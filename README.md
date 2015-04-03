@@ -52,7 +52,11 @@ equivalents.
   syntactic sugar. Ralf S. Engelschall is a strong promoter of reducing
   source codes to its bare minimum. Hence, in his personal opinion
   ECMAScript 6 should be coded without semicolons. But if you
-  disagree, just switch the shown style on the website.
+  disagree, just switch the shown style on the website. If you even
+  need to enforce a particular style for both ES6 and ES5 code snippets
+  in your bookmarks, just use one of the following URLs:
+  [ES6-Features (modernized style)](http://es6-features.org/#modernized) or
+  [ES6-Features (traditional style)](http://es6-features.org/#traditional)
 
 - *I still don't understand: why should I use ECMAScript 6? ECMAScript 5 looks sufficient.*
 
