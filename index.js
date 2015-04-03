@@ -68,7 +68,10 @@
 
         /*  support URL based routing and this way deep-linking  */
         var dispatch = function (id) {
-            $("li.subtitle a[href='#" + id + "']").trigger("click")
+            if (id === "modernized" || id === "traditional")
+                $(".content .js").removeClass("traditional").removeClass("modernized").addClass(id)
+            else
+                $("li.subtitle a[href='#" + id + "']").trigger("click")
         }
         var router = new Router()
         router.on("(.+)", dispatch)
