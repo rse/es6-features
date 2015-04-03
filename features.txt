@@ -577,12 +577,12 @@ Concise FP-style way to create an object, based on another object where
 each entry is the result of some operation.
 
 6| let results = (
-6|     for (c of customers)
+6|     for (|c of customers|)
 6|         if (c.city == "Munich")
 6|             { name: c.name, age: c.age } );
 
 5| var results = |[]|;
-5| for (var c = customers.next(); !c.done; c = customers.next())
+5| for (|var c = customers.next(); !c.done; c = customers.next()|)
 5|     if (c.city === "Munich")
 5|         |result.push|({ name: c.name, age: c.age });
 
@@ -595,11 +595,11 @@ Binary & Octal Literal
 
 Direct support for binary and octal literals.
 
-6| 0b111110111 === 503;
-6| 0o767 === 503;
+6| |0b111110111| === 503;
+6| |0o767| === 503;
 
-5| parseInt("111110111", 2) === 503;
-5| parseInt("767", 8) === 503;
+5| |parseInt("111110111", 2)| === 503;
+5| |parseInt("767", 8)| === 503;
 
 Unicode String & RegExp Literal
 -------------------------------
@@ -607,10 +607,10 @@ Unicode String & RegExp Literal
 Extended support using Unicode within strings and regular expressions.
 
 6| "𠮷".length === 2;
-6| "𠮷".match(/./u)[0].length === 2;
-6| "\u{20BB7}" === "𠮷" === "\uD842\uDFB7";
-6| "𠮷".codePointAt(0) == 0x20BB7;
-6| for (let codepoint of "𠮷") console.log(codepoint);
+6| "𠮷".match(/./|u|)[0].length === 2;
+6| "|\u{20BB7}|" === "𠮷" === "\uD842\uDFB7";
+6| "𠮷".|codePointAt|(0) == 0x20BB7;
+6| for (let codepoint |of| "𠮷") console.log(codepoint);
 
 5| "𠮷".length === 2;
 5| //  no equivalent in ES5
@@ -623,7 +623,7 @@ Map/Set & WeakMap/WeakSet
 =========================
 
 Set
----
+----
 
 Cleaner data-structure for common algorithms based on sets.
 
@@ -643,7 +643,7 @@ Cleaner data-structure for common algorithms based on sets.
 5|         console.log(val);
 
 Map
----
+----
 
 Cleaner data-structure for common algorithms based on maps.
 

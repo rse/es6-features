@@ -151,6 +151,10 @@
 </li>
 <li class="title">Map/Set & WeakMap/WeakSet
     <ul>
+<li class="subtitle subtitle_Set">
+    <a href="#Set">Set</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_Map">
+    <a href="#Map">Map</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_WeakSetWeakMap">
     <a href="#WeakSetWeakMap">WeakSet & WeakMap</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
@@ -942,7 +946,7 @@ each entry is the result of some operation.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> results<span class="punctuation"> = </span><span class="punctuation">(</span>
-    <span class="keyword">for</span> <span class="punctuation">(</span>c <span class="keyword">of</span> customers<span class="punctuation">)</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="mark">c <span class="keyword">of</span> customers</span><span class="punctuation">)</span>
         <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city == <span class="literal">"Munich"</span><span class="punctuation">)</span>
             <span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span> <span class="punctuation">)</span><span class="semi">;</span>
 </div>
@@ -952,7 +956,7 @@ each entry is the result of some operation.</div>
         <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">var</span> results<span class="punctuation"> = </span><span class="mark"><span class="punctuation">[</span><span class="punctuation">]</span></span><span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> c<span class="punctuation"> = </span>customers<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span> !c<span class="punctuation">.</span>done<span class="semi">;</span> c<span class="punctuation"> = </span>customers<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="mark"><span class="keyword">var</span> c<span class="punctuation"> = </span>customers<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span> !c<span class="punctuation">.</span>done<span class="semi">;</span> c<span class="punctuation"> = </span>customers<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="punctuation">)</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city <span class="punctuation">===</span> <span class="literal">"Munich"</span><span class="punctuation">)</span>
         <span class="mark">result<span class="punctuation">.</span>push</span><span class="punctuation">(</span><span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
@@ -966,16 +970,16 @@ each entry is the result of some operation.</div>
         <div class="desc">Direct support for binary and octal literals.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="literal">0</span>b<span class="literal">111110111</span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
-<span class="literal">0</span>o<span class="literal">767</span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
+    <div class="code"><span class="mark"><span class="literal">0</span>b<span class="literal">111110111</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
+<span class="mark"><span class="literal">0</span>o<span class="literal">767</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
         <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">parseInt<span class="punctuation">(</span><span class="literal">"111110111"</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
-parseInt<span class="punctuation">(</span><span class="literal">"767"</span><span class="punctuation">,</span> <span class="literal">8</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span></div>
+    <div class="code"><span class="mark">parseInt<span class="punctuation">(</span><span class="literal">"111110111"</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
+<span class="mark">parseInt<span class="punctuation">(</span><span class="literal">"767"</span><span class="punctuation">,</span> <span class="literal">8</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
@@ -988,10 +992,10 @@ parseInt<span class="punctuation">(</span><span class="literal">"767"</span><spa
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="literal">"𠮷"</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
-<span class="literal">"𠮷"</span><span class="punctuation">.</span>match<span class="punctuation">(</span>/<span class="punctuation">.</span>/u<span class="punctuation">)</span><span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
-<span class="literal">"\u<span class="punctuation">{</span>20BB7<span class="punctuation">}</span>"</span> <span class="punctuation">===</span> <span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span>
-<span class="literal">"𠮷"</span><span class="punctuation">.</span>codePointAt<span class="punctuation">(</span><span class="literal">0</span><span class="punctuation">)</span> == <span class="literal">0</span>x<span class="literal">20</span>BB<span class="literal">7</span><span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> codepoint <span class="keyword">of</span> <span class="literal">"𠮷"</span><span class="punctuation">)</span> console<span class="punctuation">.</span>log<span class="punctuation">(</span>codepoint<span class="punctuation">)</span><span class="semi">;</span>
+<span class="literal">"𠮷"</span><span class="punctuation">.</span>match<span class="punctuation">(</span>/<span class="punctuation">.</span>/<span class="mark">u</span><span class="punctuation">)</span><span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+<span class="literal">"<span class="mark">\u<span class="punctuation">{</span>20BB7<span class="punctuation">}</span></span>"</span> <span class="punctuation">===</span> <span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span>
+<span class="literal">"𠮷"</span><span class="punctuation">.</span><span class="mark">codePointAt</span><span class="punctuation">(</span><span class="literal">0</span><span class="punctuation">)</span> == <span class="literal">0</span>x<span class="literal">20</span>BB<span class="literal">7</span><span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> codepoint <span class="mark"><span class="keyword">of</span></span> <span class="literal">"𠮷"</span><span class="punctuation">)</span> console<span class="punctuation">.</span>log<span class="punctuation">(</span>codepoint<span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -1003,6 +1007,68 @@ parseInt<span class="punctuation">(</span><span class="literal">"767"</span><spa
 <span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span><span class="comment">
 //  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
 //  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+    </a>
+</div>
+<div class="showcase showcase_Set">    <a name="Set">
+        <div class="title">Map/Set & WeakMap/WeakSet</div>
+        <div class="subtitle">Set</div>
+        <div class="desc">Cleaner data-structure for common algorithms based on sets.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">let</span> s<span class="punctuation"> = </span><span class="keyword">new</span> Set<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+s<span class="punctuation">.</span>add<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">)</span><span class="punctuation">.</span>add<span class="punctuation">(</span><span class="literal">"goodbye"</span><span class="punctuation">)</span><span class="punctuation">.</span>add<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">)</span><span class="semi">;</span>
+s<span class="punctuation">.</span>size <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+s<span class="punctuation">.</span>has<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">)</span> <span class="punctuation">===</span> true<span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> val <span class="keyword">of</span> m<span class="punctuation">.</span>values<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span> /<span class="punctuation">*</span> insertion order <span class="punctuation">*</span>/
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>val<span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+        <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> s<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+s<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span><span class="punctuation"> = </span>true<span class="semi">;</span> s<span class="punctuation">[</span><span class="literal">"goodbye"</span><span class="punctuation">]</span><span class="punctuation"> = </span>true<span class="semi">;</span> s<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span><span class="punctuation"> = </span>true<span class="semi">;</span>
+Object<span class="punctuation">.</span>keys<span class="punctuation">(</span>s<span class="punctuation">)</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+s<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span> <span class="punctuation">===</span> true<span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span>val <span class="keyword">in</span> s<span class="punctuation">)</span> /<span class="punctuation">*</span> arbitrary order <span class="punctuation">*</span>/
+    <span class="keyword">if</span> <span class="punctuation">(</span>s<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>key<span class="punctuation">)</span><span class="punctuation">)</span>
+        console<span class="punctuation">.</span>log<span class="punctuation">(</span>val<span class="punctuation">)</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+    </a>
+</div>
+<div class="showcase showcase_Map">    <a name="Map">
+        <div class="title">Map/Set & WeakMap/WeakSet</div>
+        <div class="subtitle">Map</div>
+        <div class="desc">Cleaner data-structure for common algorithms based on maps.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">let</span> m<span class="punctuation"> = </span><span class="keyword">new</span> Map<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+m<span class="punctuation">.</span>set<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">,</span> <span class="literal">42</span><span class="punctuation">)</span><span class="semi">;</span>
+m<span class="punctuation">.</span>set<span class="punctuation">(</span>s<span class="punctuation">,</span> <span class="literal">34</span><span class="punctuation">)</span><span class="semi">;</span>
+m<span class="punctuation">.</span>get<span class="punctuation">(</span>s<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">34</span><span class="semi">;</span>
+m<span class="punctuation">.</span>size <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> <span class="punctuation">[</span> key<span class="punctuation">,</span> val <span class="punctuation">]</span> <span class="keyword">of</span> m<span class="punctuation">.</span>entries<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>key <span class="punctuation">+</span> <span class="literal">"<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> val<span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+        <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> m<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+m<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">42</span><span class="semi">;</span><span class="comment">
+// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
+// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
+Object<span class="punctuation">.</span>keys<span class="punctuation">(</span>m<span class="punctuation">)</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span>key <span class="keyword">in</span> m<span class="punctuation">)</span>
+    <span class="keyword">if</span> <span class="punctuation">(</span>m<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>key<span class="punctuation">)</span><span class="punctuation">)</span>
+        console<span class="punctuation">.</span>log<span class="punctuation">(</span>key <span class="punctuation">+</span> <span class="literal">"<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> m<span class="punctuation">[</span>key<span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
