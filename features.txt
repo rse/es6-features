@@ -510,7 +510,8 @@ Generators
 ----------
 
 Support for generators, a special case of Iterators where
-the control flow can be paused and resumed.
+the control flow can be paused and resumed. Beside iteration,
+supports asynchronous programming.
 
 6| let fibonacci = {
 6|     [Symbol.iterator]: |function*| () {
