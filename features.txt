@@ -622,8 +622,8 @@ Extended support using Unicode within strings and regular expressions.
 Map/Set & WeakMap/WeakSet
 =========================
 
-Set
-----
+Set Data-Structure
+------------------
 
 Cleaner data-structure for common algorithms based on sets.
 
@@ -642,8 +642,8 @@ Cleaner data-structure for common algorithms based on sets.
 5|     if (s.hasOwnProperty(key))
 5|         console.log(val);
 
-Map
-----
+Map Data-Structure
+------------------
 
 Cleaner data-structure for common algorithms based on maps.
 
@@ -664,8 +664,8 @@ Cleaner data-structure for common algorithms based on maps.
 5|     if (m.hasOwnProperty(key))
 5|         console.log(key + " = " + m[key]);
 
-WeakSet & WeakMap
------------------
+Weak-Link Data-Structures
+-------------------------
 
 Memory-leak-free Object-key’d side-tables
 
