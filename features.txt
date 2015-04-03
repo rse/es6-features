@@ -209,36 +209,36 @@ More intuitive and boilerplate-free getter/setter members.
 
 6| class Shape {
 6|     ...
-6|     get area { throw new Error("calculated area not implemented"); }
-6|     set area { throw new Error("cannot set calculated area");      }
+6|     |get area| { throw new Error("calculated area not implemented"); }
+6|     |set area| { throw new Error("cannot set calculated area");      }
 6| }
 6| class Rectangle extends Shape {
 6|     ...
-6|     get area { return this.width * this.height; }
+6|     |get area| { return this.width * this.height; }
 6| }
 6| class Circle extends Shape {
 6|     ...
-6|     get area { return Math.PI * this.radius * this.radius; }
+6|     |get area| { return Math.PI * this.radius * this.radius; }
 6| }
 6| let rec = new Rectangle("foo", 0, 0, 50, 20);
 6| circle|.area| === 1000;
-6| circle.area = 2000; // exception!
+6| circle|.area| = 2000; // exception!
 
-5| Shape.prototype.setArea = function (area) {
+5| Shape|.prototype.setArea| = function (area) {
 5|     throw new Error("cannot set calculated area");
 5| };
-5| Shape.prototype.getArea = function () {
+5| Shape|.prototype.getArea| = function () {
 5|     throw new Error("calculated area not implemented");
 5| };
-5| Rectangle.prototype.getArea = function () {
+5| Rectangle|.prototype.getArea| = function () {
 5|     return this.width * this.height;
 5| };
-5| Circle.prototype.getArea = function () {
+5| Circle|.prototype.getArea| = function () {
 5|     return Math.PI * this.radius * this.radius;
 5| };
 5| var rec = new Rectangle("foo", 0, 0, 50, 20);
 5| circle|.getArea()| === 1000;
-5| circle|.setArea(2000)|; // exception!
+5| circle|.setArea(|2000|)|; // exception!
 
 
 Enhanced Object Literals

@@ -432,41 +432,41 @@ Shape<span class="punctuation">.</span><span class="mark">prototype<span class="
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">class</span> Shape <span class="punctuation">{</span>
     <span class="ellipsis">&hellip;</span>
-    get area <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="semi">;</span> <span class="punctuation">}</span>
-    set area <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="semi">;</span>      <span class="punctuation">}</span>
+    <span class="mark">get area</span> <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="semi">;</span> <span class="punctuation">}</span>
+    <span class="mark">set area</span> <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="semi">;</span>      <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 <span class="keyword">class</span> Rectangle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
     <span class="ellipsis">&hellip;</span>
-    get area <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="semi">;</span> <span class="punctuation">}</span>
+    <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="semi">;</span> <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 <span class="keyword">class</span> Circle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
     <span class="ellipsis">&hellip;</span>
-    get area <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span> <span class="punctuation">}</span>
+    <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span> <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 <span class="keyword">let</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
 circle<span class="mark"><span class="punctuation">.</span>area</span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
-circle<span class="punctuation">.</span>area<span class="punctuation"> = </span><span class="literal">2000</span><span class="semi">;</span><span class="comment"> // exception!</span>
+circle<span class="mark"><span class="punctuation">.</span>area</span><span class="punctuation"> = </span><span class="literal">2000</span><span class="semi">;</span><span class="comment"> // exception!</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
         <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">Shape<span class="punctuation">.</span>prototype<span class="punctuation">.</span>setArea<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>area<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <div class="code">Shape<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>setArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>area<span class="punctuation">)</span> <span class="punctuation">{</span>
     throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-Shape<span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+Shape<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-Rectangle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+Rectangle<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-Circle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+Circle<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
 <span class="keyword">var</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
 circle<span class="mark"><span class="punctuation">.</span>getArea<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>setArea<span class="punctuation">(</span><span class="literal">2000</span><span class="punctuation">)</span></span><span class="semi">;</span><span class="comment"> // exception!</span></div>
+circle<span class="mark"><span class="punctuation">.</span>setArea<span class="punctuation">(</span></span><span class="literal">2000</span><span class="mark"><span class="punctuation">)</span></span><span class="semi">;</span><span class="comment"> // exception!</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
