@@ -508,15 +508,15 @@ circle<span class="mark"><span class="punctuation">.</span>setArea<span class="p
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code">//  lib/math<span class="punctuation">.</span>js
-<span class="mark"><span class="keyword">export</span></span> <span class="keyword">function</span> sum <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark"><span class="keyword">export</span></span> <span class="keyword">var</span> pi<span class="punctuation"> = </span><span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">export</span></span> <span class="keyword">function</span> <span class="mark">sum</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">export</span></span> <span class="keyword">var</span> <span class="mark">pi</span><span class="punctuation"> = </span><span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span>
 <span class="comment">
 //  someApp<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">import</span> <span class="punctuation">*</span> as math from</span> <span class="literal">"lib/math"</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">import</span> <span class="punctuation">*</span> as math</span> from <span class="literal">"lib/math"</span><span class="semi">;</span>
 alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> math<span class="punctuation">.</span>sum<span class="punctuation">(</span>math<span class="punctuation">.</span>pi<span class="punctuation">,</span> math<span class="punctuation">.</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="comment">
 //  otherApp<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">import</span> <span class="punctuation">{</span> sum<span class="punctuation">,</span> pi <span class="punctuation">}</span> from</span> <span class="literal">"lib/math"</span><span class="punctuation">;</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">import</span> <span class="punctuation">{</span> sum<span class="punctuation">,</span> pi <span class="punctuation">}</span></span> from <span class="literal">"lib/math"</span><span class="punctuation">;</span><span class="semi">;</span>
 alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> sum<span class="punctuation">(</span>pi<span class="punctuation">,</span> pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
@@ -560,7 +560,7 @@ alert<span class="punctuation">(</span><span class="literal">"2π<span class="pu
     <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code">//  lib/mathplusplus<span class="punctuation">.</span>js
-LibMathPP<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">LibMathPP<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span></span><span class="semi">;</span>
 <span class="mark"><span class="keyword">for</span> <span class="punctuation">(</span>symbol <span class="keyword">in</span> LibMath<span class="punctuation">)</span></span>
     <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>LibMath<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>symbol<span class="punctuation">)</span><span class="punctuation">)</span></span>
         <span class="mark">LibMathPP<span class="punctuation">[</span>symbol<span class="punctuation">]</span><span class="punctuation"> = </span>LibMath<span class="punctuation">[</span>symbol<span class="punctuation">]</span><span class="punctuation">;</span></span>
