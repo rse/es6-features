@@ -22,12 +22,6 @@
 ##  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ##
 
-#   GOALS:
-#   reduce language cleaness
-#   increase expressiveness
-#   decrease necessary boilerplate code
-#   avoid hacks and workarounds
-
 
 Arrows
 ======

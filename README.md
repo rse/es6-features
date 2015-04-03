@@ -37,3 +37,15 @@ equivalents.
   ECMAScript 6 should be coded without semicolons. But if you
   disagree, just switch the shown style on the website.
 
+- *I still don't understand: why should I use ECMAScript 6? ECMAScript 5 looks sufficient.*
+
+  ECMAScript 5 is a nice and decent programming language, of course. But
+  because of its history, it has some nasty aspects which ECMAScript 6
+  finally resolves. As programming never is just about getting the necessary
+  functionality done, it is advised to also use the best lanuage,
+  too. ECMAScript 6's language design is cleaner than ECMAScript 5,
+  its syntax increases the expressiveness of your code, it decreases the
+  necessary boilerplate code (e.g. `function` vs. arrow syntax) and it
+  especially let you get rid of some very nasty but required hacks and
+  workarounds from the ECMAScript 5 era (e.g. `var self = this`).
+
