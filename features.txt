@@ -113,140 +113,6 @@ More intuitive handling of current object context.
 5| });
 
 
-Classes
-=======
-
-Class Definition
-----------------
-
-More intuitive, OOP-style and boilerplate-free classes.
-
-6| |class| Shape {
-6|     |constructor| (id, x, y) {
-6|         this.id = id;
-6|         this.move(x, y);
-6|     }
-6|     |move| (x, y) {
-6|         this.x = x;
-6|         this.y = y;
-6|     }
-6| }
-
-5| var Shape = |function| (id, x, y) {
-5|     this.id = id;
-5|     this.move(x, y);
-5| };
-5| Shape.|prototype.move| = |function| (x, y) {
-5|     this.x = x;
-5|     this.y = y;
-5| };
-
-
-Class Inheritance
------------------
-
-More intuitive, OOP-style and boilerplate-free inheritance.
-
-6| |class| Rectangle |extends| Shape {
-6|     constructor (id, x, y, width, height) {
-6|         |super|(id, x, y);
-6|         this.width  = width;
-6|         this.height = height;
-6|     }
-6| }
-6| |class| Circle |extends| Shape {
-6|     constructor (id, x, y, radius) {
-6|         |super|(id, x, y);
-6|         this.radius = radius;
-6|     }
-6| }
-
-5| var Rectangle = function (id, x, y, width, height) {
-5|     |Shape.call|(this, id, x, y);
-5|     this.width  = width;
-5|     this.height = height;
-5| };
-5| |Rectangle.prototype = Object.create(Shape.prototype)|;
-5| |Rectangle.prototype.constructor = Rectangle|;
-5| var Circle = function (id, x, y, radius) {
-5|     |Shape.call|(this, id, x, y);
-5|     this.radius = radius;
-5| };
-5| |Circle.prototype = Object.create(Shape.prototype)|;
-5| |Circle.prototype.constructor = Circle|;
-
-
-Static Members
---------------
-
-Simple support for static class members.
-
-6| class Rectangle extends Shape {
-6|     ...
-6|     |static defaultRectangle| () {
-6|         return new Rectangle("default", 0, 0, 100, 100);
-6|     }
-6| }
-6| class Circle extends Shape {
-6|     ...
-6|     |static defaultCircle| () {
-6|         return new Circle("default", 0, 0, 100);
-6|     }
-6| }
-
-5| var Rectangle = function (id, x, y, width, height) {
-5|     ...
-5| };
-5| |Rectangle.defaultRectangle| = function () {
-5|     return new Rectangle("default", 0, 0, 100, 100);
-5| };
-5| var Circle = function (id, x, y, width, height) {
-5|     ...
-5| };
-5| |Circle.defaultCircle| = function () {
-5|     return new Circle("default", 0, 0, 100);
-5| };
-
-
-Getter/Setter
--------------
-
-More intuitive and boilerplate-free getter/setter members.
-
-6| class Shape {
-6|     ...
-6|     |get area| { throw new Error("calculated area not implemented"); }
-6|     |set area| { throw new Error("cannot set calculated area");      }
-6| }
-6| class Rectangle extends Shape {
-6|     ...
-6|     |get area| { return this.width * this.height; }
-6| }
-6| class Circle extends Shape {
-6|     ...
-6|     |get area| { return Math.PI * this.radius * this.radius; }
-6| }
-6| let rec = new Rectangle("foo", 0, 0, 50, 20);
-6| circle|.area| === 1000;
-6| circle|.area| = 2000; // exception!
-
-5| Shape|.prototype.setArea| = function (area) {
-5|     throw new Error("cannot set calculated area");
-5| };
-5| Shape|.prototype.getArea| = function () {
-5|     throw new Error("calculated area not implemented");
-5| };
-5| Rectangle|.prototype.getArea| = function () {
-5|     return this.width * this.height;
-5| };
-5| Circle|.prototype.getArea| = function () {
-5|     return Math.PI * this.radius * this.radius;
-5| };
-5| var rec = new Rectangle("foo", 0, 0, 50, 20);
-5| circle|.getArea()| === 1000;
-5| circle|.setArea(|2000|)|; // exception!
-
-
 Enhanced Object Literals
 ========================
 
@@ -273,66 +139,6 @@ Support for computed names in object property definitions.
 5|     foo: "bar"
 5| };
 5| |obj[| "prop_" + foo() |] =| 42;
-
-
-Modules
-=======
-
-Symbol Export/Import
---------------------
-
-Support for exporting/importing symbols from/to modules without global namespace pollution.
-
-6| //  lib/math.js
-6| |export| function |sum| (x, y) { return x + y };
-6| |export| var |pi| = 3.141593;
-6|
-6| //  someApp.js
-6| |import * as math| from "lib/math";
-6| alert("2π = " + math.sum(math.pi, math.pi));
-6|
-6| //  otherApp.js
-6| |import { sum, pi }| from "lib/math";;
-6| alert("2π = " + sum(pi, pi));
-
-5| //  lib/math.js
-5| |LibMath = {};|
-5| |LibMath.sum| = function (x, y) { return x + y };
-5| |LibMath.pi| = 3.141593;
-5|
-5| //  someApp.js
-5| var |math = LibMath|;
-5| alert("2π = " + math.sum(math.pi, math.pi));
-5|
-5| //  otherApp.js
-5| var |sum = LibMath.sum|, |pi = LibMath.pi|;
-5| alert("2π = " + sum(pi, pi));
-
-Default & Wildcard
-------------------
-
-Marking a symbol as the default exported symbol and mass-mixin of symbols.
-
-6| //  lib/mathplusplus.js
-6| |export *| from "lib/math";
-6| export var e = 2.71828182846;
-6| |export default| function (x) { return Math.exp(x) };
-6|
-6| //  someApp.js
-6| |import exp, { pi, e }| from "lib/mathplusplus";
-6| alert("2π = " + exp(pi, e));
-
-5| //  lib/mathplusplus.js
-5| |LibMathPP = {}|;
-5| |for (symbol in LibMath)|
-5|     |if (LibMath.hasOwnProperty(symbol))|
-5|         |LibMathPP[symbol] = LibMath[symbol];|
-5| |LibMathPP.e| = 2.71828182846;
-5| |LibMathPP.exp| = function (x) { return Math.exp(x) };
-5|
-5| //  someApp.js
-5| var |exp = LibMathPP.exp|, |pi = LibMathPP.pi|, |e = libMathPP.e|;
-5| alert("2π = " + exp(pi, e));
 
 
 Extended Literals
@@ -493,6 +299,200 @@ Spreading of array elements into individual parameters of a function.
 
 5| var params = [ "hello", true, 7 ];
 5| f|.apply|(|undefined|, [ 1, 2 ]|.concat(params)|) === 9;
+
+
+Modules
+=======
+
+Symbol Export/Import
+--------------------
+
+Support for exporting/importing symbols from/to modules without global namespace pollution.
+
+6| //  lib/math.js
+6| |export| function |sum| (x, y) { return x + y };
+6| |export| var |pi| = 3.141593;
+6|
+6| //  someApp.js
+6| |import * as math| from "lib/math";
+6| alert("2π = " + math.sum(math.pi, math.pi));
+6|
+6| //  otherApp.js
+6| |import { sum, pi }| from "lib/math";;
+6| alert("2π = " + sum(pi, pi));
+
+5| //  lib/math.js
+5| |LibMath = {};|
+5| |LibMath.sum| = function (x, y) { return x + y };
+5| |LibMath.pi| = 3.141593;
+5|
+5| //  someApp.js
+5| var |math = LibMath|;
+5| alert("2π = " + math.sum(math.pi, math.pi));
+5|
+5| //  otherApp.js
+5| var |sum = LibMath.sum|, |pi = LibMath.pi|;
+5| alert("2π = " + sum(pi, pi));
+
+Default & Wildcard
+------------------
+
+Marking a symbol as the default exported symbol and mass-mixin of symbols.
+
+6| //  lib/mathplusplus.js
+6| |export *| from "lib/math";
+6| export var e = 2.71828182846;
+6| |export default| function (x) { return Math.exp(x) };
+6|
+6| //  someApp.js
+6| |import exp, { pi, e }| from "lib/mathplusplus";
+6| alert("2π = " + exp(pi, e));
+
+5| //  lib/mathplusplus.js
+5| |LibMathPP = {}|;
+5| |for (symbol in LibMath)|
+5|     |if (LibMath.hasOwnProperty(symbol))|
+5|         |LibMathPP[symbol] = LibMath[symbol];|
+5| |LibMathPP.e| = 2.71828182846;
+5| |LibMathPP.exp| = function (x) { return Math.exp(x) };
+5|
+5| //  someApp.js
+5| var |exp = LibMathPP.exp|, |pi = LibMathPP.pi|, |e = libMathPP.e|;
+5| alert("2π = " + exp(pi, e));
+
+
+Classes
+=======
+
+Class Definition
+----------------
+
+More intuitive, OOP-style and boilerplate-free classes.
+
+6| |class| Shape {
+6|     |constructor| (id, x, y) {
+6|         this.id = id;
+6|         this.move(x, y);
+6|     }
+6|     |move| (x, y) {
+6|         this.x = x;
+6|         this.y = y;
+6|     }
+6| }
+
+5| var Shape = |function| (id, x, y) {
+5|     this.id = id;
+5|     this.move(x, y);
+5| };
+5| Shape.|prototype.move| = |function| (x, y) {
+5|     this.x = x;
+5|     this.y = y;
+5| };
+
+
+Class Inheritance
+-----------------
+
+More intuitive, OOP-style and boilerplate-free inheritance.
+
+6| |class| Rectangle |extends| Shape {
+6|     constructor (id, x, y, width, height) {
+6|         |super|(id, x, y);
+6|         this.width  = width;
+6|         this.height = height;
+6|     }
+6| }
+6| |class| Circle |extends| Shape {
+6|     constructor (id, x, y, radius) {
+6|         |super|(id, x, y);
+6|         this.radius = radius;
+6|     }
+6| }
+
+5| var Rectangle = function (id, x, y, width, height) {
+5|     |Shape.call|(this, id, x, y);
+5|     this.width  = width;
+5|     this.height = height;
+5| };
+5| |Rectangle.prototype = Object.create(Shape.prototype)|;
+5| |Rectangle.prototype.constructor = Rectangle|;
+5| var Circle = function (id, x, y, radius) {
+5|     |Shape.call|(this, id, x, y);
+5|     this.radius = radius;
+5| };
+5| |Circle.prototype = Object.create(Shape.prototype)|;
+5| |Circle.prototype.constructor = Circle|;
+
+
+Static Members
+--------------
+
+Simple support for static class members.
+
+6| class Rectangle extends Shape {
+6|     ...
+6|     |static defaultRectangle| () {
+6|         return new Rectangle("default", 0, 0, 100, 100);
+6|     }
+6| }
+6| class Circle extends Shape {
+6|     ...
+6|     |static defaultCircle| () {
+6|         return new Circle("default", 0, 0, 100);
+6|     }
+6| }
+
+5| var Rectangle = function (id, x, y, width, height) {
+5|     ...
+5| };
+5| |Rectangle.defaultRectangle| = function () {
+5|     return new Rectangle("default", 0, 0, 100, 100);
+5| };
+5| var Circle = function (id, x, y, width, height) {
+5|     ...
+5| };
+5| |Circle.defaultCircle| = function () {
+5|     return new Circle("default", 0, 0, 100);
+5| };
+
+
+Getter/Setter
+-------------
+
+More intuitive and boilerplate-free getter/setter members.
+
+6| class Shape {
+6|     ...
+6|     |get area| { throw new Error("calculated area not implemented"); }
+6|     |set area| { throw new Error("cannot set calculated area");      }
+6| }
+6| class Rectangle extends Shape {
+6|     ...
+6|     |get area| { return this.width * this.height; }
+6| }
+6| class Circle extends Shape {
+6|     ...
+6|     |get area| { return Math.PI * this.radius * this.radius; }
+6| }
+6| let rec = new Rectangle("foo", 0, 0, 50, 20);
+6| circle|.area| === 1000;
+6| circle|.area| = 2000; // exception!
+
+5| Shape|.prototype.setArea| = function (area) {
+5|     throw new Error("cannot set calculated area");
+5| };
+5| Shape|.prototype.getArea| = function () {
+5|     throw new Error("calculated area not implemented");
+5| };
+5| Rectangle|.prototype.getArea| = function () {
+5|     return this.width * this.height;
+5| };
+5| Circle|.prototype.getArea| = function () {
+5|     return Math.PI * this.radius * this.radius;
+5| };
+5| var rec = new Rectangle("foo", 0, 0, 50, 20);
+5| circle|.getArea()| === 1000;
+5| circle|.setArea(|2000|)|; // exception!
 
 
 Iterators

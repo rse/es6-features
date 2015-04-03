@@ -69,32 +69,12 @@
     <a href="#Lexicalthis">Lexical <code>this</code></a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
-<li class="title">Classes
-    <ul>
-<li class="subtitle subtitle_ClassDefinition">
-    <a href="#ClassDefinition">Class Definition</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_ClassInheritance">
-    <a href="#ClassInheritance">Class Inheritance</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_StaticMembers">
-    <a href="#StaticMembers">Static Members</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_GetterSetter">
-    <a href="#GetterSetter">Getter/Setter</a> <i class="fa fa-arrow-circle-right"></i></li>
-    </ul>
-</li>
 <li class="title">Enhanced Object Literals
     <ul>
 <li class="subtitle subtitle_PropertyShorthand">
     <a href="#PropertyShorthand">Property Shorthand</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_ComputedPropertyNames">
     <a href="#ComputedPropertyNames">Computed Property Names</a> <i class="fa fa-arrow-circle-right"></i></li>
-    </ul>
-</li>
-<li class="title">Modules
-    <ul>
-<li class="subtitle subtitle_SymbolExportImport">
-    <a href="#SymbolExportImport">Symbol Export/Import</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_DefaultWildcard">
-    <a href="#DefaultWildcard">Default & Wildcard</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Extended Literals
@@ -133,6 +113,26 @@
     <a href="#RestParameter">Rest Parameter</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_SpreadOperator">
     <a href="#SpreadOperator">Spread Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
+<li class="title">Modules
+    <ul>
+<li class="subtitle subtitle_SymbolExportImport">
+    <a href="#SymbolExportImport">Symbol Export/Import</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_DefaultWildcard">
+    <a href="#DefaultWildcard">Default & Wildcard</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
+<li class="title">Classes
+    <ul>
+<li class="subtitle subtitle_ClassDefinition">
+    <a href="#ClassDefinition">Class Definition</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_ClassInheritance">
+    <a href="#ClassInheritance">Class Inheritance</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_StaticMembers">
+    <a href="#StaticMembers">Static Members</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GetterSetter">
+    <a href="#GetterSetter">Getter/Setter</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Iterators
@@ -303,165 +303,6 @@ nums <span class="punctuation"> = </span>evens<span class="punctuation">.</span>
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="ClassDefinition" class="showcase showcase_ClassDefinition">    <div class="title">Classes</div>
-    <div class="subtitle">Class Definition</div>
-    <div class="desc">More intuitive, OOP-style and boilerplate-free classes.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="mark"><span class="keyword">class</span></span> Shape <span class="punctuation">{</span>
-    <span class="mark">constructor</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>id<span class="punctuation"> = </span>id<span class="semi">;</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>move<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
-    <span class="punctuation">}</span>
-    <span class="mark">move</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>x<span class="punctuation"> = </span>x<span class="semi">;</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>y<span class="punctuation"> = </span>y<span class="semi">;</span>
-    <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> Shape<span class="punctuation"> = </span><span class="mark"><span class="keyword">function</span></span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>id<span class="punctuation"> = </span>id<span class="semi">;</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>move<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-Shape<span class="punctuation">.</span><span class="mark">prototype<span class="punctuation">.</span>move</span><span class="punctuation"> = </span><span class="mark"><span class="keyword">function</span></span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>x<span class="punctuation"> = </span>x<span class="semi">;</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>y<span class="punctuation"> = </span>y<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="ClassInheritance" class="showcase showcase_ClassInheritance">    <div class="title">Classes</div>
-    <div class="subtitle">Class Inheritance</div>
-    <div class="desc">More intuitive, OOP-style and boilerplate-free inheritance.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="mark"><span class="keyword">class</span></span> Rectangle <span class="mark"><span class="keyword">extends</span></span> Shape <span class="punctuation">{</span>
-    constructor <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="mark">super</span><span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation"> = </span>width<span class="semi">;</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>height<span class="punctuation"> = </span>height<span class="semi">;</span>
-    <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-<span class="mark"><span class="keyword">class</span></span> Circle <span class="mark"><span class="keyword">extends</span></span> Shape <span class="punctuation">{</span>
-    constructor <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> radius<span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="mark">super</span><span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
-        <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="punctuation"> = </span>radius<span class="semi">;</span>
-    <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> Rectangle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="mark">Shape<span class="punctuation">.</span>call</span><span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">,</span> id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation"> = </span>width<span class="semi">;</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>height<span class="punctuation"> = </span>height<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">Rectangle<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>Shape<span class="punctuation">.</span>prototype<span class="punctuation">)</span></span><span class="semi">;</span>
-<span class="mark">Rectangle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>Rectangle</span><span class="semi">;</span>
-<span class="keyword">var</span> Circle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> radius<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="mark">Shape<span class="punctuation">.</span>call</span><span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">,</span> id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
-    <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="punctuation"> = </span>radius<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">Circle<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>Shape<span class="punctuation">.</span>prototype<span class="punctuation">)</span></span><span class="semi">;</span>
-<span class="mark">Circle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>Circle</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="StaticMembers" class="showcase showcase_StaticMembers">    <div class="title">Classes</div>
-    <div class="subtitle">Static Members</div>
-    <div class="desc">Simple support for static class members.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">class</span> Rectangle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-    <span class="mark">static defaultRectangle</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="keyword">return</span> <span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
-    <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-<span class="keyword">class</span> Circle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-    <span class="mark">static defaultCircle</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="keyword">return</span> <span class="keyword">new</span> Circle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
-    <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> Rectangle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">Rectangle<span class="punctuation">.</span>defaultRectangle</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> <span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="keyword">var</span> Circle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">Circle<span class="punctuation">.</span>defaultCircle</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> <span class="keyword">new</span> Circle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="GetterSetter" class="showcase showcase_GetterSetter">    <div class="title">Classes</div>
-    <div class="subtitle">Getter/Setter</div>
-    <div class="desc">More intuitive and boilerplate-free getter/setter members.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">class</span> Shape <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-    <span class="mark">get area</span> <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="punctuation">;</span> <span class="punctuation">}</span>
-    <span class="mark">set area</span> <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="punctuation">;</span>      <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-<span class="keyword">class</span> Rectangle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-    <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="punctuation">;</span> <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-<span class="keyword">class</span> Circle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-    <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="punctuation">;</span> <span class="punctuation">}</span>
-<span class="punctuation">}</span>
-<span class="keyword">let</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>area</span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>area</span><span class="punctuation"> = </span><span class="literal">2000</span><span class="punctuation">;</span><span class="comment"> // exception!</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">Shape<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>setArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>area<span class="punctuation">)</span> <span class="punctuation">{</span>
-    throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-Shape<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-Rectangle<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-Circle<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="keyword">var</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>getArea<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>setArea<span class="punctuation">(</span></span><span class="literal">2000</span><span class="mark"><span class="punctuation">)</span></span><span class="punctuation">;</span><span class="comment"> // exception!</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
 <div id="PropertyShorthand" class="showcase showcase_PropertyShorthand">    <div class="title">Enhanced Object Literals</div>
     <div class="subtitle">Property Shorthand</div>
     <div class="desc">Shorter syntax for common object property definition idiom.</div>
@@ -498,78 +339,6 @@ circle<span class="mark"><span class="punctuation">.</span>setArea<span class="p
     foo: <span class="literal">"bar"</span>
 <span class="punctuation">}</span><span class="semi">;</span>
 <span class="mark">obj<span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span> =</span> <span class="literal">42</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="SymbolExportImport" class="showcase showcase_SymbolExportImport">    <div class="title">Modules</div>
-    <div class="subtitle">Symbol Export/Import</div>
-    <div class="desc">Support for exporting/importing symbols from/to modules without global namespace pollution.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">//  lib/math<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">export</span></span> <span class="keyword">function</span> <span class="mark">sum</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark"><span class="keyword">export</span></span> <span class="keyword">var</span> <span class="mark">pi</span><span class="punctuation"> = </span><span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span>
-<span class="comment">
-//  someApp<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">import</span> <span class="punctuation">*</span> as math</span> from <span class="literal">"lib/math"</span><span class="semi">;</span>
-alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> math<span class="punctuation">.</span>sum<span class="punctuation">(</span>math<span class="punctuation">.</span>pi<span class="punctuation">,</span> math<span class="punctuation">.</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="comment">
-//  otherApp<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">import</span> <span class="punctuation">{</span> sum<span class="punctuation">,</span> pi <span class="punctuation">}</span></span> from <span class="literal">"lib/math"</span><span class="punctuation">;</span><span class="semi">;</span>
-alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> sum<span class="punctuation">(</span>pi<span class="punctuation">,</span> pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">//  lib/math<span class="punctuation">.</span>js</span>
-<span class="mark">LibMath<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">;</span></span>
-<span class="mark">LibMath<span class="punctuation">.</span>sum</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">LibMath<span class="punctuation">.</span>pi</span><span class="punctuation"> = </span><span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span>
-<span class="comment">
-//  someApp<span class="punctuation">.</span>js</span>
-<span class="keyword">var</span> <span class="mark">math<span class="punctuation"> = </span>LibMath</span><span class="semi">;</span>
-alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> math<span class="punctuation">.</span>sum<span class="punctuation">(</span>math<span class="punctuation">.</span>pi<span class="punctuation">,</span> math<span class="punctuation">.</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="comment">
-//  otherApp<span class="punctuation">.</span>js</span>
-<span class="keyword">var</span> <span class="mark">sum<span class="punctuation"> = </span>LibMath<span class="punctuation">.</span>sum</span><span class="punctuation">,</span> <span class="mark">pi<span class="punctuation"> = </span>LibMath<span class="punctuation">.</span>pi</span><span class="semi">;</span>
-alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> sum<span class="punctuation">(</span>pi<span class="punctuation">,</span> pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="DefaultWildcard" class="showcase showcase_DefaultWildcard">    <div class="title">Modules</div>
-    <div class="subtitle">Default & Wildcard</div>
-    <div class="desc">Marking a symbol as the default exported symbol and mass-mixin of symbols.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">//  lib/mathplusplus<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">export</span> <span class="punctuation">*</span></span> from <span class="literal">"lib/math"</span><span class="semi">;</span>
-<span class="keyword">export</span> <span class="keyword">var</span> e<span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">.</span><span class="literal">71828182846</span><span class="semi">;</span>
-<span class="mark"><span class="keyword">export</span> default</span> <span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>exp<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">}</span><span class="semi">;</span>
-<span class="comment">
-//  someApp<span class="punctuation">.</span>js</span>
-<span class="mark"><span class="keyword">import</span> exp<span class="punctuation">,</span> <span class="punctuation">{</span> pi<span class="punctuation">,</span> e <span class="punctuation">}</span></span> from <span class="literal">"lib/mathplusplus"</span><span class="semi">;</span>
-alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">,</span> e<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">//  lib/mathplusplus<span class="punctuation">.</span>js</span>
-<span class="mark">LibMathPP<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span></span><span class="semi">;</span>
-<span class="mark"><span class="keyword">for</span> <span class="punctuation">(</span>symbol <span class="keyword">in</span> LibMath<span class="punctuation">)</span></span>
-    <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>LibMath<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>symbol<span class="punctuation">)</span><span class="punctuation">)</span></span>
-        <span class="mark">LibMathPP<span class="punctuation">[</span>symbol<span class="punctuation">]</span><span class="punctuation"> = </span>LibMath<span class="punctuation">[</span>symbol<span class="punctuation">]</span><span class="punctuation">;</span></span>
-<span class="mark">LibMathPP<span class="punctuation">.</span>e</span><span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">.</span><span class="literal">71828182846</span><span class="semi">;</span>
-<span class="mark">LibMathPP<span class="punctuation">.</span>exp</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>exp<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">}</span><span class="semi">;</span>
-<span class="comment">
-//  someApp<span class="punctuation">.</span>js</span>
-<span class="keyword">var</span> <span class="mark">exp<span class="punctuation"> = </span>LibMathPP<span class="punctuation">.</span>exp</span><span class="punctuation">,</span> <span class="mark">pi<span class="punctuation"> = </span>LibMathPP<span class="punctuation">.</span>pi</span><span class="punctuation">,</span> <span class="mark">e<span class="punctuation"> = </span>libMathPP<span class="punctuation">.</span>e</span><span class="semi">;</span>
-alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">,</span> e<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
@@ -802,6 +571,237 @@ f<span class="punctuation">(</span><span class="literal">1</span><span class="pu
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">var</span> params<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span><span class="semi">;</span>
 f<span class="mark"><span class="punctuation">.</span>apply</span><span class="punctuation">(</span><span class="mark">undefined</span><span class="punctuation">,</span> <span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span> <span class="punctuation">]</span><span class="mark"><span class="punctuation">.</span>concat<span class="punctuation">(</span>params<span class="punctuation">)</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="SymbolExportImport" class="showcase showcase_SymbolExportImport">    <div class="title">Modules</div>
+    <div class="subtitle">Symbol Export/Import</div>
+    <div class="desc">Support for exporting/importing symbols from/to modules without global namespace pollution.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  lib/math<span class="punctuation">.</span>js</span>
+<span class="mark"><span class="keyword">export</span></span> <span class="keyword">function</span> <span class="mark">sum</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">export</span></span> <span class="keyword">var</span> <span class="mark">pi</span><span class="punctuation"> = </span><span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span>
+<span class="comment">
+//  someApp<span class="punctuation">.</span>js</span>
+<span class="mark"><span class="keyword">import</span> <span class="punctuation">*</span> as math</span> from <span class="literal">"lib/math"</span><span class="semi">;</span>
+alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> math<span class="punctuation">.</span>sum<span class="punctuation">(</span>math<span class="punctuation">.</span>pi<span class="punctuation">,</span> math<span class="punctuation">.</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="comment">
+//  otherApp<span class="punctuation">.</span>js</span>
+<span class="mark"><span class="keyword">import</span> <span class="punctuation">{</span> sum<span class="punctuation">,</span> pi <span class="punctuation">}</span></span> from <span class="literal">"lib/math"</span><span class="punctuation">;</span><span class="semi">;</span>
+alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> sum<span class="punctuation">(</span>pi<span class="punctuation">,</span> pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  lib/math<span class="punctuation">.</span>js</span>
+<span class="mark">LibMath<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">;</span></span>
+<span class="mark">LibMath<span class="punctuation">.</span>sum</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">LibMath<span class="punctuation">.</span>pi</span><span class="punctuation"> = </span><span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span>
+<span class="comment">
+//  someApp<span class="punctuation">.</span>js</span>
+<span class="keyword">var</span> <span class="mark">math<span class="punctuation"> = </span>LibMath</span><span class="semi">;</span>
+alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> math<span class="punctuation">.</span>sum<span class="punctuation">(</span>math<span class="punctuation">.</span>pi<span class="punctuation">,</span> math<span class="punctuation">.</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="comment">
+//  otherApp<span class="punctuation">.</span>js</span>
+<span class="keyword">var</span> <span class="mark">sum<span class="punctuation"> = </span>LibMath<span class="punctuation">.</span>sum</span><span class="punctuation">,</span> <span class="mark">pi<span class="punctuation"> = </span>LibMath<span class="punctuation">.</span>pi</span><span class="semi">;</span>
+alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> sum<span class="punctuation">(</span>pi<span class="punctuation">,</span> pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="DefaultWildcard" class="showcase showcase_DefaultWildcard">    <div class="title">Modules</div>
+    <div class="subtitle">Default & Wildcard</div>
+    <div class="desc">Marking a symbol as the default exported symbol and mass-mixin of symbols.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  lib/mathplusplus<span class="punctuation">.</span>js</span>
+<span class="mark"><span class="keyword">export</span> <span class="punctuation">*</span></span> from <span class="literal">"lib/math"</span><span class="semi">;</span>
+<span class="keyword">export</span> <span class="keyword">var</span> e<span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">.</span><span class="literal">71828182846</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">export</span> default</span> <span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>exp<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">}</span><span class="semi">;</span>
+<span class="comment">
+//  someApp<span class="punctuation">.</span>js</span>
+<span class="mark"><span class="keyword">import</span> exp<span class="punctuation">,</span> <span class="punctuation">{</span> pi<span class="punctuation">,</span> e <span class="punctuation">}</span></span> from <span class="literal">"lib/mathplusplus"</span><span class="semi">;</span>
+alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">,</span> e<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  lib/mathplusplus<span class="punctuation">.</span>js</span>
+<span class="mark">LibMathPP<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span></span><span class="semi">;</span>
+<span class="mark"><span class="keyword">for</span> <span class="punctuation">(</span>symbol <span class="keyword">in</span> LibMath<span class="punctuation">)</span></span>
+    <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>LibMath<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>symbol<span class="punctuation">)</span><span class="punctuation">)</span></span>
+        <span class="mark">LibMathPP<span class="punctuation">[</span>symbol<span class="punctuation">]</span><span class="punctuation"> = </span>LibMath<span class="punctuation">[</span>symbol<span class="punctuation">]</span><span class="punctuation">;</span></span>
+<span class="mark">LibMathPP<span class="punctuation">.</span>e</span><span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">.</span><span class="literal">71828182846</span><span class="semi">;</span>
+<span class="mark">LibMathPP<span class="punctuation">.</span>exp</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>exp<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">}</span><span class="semi">;</span>
+<span class="comment">
+//  someApp<span class="punctuation">.</span>js</span>
+<span class="keyword">var</span> <span class="mark">exp<span class="punctuation"> = </span>LibMathPP<span class="punctuation">.</span>exp</span><span class="punctuation">,</span> <span class="mark">pi<span class="punctuation"> = </span>LibMathPP<span class="punctuation">.</span>pi</span><span class="punctuation">,</span> <span class="mark">e<span class="punctuation"> = </span>libMathPP<span class="punctuation">.</span>e</span><span class="semi">;</span>
+alert<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">,</span> e<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="ClassDefinition" class="showcase showcase_ClassDefinition">    <div class="title">Classes</div>
+    <div class="subtitle">Class Definition</div>
+    <div class="desc">More intuitive, OOP-style and boilerplate-free classes.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark"><span class="keyword">class</span></span> Shape <span class="punctuation">{</span>
+    <span class="mark">constructor</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>id<span class="punctuation"> = </span>id<span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>move<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+    <span class="mark">move</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>x<span class="punctuation"> = </span>x<span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>y<span class="punctuation"> = </span>y<span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> Shape<span class="punctuation"> = </span><span class="mark"><span class="keyword">function</span></span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>id<span class="punctuation"> = </span>id<span class="semi">;</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>move<span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+Shape<span class="punctuation">.</span><span class="mark">prototype<span class="punctuation">.</span>move</span><span class="punctuation"> = </span><span class="mark"><span class="keyword">function</span></span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>x<span class="punctuation"> = </span>x<span class="semi">;</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>y<span class="punctuation"> = </span>y<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="ClassInheritance" class="showcase showcase_ClassInheritance">    <div class="title">Classes</div>
+    <div class="subtitle">Class Inheritance</div>
+    <div class="desc">More intuitive, OOP-style and boilerplate-free inheritance.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark"><span class="keyword">class</span></span> Rectangle <span class="mark"><span class="keyword">extends</span></span> Shape <span class="punctuation">{</span>
+    constructor <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark">super</span><span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation"> = </span>width<span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>height<span class="punctuation"> = </span>height<span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+<span class="mark"><span class="keyword">class</span></span> Circle <span class="mark"><span class="keyword">extends</span></span> Shape <span class="punctuation">{</span>
+    constructor <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> radius<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark">super</span><span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="punctuation"> = </span>radius<span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> Rectangle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark">Shape<span class="punctuation">.</span>call</span><span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">,</span> id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation"> = </span>width<span class="semi">;</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>height<span class="punctuation"> = </span>height<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">Rectangle<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>Shape<span class="punctuation">.</span>prototype<span class="punctuation">)</span></span><span class="semi">;</span>
+<span class="mark">Rectangle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>Rectangle</span><span class="semi">;</span>
+<span class="keyword">var</span> Circle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> radius<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark">Shape<span class="punctuation">.</span>call</span><span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">,</span> id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="punctuation"> = </span>radius<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">Circle<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>Shape<span class="punctuation">.</span>prototype<span class="punctuation">)</span></span><span class="semi">;</span>
+<span class="mark">Circle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>Circle</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="StaticMembers" class="showcase showcase_StaticMembers">    <div class="title">Classes</div>
+    <div class="subtitle">Static Members</div>
+    <div class="desc">Simple support for static class members.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">class</span> Rectangle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+    <span class="mark">static defaultRectangle</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+<span class="keyword">class</span> Circle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+    <span class="mark">static defaultCircle</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">return</span> <span class="keyword">new</span> Circle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> Rectangle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">Rectangle<span class="punctuation">.</span>defaultRectangle</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="keyword">var</span> Circle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>id<span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">,</span> width<span class="punctuation">,</span> height<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">Circle<span class="punctuation">.</span>defaultCircle</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="keyword">new</span> Circle<span class="punctuation">(</span><span class="literal">"default"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="GetterSetter" class="showcase showcase_GetterSetter">    <div class="title">Classes</div>
+    <div class="subtitle">Getter/Setter</div>
+    <div class="desc">More intuitive and boilerplate-free getter/setter members.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">class</span> Shape <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+    <span class="mark">get area</span> <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="punctuation">;</span> <span class="punctuation">}</span>
+    <span class="mark">set area</span> <span class="punctuation">{</span> throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="punctuation">;</span>      <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+<span class="keyword">class</span> Rectangle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+    <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="punctuation">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+<span class="keyword">class</span> Circle <span class="keyword">extends</span> Shape <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+    <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="punctuation">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+<span class="keyword">let</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
+circle<span class="mark"><span class="punctuation">.</span>area</span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
+circle<span class="mark"><span class="punctuation">.</span>area</span><span class="punctuation"> = </span><span class="literal">2000</span><span class="punctuation">;</span><span class="comment"> // exception!</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code">Shape<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>setArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>area<span class="punctuation">)</span> <span class="punctuation">{</span>
+    throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"cannot set calculated area"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+Shape<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    throw <span class="keyword">new</span> Error<span class="punctuation">(</span><span class="literal">"calculated area not implemented"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+Rectangle<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>width <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>height<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+Circle<span class="mark"><span class="punctuation">.</span>prototype<span class="punctuation">.</span>getArea</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="keyword">var</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
+circle<span class="mark"><span class="punctuation">.</span>getArea<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
+circle<span class="mark"><span class="punctuation">.</span>setArea<span class="punctuation">(</span></span><span class="literal">2000</span><span class="mark"><span class="punctuation">)</span></span><span class="punctuation">;</span><span class="comment"> // exception!</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
