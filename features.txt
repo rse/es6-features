@@ -289,16 +289,27 @@ Object Matching in Parameter Position
 
 Intuitive and flexible destructuring of Objects into individual parameters during function calls.
 
-6| function g (|{ name: x }|) {
-6|     console.log(x);
+6| function f (|{ name: n, val: v }|) {
+6|     console.log(n, v);
 6| }
-6| g({ name: 5 });
+6| function g (|{ name, val }|) {
+6|     console.log(name, val);
+6| }
+6| f({ name: "foo", val: 7 });
+6| g({ name: "bar", val: 42 });
 
-5| function g (|arg|) {
-5|     |var x = arg.name|;
-5|     console.log(x);
+5| function f (|arg|) {
+5|     |var n = arg.name|;
+5|     |var v = arg.val|;
+5|     console.log(n, v);
 5| };
-5| g({ name: 5 });
+5| function g (|arg|) {
+5|     |var name = arg.name|;
+5|     |var val = arg.val|;
+5|     console.log(name, val);
+5| };
+5| f({ name: "foo", val: 7 });
+5| g({ name: "bar", val: 42 });
 
 
 Modules
