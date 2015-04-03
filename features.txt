@@ -65,8 +65,8 @@ Block-scoped constants without constant hoisting.
 5| pi() > 3.0;
 
 
-Arrows
-======
+Arrow Functions
+===============
 
 Expression Bodies
 -----------------
@@ -116,8 +116,8 @@ More intuitive handling of current object context.
 Classes
 =======
 
-Simple Class
------------
+Class Definition
+----------------
 
 More intuitive and boilerplate-free classes.
 
