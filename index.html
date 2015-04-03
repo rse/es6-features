@@ -135,14 +135,6 @@
     <a href="#Generators">Generators</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
-<li class="title">Comprehensions
-    <ul>
-<li class="subtitle subtitle_ListComprehension">
-    <a href="#ListComprehension">List Comprehension</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_GeneratorComprehension">
-    <a href="#GeneratorComprehension">Generator Comprehension</a> <i class="fa fa-arrow-circle-right"></i></li>
-    </ul>
-</li>
 <li class="title">Extended Literals
     <ul>
 <li class="subtitle subtitle_BinaryOctalLiteral">
@@ -865,55 +857,6 @@ supports asynchronous programming.</div>
         break<span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="ListComprehension" class="showcase showcase_ListComprehension">    <div class="title">Comprehensions</div>
-    <div class="subtitle">List Comprehension</div>
-    <div class="desc">Concise FP-style way to create a list/array, based on another list where
-each entry is the result of some operation.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">let</span> results<span class="punctuation"> = </span><span class="punctuation">[</span>
-    <span class="mark"><span class="keyword">for</span> <span class="punctuation">(</span>c </span><span class="keyword">of</span><span class="mark"> customers<span class="punctuation">)</span></span>
-        <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city <span class="punctuation">===</span> <span class="literal">"Munich"</span><span class="punctuation">)</span>
-            <span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span> <span class="punctuation">]</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> results<span class="punctuation"> = </span><span class="mark"><span class="punctuation">[</span><span class="punctuation">]</span></span><span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> c <span class="mark"><span class="keyword">in</span></span> customers<span class="punctuation">)</span>
-    <span class="keyword">if</span> <span class="punctuation">(</span>customers<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>c<span class="punctuation">)</span><span class="punctuation">)</span>
-        <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city <span class="punctuation">===</span> <span class="literal">"Munich"</span><span class="punctuation">)</span>
-            <span class="mark">result<span class="punctuation">.</span>push</span><span class="punctuation">(</span><span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="GeneratorComprehension" class="showcase showcase_GeneratorComprehension">    <div class="title">Comprehensions</div>
-    <div class="subtitle">Generator Comprehension</div>
-    <div class="desc">Concise FP-style way to create an object, based on another object where
-each entry is the result of some operation.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">let</span> results<span class="punctuation"> = </span><span class="punctuation">(</span>
-    <span class="keyword">for</span> <span class="punctuation">(</span><span class="mark">c <span class="keyword">of</span> customers</span><span class="punctuation">)</span>
-        <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city == <span class="literal">"Munich"</span><span class="punctuation">)</span>
-            <span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span> <span class="punctuation">)</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> results<span class="punctuation"> = </span><span class="mark"><span class="punctuation">[</span><span class="punctuation">]</span></span><span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="mark"><span class="keyword">var</span> c<span class="punctuation"> = </span>customers<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span> !c<span class="punctuation">.</span>done<span class="punctuation">;</span> c<span class="punctuation"> = </span>customers<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="punctuation">)</span>
-    <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city <span class="punctuation">===</span> <span class="literal">"Munich"</span><span class="punctuation">)</span>
-        <span class="mark">result<span class="punctuation">.</span>push</span><span class="punctuation">(</span><span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

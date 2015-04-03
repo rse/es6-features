@@ -550,41 +550,41 @@ supports asynchronous programming.
 5| }
 
 
-Comprehensions
-==============
-
-List Comprehension
-------------------
-
-Concise FP-style way to create a list/array, based on another list where
-each entry is the result of some operation.
-
-6| let results = [
-6|     |for (c |of| customers)|
-6|         if (c.city === "Munich")
-6|             { name: c.name, age: c.age } ];
-
-5| var results = |[]|;
-5| for (var c |in| customers)
-5|     if (customers.hasOwnProperty(c))
-5|         if (c.city === "Munich")
-5|             |result.push|({ name: c.name, age: c.age });
-
-Generator Comprehension
------------------------
-
-Concise FP-style way to create an object, based on another object where
-each entry is the result of some operation.
-
-6| let results = (
-6|     for (|c of customers|)
-6|         if (c.city == "Munich")
-6|             { name: c.name, age: c.age } );
-
-5| var results = |[]|;
-5| for (|var c = customers.next(); !c.done; c = customers.next()|)
-5|     if (c.city === "Munich")
-5|         |result.push|({ name: c.name, age: c.age });
+# Comprehensions
+# ==============
+#
+# List Comprehension
+# ------------------
+#
+# Concise FP-style way to create a list/array, based on another list where
+# each entry is the result of some operation.
+#
+# 6| let results = [
+# 6|     |for (c |of| customers)|
+# 6|         if (c.city === "Munich")
+# 6|             { name: c.name, age: c.age } ];
+#
+# 5| var results = |[]|;
+# 5| for (var c |in| customers)
+# 5|     if (customers.hasOwnProperty(c))
+# 5|         if (c.city === "Munich")
+# 5|             |result.push|({ name: c.name, age: c.age });
+#
+# Generator Comprehension
+# -----------------------
+#
+# Concise FP-style way to create an object, based on another object where
+# each entry is the result of some operation.
+#
+# 6| let results = (
+# 6|     for (|c of customers|)
+# 6|         if (c.city == "Munich")
+# 6|             { name: c.name, age: c.age } );
+#
+# # 5| var results = |[]|;
+# 5| for (|var c = customers.next(); !c.done; c = customers.next()|)
+# 5|     if (c.city === "Munich")
+# 5|         |result.push|({ name: c.name, age: c.age });
 
 
 Extended Literals
