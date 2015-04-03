@@ -343,9 +343,9 @@ String Interpolation
 
 Intuitive expression interpolation for strings.
 
-6|mail = `Hello |${name}|, let's eat |${num +1}| pizzas.`;
+6|mail = `Hello |${name}|, want to eat |${num +1}| pizzas?`;
 
-5|mail = "Hello "| + name + |", let's eat "| + (num + 1) + |"pizzas.";
+5|mail = "Hello "| + name + |", want to eat "| + (num + 1) + |" pizzas?";
 
 Custom Interpolation
 --------------------
