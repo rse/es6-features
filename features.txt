@@ -31,16 +31,16 @@ Block-Scoped Variables
 
 Block-scoped variables without variable hoisting.
 
-6| for (let i = 0; i < a.length; i++) {
-6|     let x = a[i];
+6| for (|let i| = 0; i < a.length; i++) {
+6|     |let x| = a[i];
 6|     ...
 6| }
-6| for (let i = 0; i < b.length; i++)
-6|     let y = b[i];
+6| for (|let i| = 0; i < b.length; i++)
+6|     |let y| = b[i];
 6|     ...
 6| }
 
-5| var i, x, y;
+5| |var i, x, y|;
 5| for (i = 0; i < a.length; i++) {
 5|     x = a[i];
 5|     ...
@@ -55,14 +55,14 @@ Block-Scoped Constants
 
 Block-scoped constants without constant hoisting.
 
-6| const pi = 3.141593;
-6| pi > 3.0;
+6| |const pi| = 3.141593;
+6| |pi| > 3.0;
 
-5| var pi = new (function () {
+5| |var pi| = |(function () {|
 5|     var pi = 3.141593;
 5|     return function () { return pi };
-5| })();
-5| pi() > 3.0;
+5| |})();|
+5| |pi()| > 3.0;
 
 
 Arrow Functions
