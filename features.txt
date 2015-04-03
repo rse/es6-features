@@ -56,13 +56,13 @@ Block-Scoped Constants
 Block-scoped constants without constant hoisting.
 
 6| |const pi| = 3.141593;
-6| |pi| > 3.0;
+6| pi > 3.0;
 
-5| |var pi| = |(function () {|
+5| |var| pi = |(function () {|
 5|     var pi = 3.141593;
 5|     return function () { return pi };
 5| |})();|
-5| |pi()| > 3.0;
+5| pi|()| > 3.0;
 
 
 Arrow Functions
