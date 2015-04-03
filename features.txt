@@ -284,15 +284,15 @@ Symbol Export/Import
 Support for exporting/importing symbols from/to modules without global namespace pollution.
 
 6| //  lib/math.js
-6| |export| function sum (x, y) { return x + y };
-6| |export| var pi = 3.141593;
+6| |export| function |sum| (x, y) { return x + y };
+6| |export| var |pi| = 3.141593;
 6|
 6| //  someApp.js
-6| |import * as math from| "lib/math";
+6| |import * as math| from "lib/math";
 6| alert("2π = " + math.sum(math.pi, math.pi));
 6|
 6| //  otherApp.js
-6| |import { sum, pi } from| "lib/math";;
+6| |import { sum, pi }| from "lib/math";;
 6| alert("2π = " + sum(pi, pi));
 
 5| //  lib/math.js
@@ -323,7 +323,7 @@ Marking a symbol as the default exported symbol and mass-mixin of symbols.
 6| alert("2π = " + exp(pi, e));
 
 5| //  lib/mathplusplus.js
-5| LibMathPP = {};
+5| |LibMathPP = {}|;
 5| |for (symbol in LibMath)|
 5|     |if (LibMath.hasOwnProperty(symbol))|
 5|         |LibMathPP[symbol] = LibMath[symbol];|
