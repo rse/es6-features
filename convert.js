@@ -109,21 +109,19 @@ txt.replace(/\s*([^\n]+)\n====+[ \t]*\n((?:.|\n)+?)(?=[^\n]+\n====+[ \t]*\n|$)/g
         nav += `</li>\n`
 
         /*  generate showcase header  */
-        out += `<div class="showcase showcase_${id}">`
-        out += `    <a name="${id}">\n`
-        out += `        <div class="title">${md(title)}</div>\n`
-        out += `        <div class="subtitle">${md(subtitle)}</div>\n`
+        out += `<div id="${id}" class="showcase showcase_${id}">`
+        out += `    <div class="title">${md(title)}</div>\n`
+        out += `    <div class="subtitle">${md(subtitle)}</div>\n`
 
         /*  for the showcode content...  */
         txt.replace(/^\s*((?:.|\n)+?)\n\n(6\|(?:.|\n)+?\n)\n(5\|(?:.|\n)+?)\s*$/, (m, desc, es6, es5) => {
-            out += `        <div class="desc">${md(desc)}</div>\n`
+            out += `    <div class="desc">${md(desc)}</div>\n`
             es6 = es6.replace(/^6\| ?/mg, "").replace(/^\s*/, "")
             es5 = es5.replace(/^5\| ?/mg, "").replace(/^\s*/, "")
             out += js("es6", "ECMAScript 6", es6, "check-circle")
-            out += '        <div class="arrow"><i class="fa fa-caret-up"></i></div>'
+            out += '    <div class="arrow"><i class="fa fa-caret-up"></i></div>'
             out += js("es5", "ECMAScript 5", es5, "times-circle")
         })
-        out += `    </a>\n`
         out += `</div>\n`
     })
 
