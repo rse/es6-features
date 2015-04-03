@@ -97,6 +97,14 @@
     <a href="#DefaultWildcard">Default & Wildcard</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
+<li class="title">Extended Literals
+    <ul>
+<li class="subtitle subtitle_BinaryOctalLiteral">
+    <a href="#BinaryOctalLiteral">Binary & Octal Literal</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_UnicodeStringRegExpLiteral">
+    <a href="#UnicodeStringRegExpLiteral">Unicode String & RegExp Literal</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
 <li class="title">Template Strings
     <ul>
 <li class="subtitle subtitle_StringInterpolation">
@@ -133,14 +141,6 @@
     <a href="#IteratorForOfOperator">Iterator & For-Of Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_Generators">
     <a href="#Generators">Generators</a> <i class="fa fa-arrow-circle-right"></i></li>
-    </ul>
-</li>
-<li class="title">Extended Literals
-    <ul>
-<li class="subtitle subtitle_BinaryOctalLiteral">
-    <a href="#BinaryOctalLiteral">Binary & Octal Literal</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_UnicodeStringRegExpLiteral">
-    <a href="#UnicodeStringRegExpLiteral">Unicode String & RegExp Literal</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Map/Set & WeakMap/WeakSet
@@ -574,6 +574,50 @@ alert<span class="punctuation">(</span><span class="literal">"2π<span class="pu
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
+<div id="BinaryOctalLiteral" class="showcase showcase_BinaryOctalLiteral">    <div class="title">Extended Literals</div>
+    <div class="subtitle">Binary & Octal Literal</div>
+    <div class="desc">Direct support for binary and octal literals.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark"><span class="literal">0</span>b<span class="literal">111110111</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
+<span class="mark"><span class="literal">0</span>o<span class="literal">767</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark">parseInt<span class="punctuation">(</span><span class="literal">"111110111"</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
+<span class="mark">parseInt<span class="punctuation">(</span><span class="literal">"767"</span><span class="punctuation">,</span> <span class="literal">8</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="UnicodeStringRegExpLiteral" class="showcase showcase_UnicodeStringRegExpLiteral">    <div class="title">Extended Literals</div>
+    <div class="subtitle">Unicode String & RegExp Literal</div>
+    <div class="desc">Extended support using Unicode within strings and regular expressions.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="literal">"𠮷"</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+<span class="literal">"𠮷"</span><span class="punctuation">.</span>match<span class="punctuation">(</span>/<span class="punctuation">.</span>/<span class="mark">u</span><span class="punctuation">)</span><span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
+<span class="literal">"<span class="mark">\u<span class="punctuation">{</span>20BB7<span class="punctuation">}</span></span>"</span> <span class="punctuation">===</span> <span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span>
+<span class="literal">"𠮷"</span><span class="punctuation">.</span><span class="mark">codePointAt</span><span class="punctuation">(</span><span class="literal">0</span><span class="punctuation">)</span> == <span class="literal">0</span>x<span class="literal">20</span>BB<span class="literal">7</span><span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> codepoint <span class="mark"><span class="keyword">of</span></span> <span class="literal">"𠮷"</span><span class="punctuation">)</span> console<span class="punctuation">.</span>log<span class="punctuation">(</span>codepoint<span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="literal">"𠮷"</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span><span class="comment">
+//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
+<span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span><span class="comment">
+//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
+//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
 <div id="StringInterpolation" class="showcase showcase_StringInterpolation">    <div class="title">Template Strings</div>
     <div class="subtitle">String Interpolation</div>
     <div class="desc">Intuitive expression interpolation for strings.</div>
@@ -863,50 +907,6 @@ supports asynchronous programming.</div>
         break<span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="BinaryOctalLiteral" class="showcase showcase_BinaryOctalLiteral">    <div class="title">Extended Literals</div>
-    <div class="subtitle">Binary & Octal Literal</div>
-    <div class="desc">Direct support for binary and octal literals.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="mark"><span class="literal">0</span>b<span class="literal">111110111</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
-<span class="mark"><span class="literal">0</span>o<span class="literal">767</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="mark">parseInt<span class="punctuation">(</span><span class="literal">"111110111"</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span>
-<span class="mark">parseInt<span class="punctuation">(</span><span class="literal">"767"</span><span class="punctuation">,</span> <span class="literal">8</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">503</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="UnicodeStringRegExpLiteral" class="showcase showcase_UnicodeStringRegExpLiteral">    <div class="title">Extended Literals</div>
-    <div class="subtitle">Unicode String & RegExp Literal</div>
-    <div class="desc">Extended support using Unicode within strings and regular expressions.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="literal">"𠮷"</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
-<span class="literal">"𠮷"</span><span class="punctuation">.</span>match<span class="punctuation">(</span>/<span class="punctuation">.</span>/<span class="mark">u</span><span class="punctuation">)</span><span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
-<span class="literal">"<span class="mark">\u<span class="punctuation">{</span>20BB7<span class="punctuation">}</span></span>"</span> <span class="punctuation">===</span> <span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span>
-<span class="literal">"𠮷"</span><span class="punctuation">.</span><span class="mark">codePointAt</span><span class="punctuation">(</span><span class="literal">0</span><span class="punctuation">)</span> == <span class="literal">0</span>x<span class="literal">20</span>BB<span class="literal">7</span><span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> codepoint <span class="mark"><span class="keyword">of</span></span> <span class="literal">"𠮷"</span><span class="punctuation">)</span> console<span class="punctuation">.</span>log<span class="punctuation">(</span>codepoint<span class="punctuation">)</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="literal">"𠮷"</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span><span class="comment">
-//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
-<span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span><span class="comment">
-//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
-//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
