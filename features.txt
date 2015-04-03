@@ -383,12 +383,12 @@ Object Matching with Deeper Matching
 
 Intuitive and flexible destructuring of Objects into individual variables during assignment.
 
-6| var |{ op: a, lhs: { op: b }, rhs: c }| = getASTNode();
+6| var { op: a, |lhs: { op: b }|, rhs: c } = getASTNode();
 
-5| var |tmp| = getASTNode();
-5| var |a = tmp.op|;
+5| var tmp = getASTNode();
+5| var a = tmp.op;
 5| var |b = tmp.lhs.op|;
-5| var |c = tmp.rhs|;
+5| var c = tmp.rhs;
 
 Object Matching in Parameter Position
 -------------------------------------
