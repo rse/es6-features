@@ -217,8 +217,8 @@ Extended support using Unicode within strings and regular expressions.
 5| //  no equivalent in ES5
 
 
-Enhanced Object Literals
-========================
+Enhanced Object Properties
+==========================
 
 Property Shorthand
 ------------------
@@ -245,8 +245,8 @@ Support for computed names in object property definitions.
 5| |obj[| "prop_" + foo() |] =| 42;
 
 
-Destructuring
-=============
+Destructuring Assignment
+========================
 
 Array Matching
 --------------
