@@ -167,8 +167,10 @@
 </li>
 <li class="title">Promises
     <ul>
-<li class="subtitle subtitle_Promises">
-    <a href="#Promises">Promises</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_PromiseUsage">
+    <a href="#PromiseUsage">Promise Usage</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_PromiseCombination">
+    <a href="#PromiseCombination">Promise Combination</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Meta-Programming
@@ -1080,7 +1082,7 @@ m<span class="punctuation">.</span><span class="mark">size</span> <span class="p
 <div class="showcase showcase_WeakLinkDataStructures">    <a name="WeakLinkDataStructures">
         <div class="title">Map/Set & WeakMap/WeakSet</div>
         <div class="subtitle">Weak-Link Data-Structures</div>
-        <div class="desc">Memory-leak-free Object-key’d side-tables</div>
+        <div class="desc">Memory-leak-free Object-key’d side-by-side data-structures.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> isMarked    <span class="punctuation"> = </span><span class="keyword">new</span> <span class="mark">WeakSet</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
@@ -1117,11 +1119,11 @@ JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span
         <div class="desc">Unique and immutable data type to be used as an identifier for object properties.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span> !== Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
+    <div class="code">Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span> <span class="mark">!==</span> Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="keyword">let</span> foo<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="keyword">let</span> bar<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"bar"</span><span class="punctuation">)</span><span class="semi">;</span>
-typeof foo <span class="punctuation">===</span> <span class="literal">"symbol"</span><span class="semi">;</span>
-typeof bar <span class="punctuation">===</span> <span class="literal">"symbol"</span><span class="semi">;</span>
+typeof foo <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
+typeof bar <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
 <span class="keyword">let</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
 obj<span class="punctuation">[</span>foo<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"foo"</span><span class="semi">;</span>
 obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
@@ -1137,26 +1139,44 @@ obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span 
 </div>
     </a>
 </div>
-<div class="showcase showcase_Promises">    <a name="Promises">
+<div class="showcase showcase_PromiseUsage">    <a name="PromiseUsage">
         <div class="title">Promises</div>
-        <div class="subtitle">Promises</div>
+        <div class="subtitle">Promise Usage</div>
         <div class="desc">First class representation of a value that may be made asynchronously and be available in the future.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">function</span> timeout <span class="punctuation">(</span>duration<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> <span class="keyword">new</span> Promise<span class="punctuation">(</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
-        setTimeout<span class="punctuation">(</span>resolve<span class="punctuation">,</span> duration<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="keyword">return</span> <span class="mark"><span class="keyword">new</span> Promise<span class="punctuation">(</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span></span> <span class="punctuation">{</span>
+        setTimeout<span class="punctuation">(</span><span class="mark">resolve</span><span class="punctuation">,</span> duration<span class="punctuation">)</span><span class="semi">;</span>
     <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span>
-timeout<span class="punctuation">(</span><span class="literal">100</span><span class="punctuation">)</span><span class="punctuation">.</span>then<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+timeout<span class="punctuation">(</span><span class="literal">100</span><span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
     <span class="keyword">return</span> timeout<span class="punctuation">(</span><span class="literal">200</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">.</span>then<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+<span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">.</span>|then<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"done waiting 300ms"</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="punctuation">)</span>
-Promise<span class="punctuation">.</span>all<span class="punctuation">(</span><span class="punctuation">[</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+        <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+    </a>
+</div>
+<div class="showcase showcase_PromiseCombination">    <a name="PromiseCombination">
+        <div class="title">Promises</div>
+        <div class="subtitle">Promise Combination</div>
+        <div class="desc">Combine one or more promises into new promises.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark">Promise<span class="punctuation">.</span>all</span><span class="punctuation">(</span><span class="punctuation">[</span>
     timeout<span class="punctuation">(</span><span class="literal">100</span><span class="punctuation">)</span><span class="punctuation">,</span>
     timeout<span class="punctuation">(</span><span class="literal">200</span><span class="punctuation">)</span>
-<span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">.</span>then<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+<span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"done waiting 200ms"</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 </div>

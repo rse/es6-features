@@ -671,7 +671,7 @@ Cleaner data-structure for common algorithms based on maps.
 Weak-Link Data-Structures
 -------------------------
 
-Memory-leak-free Object-key’d side-tables
+Memory-leak-free Object-key’d side-by-side data-structures.
 
 6| let isMarked     = new |WeakSet|();
 6| let attachedData = new |WeakMap|();
@@ -701,11 +701,11 @@ Symbol Type
 
 Unique and immutable data type to be used as an identifier for object properties.
 
-6| Symbol("foo") !== Symbol("foo");
+6| Symbol("foo") |!==| Symbol("foo");
 6| let foo = Symbol("foo");
 6| let bar = Symbol("bar");
-6| typeof foo === "symbol";
-6| typeof bar === "symbol";
+6| typeof foo === |"symbol"|;
+6| typeof bar === |"symbol"|;
 6| let obj = {};
 6| obj[foo] = "foo";
 6| obj[bar] = "bar";
@@ -716,25 +716,33 @@ Unique and immutable data type to be used as an identifier for object properties
 Promises
 ========
 
-Promises
---------
+Promise Usage
+-------------
 
 First class representation of a value that may be made asynchronously and be available in the future.
 
 6| function timeout (duration = 0) {
-6|     return new Promise((resolve, reject) => {
-6|         setTimeout(resolve, duration);
+6|     return |new Promise((resolve, reject) =>| {
+6|         setTimeout(|resolve|, duration);
 6|     });
 6| }
-6| timeout(100).then(() => {
+6| timeout(100).|then|(() => {
 6|     return timeout(200);
-6| }).then(() => {
+6| }).|then(() => {
 6|     console.log("done waiting 300ms");
 6| })
-6| Promise.all([
+
+5| // no equivalent in ES5
+
+Promise Combination
+-------------------
+
+Combine one or more promises into new promises.
+
+6| |Promise.all|([
 6|     timeout(100),
 6|     timeout(200)
-6| ]).then(() => {
+6| ]).|then|(() => {
 6|     console.log("done waiting 200ms");
 6| });
 
