@@ -59,7 +59,7 @@ let js = (clazz, title, code, icon) => {
         /\b(this|function|class(?=[^=])|extends|return|if|new|import|export|in|of|var|let|while|for|const)\b/g,
         "<span class=keyword>$1</span>")
     code = code.replace(
-        /(\s\/\/[^\n]*)/g,
+        /((?:^|\s)\/\/[^\n]*)/g,
         "<span class=comment>$1</span>")
     code = code.replace(
         /\|(.+?)\|/g,
