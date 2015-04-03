@@ -253,10 +253,10 @@ Shorter syntax for common object property definition idiom.
 
 5| obj = { |x: x|, |y: y| };
 
-Computed/Dynamic Property Names
--------------------------------
+Computed Property Names
+-----------------------
 
-Support for dynamically generated keys in object literals.
+Support for computed names in object property definitions.
 
 6| obj = {
 6|     foo: "bar",
