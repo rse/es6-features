@@ -752,21 +752,21 @@ Combine one or more promises into new promises.
 Meta-Programming
 ================
 
-Proxy Objects
--------------
+Proxing
+-------
 
 Hooking into runtime-level object meta-operations.
 
 6| let target = {
-6|     foo: "Hello, foo!"
+6|     foo: "Hello, foo"
 6| };
-6| let proxy = new Proxy(target, {
-6|     get (receiver, name) {
-6|         return `Hello, ${name}!`;
+6| let proxy = |new Proxy|(|target|, {
+6|     |get (receiver, name)| {
+6|         return `Hello, ${name}!!`;
 6|     }
 6| });
-6| proxy.foo   === "Hello, foo!";
-6| proxy.world === "Hello, world!";
+6| proxy.foo   === "Hello, foo";
+6| proxy.|world| === "Hello, |world|!!";
 
 5| // no equivalent in ES5
 
@@ -780,8 +780,8 @@ Make calls corresponding to the object meta-operations.
 6| obj[Symbol("c")] = 3;
 6| function clazz (a, b) { this.c = a + b; };
 6|
-6| Reflect.ownKeys(obj); // [ "a", "b", Symbol(c) ]
-6| let instance = Reflect.construct(clazz, [ 20, 22 ]);
+6| |Reflect.ownKeys|(obj); // [ "a", "b", Symbol(c) ]
+6| let instance = |Reflect.construct|(clazz, [ 20, 22 ]);
 6| instance.c === 42;
 
 5| // no equivalent in ES5

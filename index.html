@@ -175,8 +175,8 @@
 </li>
 <li class="title">Meta-Programming
     <ul>
-<li class="subtitle subtitle_ProxyObjects">
-    <a href="#ProxyObjects">Proxy Objects</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_Proxing">
+    <a href="#Proxing">Proxing</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_Reflection">
     <a href="#Reflection">Reflection</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
@@ -1191,22 +1191,22 @@ timeout<span class="punctuation">(</span><span class="literal">100</span><span c
 </div>
     </a>
 </div>
-<div class="showcase showcase_ProxyObjects">    <a name="ProxyObjects">
+<div class="showcase showcase_Proxing">    <a name="Proxing">
         <div class="title">Meta-Programming</div>
-        <div class="subtitle">Proxy Objects</div>
+        <div class="subtitle">Proxing</div>
         <div class="desc">Hooking into runtime-level object meta-operations.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> target<span class="punctuation"> = </span><span class="punctuation">{</span>
-    foo: <span class="literal">"Hello<span class="punctuation">,</span> foo!"</span>
+    foo: <span class="literal">"Hello<span class="punctuation">,</span> foo"</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-<span class="keyword">let</span> proxy<span class="punctuation"> = </span><span class="keyword">new</span> Proxy<span class="punctuation">(</span>target<span class="punctuation">,</span> <span class="punctuation">{</span>
-    get <span class="punctuation">(</span>receiver<span class="punctuation">,</span> name<span class="punctuation">)</span> <span class="punctuation">{</span>
-        <span class="keyword">return</span> <span class="literal">`Hello<span class="punctuation">,</span> $<span class="punctuation">{</span>name<span class="punctuation">}</span>!`</span><span class="semi">;</span>
+<span class="keyword">let</span> proxy<span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Proxy</span><span class="punctuation">(</span><span class="mark">target</span><span class="punctuation">,</span> <span class="punctuation">{</span>
+    <span class="mark">get <span class="punctuation">(</span>receiver<span class="punctuation">,</span> name<span class="punctuation">)</span></span> <span class="punctuation">{</span>
+        <span class="keyword">return</span> <span class="literal">`Hello<span class="punctuation">,</span> $<span class="punctuation">{</span>name<span class="punctuation">}</span>!!`</span><span class="semi">;</span>
     <span class="punctuation">}</span>
 <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
-proxy<span class="punctuation">.</span>foo   <span class="punctuation">===</span> <span class="literal">"Hello<span class="punctuation">,</span> foo!"</span><span class="semi">;</span>
-proxy<span class="punctuation">.</span>world <span class="punctuation">===</span> <span class="literal">"Hello<span class="punctuation">,</span> world!"</span><span class="semi">;</span>
+proxy<span class="punctuation">.</span>foo   <span class="punctuation">===</span> <span class="literal">"Hello<span class="punctuation">,</span> foo"</span><span class="semi">;</span>
+proxy<span class="punctuation">.</span><span class="mark">world</span> <span class="punctuation">===</span> <span class="literal">"Hello<span class="punctuation">,</span> <span class="mark">world</span>!!"</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -1230,8 +1230,8 @@ Object<span class="punctuation">.</span>defineProperty<span class="punctuation">
 obj<span class="punctuation">[</span>Symbol<span class="punctuation">(</span><span class="literal">"c"</span><span class="punctuation">)</span><span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">3</span><span class="semi">;</span>
 <span class="keyword">function</span> clazz <span class="punctuation">(</span>a<span class="punctuation">,</span> b<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>c<span class="punctuation"> = </span>a <span class="punctuation">+</span> b<span class="semi">;</span> <span class="punctuation">}</span><span class="semi">;</span>
 
-Reflect<span class="punctuation">.</span>ownKeys<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"b"</span><span class="punctuation">,</span> Symbol<span class="punctuation">(</span>c<span class="punctuation">)</span> <span class="punctuation">]</span></span>
-<span class="keyword">let</span> instance<span class="punctuation"> = </span>Reflect<span class="punctuation">.</span>construct<span class="punctuation">(</span>clazz<span class="punctuation">,</span> <span class="punctuation">[</span> <span class="literal">20</span><span class="punctuation">,</span> <span class="literal">22</span> <span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="mark">Reflect<span class="punctuation">.</span>ownKeys</span><span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"b"</span><span class="punctuation">,</span> Symbol<span class="punctuation">(</span>c<span class="punctuation">)</span> <span class="punctuation">]</span></span>
+<span class="keyword">let</span> instance<span class="punctuation"> = </span><span class="mark">Reflect<span class="punctuation">.</span>construct</span><span class="punctuation">(</span>clazz<span class="punctuation">,</span> <span class="punctuation">[</span> <span class="literal">20</span><span class="punctuation">,</span> <span class="literal">22</span> <span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span>
 instance<span class="punctuation">.</span>c <span class="punctuation">===</span> <span class="literal">42</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
