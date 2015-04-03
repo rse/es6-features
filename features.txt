@@ -627,18 +627,18 @@ Set Data-Structure
 
 Cleaner data-structure for common algorithms based on sets.
 
-6| let s = new Set();
-6| s.add("hello").add("goodbye").add("hello");
-6| s.size === 2;
-6| s.has("hello") === true;
-6| for (let val of m.values()) /* insertion order */
+6| let s = |new Set()|;
+6| s.|add("hello")|.|add("goodbye")|.|add("hello")|;
+6| s.|size| === 2;
+6| s.|has("hello")| === true;
+6| for (let val |of| m.|values()|) // insertion order
 6|     console.log(val);
 
-5| var s = {};
-5| s["hello"] = true; s["goodbye"] = true; s["hello"] = true;
-5| Object.keys(s).length === 2;
-5| s["hello"] === true;
-5| for (val in s) /* arbitrary order */
+5| var s = |{}|;
+5| |s["hello"] = true|; |s["goodbye"] = true|; |s["hello"] = true|;
+5| |Object.keys(s).length| === 2;
+5| |s["hello"]| === true;
+5| for (val |in| s) // arbitrary order
 5|     if (s.hasOwnProperty(key))
 5|         console.log(val);
 
