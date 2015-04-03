@@ -590,8 +590,8 @@ each entry is the result of some operation.
 Extended Literals
 =================
 
-Binary & Octal Literals
------------------------
+Binary & Octal Literal
+----------------------
 
 Direct support for binary and octal literals.
 
@@ -601,8 +601,8 @@ Direct support for binary and octal literals.
 5| parseInt("111110111", 2) === 503;
 5| parseInt("767", 8) === 503;
 
-Extended Unicode String & RegExp Literals
------------------------------------------
+Unicode String & RegExp Literal
+-------------------------------
 
 Extended support using Unicode within strings and regular expressions.
 
@@ -619,8 +619,8 @@ Extended support using Unicode within strings and regular expressions.
 5| //  no equivalent in ES5
 
 
-Map/Set/WeakMap/WeakSet
-=======================
+Map/Set & WeakMap/WeakSet
+=========================
 
 Set
 ---
