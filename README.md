@@ -19,6 +19,23 @@ equivalents.
   promote ECMAScript 6 in the software engineering projects around him
   and to have bookmarkable URLs at hand for referencing certain ECMAScript 6 features.
 
+- *Where can I find the current browser support status quo for ECMASCript 6?*
+
+  Have a look at the regularily updated
+  [ECMAScript compatibility table](http://kangax.github.io/compat-table/es6/) by kangax.
+
+- *Where can I find the latest ECMAScript 6 standard?*
+
+  The final ECMAScript 6 standard is still not published. But you can find the
+  latest drafts on [ecmascript.org](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts).
+
+- *How can I use ECMAScript 6 if my JavaScript runtime still does not support it?*
+
+  Use the awesome [Babel](http://babeljs.io/) transpiler. For Node.js/io.js environments
+  just use its tricky [`require` hook](http://babeljs.io/docs/usage/require/). For browser environments use Babel in conjunction
+  with [Browserify](http://browserify.org/) and its [Babelify](https://github.com/babel/babelify) plugin. For
+  other tools see [Using Babel](http://babeljs.io/docs/using-babel/).
+
 - *Why uses the website for ECMAScript 6 the "modernized style" without semicolons as
   the default, but for ECMAScript 5 the "traditional style" with semicolons?*
 
