@@ -295,7 +295,7 @@ Intuitive and flexible destructuring of Objects into individual parameters durin
 6| function g (|{ name, val }|) {
 6|     console.log(name, val);
 6| }
-6| f({ name: "foo", val: 7 });
+6| f({ name: "foo", val:  7 });
 6| g({ name: "bar", val: 42 });
 
 5| function f (|arg|) {
@@ -305,10 +305,10 @@ Intuitive and flexible destructuring of Objects into individual parameters durin
 5| };
 5| function g (|arg|) {
 5|     |var name = arg.name|;
-5|     |var val = arg.val|;
+5|     |var val  = arg.val|;
 5|     console.log(name, val);
 5| };
-5| f({ name: "foo", val: 7 });
+5| f({ name: "foo", val:  7 });
 5| g({ name: "bar", val: 42 });
 
 
