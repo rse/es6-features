@@ -1,5 +1,5 @@
 {
-    "name": "ecmascript6-features",
+    "name": "es6-features",
     "devDependencies": {
         "grunt":                      "~0.4.5",
         "grunt-cli":                  "~0.1.13",

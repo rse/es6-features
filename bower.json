@@ -1,5 +1,5 @@
 {
-    "name": "ecmascript6-features",
+    "name": "es6-features",
     "dependencies": {
         "sanitize.css":       "2.0.0",
         "typopro":            "2.3.1",
