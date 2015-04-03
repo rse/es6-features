@@ -23,6 +23,48 @@
 ##
 
 
+Block Scope
+===========
+
+Block-Scoped Variables
+------------------------
+
+Block-scoped variables without variable hoisting.
+
+6| for (let i = 0; i < a.length; i++) {
+6|     let x = a[i];
+6|     ...
+6| }
+6| for (let i = 0; i < b.length; i++)
+6|     let y = b[i];
+6|     ...
+6| }
+
+5| var i, x, y;
+5| for (i = 0; i < a.length; i++) {
+5|     x = a[i];
+5|     ...
+5| }
+5| for (i = 0; i < b.length; i++)
+5|     y = b[i];
+5|     ...
+5| }
+
+Block-Scope Constants
+-----------------------
+
+Block-scoped constants without constant hoisting.
+
+6| const pi = 3.141593;
+6| pi > 3.0;
+
+5| var pi = new (function () {
+5|     var pi = 3.141593;
+5|     return function () { return pi };
+5| })();
+5| pi() > 3.0;
+
+
 Arrows
 ======
 
@@ -413,48 +455,6 @@ Spreading of array elements into individual parameters of a function.
 
 5| var params = [ "hello", true, 7 ];
 5| f|.apply|(|undefined|, [ 1, 2 ]|.concat|(params)) === 9;
-
-
-Blocked Scoped Variable Binding
-===============================
-
-Blocked Scoped Variables
-------------------------
-
-Blocked scoping variables without hoisting.
-
-6| for (let i = 0; i < a.length; i++) {
-6|     let x = a[i];
-6|     ...
-6| }
-6| for (let i = 0; i < b.length; i++)
-6|     let y = b[i];
-6|     ...
-6| }
-
-5| var i, x, y;
-5| for (i = 0; i < a.length; i++) {
-5|     x = a[i];
-5|     ...
-5| }
-5| for (i = 0; i < b.length; i++)
-5|     y = b[i];
-5|     ...
-5| }
-
-Constants
----------
-
-Blocked scoping constants without hoisting.
-
-6| const pi = 3.141593;
-6| pi > 3.0;
-
-5| var pi = new (function () {
-5|     var pi = 3.141593;
-5|     return function () { return pi };
-5| })();
-5| pi() > 3.0;
 
 
 Iterators
