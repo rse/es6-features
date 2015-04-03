@@ -79,12 +79,12 @@
     <a href="#SpreadOperator">Spread Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
-<li class="title">Enhanced Object Literals
+<li class="title">Template Strings
     <ul>
-<li class="subtitle subtitle_PropertyShorthand">
-    <a href="#PropertyShorthand">Property Shorthand</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_ComputedPropertyNames">
-    <a href="#ComputedPropertyNames">Computed Property Names</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_StringInterpolation">
+    <a href="#StringInterpolation">String Interpolation</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_CustomInterpolation">
+    <a href="#CustomInterpolation">Custom Interpolation</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Extended Literals
@@ -95,12 +95,12 @@
     <a href="#UnicodeStringRegExpLiteral">Unicode String & RegExp Literal</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
-<li class="title">Template Strings
+<li class="title">Enhanced Object Literals
     <ul>
-<li class="subtitle subtitle_StringInterpolation">
-    <a href="#StringInterpolation">String Interpolation</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_CustomInterpolation">
-    <a href="#CustomInterpolation">Custom Interpolation</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_PropertyShorthand">
+    <a href="#PropertyShorthand">Property Shorthand</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_ComputedPropertyNames">
+    <a href="#ComputedPropertyNames">Computed Property Names</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Destructuring
@@ -373,42 +373,36 @@ f<span class="mark"><span class="punctuation">.</span>apply</span><span class="p
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="PropertyShorthand" class="showcase showcase_PropertyShorthand">    <div class="title">Enhanced Object Literals</div>
-    <div class="subtitle">Property Shorthand</div>
-    <div class="desc">Shorter syntax for common object property definition idiom.</div>
+<div id="StringInterpolation" class="showcase showcase_StringInterpolation">    <div class="title">Template Strings</div>
+    <div class="subtitle">String Interpolation</div>
+    <div class="desc">Intuitive expression interpolation for strings.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span> <span class="mark">x</span><span class="punctuation">,</span> <span class="mark">y</span> <span class="punctuation">}</span><span class="semi">;</span>
+    <div class="code">mail<span class="punctuation"> = </span><span class="literal">`Hello <span class="mark">$<span class="punctuation">{</span>name<span class="punctuation">}</span></span><span class="punctuation">,</span> want to eat <span class="mark">$<span class="punctuation">{</span>num <span class="punctuation">+</span>1<span class="punctuation">}</span></span> pizzas?`</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span> <span class="mark">x: x</span><span class="punctuation">,</span> <span class="mark">y: y</span> <span class="punctuation">}</span><span class="semi">;</span></div>
+    <div class="code">mail<span class="punctuation"> = </span><span class="literal">"Hello "</span><span class="mark"> <span class="punctuation">+</span> name <span class="punctuation">+</span> </span><span class="literal">"<span class="punctuation">,</span> want to eat "</span><span class="mark"> <span class="punctuation">+</span> <span class="punctuation">(</span>num <span class="punctuation">+</span> <span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">+</span> </span><span class="literal">" pizzas?"</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="ComputedPropertyNames" class="showcase showcase_ComputedPropertyNames">    <div class="title">Enhanced Object Literals</div>
-    <div class="subtitle">Computed Property Names</div>
-    <div class="desc">Support for computed names in object property definitions.</div>
+<div id="CustomInterpolation" class="showcase showcase_CustomInterpolation">    <div class="title">Template Strings</div>
+    <div class="subtitle">Custom Interpolation</div>
+    <div class="desc">Flexible expression interpolation for arbitrary methods.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span>
-    foo: <span class="literal">"bar"</span><span class="punctuation">,</span>
-    <span class="mark"><span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span>:</span> <span class="literal">42</span>
-<span class="punctuation">}</span><span class="semi">;</span>
+    <div class="code">get<span class="mark"><span class="literal">`http://example<span class="punctuation">.</span>com/foo?bar=$<span class="punctuation">{</span>bar<span class="punctuation">}</span><span class="punctuation"><span class="punctuation">&amp;</span></span>quux=$<span class="punctuation">{</span>quux<span class="punctuation">}</span>`</span></span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span>
-    foo: <span class="literal">"bar"</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">obj<span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span> =</span> <span class="literal">42</span><span class="semi">;</span></div>
+    <div class="code">get<span class="punctuation">(</span><span class="mark"><span class="punctuation">[</span> <span class="literal">"http://example<span class="punctuation">.</span>com/foo?bar="</span><span class="punctuation">,</span> <span class="literal">"<span class="punctuation"><span class="punctuation">&amp;</span></span>quux="</span> <span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span> bar<span class="punctuation">,</span> quux <span class="punctuation">]</span></span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
@@ -457,36 +451,42 @@ f<span class="mark"><span class="punctuation">.</span>apply</span><span class="p
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="StringInterpolation" class="showcase showcase_StringInterpolation">    <div class="title">Template Strings</div>
-    <div class="subtitle">String Interpolation</div>
-    <div class="desc">Intuitive expression interpolation for strings.</div>
+<div id="PropertyShorthand" class="showcase showcase_PropertyShorthand">    <div class="title">Enhanced Object Literals</div>
+    <div class="subtitle">Property Shorthand</div>
+    <div class="desc">Shorter syntax for common object property definition idiom.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">mail<span class="punctuation"> = </span><span class="literal">`Hello <span class="mark">$<span class="punctuation">{</span>name<span class="punctuation">}</span></span><span class="punctuation">,</span> want to eat <span class="mark">$<span class="punctuation">{</span>num <span class="punctuation">+</span>1<span class="punctuation">}</span></span> pizzas?`</span><span class="semi">;</span>
+    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span> <span class="mark">x</span><span class="punctuation">,</span> <span class="mark">y</span> <span class="punctuation">}</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">mail<span class="punctuation"> = </span><span class="literal">"Hello "</span><span class="mark"> <span class="punctuation">+</span> name <span class="punctuation">+</span> </span><span class="literal">"<span class="punctuation">,</span> want to eat "</span><span class="mark"> <span class="punctuation">+</span> <span class="punctuation">(</span>num <span class="punctuation">+</span> <span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">+</span> </span><span class="literal">" pizzas?"</span><span class="semi">;</span></div>
+    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span> <span class="mark">x: x</span><span class="punctuation">,</span> <span class="mark">y: y</span> <span class="punctuation">}</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="CustomInterpolation" class="showcase showcase_CustomInterpolation">    <div class="title">Template Strings</div>
-    <div class="subtitle">Custom Interpolation</div>
-    <div class="desc">Flexible expression interpolation for arbitrary methods.</div>
+<div id="ComputedPropertyNames" class="showcase showcase_ComputedPropertyNames">    <div class="title">Enhanced Object Literals</div>
+    <div class="subtitle">Computed Property Names</div>
+    <div class="desc">Support for computed names in object property definitions.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">get<span class="mark"><span class="literal">`http://example<span class="punctuation">.</span>com/foo?bar=$<span class="punctuation">{</span>bar<span class="punctuation">}</span><span class="punctuation"><span class="punctuation">&amp;</span></span>quux=$<span class="punctuation">{</span>quux<span class="punctuation">}</span>`</span></span><span class="semi">;</span>
+    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span>
+    foo: <span class="literal">"bar"</span><span class="punctuation">,</span>
+    <span class="mark"><span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span>:</span> <span class="literal">42</span>
+<span class="punctuation">}</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">get<span class="punctuation">(</span><span class="mark"><span class="punctuation">[</span> <span class="literal">"http://example<span class="punctuation">.</span>com/foo?bar="</span><span class="punctuation">,</span> <span class="literal">"<span class="punctuation"><span class="punctuation">&amp;</span></span>quux="</span> <span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span> bar<span class="punctuation">,</span> quux <span class="punctuation">]</span></span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span>
+    foo: <span class="literal">"bar"</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark">obj<span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span> =</span> <span class="literal">42</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

@@ -163,32 +163,26 @@ Spreading of array elements into individual parameters of a function.
 5| f|.apply|(|undefined|, [ 1, 2 ]|.concat(params)|) === 9;
 
 
-Enhanced Object Literals
-========================
+Template Strings
+================
 
-Property Shorthand
-------------------
+String Interpolation
+--------------------
 
-Shorter syntax for common object property definition idiom.
+Intuitive expression interpolation for strings.
 
-6| obj = { |x|, |y| };
+6|mail = `Hello |${name}|, want to eat |${num +1}| pizzas?`;
 
-5| obj = { |x: x|, |y: y| };
+5|mail = "Hello "| + name + |", want to eat "| + (num + 1) + |" pizzas?";
 
-Computed Property Names
------------------------
+Custom Interpolation
+--------------------
 
-Support for computed names in object property definitions.
+Flexible expression interpolation for arbitrary methods.
 
-6| obj = {
-6|     foo: "bar",
-6|     |[| "prop_" + foo() |]:| 42
-6| };
+6|get|`http://example.com/foo?bar=${bar}&quux=${quux}`|;
 
-5| obj = {
-5|     foo: "bar"
-5| };
-5| |obj[| "prop_" + foo() |] =| 42;
+5|get(|[ "http://example.com/foo?bar=", "&quux=" ], [ bar, quux ]|);
 
 
 Extended Literals
@@ -223,26 +217,32 @@ Extended support using Unicode within strings and regular expressions.
 5| //  no equivalent in ES5
 
 
-Template Strings
-================
+Enhanced Object Literals
+========================
 
-String Interpolation
---------------------
+Property Shorthand
+------------------
 
-Intuitive expression interpolation for strings.
+Shorter syntax for common object property definition idiom.
 
-6|mail = `Hello |${name}|, want to eat |${num +1}| pizzas?`;
+6| obj = { |x|, |y| };
 
-5|mail = "Hello "| + name + |", want to eat "| + (num + 1) + |" pizzas?";
+5| obj = { |x: x|, |y: y| };
 
-Custom Interpolation
---------------------
+Computed Property Names
+-----------------------
 
-Flexible expression interpolation for arbitrary methods.
+Support for computed names in object property definitions.
 
-6|get|`http://example.com/foo?bar=${bar}&quux=${quux}`|;
+6| obj = {
+6|     foo: "bar",
+6|     |[| "prop_" + foo() |]:| 42
+6| };
 
-5|get(|[ "http://example.com/foo?bar=", "&quux=" ], [ bar, quux ]|);
+5| obj = {
+5|     foo: "bar"
+5| };
+5| |obj[| "prop_" + foo() |] =| 42;
 
 
 Destructuring
