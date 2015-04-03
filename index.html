@@ -375,17 +375,19 @@ f<span class="mark"><span class="punctuation">.</span>apply</span><span class="p
 </div>
 <div id="StringInterpolation" class="showcase showcase_StringInterpolation">    <div class="title">Template Strings</div>
     <div class="subtitle">String Interpolation</div>
-    <div class="desc">Intuitive expression interpolation for strings.</div>
+    <div class="desc">Intuitive expression interpolation for single-line and multi-line strings.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">mail<span class="punctuation"> = </span><span class="literal">`Hello <span class="mark">$<span class="punctuation">{</span>name<span class="punctuation">}</span></span><span class="punctuation">,</span> want to eat <span class="mark">$<span class="punctuation">{</span>num <span class="punctuation">+</span>1<span class="punctuation">}</span></span> pizzas?`</span><span class="semi">;</span>
+    <div class="code">message<span class="punctuation"> = </span>`Hello <span class="mark">$<span class="punctuation">{</span>name<span class="punctuation">}</span></span><span class="punctuation">,</span>
+want to eat <span class="mark">$<span class="punctuation">{</span>num <span class="punctuation">+</span><span class="literal">1</span><span class="punctuation">}</span></span> pizzas?`<span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">mail<span class="punctuation"> = </span><span class="literal">"Hello "</span><span class="mark"> <span class="punctuation">+</span> name <span class="punctuation">+</span> </span><span class="literal">"<span class="punctuation">,</span> want to eat "</span><span class="mark"> <span class="punctuation">+</span> <span class="punctuation">(</span>num <span class="punctuation">+</span> <span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">+</span> </span><span class="literal">" pizzas?"</span><span class="semi">;</span></div>
+    <div class="code">message<span class="punctuation"> = </span><span class="literal">"Hello "</span><span class="mark"> <span class="punctuation">+</span> name <span class="punctuation">+</span> </span><span class="literal">"<span class="punctuation">,</span>\n"</span> <span class="punctuation">+</span>
+<span class="literal">"want to eat "</span><span class="mark"> <span class="punctuation">+</span> <span class="punctuation">(</span>num <span class="punctuation">+</span> <span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">+</span> </span><span class="literal">" pizzas?"</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

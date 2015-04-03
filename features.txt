@@ -169,11 +169,13 @@ Template Strings
 String Interpolation
 --------------------
 
-Intuitive expression interpolation for strings.
+Intuitive expression interpolation for single-line and multi-line strings.
 
-6|mail = `Hello |${name}|, want to eat |${num +1}| pizzas?`;
+6| message = `Hello |${name}|,
+6| want to eat |${num +1}| pizzas?`;
 
-5|mail = "Hello "| + name + |", want to eat "| + (num + 1) + |" pizzas?";
+5| message = "Hello "| + name + |",\n" +
+5| "want to eat "| + (num + 1) + |" pizzas?";
 
 Custom Interpolation
 --------------------
