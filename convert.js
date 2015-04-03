@@ -42,7 +42,7 @@ let js = (clazz, title, code, icon) => {
 
     /*  unprotect special characters which are part of entity encoding  */
     code = code.replace(/@1@/g, "<span class=punctuation>&amp;</span>")
-    code = code.replace(/@2@([ \t]?\n|$)/g, "<span class=semi>;</span>$1")
+    code = code.replace(/@2@([ \t]?\n|[ \t]+\|?\}|[ \t]+\/\/|$)/g, "<span class=semi>;</span>$1")
     code = code.replace(/@2@/g, "<span class=punctuation>;</span>")
 
     /*  convert ellipsis to corresponding Unicode character  */
