@@ -23,5 +23,5 @@
 ##  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ##
 
-exec babel-node convert.js
+exec ./node_modules/.bin/babel-node convert.js
 
