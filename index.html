@@ -69,6 +69,16 @@
     <a href="#Lexicalthis">Lexical <code>this</code></a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
+<li class="title">Extended Parameter Handling
+    <ul>
+<li class="subtitle subtitle_DefaultParameterValues">
+    <a href="#DefaultParameterValues">Default Parameter Values</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_RestParameter">
+    <a href="#RestParameter">Rest Parameter</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_SpreadOperator">
+    <a href="#SpreadOperator">Spread Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
 <li class="title">Enhanced Object Literals
     <ul>
 <li class="subtitle subtitle_PropertyShorthand">
@@ -103,16 +113,6 @@
     <a href="#ObjectMatchingwithDeeperMatching">Object Matching with Deeper Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_ObjectMatchinginParameterPosition">
     <a href="#ObjectMatchinginParameterPosition">Object Matching in Parameter Position</a> <i class="fa fa-arrow-circle-right"></i></li>
-    </ul>
-</li>
-<li class="title">Extended Parameter Handling
-    <ul>
-<li class="subtitle subtitle_DefaultParameterValues">
-    <a href="#DefaultParameterValues">Default Parameter Values</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_RestParameter">
-    <a href="#RestParameter">Rest Parameter</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_SpreadOperator">
-    <a href="#SpreadOperator">Spread Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Modules
@@ -299,6 +299,76 @@ nums <span class="punctuation"> = </span>evens<span class="punctuation">.</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>v <span class="punctuation">%</span> <span class="literal">5</span> <span class="punctuation">===</span> <span class="literal">0</span><span class="punctuation">)</span>
         <span class="mark">self</span><span class="punctuation">.</span>fives<span class="punctuation">.</span>push<span class="punctuation">(</span>v<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="DefaultParameterValues" class="showcase showcase_DefaultParameterValues">    <div class="title">Extended Parameter Handling</div>
+    <div class="subtitle">Default Parameter Values</div>
+    <div class="desc">Simple and intuitive default values for function parameters.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> <span class="mark">y<span class="punctuation"> = </span><span class="literal">7</span><span class="punctuation">,</span> z<span class="punctuation"> = </span><span class="literal">42</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">+</span> z<span class="semi">;</span>
+<span class="punctuation">}</span>
+f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">50</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> z<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>typeof y <span class="punctuation">===</span> <span class="literal">"undefined"</span><span class="punctuation">)</span></span>
+        <span class="mark">y<span class="punctuation"> = </span><span class="literal">7</span></span><span class="semi">;</span>
+    <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>typeof z <span class="punctuation">===</span> <span class="literal">"undefined"</span><span class="punctuation">)</span></span>
+        <span class="mark">z<span class="punctuation"> = </span><span class="literal">42</span></span><span class="semi">;</span>
+    <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">+</span> z<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">50</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="RestParameter" class="showcase showcase_RestParameter">    <div class="title">Extended Parameter Handling</div>
+    <div class="subtitle">Rest Parameter</div>
+    <div class="desc">Aggregation of remaining arguments into single parameter of variadic functions.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>a</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="punctuation">(</span>x <span class="punctuation">+</span> y<span class="punctuation">)</span> <span class="punctuation">*</span> a<span class="punctuation">.</span>length<span class="semi">;</span>
+<span class="punctuation">}</span>
+f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark"><span class="keyword">var</span> a<span class="punctuation"> = </span>Array<span class="punctuation">.</span>prototype<span class="punctuation">.</span>slice<span class="punctuation">.</span>call<span class="punctuation">(</span>arguments<span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span></span><span class="semi">;</span>
+    <span class="keyword">return</span> <span class="punctuation">(</span>x <span class="punctuation">+</span> y<span class="punctuation">)</span> <span class="punctuation">*</span> a<span class="punctuation">.</span>length<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="SpreadOperator" class="showcase showcase_SpreadOperator">    <div class="title">Extended Parameter Handling</div>
+    <div class="subtitle">Spread Operator</div>
+    <div class="desc">Spreading of array elements into individual parameters of a function.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> params<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span><span class="semi">;</span>
+f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>params</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> params<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span><span class="semi">;</span>
+f<span class="mark"><span class="punctuation">.</span>apply</span><span class="punctuation">(</span><span class="mark">undefined</span><span class="punctuation">,</span> <span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span> <span class="punctuation">]</span><span class="mark"><span class="punctuation">.</span>concat<span class="punctuation">(</span>params<span class="punctuation">)</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
@@ -501,76 +571,6 @@ g<span class="punctuation">(</span><span class="punctuation">{</span> name: <spa
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>x<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
 g<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">5</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="DefaultParameterValues" class="showcase showcase_DefaultParameterValues">    <div class="title">Extended Parameter Handling</div>
-    <div class="subtitle">Default Parameter Values</div>
-    <div class="desc">Simple and intuitive default values for function parameters.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> <span class="mark">y<span class="punctuation"> = </span><span class="literal">7</span><span class="punctuation">,</span> z<span class="punctuation"> = </span><span class="literal">42</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">+</span> z<span class="semi">;</span>
-<span class="punctuation">}</span>
-f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">50</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> z<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>typeof y <span class="punctuation">===</span> <span class="literal">"undefined"</span><span class="punctuation">)</span></span>
-        <span class="mark">y<span class="punctuation"> = </span><span class="literal">7</span></span><span class="semi">;</span>
-    <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span>typeof z <span class="punctuation">===</span> <span class="literal">"undefined"</span><span class="punctuation">)</span></span>
-        <span class="mark">z<span class="punctuation"> = </span><span class="literal">42</span></span><span class="semi">;</span>
-    <span class="keyword">return</span> x <span class="punctuation">+</span> y <span class="punctuation">+</span> z<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">50</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="RestParameter" class="showcase showcase_RestParameter">    <div class="title">Extended Parameter Handling</div>
-    <div class="subtitle">Rest Parameter</div>
-    <div class="desc">Aggregation of remaining arguments into single parameter of variadic functions.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>a</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> <span class="punctuation">(</span>x <span class="punctuation">+</span> y<span class="punctuation">)</span> <span class="punctuation">*</span> a<span class="punctuation">.</span>length<span class="semi">;</span>
-<span class="punctuation">}</span>
-f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="mark"><span class="keyword">var</span> a<span class="punctuation"> = </span>Array<span class="punctuation">.</span>prototype<span class="punctuation">.</span>slice<span class="punctuation">.</span>call<span class="punctuation">(</span>arguments<span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span></span><span class="semi">;</span>
-    <span class="keyword">return</span> <span class="punctuation">(</span>x <span class="punctuation">+</span> y<span class="punctuation">)</span> <span class="punctuation">*</span> a<span class="punctuation">.</span>length<span class="semi">;</span>
-<span class="punctuation">}</span><span class="semi">;</span>
-f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="SpreadOperator" class="showcase showcase_SpreadOperator">    <div class="title">Extended Parameter Handling</div>
-    <div class="subtitle">Spread Operator</div>
-    <div class="desc">Spreading of array elements into individual parameters of a function.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> params<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span><span class="semi">;</span>
-f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>params</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> params<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span><span class="semi">;</span>
-f<span class="mark"><span class="punctuation">.</span>apply</span><span class="punctuation">(</span><span class="mark">undefined</span><span class="punctuation">,</span> <span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span> <span class="punctuation">]</span><span class="mark"><span class="punctuation">.</span>concat<span class="punctuation">(</span>params<span class="punctuation">)</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

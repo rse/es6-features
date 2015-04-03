@@ -113,6 +113,56 @@ More intuitive handling of current object context.
 5| });
 
 
+Extended Parameter Handling
+===========================
+
+Default Parameter Values
+------------------------
+
+Simple and intuitive default values for function parameters.
+
+6| function f (x, |y = 7, z = 42|) {
+6|     return x + y + z;
+6| }
+6| f(1) === 50;
+
+5| function f (x, y, z) {
+5|     |if (typeof y === "undefined")|
+5|         |y = 7|;
+5|     |if (typeof z === "undefined")|
+5|         |z = 42|;
+5|     return x + y + z;
+5| };
+5| f(1) === 50;
+
+Rest Parameter
+--------------
+
+Aggregation of remaining arguments into single parameter of variadic functions.
+
+6| function f (x, y, |...a|) {
+6|     return (x + y) * a.length;
+6| }
+6| f(1, 2, |"hello", true, 7|) === 9;
+
+5| function f (x, y) {
+5|     |var a = Array.prototype.slice.call(arguments, 2)|;
+5|     return (x + y) * a.length;
+5| };
+5| f(1, 2, |"hello", true, 7|) === 9;
+
+Spread Operator
+---------------
+
+Spreading of array elements into individual parameters of a function.
+
+6| var params = [ "hello", true, 7 ];
+6| f(1, 2, |...params|) === 9;
+
+5| var params = [ "hello", true, 7 ];
+5| f|.apply|(|undefined|, [ 1, 2 ]|.concat(params)|) === 9;
+
+
 Enhanced Object Literals
 ========================
 
@@ -249,56 +299,6 @@ Intuitive and flexible destructuring of Objects into individual parameters durin
 5|     console.log(x);
 5| };
 5| g({ name: 5 });
-
-
-Extended Parameter Handling
-===========================
-
-Default Parameter Values
-------------------------
-
-Simple and intuitive default values for function parameters.
-
-6| function f (x, |y = 7, z = 42|) {
-6|     return x + y + z;
-6| }
-6| f(1) === 50;
-
-5| function f (x, y, z) {
-5|     |if (typeof y === "undefined")|
-5|         |y = 7|;
-5|     |if (typeof z === "undefined")|
-5|         |z = 42|;
-5|     return x + y + z;
-5| };
-5| f(1) === 50;
-
-Rest Parameter
---------------
-
-Aggregation of remaining arguments into single parameter of variadic functions.
-
-6| function f (x, y, |...a|) {
-6|     return (x + y) * a.length;
-6| }
-6| f(1, 2, |"hello", true, 7|) === 9;
-
-5| function f (x, y) {
-5|     |var a = Array.prototype.slice.call(arguments, 2)|;
-5|     return (x + y) * a.length;
-5| };
-5| f(1, 2, |"hello", true, 7|) === 9;
-
-Spread Operator
----------------
-
-Spreading of array elements into individual parameters of a function.
-
-6| var params = [ "hello", true, 7 ];
-6| f(1, 2, |...params|) === 9;
-
-5| var params = [ "hello", true, 7 ];
-5| f|.apply|(|undefined|, [ 1, 2 ]|.concat(params)|) === 9;
 
 
 Modules
