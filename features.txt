@@ -463,13 +463,15 @@ Iterator
 Iterator & For-Of Operator
 --------------------------
 
-FIXME
+Support "iterable" protocol to allow objects to customize their
+iteration behaviour. Additionally, suppot "iterator" protocol to produce
+sequence of values (either finite or infinite).
 
 6| let fibonacci = {
 6|     |[Symbol.iterator]()| {
 6|         let pre = 0, cur = 1;
 6|         return {
-6|            |next()| {
+6|            |next ()| {
 6|                [ pre, cur ] = [ cur, pre + cur ];
 6|                return |{ done: false, value: cur }|;
 6|            }
@@ -477,7 +479,7 @@ FIXME
 6|     }
 6| }
 6|
-6| for (let n of fibonacci) {
+6| for (let n |of| fibonacci) {
 6|     if (n > 1000)
 6|         break;
 6|     console.log(n);

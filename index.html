@@ -801,14 +801,16 @@ f<span class="mark"><span class="punctuation">.</span>apply</span><span class="p
 <div class="showcase showcase_IteratorForOfOperator">    <a name="IteratorForOfOperator">
         <div class="title">Iterator</div>
         <div class="subtitle">Iterator & For-Of Operator</div>
-        <div class="desc">FIXME</div>
+        <div class="desc">Support "iterable" protocol to allow objects to customize their
+iteration behaviour. Additionally, suppot "iterator" protocol to produce
+sequence of values (either finite or infinite).</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> fibonacci<span class="punctuation"> = </span><span class="punctuation">{</span>
     <span class="mark"><span class="punctuation">[</span>Symbol<span class="punctuation">.</span>iterator<span class="punctuation">]</span><span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
         <span class="keyword">let</span> pre<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">,</span> cur<span class="punctuation"> = </span><span class="literal">1</span><span class="semi">;</span>
         <span class="keyword">return</span> <span class="punctuation">{</span>
-           <span class="mark">next<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
+           <span class="mark">next <span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
                <span class="punctuation">[</span> pre<span class="punctuation">,</span> cur <span class="punctuation">]</span><span class="punctuation"> = </span><span class="punctuation">[</span> cur<span class="punctuation">,</span> pre <span class="punctuation">+</span> cur <span class="punctuation">]</span><span class="semi">;</span>
                <span class="keyword">return</span> <span class="mark"><span class="punctuation">{</span> done: false<span class="punctuation">,</span> value: cur <span class="punctuation">}</span></span><span class="semi">;</span>
            <span class="punctuation">}</span>
@@ -816,7 +818,7 @@ f<span class="mark"><span class="punctuation">.</span>apply</span><span class="p
     <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> n <span class="keyword">of</span> fibonacci<span class="punctuation">)</span> <span class="punctuation">{</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> n <span class="mark"><span class="keyword">of</span></span> fibonacci<span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>n <span class="punctuation">&gt;</span> <span class="literal">1000</span><span class="punctuation">)</span>
         break<span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
