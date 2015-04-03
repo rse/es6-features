@@ -31,13 +31,13 @@ Expression Bodies
 
 More expressive closure syntax.
 
-6| odds  = evens.map(|v => v + 1|);
-6| nums  = evens.map(|(v, i) => v + i|);
-6| pairs = evens.map(|v => ({ even: v, odd: v + 1 })|);
+6| odds  = evens.map(|v =>| v + 1);
+6| pairs = evens.map(|v => (|{ even: v, odd: v + 1 }|)|);
+6| nums  = evens.map(|(v, i) =>| v + i);
 
-5| odds  = evens.map(|function (v) { return v + 1; }|);
-5| nums  = evens.map(|function (v, i) { return v + i; }|);
-5| pairs = evens.map(|function (v) { return { even: v, odd: v + 1 }; }|);
+5| odds  = evens.map(|function (v) { return| v + 1; |}|);
+5| pairs = evens.map(|function (v) { return| { even: v, odd: v + 1 }; |}|);
+5| nums  = evens.map(|function (v, i) { return| v + i; |}|);
 
 Statement Bodies
 ----------------
