@@ -647,22 +647,26 @@ Map Data-Structure
 
 Cleaner data-structure for common algorithms based on maps.
 
-6| let m = new Map();
-6| m.set("hello", 42);
-6| m.set(s, 34);
-6| m.get(s) === 34;
-6| m.size === 2;
-6| for (let [ key, val ] of m.entries())
+6| let m = |new Map()|;
+6| m.|set("hello", 42)|;
+6| m.|set(s, 34)|;
+6| m.|get(s)| === 34;
+6| m.|size| === 2;
+6| for (let |[ key, val ] of m.entries()|)
 6|     console.log(key + " = " + val);
 
-5| var m = {};
-5| m["hello"] = 42;
+5| var m = |{}|;
+5| |m["hello"] = 42|;
 5| // no equivalent in ES5
 5| // no equivalent in ES5
-5| Object.keys(m).length === 2;
-5| for (key in m)
-5|     if (m.hasOwnProperty(key))
-5|         console.log(key + " = " + m[key]);
+5| |Object.keys(m).length| === 2;
+5| for (key |in| m) {
+5|     if (m.hasOwnProperty(key)) {
+5|         var |val = m[key]|;
+5|         console.log(key + " = " + val);
+5|     }
+5| }
+
 
 Weak-Link Data-Structures
 -------------------------
