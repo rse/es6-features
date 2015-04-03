@@ -831,7 +831,7 @@ convenient <code>of</code> operator to iterate over all values of an iterable ob
         <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">var</span> fibonacci<span class="punctuation"> = </span><span class="punctuation">{</span>
-    next: <span class="punctuation">(</span><span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark">next:</span> <span class="punctuation">(</span><span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
         <span class="keyword">var</span> pre<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">,</span> cur<span class="punctuation"> = </span><span class="literal">1</span><span class="semi">;</span>
         <span class="keyword">return</span> <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
             tmp<span class="punctuation"> = </span>pre<span class="semi">;</span>
@@ -844,7 +844,7 @@ convenient <code>of</code> operator to iterate over all values of an iterable ob
 
 <span class="keyword">var</span> n<span class="semi">;</span>
 <span class="keyword">for</span> <span class="punctuation">(</span><span class="punctuation">;</span><span class="punctuation">;</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    n<span class="punctuation"> = </span>fibonacci<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+    n<span class="punctuation"> = </span>fibonacci<span class="mark"><span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="semi">;</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>n <span class="punctuation">&gt;</span> <span class="literal">1000</span><span class="punctuation">)</span>
         break<span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>

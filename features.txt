@@ -487,7 +487,7 @@ convenient `of` operator to iterate over all values of an iterable object.
 6| }
 
 5| var fibonacci = {
-5|     next: ((function () {
+5|     |next:| ((function () {
 5|         var pre = 0, cur = 1;
 5|         return function () {
 5|             tmp = pre;
@@ -500,7 +500,7 @@ convenient `of` operator to iterate over all values of an iterable object.
 5|
 5| var n;
 5| for (;;) {
-5|     n = fibonacci.next();
+5|     n = fibonacci|.next()|;
 5|     if (n > 1000)
 5|         break;
 5|     console.log(n);
