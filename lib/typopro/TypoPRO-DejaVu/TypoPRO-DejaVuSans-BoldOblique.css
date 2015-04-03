@@ -1,0 +1,15 @@
+
+/* TypoPRO DejaVu Sans Bold Oblique */
+@font-face {
+    font-family:  'TypoPRO DejaVu Sans';
+    src:          url('TypoPRO-DejaVuSans-BoldOblique.eot');
+    src:          local('*'),
+                  url('TypoPRO-DejaVuSans-BoldOblique.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-DejaVuSans-BoldOblique.woff') format('woff'),
+                  url('TypoPRO-DejaVuSans-BoldOblique.ttf') format('truetype');
+    font-style:   oblique;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

@@ -1,0 +1,773 @@
+##
+##  es6-features -- ECMAScript 6 Feature Overview & Comparison
+##  Copyright (c) 2015 Ralf S. Engelschall <rse@engelschall.com>
+##
+##  Permission is hereby granted, free of charge, to any person obtaining
+##  a copy of this software and associated documentation files (the
+##  "Software"), to deal in the Software without restriction, including
+##  without limitation the rights to use, copy, modify, merge, publish,
+##  distribute, sublicense, and/or sell copies of the Software, and to
+##  permit persons to whom the Software is furnished to do so, subject to
+##  the following conditions:
+##
+##  The above copyright notice and this permission notice shall be included
+##  in all copies or substantial portions of the Software.
+##
+##  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+##  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+##  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+##  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+##  CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+##  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+##  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+##
+
+#   GOALS:
+#   reduce language cleaness
+#   increase expressiveness
+#   decrease necessary boilerplate code
+#   avoid hacks and workarounds
+
+
+Arrows
+======
+
+Expression Bodies
+-----------------
+
+More expressive closure syntax.
+
+5| odds  = evens.map(|function (v) { return v + 1; }|);
+5| nums  = evens.map(|function (v, i) { return v + i; }|);
+5| pairs = evens.map(|function (v) { return { even: v, odd: v + 1 }; }|);
+
+6| odds  = evens.map(|v => v + 1|);
+6| nums  = evens.map(|(v, i) => v + i|);
+6| pairs = evens.map(|v => ({ even: v, odd: v + 1 })|);
+
+Statement Bodies
+----------------
+
+More expressive closure syntax.
+
+5| nums.forEach(|function (v) {|
+5|    if (v % 5 === 0)
+5|        fives.push(v);
+5| |}|);
+
+6| nums.forEach(|v => {|
+6|    if (v % 5 === 0)
+6|        fives.push(v);
+6| |}|)
+
+Lexical `this`
+--------------
+
+More intuitive handling of current object context.
+
+5| var |self| = |this|
+5| |this|.nums.forEach(|function (v)| {
+5|     if (v % 5 === 0)
+5|         |self|.fives.push(v);
+5| });
+
+6| |this|.nums.forEach(|(v) =>| {
+6|     if (v % 5 === 0)
+6|         |this|.fives.push(v);
+6| });
+
+
+Classes
+=======
+
+Simple Class
+-----------
+
+More intuitive and boilerplate-free classes.
+
+5| var Shape = |function| (id, x, y) {
+5|     this.id = id;
+5|     this.move(x, y);
+5| };
+5| Shape.|prototype.move| = function (x, y) {
+5|     this.x = x;
+5|     this.y = y;
+5| };
+
+6| |class| Shape {
+6|     |constructor| (id, x, y) {
+6|         this.id = id;
+6|         this.move(x, y);
+6|     }
+6|     |move| (x, y) {
+6|         this.x = x;
+6|         this.y = y;
+6|     }
+6| }
+
+Class Inheritance
+-----------------
+
+More intuitive and boilerplate-free inheritance.
+
+5| var Rectangle = |function| (id, x, y, width, height) {
+5|     |Shape.call|(this, id, x, y);
+5|     this.width  = width;
+5|     this.height = height;
+5| };
+5| |Rectangle.prototype = Object.create(Shape.prototype)|;
+5| |Rectangle.prototype.constructor = Rectangle|;
+5| var Circle = |function| (id, x, y, radius) {
+5|     |Shape.call|(this, id, x, y);
+5|     this.radius = radius;
+5| };
+5| |Circle.prototype = Object.create(Shape.prototype)|;
+5| |Circle.prototype.constructor = Circle|;
+
+6| |class| Rectangle |extends| Shape {
+6|     |constructor| (id, x, y, width, height) {
+6|         |super|(id, x, y);
+6|         this.width  = width;
+6|         this.height = height;
+6|     }
+6| }
+6| |class| Circle |extends| Shape {
+6|     |constructor| (id, x, y, radius) {
+6|         |super|(id, x, y);
+6|         this.radius = radius;
+6|     }
+6| }
+
+Static Members
+--------------
+
+Simple support for static class members.
+
+5| |Rectangle.defaultRectangle| = function () {
+5|     return new Rectangle("default", 0, 0, 100, 100);
+5| };
+5| |Circle.defaultCircle| = function () {
+5|     return new Circle("default", 0, 0, 100);
+5| };
+
+6| |class| Rectangle |extends| Shape {
+6|     ...
+6|     |static| defaultRectangle () {
+6|         return new Rectangle("default", 0, 0, 100, 100);
+6|     }
+6| }
+6| |class| Circle |extends| Shape {
+6|     ...
+6|     |static| defaultCircle () {
+6|         return new Circle("default", 0, 0, 100);
+6|     }
+6| }
+
+Getter/Setter
+-------------
+
+More intuitive and boilerplate-free getter/setter members.
+
+5| Shape.prototype.setArea = function (area) {
+5|     throw new Error("cannot set calculated area");
+5| };
+5| Shape.prototype.getArea = function () {
+5|     throw new Error("calculated area not implemented");
+5| };
+5| Rectangle.prototype.getArea = function () {
+5|     return this.width * this.height;
+5| };
+5| Circle.prototype.getArea = function () {
+5|     return Math.PI * this.radius * this.radius;
+5| };
+5| var rec = new Rectangle("foo", 0, 0, 50, 20);
+5| circle|.getArea()| === 1000;
+5| circle|.setArea(2000)|; // exception!
+
+6| class Shape {
+6|     ...
+6|     get area { throw new Error("calculated area not implemented"); }
+6|     set area { throw new Error("cannot set calculated area");      }
+6| }
+6| class Rectangle extends Shape {
+6|     ...
+6|     get area { return this.width * this.height; }
+6| }
+6| class Circle extends Shape {
+6|     ...
+6|     get area { return Math.PI * this.radius * this.radius; }
+6| }
+6| let rec = new Rectangle("foo", 0, 0, 50, 20);
+6| circle|.area| === 1000;
+6| circle.area = 2000; // exception!
+
+
+Enhanced Object Literals
+========================
+
+Property Shorthand
+------------------
+
+Shorter syntax for common idiom.
+
+5| obj = { x: x, y: y };
+
+6| obj = { x, y };
+
+Computed/Dynamic Property Names
+-------------------------------
+
+Support for dynamically generated keys in object literals.
+
+5| obj = {
+5|     foo: "bar"
+5| };
+5| obj[ "prop_" + foo() ] = 42;
+
+6| obj = {
+6|     foo: "bar",
+6|     |[| "prop_" + foo() |]|: 42
+6| };
+
+
+Modules
+=======
+
+Explicit Symbol Export/Import
+-----------------------------
+
+Support for exporting/importing symbols from/to modules without global namespace pollution.
+
+5| //  lib/math.js
+5| LibMath = {};
+5| LibMath.sum = function (x, y) { return x + y };
+5| LibMath.pi = 3.141593;
+5|
+5| //  someApp.js
+5| var math = LibMath;
+5| alert("2π = " + math.sum(math.pi, math.pi));
+5|
+5| //  otherApp.js
+5| var sum = LibMath.sum, pi = LibMath.pi;
+5| alert("2π = " + sum(pi, pi));
+
+6| //  lib/math.js
+6| export function sum (x, y) { return x + y };
+6| export var pi = 3.141593;
+6|
+6| //  someApp.js
+6| import * as math from "lib/math";
+6| alert("2π = " + math.sum(math.pi, math.pi));
+6|
+6| //  otherApp.js
+6| import { sum, pi } from "lib/math";;
+6| alert("2π = " + sum(pi, pi));
+
+Default & Wildcard Symbol Export/Import
+---------------------------------------
+
+Marking a symbol as the default exported symbol and mass-mixin of symbols.
+
+5| //  lib/mathplusplus.js
+5| LibMathPP = {};
+5| for (symbol in LibMath)
+5|     if (LibMath.hasOwnProperty(symbol))
+5|         LibMathPP[symbol] = LibMath[symbol];
+5| LibMathPP.e = 2.71828182846;
+5| LibMathPP.exp = function (x) { return Math.exp(x) };
+5|
+5| //  someApp.js
+5| var exp = LibMathPP.exp, pi = LibMathPP.pi, e = libMathPP.e;
+5| alert("2π = " + exp(pi, e));
+
+6| //  lib/mathplusplus.js
+6| export * from "lib/math";
+6| export var e = 2.71828182846;
+6| export default function (x) { return Math.exp(x) };
+6|
+6| //  someApp.js
+6| import exp, { pi, e } from "lib/mathplusplus";
+6| alert("2π = " + exp(pi, e));
+
+
+Template Strings
+================
+
+String Interpolation
+--------------------
+
+Intuitive expression interpolation for strings.
+
+5|mail = "Hello "| + name + |", let's eat "| + (num + 1) + |"pizzas.";
+
+6|mail = `Hello |${name}|, let's eat |${num +1}| pizzas.`;
+
+Custom Interpolation
+--------------------
+
+Flexible expression interpolation for arbitrary methods.
+
+5|get(|[ "http://example.com/foo?bar=", "&quux=" ], [ bar, quux ]|);
+
+6|get|`http://example.com/foo?bar=${bar}&quux=${quux}`|;
+
+
+Destructuring
+=============
+
+Array Matching
+--------------
+
+Intuitive and flexible destructuring of Arrays into individual variables during assignment.
+
+5| var list = [ 1, 2, 3 ];
+5| var |a = list[0]|;
+5| var |b = list[2]|;
+
+6| var list = [ 1, 2, 3 ];
+6| var |[ a, , b ] = list|;
+
+Object Matching with Shorthand Notation
+---------------------------------------
+
+Intuitive and flexible destructuring of Objects into individual variables during assignment.
+
+5| var |tmp| = getASTNode();
+5| var |op  = tmp.op|;
+5| var |lhs = tmp.lhs|;
+5| var |rhs = tmp.rhs|;
+
+6| var |{ op, lhs, rhs }| = getASTNode();
+
+Object Matching with Deeper Matching
+------------------------------------
+
+Intuitive and flexible destructuring of Objects into individual variables during assignment.
+
+5| var |tmp| = getASTNode();
+5| var |a = tmp.op|;
+5| var |b = tmp.lhs.op|;
+5| var |c = tmp.rhs|;
+
+6| var |{ op: a, lhs: { op: b }, rhs: c }| = getASTNode();
+
+Object Matching in Parameter Position
+-------------------------------------
+
+Intuitive and flexible destructuring of Objects into individual parameters during function calls.
+
+5| function g (|arg|) {
+5|     |var x = arg.name|;
+5|     console.log(x);
+5| };
+5| g({ name: 5 });
+
+6| function g (|{ name: x }|) {
+6|     console.log(x);
+6| }
+6| g({ name: 5 });
+
+
+Extended Parameter Handling
+===========================
+
+Default Parameter Values
+------------------------
+
+Simple and intuitive providing of default values for function parameters.
+
+5| function f (x, y, z) {
+5|     |if (typeof y === "undefined")|
+5|         |y = 7|;
+5|     |if (typeof z === "undefined")|
+5|         |z = 42|;
+5|     return x + y + z;
+5| };
+5| f(1) === 50;
+
+6| function f (x, |y = 7, z = 42|) {
+6|     return x + y + z;
+6| }
+6| f(1) === 50;
+
+Rest Parameter
+--------------
+
+Aggregation of remaining arguments into single parameter of variadic functions.
+
+5| function f (x, y) {
+5|     |var a = Array.prototype.slice.call(arguments, 2)|;
+5|     return (x + y) * a.length;
+5| };
+5| f(1, 2, "hello", true, 7) === 9;
+
+6| function f (x, y, |...a|) {
+6|     return (x + y) * a.length;
+6| }
+6| f(1, 2, "hello", true, 7) === 9;
+
+Spread Operator
+---------------
+
+Spreading of array elements into individual parameters of a function.
+
+5| var params = [ "hello", true, 7 ];
+5| f|.apply|(|undefined|, [ 1, 2 ]|.concat|(params)) === 9;
+
+6| var params = [ "hello", true, 7 ];
+6| f(1, 2, |...params|) === 9;
+
+
+Blocked Scoped Variable Binding
+===============================
+
+Blocked Scoped Variables
+------------------------
+
+Blocked scoping variables without hoisting.
+
+5| var i, x, y;
+5| for (i = 0; i < a.length; i++) {
+5|     x = a[i];
+5|     ...
+5| }
+5| for (i = 0; i < b.length; i++)
+5|     y = b[i];
+5|     ...
+5| }
+
+6| for (let i = 0; i < a.length; i++) {
+6|     let x = a[i];
+6|     ...
+6| }
+6| for (let i = 0; i < b.length; i++)
+6|     let y = b[i];
+6|     ...
+6| }
+
+Constants
+---------
+
+Blocked scoping constants without hoisting.
+
+5| var pi = new (function () {
+5|     var pi = 3.141593;
+5|     return function () { return pi };
+5| })();
+5| pi() > 3.0;
+
+6| const pi = 3.141593;
+6| pi > 3.0;
+
+
+Iterators
+=========
+
+Iterator & For-Of Operator
+--------------------------
+
+FIXME
+
+5| var fibonacci = {
+5|     next: ((function () {
+5|         var pre = 0, cur = 1;
+5|         return function () {
+5|             tmp = pre;
+5|             pre = cur;
+5|             cur += tmp;
+5|             return cur;
+5|         };
+5|     })();
+5| };
+5|
+5| var n;
+5| for (;;) {
+5|     n = fibonacci.next();
+5|     if (n > 1000)
+5|         break;
+5|     console.log(n);
+5| }
+
+6| let fibonacci = {
+6|     |[Symbol.iterator]()| {
+6|         let pre = 0, cur = 1;
+6|         return {
+6|            |next()| {
+6|                [ pre, cur ] = [ cur, pre + cur ];
+6|                return |{ done: false, value: cur }|;
+6|            }
+6|         };
+6|     }
+6| }
+6|
+6| for (let n of fibonacci) {
+6|     if (n > 1000)
+6|         break;
+6|     console.log(n);
+6| }
+
+Generators
+----------
+
+FIXME
+
+5| var fibonacci = {
+5|     next: ((function () {
+5|         var pre = 0, cur = 1;
+5|         return function () {
+5|             tmp = pre;
+5|             pre = cur;
+5|             cur += tmp;
+5|             return cur;
+5|         };
+5|     })();
+5| };
+5|
+5| var n;
+5| for (;;) {
+5|     n = fibonacci.next();
+5|     if (n > 1000)
+5|         break;
+5|     console.log(n);
+5| }
+
+6| let fibonacci = {
+6|     [Symbol.iterator]: |function*| () {
+6|         let pre = 0, cur = 1;
+6|         |for (;;)| {
+6|             [ pre, cur ] = [ cur, pre + cur ];
+6|             |yield cur|;
+6|         }
+6|     }
+6| }
+6|
+6| for (|let n of fibonacci|) {
+6|     if (n > 1000)
+6|         break;
+6|     console.log(n);
+6| }
+
+
+Comprehensions
+==============
+
+Array Comprehension
+-------------------
+
+FIXME
+
+5| var results = |[]|;
+5| for (var c in customers)
+5|     if (customers.hasOwnProperty(c))
+5|         if (c.city === "Munich")
+5|             |result.push|({ name: c.name, age: c.age });
+
+6| let results = [
+6|     |for (c of customers)|
+6|         if (c.city === "Munich")
+6|             { name: c.name, age: c.age } ];
+
+Generator Comprehension
+-----------------------
+
+FIXME
+
+5| var results = |[]|;
+5| for (var c = customers.next(); !c.done; c = customers.next())
+5|     if (c.city === "Munich")
+5|         |result.push|({ name: c.name, age: c.age });
+
+6| let results = (
+6|     for (c of customers)
+6|         if (c.city == "Munich")
+6|             { name: c.name, age: c.age } );
+
+
+Extended Literals
+=================
+
+Binary & Octal Literals
+-----------------------
+
+Direct support for binary and octal literals.
+
+5| parseInt("111110111", 2) === 503;
+5| parseInt("767", 8) === 503;
+
+6| 0b111110111 === 503;
+6| 0o767 === 503;
+
+Extended Unicode String & RegExp Literals
+-----------------------------------------
+
+FIXME
+
+5| "𠮷".length === 2;
+5| //  no equivalent in ES5
+5| "𠮷" === "\uD842\uDFB7";
+5| //  no equivalent in ES5
+5| //  no equivalent in ES5
+
+6| "𠮷".length === 2;
+6| "𠮷".match(/./u)[0].length === 2;
+6| "\u{20BB7}" === "𠮷" === "\uD842\uDFB7";
+6| "𠮷".codePointAt(0) == 0x20BB7;
+6| for (let codepoint of "𠮷") console.log(codepoint);
+
+
+Map/Set/WeakMap/WeakSet
+=======================
+
+Set
+---
+
+Cleaner data-structure for common algorithms based on sets.
+
+5| var s = {};
+5| s["hello"] = true; s["goodbye"] = true; s["hello"] = true;
+5| Object.keys(s).length === 2;
+5| s["hello"] === true;
+5| for (val in s) /* arbitrary order */
+5|     if (s.hasOwnProperty(key))
+5|         console.log(val);
+
+6| let s = new Set();
+6| s.add("hello").add("goodbye").add("hello");
+6| s.size === 2;
+6| s.has("hello") === true;
+6| for (let val of m.values()) /* insertion order */
+6|     console.log(val);
+
+Map
+---
+
+Cleaner data-structure for common algorithms based on maps.
+
+5| var m = {};
+5| m["hello"] = 42;
+5| // no equivalent in ES5
+5| // no equivalent in ES5
+5| Object.keys(m).length === 2;
+5| for (key in m)
+5|     if (m.hasOwnProperty(key))
+5|         console.log(key + " = " + m[key]);
+
+6| let m = new Map();
+6| m.set("hello", 42);
+6| m.set(s, 34);
+6| m.get(s) === 34;
+6| m.size === 2;
+6| for (let [ key, val ] of m.entries())
+6|     console.log(key + " = " + val);
+
+WeakSet & WeakMap
+-----------------
+
+Memory-leak-free Object-key’d side-tables
+
+5| // no equivalent in ES5
+
+6| let isMarked     = new |WeakSet|();
+6| let attachedData = new |WeakMap|();
+6| export class Node {
+6|     constructor (id)   { this.id = id;                  }
+6|     mark        ()     { |isMarked.add|(this);            }
+6|     unmark      ()     { |isMarked.delete|(this);         }
+6|     marked      ()     { return |isMarked.has|(this);     }
+6|     set data    (data) { |attachedData.set|(this, data);  }
+6|     get data    ()     { return |attachedData.get|(this); }
+6| }
+6| new foo = new Node("foo");
+6| JSON.stringify(foo) === |'{"id":"foo"}'|;
+6| foo.mark();
+6| foo.data = "bar";
+6| foo.data === "bar";
+6| JSON.stringify(foo) === |'{"id":"foo"}'|;
+
+
+Symbol Type
+===========
+
+Symbol Type
+-----------
+
+Unique and immutable data type to be used as an identifier for object properties.
+
+5| // no equivalent in ES5
+
+6| Symbol("foo") !== Symbol("foo");
+6| let foo = Symbol("foo");
+6| let bar = Symbol("bar");
+6| typeof foo === "symbol";
+6| typeof bar === "symbol";
+6| let obj = {};
+6| obj[foo] = "foo";
+6| obj[bar] = "bar";
+
+
+Promises
+========
+
+Promises
+--------
+
+First class representation of a value that may be made asynchronously and be available in the future.
+
+5| // no equivalent in ES5
+
+6| function timeout (duration = 0) {
+6|     return new Promise((resolve, reject) => {
+6|         setTimeout(resolve, duration);
+6|     });
+6| }
+6| timeout(100).then(() => {
+6|     return timeout(200);
+6| }).then(() => {
+6|     console.log("done waiting 300ms");
+6| })
+6| Promise.all([
+6|     timeout(100),
+6|     timeout(200)
+6| ]).then(() => {
+6|     console.log("done waiting 200ms");
+6| });
+
+
+Meta-Programming
+================
+
+Proxy Objects
+-------------
+
+Hooking into runtime-level object meta-operations.
+
+5| // no equivalent in ES5
+
+6| let target = {
+6|     foo: "Hello, foo!"
+6| };
+6| let proxy = new Proxy(target, {
+6|     get (receiver, name) {
+6|         return `Hello, ${name}!`;
+6|     }
+6| });
+6| proxy.foo   === "Hello, foo!";
+6| proxy.world === "Hello, world!";
+
+Reflection
+----------
+
+Make calls corresponding to the object meta-operations.
+
+5| // no equivalent in ES5
+
+6| let obj = { a: 1 };
+6| Object.defineProperty(obj, "b", { value: 2 });
+6| obj[Symbol("c")] = 3;
+6| function clazz (a, b) { this.c = a + b; };
+6|
+6| Reflect.ownKeys(obj); // [ "a", "b", Symbol(c) ]
+6| let instance = Reflect.construct(clazz, [ 20, 22 ]);
+6| instance.c === 42;
+
+

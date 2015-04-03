@@ -1,0 +1,15 @@
+
+/* TypoPRO Open Sans Extrabold */
+@font-face {
+    font-family:  'TypoPRO Open Sans';
+    src:          url('TypoPRO-OpenSans-ExtraBold.eot');
+    src:          local('*'),
+                  url('TypoPRO-OpenSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-OpenSans-ExtraBold.woff') format('woff'),
+                  url('TypoPRO-OpenSans-ExtraBold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  800;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

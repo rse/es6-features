@@ -1,0 +1,15 @@
+
+/* TypoPRO DejaVu Sans Mono */
+@font-face {
+    font-family:  'TypoPRO DejaVu Sans Mono';
+    src:          url('TypoPRO-DejaVuSansMono-Regular.eot');
+    src:          local('*'),
+                  url('TypoPRO-DejaVuSansMono-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-DejaVuSansMono-Regular.woff') format('woff'),
+                  url('TypoPRO-DejaVuSansMono-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

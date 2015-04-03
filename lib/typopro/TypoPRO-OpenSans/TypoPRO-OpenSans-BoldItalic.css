@@ -1,0 +1,15 @@
+
+/* TypoPRO Open Sans Bold Italic */
+@font-face {
+    font-family:  'TypoPRO Open Sans';
+    src:          url('TypoPRO-OpenSans-BoldItalic.eot');
+    src:          local('*'),
+                  url('TypoPRO-OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-OpenSans-BoldItalic.woff') format('woff'),
+                  url('TypoPRO-OpenSans-BoldItalic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

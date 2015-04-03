@@ -1,0 +1,15 @@
+
+/* TypoPRO Open Sans */
+@font-face {
+    font-family:  'TypoPRO Open Sans';
+    src:          url('TypoPRO-OpenSans-Regular.eot');
+    src:          local('*'),
+                  url('TypoPRO-OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-OpenSans-Regular.woff') format('woff'),
+                  url('TypoPRO-OpenSans-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

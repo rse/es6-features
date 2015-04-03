@@ -1,0 +1,15 @@
+
+/* TypoPRO DejaVu Serif Bold Italic */
+@font-face {
+    font-family:  'TypoPRO DejaVu Serif';
+    src:          url('TypoPRO-DejaVuSerif-BoldItalic.eot');
+    src:          local('*'),
+                  url('TypoPRO-DejaVuSerif-BoldItalic.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-DejaVuSerif-BoldItalic.woff') format('woff'),
+                  url('TypoPRO-DejaVuSerif-BoldItalic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

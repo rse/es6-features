@@ -1,0 +1,15 @@
+
+/* TypoPRO Journal */
+@font-face {
+    font-family:  'TypoPRO Journal';
+    src:          url('TypoPRO-Journal-Regular.eot');
+    src:          local('*'),
+                  url('TypoPRO-Journal-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-Journal-Regular.woff') format('woff'),
+                  url('TypoPRO-Journal-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

@@ -1,0 +1,15 @@
+
+/* TypoPRO Open Sans Italic */
+@font-face {
+    font-family:  'TypoPRO Open Sans';
+    src:          url('TypoPRO-OpenSans-Italic.eot');
+    src:          local('*'),
+                  url('TypoPRO-OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-OpenSans-Italic.woff') format('woff'),
+                  url('TypoPRO-OpenSans-Italic.ttf') format('truetype');
+    font-style:   italic;
+    font-weight:  normal;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

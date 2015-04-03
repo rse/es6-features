@@ -1,0 +1,308 @@
+/*
+**  es6-features -- ECMAScript 6 Feature Overview & Comparison
+**  Copyright (c) 2015 Ralf S. Engelschall <rse@engelschall.com>
+**
+**  Permission is hereby granted, free of charge, to any person obtaining
+**  a copy of this software and associated documentation files (the
+**  "Software"), to deal in the Software without restriction, including
+**  without limitation the rights to use, copy, modify, merge, publish,
+**  distribute, sublicense, and/or sell copies of the Software, and to
+**  permit persons to whom the Software is furnished to do so, subject to
+**  the following conditions:
+**
+**  The above copyright notice and this permission notice shall be included
+**  in all copies or substantial portions of the Software.
+**
+**  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+**  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+**  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+**  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+**  CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+**  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+**  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+@import "lib/sanitize/sanitize.css";
+@import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans.css";
+@import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-Regular.css";
+@import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-Bold.css";
+@import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-Oblique.css";
+@import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-BoldOblique.css";
+@import "lib/typopro/TypoPRO-Journal/TypoPRO-Journal.css";
+@import "lib/fontawesome/fontawesome.css";
+
+body {
+    background-color: #555555;
+    font-family: "TypoPRO Open Sans", sans-serif;
+    font-size: 10pt;
+    margin: 0px;
+    padding: 0px;
+}
+
+.head {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #333333;
+    color: #e0e0e0;
+    font-size: 160%;
+    padding: 14px 40px 10px 40px;
+    -webkit-box-shadow: 2px 2px 4px 0px #444444;
+    box-shadow: 2px 2px 4px 0px #444444;
+    z-index: 1000;
+}
+.head .bold {
+    font-weight: 800;
+    color: #ffffff;
+}
+.foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+    color: #909090;
+    font-size: 80%;
+    padding: 14px 0px 10px 0px;
+    -webkit-box-shadow: 2px 2px 4px 0px #444444;
+    box-shadow: 2px 2px 4px 0px #444444;
+    text-align: right;
+    z-index: 1000;
+}
+.foot .text {
+    text-align: right;
+    padding-right: 30px;
+}
+.foot .text a {
+    text-decoration: none;
+    color: #909090;
+}
+
+.slogan {
+    font-family: "TypoPRO Journal";
+    font-size: 25pt;
+    color: #f0e0d0;
+    position: absolute;
+    right: 30px;
+    bottom: 110px;
+    transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    letter-spacing: 1px;
+    line-height: 19pt;
+}
+.slogan a {
+    text-decoration: underline;
+    color: #f0e0d0;
+}
+
+.nav {
+    position: fixed;
+    left: 0px;
+    top: 80px;
+    margin-left: 30px;
+    width: 320px;
+    background-color: #333333;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 0px;
+    height: calc(100% - 180px);
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 2px 2px 4px 0px #444444;
+    box-shadow: 2px 2px 4px 0px #444444;
+}
+.nav > ul {
+    list-style-type: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    width: 100%;
+}
+.nav > ul > li {
+    background-color: #333333;
+    color: #e0e0e0;
+    font-weight: bold;
+    padding-left: 10px;
+    width: 100%;
+}
+.nav > ul > li > ul {
+    position: relative;
+    left: -10px;
+    background-color: red;
+    list-style-type: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    width: 100%;
+}
+.nav > ul > li > ul > li {
+    background-color: #222222;
+    color: #000000;
+    font-weight: normal;
+    width: 100%;
+    position: relative;
+}
+.nav > ul > li > ul > li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding-left: 30px;
+    width: 100%;
+    display: inline-block;
+}
+.nav > ul > li > ul > li i {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    color: #ffffff;
+    display: none;
+}
+.nav > ul > li > ul > li.selected i {
+    display: block;
+}
+.nav > ul > li > ul > li.selected a {
+    background-color: #336699;
+    color: #ffffff;
+    width: 100%;
+}
+
+.content {
+    position: absolute;
+    left: 380px;
+    top: 80px;
+    width: calc(100% - 380px - 30px);
+}
+
+.content .title {
+    font-size: 160%;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+.content .subtitle {
+    font-size: 140%;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: -2px;
+}
+
+.content .desc {
+    color: #ffffff;
+    margin: 8px 0px 8px 0px;
+}
+
+.content .js {
+    margin: 00px 0px 00px 0px;
+    width: 100%;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 2px 2px 4px 0px #444444;
+    box-shadow: 2px 2px 4px 0px #444444;
+    position: relative;
+}
+.content .js.es6 {
+    margin-top: 30px;
+}
+.content .js .title {
+    font-size: 80%;
+    font-weight: 200;
+    color: #cccccc;
+    background-color: #333333;
+    padding: 4px 10px 2px 10px;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+}
+.content .js .title .style {
+    cursor: pointer;
+}
+.content .js.modernized .title .style.modernized,
+.content .js.traditional .title .style.traditional {
+    text-decoration: underline;
+}
+.content .js.modernized .code .semi {
+    display: none;
+}
+.content .js .code {
+    font-family: "TypoPRO DejaVu Sans Mono", sans-serif;
+    display: block;
+    white-space: pre;
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+    overflow-x: scroll;
+}
+.content .js.es5 .code {
+    border-left: 10px solid #990000;
+}
+.content .js.es6 .code {
+    border-left: 10px solid #009900;
+}
+.content .js .code .keyword {
+    font-weight: bold;
+    color: #3377bb;
+}
+.content .js .code .punctuation {
+    font-weight: bold;
+    color: #3377bb;
+}
+.content .js .code .semi {
+    font-weight: bold;
+    color: #3377bb;
+}
+.content .js .code .literal {
+    color: #aa7733;
+}
+.content .js .code .comment {
+    color: #999999;
+    font-weight: normal;
+    font-style: italic;
+}
+.content .js .code .comment * {
+    color: #999999;
+    font-weight: normal;
+    font-style: italic;
+}
+.content .js .code .mark {
+    background-color: #f0f8ff;
+    padding: 1px 0px 1px 0px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border-radius: 2px 2px 2px 2px;
+}
+.content .js .ellipsis {
+    color: #999999;
+}
+.content .js .icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+}
+.content .js.es5 .icon {
+    z-index: 1001;
+    color: #990000;
+}
+.content .js.es6 .icon {
+    z-index: 1001;
+    color: #009900;
+}
+.content .js .icon.fa-circle {
+    z-index: 1000;
+    color: #ffffff;
+}
+
+.arrow {
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    height: 30px;
+}
+.arrow i {
+    color: #333333;
+    position: relative;
+    top: -24px;
+    text-shadow: 2px 2px 4px #444444;
+}
+

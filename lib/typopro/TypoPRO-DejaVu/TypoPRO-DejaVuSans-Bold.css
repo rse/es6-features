@@ -1,0 +1,15 @@
+
+/* TypoPRO DejaVu Sans Bold */
+@font-face {
+    font-family:  'TypoPRO DejaVu Sans';
+    src:          url('TypoPRO-DejaVuSans-Bold.eot');
+    src:          local('*'),
+                  url('TypoPRO-DejaVuSans-Bold.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-DejaVuSans-Bold.woff') format('woff'),
+                  url('TypoPRO-DejaVuSans-Bold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  bold;
+    font-stretch: normal;
+    font-variant: normal;
+}
+

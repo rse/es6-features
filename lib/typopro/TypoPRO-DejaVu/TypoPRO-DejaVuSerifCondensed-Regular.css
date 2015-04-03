@@ -1,0 +1,15 @@
+
+/* TypoPRO DejaVu Serif Condensed */
+@font-face {
+    font-family:  'TypoPRO DejaVu Serif';
+    src:          url('TypoPRO-DejaVuSerifCondensed-Regular.eot');
+    src:          local('*'),
+                  url('TypoPRO-DejaVuSerifCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-DejaVuSerifCondensed-Regular.woff') format('woff'),
+                  url('TypoPRO-DejaVuSerifCondensed-Regular.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  normal;
+    font-stretch: condensed;
+    font-variant: normal;
+}
+
