@@ -49,3 +49,9 @@ equivalents.
   especially let you get rid of some very nasty but required hacks and
   workarounds from the ECMAScript 5 era (e.g. `var self = this`).
 
+- *I've found a mistake, how can I contribute?*
+
+  The source is the file `features.txt`, everything else on es6-features.org is
+  just generated out of it. Fork this project on Github, edit the file
+  `features.txt` and then send a pull request.
+
