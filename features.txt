@@ -27,7 +27,7 @@ Block Scope
 ===========
 
 Block-Scoped Variables
-------------------------
+----------------------
 
 Block-scoped variables without variable hoisting.
 
@@ -50,8 +50,8 @@ Block-scoped variables without variable hoisting.
 5|     ...
 5| }
 
-Block-Scope Constants
------------------------
+Block-Scoped Constants
+----------------------
 
 Block-scoped constants without constant hoisting.
 
