@@ -119,7 +119,7 @@ Classes
 Class Definition
 ----------------
 
-More intuitive and boilerplate-free classes.
+More intuitive, OOP-style and boilerplate-free classes.
 
 6| |class| Shape {
 6|     |constructor| (id, x, y) {
@@ -145,7 +145,7 @@ More intuitive and boilerplate-free classes.
 Class Inheritance
 -----------------
 
-More intuitive and boilerplate-free inheritance.
+More intuitive, OOP-style and boilerplate-free inheritance.
 
 6| |class| Rectangle |extends| Shape {
 6|     |constructor| (id, x, y, width, height) {
