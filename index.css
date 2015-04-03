@@ -37,6 +37,7 @@ body {
     font-size: 10pt;
     margin: 0px;
     padding: 0px;
+    position: relative;
 }
 
 .head {
@@ -85,7 +86,7 @@ body {
     font-family: "TypoPRO Journal";
     font-size: 25pt;
     color: #f0e0d0;
-    position: absolute;
+    position: fixed;
     right: 30px;
     bottom: 110px;
     transform: rotate(-4deg);
@@ -97,6 +98,21 @@ body {
 .slogan a {
     text-decoration: underline;
     color: #f0e0d0;
+}
+
+.bg {
+    font-weight: 800;
+    z-index: -1000;
+    color: #666666;
+    font-size: 400pt;
+    position: fixed;
+    bottom: 50px;
+    right: -120px;
+    transform: rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    -webkit-transform: rotate(-8deg);
+    letter-spacing: -20px;
+    opacity: 0.4;
 }
 
 .nav {
