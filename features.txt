@@ -553,18 +553,19 @@ supports asynchronous programming.
 Comprehensions
 ==============
 
-Array Comprehension
--------------------
+List Comprehension
+------------------
 
-FIXME
+Concise FP-style way to create a list/array, based on another list where
+each entry is the result of some operation.
 
 6| let results = [
-6|     |for (c of customers)|
+6|     |for (c |of| customers)|
 6|         if (c.city === "Munich")
 6|             { name: c.name, age: c.age } ];
 
 5| var results = |[]|;
-5| for (var c in customers)
+5| for (var c |in| customers)
 5|     if (customers.hasOwnProperty(c))
 5|         if (c.city === "Munich")
 5|             |result.push|({ name: c.name, age: c.age });
@@ -572,7 +573,8 @@ FIXME
 Generator Comprehension
 -----------------------
 
-FIXME
+Concise FP-style way to create an object, based on another object where
+each entry is the result of some operation.
 
 6| let results = (
 6|     for (c of customers)
@@ -602,7 +604,7 @@ Direct support for binary and octal literals.
 Extended Unicode String & RegExp Literals
 -----------------------------------------
 
-FIXME
+Extended support using Unicode within strings and regular expressions.
 
 6| "𠮷".length === 2;
 6| "𠮷".match(/./u)[0].length === 2;

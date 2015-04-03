@@ -135,8 +135,8 @@
 </li>
 <li class="title">Comprehensions
     <ul>
-<li class="subtitle subtitle_ArrayComprehension">
-    <a href="#ArrayComprehension">Array Comprehension</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_ListComprehension">
+    <a href="#ListComprehension">List Comprehension</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_GeneratorComprehension">
     <a href="#GeneratorComprehension">Generator Comprehension</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
@@ -907,14 +907,15 @@ supports asynchronous programming.</div>
 </div>
     </a>
 </div>
-<div class="showcase showcase_ArrayComprehension">    <a name="ArrayComprehension">
+<div class="showcase showcase_ListComprehension">    <a name="ListComprehension">
         <div class="title">Comprehensions</div>
-        <div class="subtitle">Array Comprehension</div>
-        <div class="desc">FIXME</div>
+        <div class="subtitle">List Comprehension</div>
+        <div class="desc">Concise FP-style way to create a list/array, based on another list where
+each entry is the result of some operation.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> results<span class="punctuation"> = </span><span class="punctuation">[</span>
-    <span class="mark"><span class="keyword">for</span> <span class="punctuation">(</span>c <span class="keyword">of</span> customers<span class="punctuation">)</span></span>
+    <span class="mark"><span class="keyword">for</span> <span class="punctuation">(</span>c </span><span class="keyword">of</span><span class="mark"> customers<span class="punctuation">)</span></span>
         <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city <span class="punctuation">===</span> <span class="literal">"Munich"</span><span class="punctuation">)</span>
             <span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span> <span class="punctuation">]</span><span class="semi">;</span>
 </div>
@@ -924,7 +925,7 @@ supports asynchronous programming.</div>
         <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">var</span> results<span class="punctuation"> = </span><span class="mark"><span class="punctuation">[</span><span class="punctuation">]</span></span><span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> c <span class="keyword">in</span> customers<span class="punctuation">)</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> c <span class="mark"><span class="keyword">in</span></span> customers<span class="punctuation">)</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>customers<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>c<span class="punctuation">)</span><span class="punctuation">)</span>
         <span class="keyword">if</span> <span class="punctuation">(</span>c<span class="punctuation">.</span>city <span class="punctuation">===</span> <span class="literal">"Munich"</span><span class="punctuation">)</span>
             <span class="mark">result<span class="punctuation">.</span>push</span><span class="punctuation">(</span><span class="punctuation">{</span> name: c<span class="punctuation">.</span>name<span class="punctuation">,</span> age: c<span class="punctuation">.</span>age <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
@@ -936,7 +937,8 @@ supports asynchronous programming.</div>
 <div class="showcase showcase_GeneratorComprehension">    <a name="GeneratorComprehension">
         <div class="title">Comprehensions</div>
         <div class="subtitle">Generator Comprehension</div>
-        <div class="desc">FIXME</div>
+        <div class="desc">Concise FP-style way to create an object, based on another object where
+each entry is the result of some operation.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> results<span class="punctuation"> = </span><span class="punctuation">(</span>
@@ -982,7 +984,7 @@ parseInt<span class="punctuation">(</span><span class="literal">"767"</span><spa
 <div class="showcase showcase_ExtendedUnicodeStringRegExpLiterals">    <a name="ExtendedUnicodeStringRegExpLiterals">
         <div class="title">Extended Literals</div>
         <div class="subtitle">Extended Unicode String & RegExp Literals</div>
-        <div class="desc">FIXME</div>
+        <div class="desc">Extended support using Unicode within strings and regular expressions.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="literal">"𠮷"</span><span class="punctuation">.</span>length <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
