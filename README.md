@@ -1,5 +1,5 @@
 
-# ES6-Features
+# http://es6-features.org/
 
-## ECMAScript 6: Feature Overview &amp; Comparison
+### ECMAScript 6: Feature Overview &amp; Comparison
 
