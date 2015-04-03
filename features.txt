@@ -302,8 +302,8 @@ Support for exporting/importing symbols from/to modules without global namespace
 5| var |sum = LibMath.sum|, |pi = LibMath.pi|;
 5| alert("2π = " + sum(pi, pi));
 
-Default & Wildcard Symbol Export/Import
----------------------------------------
+Default & Wildcard
+------------------
 
 Marking a symbol as the default exported symbol and mass-mixin of symbols.
 
