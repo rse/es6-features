@@ -181,15 +181,15 @@ Static Members
 
 Simple support for static class members.
 
-6| |class| Rectangle |extends| Shape {
+6| |class Rectangle| extends Shape {
 6|     ...
-6|     |static| defaultRectangle () {
+6|     |static defaultRectangle| () {
 6|         return new Rectangle("default", 0, 0, 100, 100);
 6|     }
 6| }
-6| |class| Circle |extends| Shape {
+6| |class Circle| extends Shape {
 6|     ...
-6|     |static| defaultCircle () {
+6|     |static defaultCircle| () {
 6|         return new Circle("default", 0, 0, 100);
 6|     }
 6| }
