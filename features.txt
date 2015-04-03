@@ -460,10 +460,28 @@ Spreading of array elements into individual parameters of a function.
 Iterator
 =========
 
-Iterator For-Of Operator
+Iterator & For-Of Operator
 --------------------------
 
 FIXME
+
+6| let fibonacci = {
+6|     |[Symbol.iterator]()| {
+6|         let pre = 0, cur = 1;
+6|         return {
+6|            |next()| {
+6|                [ pre, cur ] = [ cur, pre + cur ];
+6|                return |{ done: false, value: cur }|;
+6|            }
+6|         };
+6|     }
+6| }
+6|
+6| for (let n of fibonacci) {
+6|     if (n > 1000)
+6|         break;
+6|     console.log(n);
+6| }
 
 5| var fibonacci = {
 5|     next: ((function () {
@@ -484,24 +502,6 @@ FIXME
 5|         break;
 5|     console.log(n);
 5| }
-
-6| let fibonacci = {
-6|     |[Symbol.iterator]()| {
-6|         let pre = 0, cur = 1;
-6|         return {
-6|            |next()| {
-6|                [ pre, cur ] = [ cur, pre + cur ];
-6|                return |{ done: false, value: cur }|;
-6|            }
-6|         };
-6|     }
-6| }
-6|
-6| for (let n of fibonacci) {
-6|     if (n > 1000)
-6|         break;
-6|     console.log(n);
-6| }
 
 Generators
 ----------

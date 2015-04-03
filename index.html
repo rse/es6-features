@@ -128,7 +128,7 @@
 <li class="title">Iterator
     <ul>
 <li class="subtitle subtitle_IteratorForOfOperator">
-    <a href="#IteratorForOfOperator">Iterator For-Of Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
+    <a href="#IteratorForOfOperator">Iterator & For-Of Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_Generators">
     <a href="#Generators">Generators</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
@@ -800,7 +800,55 @@ f<span class="mark"><span class="punctuation">.</span>apply</span><span class="p
 </div>
 <div class="showcase showcase_IteratorForOfOperator">    <a name="IteratorForOfOperator">
         <div class="title">Iterator</div>
-        <div class="subtitle">Iterator For-Of Operator</div>
+        <div class="subtitle">Iterator & For-Of Operator</div>
+        <div class="desc">FIXME</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">let</span> fibonacci<span class="punctuation"> = </span><span class="punctuation">{</span>
+    <span class="mark"><span class="punctuation">[</span>Symbol<span class="punctuation">.</span>iterator<span class="punctuation">]</span><span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
+        <span class="keyword">let</span> pre<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">,</span> cur<span class="punctuation"> = </span><span class="literal">1</span><span class="semi">;</span>
+        <span class="keyword">return</span> <span class="punctuation">{</span>
+           <span class="mark">next<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
+               <span class="punctuation">[</span> pre<span class="punctuation">,</span> cur <span class="punctuation">]</span><span class="punctuation"> = </span><span class="punctuation">[</span> cur<span class="punctuation">,</span> pre <span class="punctuation">+</span> cur <span class="punctuation">]</span><span class="semi">;</span>
+               <span class="keyword">return</span> <span class="mark"><span class="punctuation">{</span> done: false<span class="punctuation">,</span> value: cur <span class="punctuation">}</span></span><span class="semi">;</span>
+           <span class="punctuation">}</span>
+        <span class="punctuation">}</span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> n <span class="keyword">of</span> fibonacci<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">if</span> <span class="punctuation">(</span>n <span class="punctuation">&gt;</span> <span class="literal">1000</span><span class="punctuation">)</span>
+        break<span class="semi">;</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+        <div class="arrow"><i class="fa fa-caret-up"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> fibonacci<span class="punctuation"> = </span><span class="punctuation">{</span>
+    next: <span class="punctuation">(</span><span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">var</span> pre<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">,</span> cur<span class="punctuation"> = </span><span class="literal">1</span><span class="semi">;</span>
+        <span class="keyword">return</span> <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+            tmp<span class="punctuation"> = </span>pre<span class="semi">;</span>
+            pre<span class="punctuation"> = </span>cur<span class="semi">;</span>
+            cur <span class="punctuation">+</span>= tmp<span class="semi">;</span>
+            <span class="keyword">return</span> cur<span class="semi">;</span>
+        <span class="punctuation">}</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+
+<span class="keyword">var</span> n<span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="punctuation">;</span><span class="punctuation">;</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    n<span class="punctuation"> = </span>fibonacci<span class="punctuation">.</span>next<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="keyword">if</span> <span class="punctuation">(</span>n <span class="punctuation">&gt;</span> <span class="literal">1000</span><span class="punctuation">)</span>
+        break<span class="semi">;</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
     </a>
 </div>
 <div class="showcase showcase_Generators">    <a name="Generators">
