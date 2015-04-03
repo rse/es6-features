@@ -136,7 +136,7 @@ More intuitive, OOP-style and boilerplate-free classes.
 5|     this.id = id;
 5|     this.move(x, y);
 5| };
-5| Shape.|prototype.move| = function (x, y) {
+5| Shape.|prototype.move| = |function| (x, y) {
 5|     this.x = x;
 5|     this.y = y;
 5| };
@@ -148,27 +148,27 @@ Class Inheritance
 More intuitive, OOP-style and boilerplate-free inheritance.
 
 6| |class| Rectangle |extends| Shape {
-6|     |constructor| (id, x, y, width, height) {
+6|     constructor (id, x, y, width, height) {
 6|         |super|(id, x, y);
 6|         this.width  = width;
 6|         this.height = height;
 6|     }
 6| }
 6| |class| Circle |extends| Shape {
-6|     |constructor| (id, x, y, radius) {
+6|     constructor (id, x, y, radius) {
 6|         |super|(id, x, y);
 6|         this.radius = radius;
 6|     }
 6| }
 
-5| var Rectangle = |function| (id, x, y, width, height) {
+5| var Rectangle = function (id, x, y, width, height) {
 5|     |Shape.call|(this, id, x, y);
 5|     this.width  = width;
 5|     this.height = height;
 5| };
 5| |Rectangle.prototype = Object.create(Shape.prototype)|;
 5| |Rectangle.prototype.constructor = Rectangle|;
-5| var Circle = |function| (id, x, y, radius) {
+5| var Circle = function (id, x, y, radius) {
 5|     |Shape.call|(this, id, x, y);
 5|     this.radius = radius;
 5| };
