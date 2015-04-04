@@ -184,7 +184,7 @@ Flexible expression interpolation for arbitrary methods.
 
 6|get|`http://example.com/foo?bar=${bar}&quux=${quux}`|;
 
-5|get(|[ "http://example.com/foo?bar=", "&quux=" ], [ bar, quux ]|);
+5|get(|[ "http://example.com/foo?bar=", "&quux=", "" ], [ bar, quux ]|);
 
 
 Extended Literals
