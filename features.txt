@@ -333,7 +333,7 @@ Support for exporting/importing symbols from/to modules without global namespace
 6| alert("2π = " + math.sum(math.pi, math.pi));
 6|
 6| //  otherApp.js
-6| |import { sum, pi }| from "lib/math";;
+6| |import { sum, pi }| from "lib/math";
 6| alert("2π = " + sum(pi, pi));
 
 5| //  lib/math.js
