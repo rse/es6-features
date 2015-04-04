@@ -63,16 +63,18 @@ equivalents.
   ECMAScript 5 is a nice and decent programming language, of course. But
   because of its history, it has some nasty aspects which ECMAScript 6
   finally resolves. As programming never is just about getting the necessary
-  functionality done, it is advised to also use the best lanuage,
+  functionality done, it is advised to also use the best language,
   too. ECMAScript 6's language design is cleaner than ECMAScript 5,
   its syntax increases the expressiveness of your code, it decreases the
   necessary boilerplate code (e.g. `function` vs. arrow syntax) and it
   especially let you get rid of some very nasty but required hacks and
   workarounds from the ECMAScript 5 era (e.g. `var self = this`).
+  So, ECMAScript 5 might be sufficient, but ECMAScript 6 nevertheless
+  is an important improvement.
 
 - *I've found a mistake, how can I contribute?*
 
-  The source is the file `features.txt`, everything else on es6-features.org is
+  The source is the file `features.txt`, everything else on [es6-features.org](http://es6-features.org) is
   just generated out of it. Fork this project on Github, edit the file
-  `features.txt` and then send a pull request.
+  `features.txt` and then please send a pull request.
 
