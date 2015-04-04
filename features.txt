@@ -37,7 +37,7 @@ Block-scoped constants without constant hoisting.
 5| |var| PI = |(function () {|
 5|     var PI = 3.141593;
 5|     return function () { return PI; };
-5| |})();|
+5| |})()|;
 5| PI|()| > 3.0;
 
 Block-Scoped Variables
@@ -338,7 +338,7 @@ Support for exporting/importing symbols from/to modules without global namespace
 6| alert("2π = " + sum(pi, pi));
 
 5| //  lib/math.js
-5| |LibMath = {};|
+5| |LibMath = {}|;
 5| |LibMath.sum| = function (x, y) { return x + y };
 5| |LibMath.pi| = 3.141593;
 5|
@@ -368,7 +368,7 @@ Marking a symbol as the default exported symbol and mass-mixin of symbols.
 5| |LibMathPP = {}|;
 5| |for (symbol in LibMath)|
 5|     |if (LibMath.hasOwnProperty(symbol))|
-5|         |LibMathPP[symbol] = LibMath[symbol];|
+5|         |LibMathPP[symbol] = LibMath[symbol]|;
 5| |LibMathPP.e| = 2.71828182846;
 5| |LibMathPP.exp| = function (x) { return Math.exp(x) };
 5|
