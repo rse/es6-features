@@ -35,7 +35,7 @@ Block-scoped variables without variable hoisting.
 6|     |let x| = a[i];
 6|     ...
 6| }
-6| for (|let i| = 0; i < b.length; i++)
+6| for (|let i| = 0; i < b.length; i++) {
 6|     |let y| = b[i];
 6|     ...
 6| }
