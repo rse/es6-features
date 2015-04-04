@@ -23,7 +23,10 @@
 */
 
 @import "lib/sanitize/sanitize.css";
-@import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans.css";
+@import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-Light.css";
+@import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-Regular.css";
+@import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-Bold.css";
+@import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-ExtraBold.css";
 @import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-Regular.css";
 @import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-Bold.css";
 @import "lib/typopro/TypoPRO-DejaVu/TypoPRO-DejaVuSansMono-Oblique.css";
@@ -224,12 +227,15 @@ body {
 }
 .content .js .title {
     font-size: 80%;
-    font-weight: 200;
+    font-weight: 300;
     color: #cccccc;
     background-color: #333333;
     padding: 4px 10px 2px 10px;
     -webkit-border-radius: 4px 4px 0px 0px;
     border-radius: 4px 4px 0px 0px;
+}
+.content .js .title b {
+    font-weight: bold;
 }
 .content .js .title .style {
     cursor: pointer;
