@@ -696,6 +696,7 @@ Memory-leak-free Object-key’d side-by-side data-structures.
 
 6| let isMarked     = new |WeakSet|();
 6| let attachedData = new |WeakMap|();
+6|
 6| export class Node {
 6|     constructor (id)   { this.id = id;                  }
 6|     mark        ()     { |isMarked.add|(this);            }
@@ -704,6 +705,7 @@ Memory-leak-free Object-key’d side-by-side data-structures.
 6|     set data    (data) { |attachedData.set|(this, data);  }
 6|     get data    ()     { return |attachedData.get|(this); }
 6| }
+6|
 6| new foo = new Node("foo");
 6| JSON.stringify(foo) === |'{"id":"foo"}'|;
 6| foo.mark();
