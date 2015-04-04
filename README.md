@@ -23,6 +23,8 @@ equivalents.
 
   Have a look at the regularily updated
   [ECMAScript compatibility table](http://kangax.github.io/compat-table/es6/) by kangax.
+  There, especially notice the column "Babel + core-js" as this is what can be achieved
+  today with transpiling (and that's fully sufficient for practice).
 
 - *Where can I find the latest ECMAScript 6 standard?*
 
