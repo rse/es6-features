@@ -3,6 +3,9 @@
 
 ### ECMAScript 6: Feature Overview &amp; Comparison
 
+*Copyright (c) 2015 Ralf S. Engelschall &lt;rse@engelschall.com&gt;*<br/>
+Licensed under MIT license.
+
 This is the source of the website [es6-features.org](http://es6-features.org/),
 a small overview of
 [ECMAScript 6](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts)
