@@ -342,6 +342,8 @@ Intuitive and flexible destructuring of Objects into individual parameters durin
 Fail-Soft Destructuring
 -----------------------
 
+Fail-soft destructuring, optionally with defaults.
+
 6| var list = [ 7, 42 ];
 6| var [ a = 1, b = 2, |c = 3|, d ] = list;
 6| a === 7;
