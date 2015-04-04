@@ -4,6 +4,7 @@
 ### ECMAScript 6: Feature Overview &amp; Comparison
 
 Copyright (c) 2015 Ralf S. Engelschall &lt;rse@engelschall.com&gt;<br/>
+Partially based on [code snippets](http://git.io/es6features) by Luke Hoban.<br/>
 Licensed under MIT license.
 
 This is the source of the website [es6-features.org](http://es6-features.org/),
