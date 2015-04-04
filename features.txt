@@ -184,7 +184,7 @@ Flexible expression interpolation for arbitrary methods.
 
 6| get|`|http://example.com/foo?bar=|${|bar + baz|}|&quux=|${|quux|}`|;
 
-5| get|([ "|http://example.com/foo?bar=|", "|&quux=|", "" ],|
+5| get|([ |"http://example.com/foo?bar="|,| "&quux="|,| ""| ],|
 5|     |[| bar + baz, quux |])|;
 
 
