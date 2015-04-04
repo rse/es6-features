@@ -339,6 +339,26 @@ Intuitive and flexible destructuring of Objects into individual parameters durin
 5| f({ name: "foo", val:  7 });
 5| g({ name: "bar", val: 42 });
 
+Fail-Soft Destructuring
+-----------------------
+
+6| var list = [ 7, 42 ];
+6| var [ a = 1, b = 2, |c = 3|, d ] = list;
+6| a === 7;
+6| b === 42;
+6| c === 3;
+6| d === undefined;
+
+5| var list = [ 7, 42 ];
+5| var a = typeof list[0] !== "undefined" ? list[0] : 1;
+5| var b = typeof list[1] !== "undefined" ? list[1] : 2;
+5| var c = |typeof list[2] !== "undefined" ? list[2] : 3|;
+5| var d = |typeof list[3] !== "undefined" ? list[3] : undefined|;
+5| a === 7;
+5| b === 42;
+5| c === 3;
+5| d === undefined;
+
 
 Modules
 =======
