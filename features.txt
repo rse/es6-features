@@ -651,7 +651,7 @@ Cleaner data-structure for common algorithms based on sets.
 6| s.|add("hello")|.|add("goodbye")|.|add("hello")|;
 6| s.|size| === 2;
 6| s.|has("hello")| === true;
-6| for (let val |of| m.|values()|) // insertion order
+6| for (let val |of| s.|values()|) // insertion order
 6|     console.log(val);
 
 5| var s = |{}|;
