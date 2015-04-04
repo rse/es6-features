@@ -261,9 +261,11 @@ body {
 }
 .content .js.es5 .code {
     border-left: 10px solid #990000;
+    border-right: 10px solid #ffffff;
 }
 .content .js.es6 .code {
     border-left: 10px solid #009900;
+    border-right: 10px solid #ffffff;
 }
 .content .js .code .keyword {
     font-weight: bold;
