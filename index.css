@@ -209,6 +209,7 @@ body {
 }
 
 .content .desc {
+    font-size: 12pt;
     color: #ffffff;
     margin: 8px 0px 8px 0px;
 }
