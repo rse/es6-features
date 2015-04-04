@@ -742,32 +742,79 @@ Promise Usage
 
 First class representation of a value that may be made asynchronously and be available in the future.
 
-6| function timeout (duration = 0) {
-6|     return |new Promise((resolve, reject) =>| {
-6|         setTimeout(|resolve|, duration);
+6| function msgAfterTimeout (msg, who, timeout) {
+6|     return |new Promise|((|resolve|, reject) => {
+6|         setTimeout(() => |resolve|(`${msg} Hello ${who}!`), timeout);
 6|     });
 6| }
-6| timeout(100).|then|(() => {
-6|     return timeout(200);
-6| }).|then(() => {
-6|     console.log("done waiting 300ms");
-6| })
+6| msgAfterTimeout("", "Foo", 100).|then|((msg) =>
+6|     msgAfterTimeout(msg, "Bar", 200);
+6| ).|then|((msg) => {
+6|     console.log(`done after 300ms:${msg}`);
+6| });
 
-5| // no equivalent in ES5
+5| function msgAfterTimeout (msg, who, timeout, |onDone|) {
+5|     setTimeout(function () {
+5|         |onDone|(msg + " Hello " + who + "!");
+5|     }, timeout);
+5| }
+5| msgAfterTimeout("", "Foo", 100|, function| (msg) {
+5|     msgAfterTimeout(msg, "Bar", 200|, function| (msg) {
+5|         console.log("done after 300ms:" + msg);
+5|     });
+5| });
 
 Promise Combination
 -------------------
 
-Combine one or more promises into new promises.
+Combine one or more promises into new promises without having to take
+care of ordering of the underlying asynchronous operations yourself.
 
+6| function fetchAsync (url, timeout, onData, onError) {
+6|     ...
+6| }
+6| let fetchPromised = (url, timeout) => {
+6|     return |new Promise|((|resolve|, |reject|) => {
+6|         fetchAsync(url, timeout, |resolve|, |reject|);
+6|     });
+6| }
 6| |Promise.all|([
-6|     timeout(100),
-6|     timeout(200)
-6| ]).|then|(() => {
-6|     console.log("done waiting 200ms");
+6|     fetchPromised("http://backend/foo.txt", 500),
+6|     fetchPromised("http://backend/bar.txt", 500),
+6|     fetchPromised("http://backend/baz.txt", 500)
+6| ]).|then|((data) => {
+6|     let [ foo, bar, baz ] = data;
+6|     console.log(`success: foo=${foo} bar=${bar} baz=${baz}`);
+6| }, (err) => {
+6|     console.log(`error: ${err}`);
 6| });
 
-5| // no equivalent in ES5
+5| function fetchAsync (url, timeout, onData, onError) {
+5|     ...
+5| }
+5| function |fetchAll| (request, onData, onError) {
+5|     var result = [], results = 0;
+5|     for (var i = 0; i < request.length; i++) {
+5|         result[i] = null;
+5|         (function (i) {
+5|             fetchAsync(request[i].url, request[i].timeout, function (data) {
+5|                 |result[i] = data|;
+5|                 |if (++results === request.length)|
+5|                     |onData(result)|;
+5|             }, onError);
+5|         })(i);
+5|     }
+5| }
+5| |fetchAll|([
+5|     { url: "http://backend/foo.txt", timeout: 500 },
+5|     { url: "http://backend/bar.txt", timeout: 500 },
+5|     { url: "http://backend/baz.txt", timeout: 500 }
+5| ], function (data) {
+5|     var foo = data[0], bar = data[0], baz = data[0];
+5|     console.log("success: foo=" + foo + " bar=" + bar + " baz=" + baz);
+5| }, function (err) {
+5|     console.log("error: " + err);
+5| });
 
 
 Meta-Programming

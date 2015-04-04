@@ -34,7 +34,7 @@
     </head>
     <body>
         <a href="https://github.com/rse/es6-features">
-            <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 2000;"
+            <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 2000;"
                  src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
                  alt="Fork me on GitHub"
                  data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"/>
@@ -404,7 +404,7 @@ want to eat <span class="mark">$<span class="punctuation">{</span>num <span clas
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">get<span class="mark"><span class="punctuation">(</span><span class="punctuation">[</span> </span><span class="literal">"http://example<span class="punctuation">.</span>com/foo?bar="</span><span class="mark"><span class="punctuation">,</span></span> <span class="literal">"<span class="punctuation"><span class="punctuation">&amp;</span></span>quux="</span><span class="mark"><span class="punctuation">,</span></span> ""<span class="mark"> <span class="punctuation">]</span><span class="punctuation">,</span></span>
+    <div class="code">get<span class="mark"><span class="punctuation">(</span><span class="punctuation">[</span> </span><span class="literal">"http://example<span class="punctuation">.</span>com/foo?bar="</span><span class="mark"><span class="punctuation">,</span></span> <span class="literal">"<span class="punctuation"><span class="punctuation">&amp;</span></span>quux="</span><span class="mark"><span class="punctuation">,</span></span> <span class="literal">""</span><span class="mark"> <span class="punctuation">]</span><span class="punctuation">,</span></span>
     <span class="mark"><span class="punctuation">[</span></span> bar <span class="punctuation">+</span> baz<span class="punctuation">,</span> quux <span class="mark"><span class="punctuation">]</span><span class="punctuation">)</span></span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
@@ -1048,37 +1048,15 @@ obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span 
     <div class="desc">First class representation of a value that may be made asynchronously and be available in the future.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> timeout <span class="punctuation">(</span>duration<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> <span class="mark"><span class="keyword">new</span> Promise<span class="punctuation">(</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span></span> <span class="punctuation">{</span>
-        setTimeout<span class="punctuation">(</span><span class="mark">resolve</span><span class="punctuation">,</span> duration<span class="punctuation">)</span><span class="semi">;</span>
+    <div class="code"><span class="keyword">function</span> msgAfterTimeout <span class="punctuation">(</span>msg<span class="punctuation">,</span> who<span class="punctuation">,</span> timeout<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="mark"><span class="keyword">new</span> Promise</span><span class="punctuation">(</span><span class="punctuation">(</span><span class="mark">resolve</span><span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+        setTimeout<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="mark">resolve</span><span class="punctuation">(</span><span class="literal">`$<span class="punctuation">{</span>msg<span class="punctuation">}</span> Hello $<span class="punctuation">{</span>who<span class="punctuation">}</span>!`</span><span class="punctuation">)</span><span class="punctuation">,</span> timeout<span class="punctuation">)</span><span class="semi">;</span>
     <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span>
-timeout<span class="punctuation">(</span><span class="literal">100</span><span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
-    <span class="keyword">return</span> timeout<span class="punctuation">(</span><span class="literal">200</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">.</span>|then<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
-    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"done waiting 300ms"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="punctuation">)</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="PromiseCombination" class="showcase showcase_PromiseCombination">    <div class="title">Promises</div>
-    <div class="subtitle">Promise Combination</div>
-    <div class="desc">Combine one or more promises into new promises.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="mark">Promise<span class="punctuation">.</span>all</span><span class="punctuation">(</span><span class="punctuation">[</span>
-    timeout<span class="punctuation">(</span><span class="literal">100</span><span class="punctuation">)</span><span class="punctuation">,</span>
-    timeout<span class="punctuation">(</span><span class="literal">200</span><span class="punctuation">)</span>
-<span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
-    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"done waiting 200ms"</span><span class="punctuation">)</span><span class="semi">;</span>
+msgAfterTimeout<span class="punctuation">(</span><span class="literal">""</span><span class="punctuation">,</span> <span class="literal">"Foo"</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span>msg<span class="punctuation">)</span> <span class="punctuation">=&gt;</span>
+    msgAfterTimeout<span class="punctuation">(</span>msg<span class="punctuation">,</span> <span class="literal">"Bar"</span><span class="punctuation">,</span> <span class="literal">200</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span>msg<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">`done after 300ms:$<span class="punctuation">{</span>msg<span class="punctuation">}</span>`</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
@@ -1086,7 +1064,76 @@ timeout<span class="punctuation">(</span><span class="literal">100</span><span c
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <div class="code"><span class="keyword">function</span> msgAfterTimeout <span class="punctuation">(</span>msg<span class="punctuation">,</span> who<span class="punctuation">,</span> timeout<span class="punctuation">,</span> <span class="mark">onDone</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    setTimeout<span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark">onDone</span><span class="punctuation">(</span>msg <span class="punctuation">+</span> <span class="literal">" Hello "</span> <span class="punctuation">+</span> who <span class="punctuation">+</span> <span class="literal">"!"</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">,</span> timeout<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+msgAfterTimeout<span class="punctuation">(</span><span class="literal">""</span><span class="punctuation">,</span> <span class="literal">"Foo"</span><span class="punctuation">,</span> <span class="literal">100</span><span class="mark"><span class="punctuation">,</span> <span class="keyword">function</span></span> <span class="punctuation">(</span>msg<span class="punctuation">)</span> <span class="punctuation">{</span>
+    msgAfterTimeout<span class="punctuation">(</span>msg<span class="punctuation">,</span> <span class="literal">"Bar"</span><span class="punctuation">,</span> <span class="literal">200</span><span class="mark"><span class="punctuation">,</span> <span class="keyword">function</span></span> <span class="punctuation">(</span>msg<span class="punctuation">)</span> <span class="punctuation">{</span>
+        console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"done after 300ms:"</span> <span class="punctuation">+</span> msg<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="PromiseCombination" class="showcase showcase_PromiseCombination">    <div class="title">Promises</div>
+    <div class="subtitle">Promise Combination</div>
+    <div class="desc">Combine one or more promises into new promises without having to take
+care of ordering of the underlying asynchronous operations yourself.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">function</span> fetchAsync <span class="punctuation">(</span>url<span class="punctuation">,</span> timeout<span class="punctuation">,</span> onData<span class="punctuation">,</span> onError<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+<span class="punctuation">}</span>
+<span class="keyword">let</span> fetchPromised<span class="punctuation"> = </span><span class="punctuation">(</span>url<span class="punctuation">,</span> timeout<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="mark"><span class="keyword">new</span> Promise</span><span class="punctuation">(</span><span class="punctuation">(</span><span class="mark">resolve</span><span class="punctuation">,</span> <span class="mark">reject</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+        fetchAsync<span class="punctuation">(</span>url<span class="punctuation">,</span> timeout<span class="punctuation">,</span> <span class="mark">resolve</span><span class="punctuation">,</span> <span class="mark">reject</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+<span class="mark">Promise<span class="punctuation">.</span>all</span><span class="punctuation">(</span><span class="punctuation">[</span>
+    fetchPromised<span class="punctuation">(</span><span class="literal">"http://backend/foo<span class="punctuation">.</span>txt"</span><span class="punctuation">,</span> <span class="literal">500</span><span class="punctuation">)</span><span class="punctuation">,</span>
+    fetchPromised<span class="punctuation">(</span><span class="literal">"http://backend/bar<span class="punctuation">.</span>txt"</span><span class="punctuation">,</span> <span class="literal">500</span><span class="punctuation">)</span><span class="punctuation">,</span>
+    fetchPromised<span class="punctuation">(</span><span class="literal">"http://backend/baz<span class="punctuation">.</span>txt"</span><span class="punctuation">,</span> <span class="literal">500</span><span class="punctuation">)</span>
+<span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">.</span><span class="mark">then</span><span class="punctuation">(</span><span class="punctuation">(</span>data<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    <span class="keyword">let</span> <span class="punctuation">[</span> foo<span class="punctuation">,</span> bar<span class="punctuation">,</span> baz <span class="punctuation">]</span><span class="punctuation"> = </span>data<span class="semi">;</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">`success: foo=$<span class="punctuation">{</span>foo<span class="punctuation">}</span> bar=$<span class="punctuation">{</span>bar<span class="punctuation">}</span> baz=$<span class="punctuation">{</span>baz<span class="punctuation">}</span>`</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="punctuation">,</span> <span class="punctuation">(</span>err<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">`error: $<span class="punctuation">{</span>err<span class="punctuation">}</span>`</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">function</span> fetchAsync <span class="punctuation">(</span>url<span class="punctuation">,</span> timeout<span class="punctuation">,</span> onData<span class="punctuation">,</span> onError<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span>
+<span class="punctuation">}</span>
+<span class="keyword">function</span> <span class="mark">fetchAll</span> <span class="punctuation">(</span>request<span class="punctuation">,</span> onData<span class="punctuation">,</span> onError<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">var</span> result<span class="punctuation"> = </span><span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span> results<span class="punctuation"> = </span><span class="literal">0</span><span class="semi">;</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> i<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">;</span> i <span class="punctuation">&lt;</span> request<span class="punctuation">.</span>length<span class="punctuation">;</span> i<span class="punctuation">+</span><span class="punctuation">+</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        result<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation"> = </span>null<span class="semi">;</span>
+        <span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span>i<span class="punctuation">)</span> <span class="punctuation">{</span>
+            fetchAsync<span class="punctuation">(</span>request<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>url<span class="punctuation">,</span> request<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>timeout<span class="punctuation">,</span> <span class="keyword">function</span> <span class="punctuation">(</span>data<span class="punctuation">)</span> <span class="punctuation">{</span>
+                <span class="mark">result<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation"> = </span>data</span><span class="semi">;</span>
+                <span class="mark"><span class="keyword">if</span> <span class="punctuation">(</span><span class="punctuation">+</span><span class="punctuation">+</span>results <span class="punctuation">===</span> request<span class="punctuation">.</span>length<span class="punctuation">)</span></span>
+                    <span class="mark">onData<span class="punctuation">(</span>result<span class="punctuation">)</span></span><span class="semi">;</span>
+            <span class="punctuation">}</span><span class="punctuation">,</span> onError<span class="punctuation">)</span><span class="semi">;</span>
+        <span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">(</span>i<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+<span class="mark">fetchAll</span><span class="punctuation">(</span><span class="punctuation">[</span>
+    <span class="punctuation">{</span> url: <span class="literal">"http://backend/foo<span class="punctuation">.</span>txt"</span><span class="punctuation">,</span> timeout: <span class="literal">500</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> url: <span class="literal">"http://backend/bar<span class="punctuation">.</span>txt"</span><span class="punctuation">,</span> timeout: <span class="literal">500</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> url: <span class="literal">"http://backend/baz<span class="punctuation">.</span>txt"</span><span class="punctuation">,</span> timeout: <span class="literal">500</span> <span class="punctuation">}</span>
+<span class="punctuation">]</span><span class="punctuation">,</span> <span class="keyword">function</span> <span class="punctuation">(</span>data<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">var</span> foo<span class="punctuation"> = </span>data<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">,</span> bar<span class="punctuation"> = </span>data<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">,</span> baz<span class="punctuation"> = </span>data<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="semi">;</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"success: foo="</span> <span class="punctuation">+</span> foo <span class="punctuation">+</span> <span class="literal">" bar="</span> <span class="punctuation">+</span> bar <span class="punctuation">+</span> <span class="literal">" baz="</span> <span class="punctuation">+</span> baz<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="punctuation">,</span> <span class="keyword">function</span> <span class="punctuation">(</span>err<span class="punctuation">)</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"error: "</span> <span class="punctuation">+</span> err<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
