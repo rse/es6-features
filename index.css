@@ -190,6 +190,7 @@ body {
     left: 380px;
     top: 80px;
     width: calc(100% - 380px - 30px);
+    padding-bottom: 100px;
 }
 
 .content .title {
