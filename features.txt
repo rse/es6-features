@@ -182,9 +182,10 @@ Custom Interpolation
 
 Flexible expression interpolation for arbitrary methods.
 
-6|get|`http://example.com/foo?bar=${bar}&quux=${quux}`|;
+6|get|`http://example.com/foo?bar=${bar + baz}&quux=${quux}`|;
 
-5|get(|[ "http://example.com/foo?bar=", "&quux=", "" ], [ bar, quux ]|);
+5|get|([ "|http://example.com/foo?bar=|", "|&quux=|", "" ],|
+5|    |[| bar + baz, quux |]|);
 
 
 Extended Literals

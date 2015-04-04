@@ -397,14 +397,15 @@ want to eat <span class="mark">$<span class="punctuation">{</span>num <span clas
     <div class="desc">Flexible expression interpolation for arbitrary methods.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">get<span class="mark"><span class="literal">`http://example<span class="punctuation">.</span>com/foo?bar=$<span class="punctuation">{</span>bar<span class="punctuation">}</span><span class="punctuation"><span class="punctuation">&amp;</span></span>quux=$<span class="punctuation">{</span>quux<span class="punctuation">}</span>`</span></span><span class="semi">;</span>
+    <div class="code">get<span class="mark"><span class="literal">`http://example<span class="punctuation">.</span>com/foo?bar=$<span class="punctuation">{</span>bar <span class="punctuation">+</span> baz<span class="punctuation">}</span><span class="punctuation"><span class="punctuation">&amp;</span></span>quux=$<span class="punctuation">{</span>quux<span class="punctuation">}</span>`</span></span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">get<span class="punctuation">(</span><span class="mark"><span class="punctuation">[</span> <span class="literal">"http://example<span class="punctuation">.</span>com/foo?bar="</span><span class="punctuation">,</span> <span class="literal">"<span class="punctuation"><span class="punctuation">&amp;</span></span>quux="</span><span class="punctuation">,</span> "" <span class="punctuation">]</span><span class="punctuation">,</span> <span class="punctuation">[</span> bar<span class="punctuation">,</span> quux <span class="punctuation">]</span></span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <div class="code">get<span class="mark"><span class="punctuation">(</span><span class="punctuation">[</span> <span class="literal">"</span>http://example<span class="punctuation">.</span>com/foo?bar=<span class="mark">"</span><span class="punctuation">,</span> <span class="literal">"</span><span class="punctuation"><span class="punctuation">&amp;</span></span>quux=<span class="mark">"</span><span class="punctuation">,</span> "" <span class="punctuation">]</span><span class="punctuation">,</span></span>
+   <span class="mark"><span class="punctuation">[</span></span> bar <span class="punctuation">+</span> baz<span class="punctuation">,</span> quux <span class="mark"><span class="punctuation">]</span></span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
