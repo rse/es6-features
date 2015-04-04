@@ -632,11 +632,11 @@ g<span class="punctuation">(</span><span class="punctuation">{</span> name: <spa
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; style: <span class="style modernized">modernized</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">var</span> list<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">7</span><span class="punctuation">,</span> <span class="literal">42</span> <span class="punctuation">]</span><span class="semi">;</span>
-<span class="keyword">var</span> <span class="punctuation">[</span> a<span class="punctuation"> = </span><span class="literal">1</span><span class="punctuation">,</span> b<span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">,</span> <span class="mark">c<span class="punctuation"> = </span><span class="literal">3</span></span><span class="punctuation">,</span> d <span class="punctuation">]</span><span class="punctuation"> = </span>list<span class="semi">;</span>
+<span class="keyword">var</span> <span class="punctuation">[</span> a<span class="punctuation"> = </span><span class="literal">1</span><span class="punctuation">,</span> b<span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">,</span> <span class="mark">c<span class="punctuation"> = </span><span class="literal">3</span></span><span class="punctuation">,</span> <span class="mark">d</span> <span class="punctuation">]</span><span class="punctuation"> = </span>list<span class="semi">;</span>
 a <span class="punctuation">===</span> <span class="literal">7</span><span class="semi">;</span>
 b <span class="punctuation">===</span> <span class="literal">42</span><span class="semi">;</span>
-c <span class="punctuation">===</span> <span class="literal">3</span><span class="semi">;</span>
-d <span class="punctuation">===</span> undefined<span class="semi">;</span>
+c <span class="punctuation">===</span> <span class="mark"><span class="literal">3</span></span><span class="semi">;</span>
+d <span class="punctuation">===</span> <span class="mark">undefined</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -646,12 +646,12 @@ d <span class="punctuation">===</span> undefined<span class="semi">;</span>
     <div class="code"><span class="keyword">var</span> list<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">7</span><span class="punctuation">,</span> <span class="literal">42</span> <span class="punctuation">]</span><span class="semi">;</span>
 <span class="keyword">var</span> a<span class="punctuation"> = </span>typeof list<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span> !== <span class="literal">"undefined"</span> ? list<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span> : <span class="literal">1</span><span class="semi">;</span>
 <span class="keyword">var</span> b<span class="punctuation"> = </span>typeof list<span class="punctuation">[</span><span class="literal">1</span><span class="punctuation">]</span> !== <span class="literal">"undefined"</span> ? list<span class="punctuation">[</span><span class="literal">1</span><span class="punctuation">]</span> : <span class="literal">2</span><span class="semi">;</span>
-<span class="keyword">var</span> c<span class="punctuation"> = </span><span class="mark">typeof list<span class="punctuation">[</span><span class="literal">2</span><span class="punctuation">]</span> !== <span class="literal">"undefined"</span> ? list<span class="punctuation">[</span><span class="literal">2</span><span class="punctuation">]</span> : <span class="literal">3</span></span><span class="semi">;</span>
-<span class="keyword">var</span> d<span class="punctuation"> = </span><span class="mark">typeof list<span class="punctuation">[</span><span class="literal">3</span><span class="punctuation">]</span> !== <span class="literal">"undefined"</span> ? list<span class="punctuation">[</span><span class="literal">3</span><span class="punctuation">]</span> : undefined</span><span class="semi">;</span>
+<span class="keyword">var</span> c<span class="punctuation"> = </span>typeof list<span class="punctuation">[</span><span class="literal">2</span><span class="punctuation">]</span> !== <span class="literal">"undefined"</span> ? list<span class="punctuation">[</span><span class="literal">2</span><span class="punctuation">]</span> : <span class="mark"><span class="literal">3</span></span><span class="semi">;</span>
+<span class="keyword">var</span> d<span class="punctuation"> = </span>typeof list<span class="punctuation">[</span><span class="literal">3</span><span class="punctuation">]</span> !== <span class="literal">"undefined"</span> ? list<span class="punctuation">[</span><span class="literal">3</span><span class="punctuation">]</span> : <span class="mark">undefined</span><span class="semi">;</span>
 a <span class="punctuation">===</span> <span class="literal">7</span><span class="semi">;</span>
 b <span class="punctuation">===</span> <span class="literal">42</span><span class="semi">;</span>
-c <span class="punctuation">===</span> <span class="literal">3</span><span class="semi">;</span>
-d <span class="punctuation">===</span> undefined<span class="semi">;</span></div>
+c <span class="punctuation">===</span> <span class="mark"><span class="literal">3</span></span><span class="semi">;</span>
+d <span class="punctuation">===</span> <span class="mark">undefined</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
