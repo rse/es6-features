@@ -43,6 +43,10 @@ body {
     position: relative;
 }
 
+code {
+    font-family: "TypoPRO DejaVu Sans Mono", sans-serif;
+}
+
 .head {
     position: fixed;
     left: 0;
