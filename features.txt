@@ -265,8 +265,8 @@ Intuitive and flexible destructuring of Arrays into individual variables during 
 5| var |a = list[0]|, |b = list[2]|;
 5| var |tmp = a|; |a = b|; |b = tmp|;
 
-Object Matching with Shorthand Notation
----------------------------------------
+Object Matching, Shorthand Notation
+-----------------------------------
 
 Intuitive and flexible destructuring of Objects into individual variables during assignment.
 
@@ -277,8 +277,8 @@ Intuitive and flexible destructuring of Objects into individual variables during
 5| var |lhs = tmp.lhs|;
 5| var |rhs = tmp.rhs|;
 
-Object Matching with Deeper Matching
-------------------------------------
+Object Matching, Deep Matching
+------------------------------
 
 Intuitive and flexible destructuring of Objects into individual variables during assignment.
 
@@ -289,8 +289,8 @@ Intuitive and flexible destructuring of Objects into individual variables during
 5| var |b = tmp.lhs.op|;
 5| var c = tmp.rhs;
 
-Object Matching in Parameter Position
--------------------------------------
+Object Matching, Parameter Context
+----------------------------------
 
 Intuitive and flexible destructuring of Objects into individual parameters during function calls.
 
