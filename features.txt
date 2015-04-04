@@ -248,6 +248,29 @@ Support for computed names in object property definitions.
 5| };
 5| |obj[| "prop_" + foo() |] =| 42;
 
+Method Properties
+-----------------
+
+Support for method notation in object property definitions.
+
+6| obj = {
+6|     |foo (a, b)| {
+5|         ...
+6|     },
+6|     |bar (x, y)| {
+5|         ...
+6|     }
+6| };
+
+5| obj = {
+5|     foo|: function| (a, b) {
+5|         ...
+5|     },
+5|     bar|: function| (x, y) {
+5|         ...
+5|     }
+5| };
+
 
 Destructuring Assignment
 ========================
