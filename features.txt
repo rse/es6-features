@@ -196,12 +196,12 @@ Binary & Octal Literal
 
 Direct support for safe binary and octal literals.
 
-6| |0b111110111| === 503;
-6| |0o767| === 503;
+6| |0b|111110111 === 503;
+6| |0o|767 === 503;
 
-5| |parseInt("111110111", 2)| === 503;
-5| |parseInt("767", 8)| === 503;
-5| |0767| === 503; // only in non-strict, backward compatibility mode
+5| |parseInt(|"111110111"|, 2)| === 503;
+5| |parseInt(|"767"|, 8)| === 503;
+5| |0|767 === 503; // only in non-strict, backward compatibility mode
 
 Unicode String & RegExp Literal
 -------------------------------
