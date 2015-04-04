@@ -121,7 +121,7 @@ Default Parameter Values
 
 Simple and intuitive default values for function parameters.
 
-6| function f (x, |y = 7, z = 42|) {
+6| function f (x, y |= 7|, z |= 42|) {
 6|     return x + y + z;
 6| }
 6| f(1) === 50;
