@@ -76,7 +76,7 @@
         var router = new Router()
         router.on("(.+)", dispatch)
         router.configure({ delimiter: "/" })
-        router.init("BlockScopedVariables")
+        router.init("BlockScopedConstants")
         dispatch(router.getRoute(0))
     })
 })(jQuery)

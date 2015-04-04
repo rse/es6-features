@@ -26,6 +26,20 @@
 Block Scope
 ===========
 
+Block-Scoped Constants
+----------------------
+
+Block-scoped constants without constant hoisting.
+
+6| |const PI| = 3.141593;
+6| PI > 3.0;
+
+5| |var| PI = |(function () {|
+5|     var PI = 3.141593;
+5|     return function () { return PI; };
+5| |})();|
+5| PI|()| > 3.0;
+
 Block-Scoped Variables
 ----------------------
 
@@ -49,20 +63,6 @@ Block-scoped variables without variable hoisting.
 5|     y = b[i];
 5|     ...
 5| }
-
-Block-Scoped Constants
-----------------------
-
-Block-scoped constants without constant hoisting.
-
-6| |const PI| = 3.141593;
-6| PI > 3.0;
-
-5| |var| PI = |(function () {|
-5|     var PI = 3.141593;
-5|     return function () { return PI; };
-5| |})();|
-5| PI|()| > 3.0;
 
 
 Arrow Functions
