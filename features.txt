@@ -376,11 +376,11 @@ Support for exporting/importing symbols from/to modules without global namespace
 6|
 6| //  someApp.js
 6| |import * as math| from "lib/math";
-6| alert("2π = " + math.sum(math.pi, math.pi));
+6| console.log("2π = " + math.sum(math.pi, math.pi));
 6|
 6| //  otherApp.js
 6| |import { sum, pi }| from "lib/math";
-6| alert("2π = " + sum(pi, pi));
+6| console.log("2π = " + sum(pi, pi));
 
 5| //  lib/math.js
 5| |LibMath = {}|;
@@ -389,11 +389,11 @@ Support for exporting/importing symbols from/to modules without global namespace
 5|
 5| //  someApp.js
 5| var |math = LibMath|;
-5| alert("2π = " + math.sum(math.pi, math.pi));
+5| console.log("2π = " + math.sum(math.pi, math.pi));
 5|
 5| //  otherApp.js
 5| var |sum = LibMath.sum|, |pi = LibMath.pi|;
-5| alert("2π = " + sum(pi, pi));
+5| console.log("2π = " + sum(pi, pi));
 
 Default & Wildcard
 ------------------
@@ -407,7 +407,7 @@ Marking a symbol as the default exported symbol and mass-mixin of symbols.
 6|
 6| //  someApp.js
 6| |import exp, { pi, e }| from "lib/mathplusplus";
-6| alert("2π = " + exp(pi, e));
+6| console.log("2π = " + exp(pi, e));
 
 5| //  lib/mathplusplus.js
 5| |LibMathPP = {}|;
@@ -419,7 +419,7 @@ Marking a symbol as the default exported symbol and mass-mixin of symbols.
 5|
 5| //  someApp.js
 5| var |exp = LibMathPP.exp|, |pi = LibMathPP.pi|, |e = libMathPP.e|;
-5| alert("2π = " + exp(pi, e));
+5| console.log("2π = " + exp(pi, e));
 
 
 Classes
