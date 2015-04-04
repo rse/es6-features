@@ -160,7 +160,7 @@ Spreading of array elements into individual parameters of a function.
 6| f(1, 2, |...params|) === 9;
 
 5| var params = [ "hello", true, 7 ];
-5| f|.apply|(|undefined|, [ 1, 2 ]|.concat(params)|) === 9;
+5| f|.apply|(|undefined, [| 1, 2 |].concat(params)|) === 9;
 
 
 Template Strings
