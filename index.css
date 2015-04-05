@@ -245,11 +245,11 @@ code {
 .content .js .title .style {
     cursor: pointer;
 }
-.content .js.modernized .title .style.modernized,
+.content .js.reduced .title .style.reduced,
 .content .js.traditional .title .style.traditional {
     text-decoration: underline;
 }
-.content .js.modernized .code .semi {
+.content .js.reduced .code .semi {
     display: none;
 }
 .content .js .code {

@@ -68,7 +68,7 @@ let js = (clazz, title, code, icon) => {
 
     /*  extend title with style switcher  */
     title = "<b>" + title + "</b> &mdash; " +
-        "style: <span class=\"style modernized\">modernized</span> | " +
+        "syntactic sugar: <span class=\"style reduced\">reduced</span> | " +
         "<span class=\"style traditional\">traditional</span>"
 
     /*  assemble everything  */

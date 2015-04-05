@@ -42,26 +42,28 @@ equivalents.
   with [Browserify](http://browserify.org/) and its [Babelify](https://github.com/babel/babelify) plugin. For
   other tools see [Using Babel](http://babeljs.io/docs/using-babel/).
 
-- *Why uses the website for ECMAScript 6 the "modernized style" without semicolons as
-  the default, but for ECMAScript 5 the "traditional style" with semicolons?*
+- *Why uses the website for ECMAScript 6 the "reduced" syntactic sugar style without semicolons as
+  the default, but for ECMAScript 5 the "traditional" syntactic sugar style with semicolons?*
 
   ECMAScript since its earliest days supported automatic semicolon
   interference, of course. But people coding ECMAScript 5 started it
   in an era where lots of tools (especially source code compressors)
   had problems when simicolons where left out from the source code. As
   a consequence, most ECMAScript 5 coders sticked to the traditional
-  coding style with semicolons. But this era is gone today. Both
-  ECMAScript 6 and all tools (including compressors) perfectly support
-  automatic semicolon interference nowadays. As a consequence,
+  coding style with semicolons as the syntactic sugar, although in most
+  of the cases they are not necessary. But this era is gone today.
+  Both ECMAScript 6 and all tools (including compressors) perfectly
+  support automatic semicolon interference nowadays. As a consequence,
   ECMAScript 6 coders nowadays finally can nearly get rid of all
   semicolons and this way clutter their source code a lot less with bare
   syntactic sugar. Ralf S. Engelschall is a strong promoter of reducing
-  source codes to its bare minimum. Hence, in his personal opinion
-  ECMAScript 6 should be coded without semicolons. But if you
-  disagree, just switch the shown style on the website. If you even
-  need to enforce a particular style for both ES6 and ES5 code snippets
-  in your bookmarks, just use one of the following URLs:
-  [ES6-Features (modernized style)](http://es6-features.org/#modernized) or
+  source code to its bare minimum. Hence, in his personal opinion
+  ECMAScript 6 should be coded with as less syntactic sugar as possible
+  and hence without semicolons. But if you disagree, just switch the
+  shown style on the website. If you even need to enforce a particular
+  style for both ES6 and ES5 code snippets in your bookmarks, just use
+  one of the following URLs:
+  [ES6-Features (reduced style)](http://es6-features.org/#reduced) or
   [ES6-Features (traditional style)](http://es6-features.org/#traditional)
 
 - *I still don't understand: why should I use ECMAScript 6? ECMAScript 5 looks sufficient.*

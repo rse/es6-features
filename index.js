@@ -24,14 +24,14 @@
 
 (function ($) {
     $(document).ready(function () {
-        /*  support switching between modernized and traditional semicolon style  */
-        $(".content .js.es6").addClass("modernized")
+        /*  support switching between reduced and traditional semicolon style  */
+        $(".content .js.es6").addClass("reduced")
         $(".content .js.es5").addClass("traditional")
         $(".content .js .title .style").click(function (ev) {
             var id = $(ev.target).text()
             var type = $(ev.target).parent().parent().hasClass("es5") ? "es5" : "es6"
             $(".content .js." + type)
-                .removeClass("modernized")
+                .removeClass("reduced")
                 .removeClass("traditional")
                 .addClass(id)
         })
@@ -68,8 +68,8 @@
 
         /*  support URL based routing and this way deep-linking  */
         var dispatch = function (id) {
-            if (id === "modernized" || id === "traditional")
-                $(".content .js").removeClass("traditional").removeClass("modernized").addClass(id)
+            if (id === "reduced" || id === "traditional")
+                $(".content .js").removeClass("traditional").removeClass("reduced").addClass(id)
             else
                 $("li.subtitle a[href='#" + id + "']").trigger("click")
         }
