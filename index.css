@@ -96,6 +96,13 @@ code {
     z-index: 2000;
 }
 
+.twitter-share-button {
+    position: fixed;
+    top: 20px;
+    right: 260px;
+    z-index: 2000;
+}
+
 .slogan {
     font-family: "TypoPRO Journal";
     font-size: 25pt;
