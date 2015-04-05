@@ -89,6 +89,13 @@ code {
     color: #b0b0b0;
 }
 
+#starbutton {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    z-index: 2000;
+}
+
 .slogan {
     font-family: "TypoPRO Journal";
     font-size: 25pt;
