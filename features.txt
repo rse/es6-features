@@ -34,10 +34,7 @@ Block-scoped constants without constant hoisting.
 6| |const PI| = 3.141593;
 6| PI > 3.0;
 
-5| |var| PI = |(function () {|
-5|     var PI = 3.141593;
-5|     return function () { return PI; };
-5| |})()|;
+5| |var| PI = |function () { return| 3.141593; |}|;
 5| PI|()| > 3.0;
 
 Block-Scoped Variables
