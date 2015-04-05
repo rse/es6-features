@@ -168,10 +168,12 @@ String Interpolation
 
 Intuitive expression interpolation for single-line and multi-line strings.
 
-6| message = `Hello |${name}|,
-6| want to eat |${num +1}| pizzas?`;
+6| sender = { name: "Foo" };
+6| message = `Hello |${sender.name}|,
+6| want to eat |${num + 1}| pizzas?`;
 
-5| message = "Hello "| + name + |",\n" +
+5| sender = { name: "Foo" };
+5| message = "Hello "| + sender.name + |",\n" +
 5| "want to eat "| + (num + 1) + |" pizzas?";
 
 Custom Interpolation
