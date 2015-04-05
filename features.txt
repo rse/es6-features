@@ -403,11 +403,11 @@ Marking a symbol as the default exported symbol and mass-mixin of symbols.
 6| //  lib/mathplusplus.js
 6| |export *| from "lib/math";
 6| export var e = 2.71828182846;
-6| |export default| function (x) { return Math.exp(x) };
+6| |export default| (x) => Math.exp(x);
 6|
 6| //  someApp.js
 6| |import exp, { pi, e }| from "lib/mathplusplus";
-6| console.log("2π = " + exp(pi, e));
+6| console.log("e^{π} = " + exp(pi));
 
 5| //  lib/mathplusplus.js
 5| |LibMathPP = {}|;
@@ -419,7 +419,7 @@ Marking a symbol as the default exported symbol and mass-mixin of symbols.
 5|
 5| //  someApp.js
 5| var |exp = LibMathPP.exp|, |pi = LibMathPP.pi|, |e = libMathPP.e|;
-5| console.log("2π = " + exp(pi, e));
+5| console.log("e^{π} = " + exp(pi));
 
 
 Classes

@@ -702,11 +702,11 @@ console<span class="punctuation">.</span>log<span class="punctuation">(</span><s
     <div class="code"><span class="comment">//  lib/mathplusplus<span class="punctuation">.</span>js</span>
 <span class="mark"><span class="keyword">export</span> <span class="punctuation">*</span></span> from <span class="literal">"lib/math"</span><span class="semi">;</span>
 <span class="keyword">export</span> <span class="keyword">var</span> e<span class="punctuation"> = </span><span class="literal">2</span><span class="punctuation">.</span><span class="literal">71828182846</span><span class="semi">;</span>
-<span class="mark"><span class="keyword">export</span> default</span> <span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>exp<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">}</span><span class="semi">;</span>
+<span class="mark"><span class="keyword">export</span> default</span> <span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> Math<span class="punctuation">.</span>exp<span class="punctuation">(</span>x<span class="punctuation">)</span><span class="semi">;</span>
 <span class="comment">
 //  someApp<span class="punctuation">.</span>js</span>
 <span class="mark"><span class="keyword">import</span> exp<span class="punctuation">,</span> <span class="punctuation">{</span> pi<span class="punctuation">,</span> e <span class="punctuation">}</span></span> from <span class="literal">"lib/mathplusplus"</span><span class="semi">;</span>
-console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">,</span> e<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"e^<span class="punctuation">{</span>π<span class="punctuation">}</span><span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -723,7 +723,7 @@ console<span class="punctuation">.</span>log<span class="punctuation">(</span><s
 <span class="comment">
 //  someApp<span class="punctuation">.</span>js</span>
 <span class="keyword">var</span> <span class="mark">exp<span class="punctuation"> = </span>LibMathPP<span class="punctuation">.</span>exp</span><span class="punctuation">,</span> <span class="mark">pi<span class="punctuation"> = </span>LibMathPP<span class="punctuation">.</span>pi</span><span class="punctuation">,</span> <span class="mark">e<span class="punctuation"> = </span>libMathPP<span class="punctuation">.</span>e</span><span class="semi">;</span>
-console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"2π<span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">,</span> e<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
+console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"e^<span class="punctuation">{</span>π<span class="punctuation">}</span><span class="punctuation"> = </span>"</span> <span class="punctuation">+</span> exp<span class="punctuation">(</span>pi<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
