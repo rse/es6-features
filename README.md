@@ -46,14 +46,14 @@ equivalents.
   the default, but for ECMAScript 5 the "traditional" syntactic sugar style with semicolons?*
 
   ECMAScript since its earliest days supported automatic semicolon
-  interference, of course. But people coding ECMAScript 5 started it
+  inference/insertion, of course. But people coding ECMAScript 5 started it
   in an era where lots of tools (especially source code compressors)
   had problems when simicolons where left out from the source code. As
   a consequence, most ECMAScript 5 coders sticked to the traditional
   coding style with semicolons as the syntactic sugar, although in most
   of the cases they are not necessary. But this era is gone today.
   Both ECMAScript 6 and all tools (including compressors) perfectly
-  support automatic semicolon interference nowadays. As a consequence,
+  support automatic semicolon inference/insertion nowadays. As a consequence,
   ECMAScript 6 coders nowadays finally can nearly get rid of all
   semicolons and this way clutter their source code a lot less with bare
   syntactic sugar. Ralf S. Engelschall is a strong promoter of reducing
