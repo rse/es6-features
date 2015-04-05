@@ -68,6 +68,8 @@
 
         /*  support URL based routing and this way deep-linking  */
         var dispatch = function (id) {
+            if (id === "modernized")
+                id = "reduced"
             if (id === "reduced" || id === "traditional")
                 $(".content .js").removeClass("traditional").removeClass("reduced").addClass(id)
             else
