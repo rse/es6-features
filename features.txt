@@ -535,8 +535,8 @@ More intuitive and boilerplate-free getter/setter members.
 6|     |get area| { return Math.PI * this.radius * this.radius; }
 6| }
 6| let rec = new Rectangle("foo", 0, 0, 50, 20);
-6| circle|.area| === 1000;
-6| circle|.area| = 2000; // exception!
+6| rec|.area| === 1000;
+6| rec|.area| = 2000; // exception!
 
 5| Shape|.prototype.setArea| = function (area) {
 5|     throw new Error("cannot set calculated area");
@@ -551,8 +551,8 @@ More intuitive and boilerplate-free getter/setter members.
 5|     return Math.PI * this.radius * this.radius;
 5| };
 5| var rec = new Rectangle("foo", 0, 0, 50, 20);
-5| circle|.getArea()| === 1000;
-5| circle|.setArea(|2000|)|; // exception!
+5| rec|.getArea()| === 1000;
+5| rec|.setArea(|2000|)|; // exception!
 
 
 Iterators
