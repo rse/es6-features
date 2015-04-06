@@ -107,6 +107,12 @@
     <a href="#UnicodeStringRegExpLiteral">Unicode String & RegExp Literal</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
+<li class="title">Enhanced Regular Expression
+    <ul>
+<li class="subtitle subtitle_RegularExpressionStickyMatching">
+    <a href="#RegularExpressionStickyMatching">Regular Expression Sticky Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
 <li class="title">Enhanced Object Properties
     <ul>
 <li class="subtitle subtitle_PropertyShorthand">
@@ -466,6 +472,67 @@ message<span class="punctuation"> = </span><span class="literal">"Hello "</span>
 <span class="literal">"𠮷"</span> <span class="punctuation">===</span> <span class="literal">"\uD842\uDFB7"</span><span class="semi">;</span><span class="comment">
 //  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
 //  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="RegularExpressionStickyMatching" class="showcase showcase_RegularExpressionStickyMatching">    <div class="title">Enhanced Regular Expression</div>
+    <div class="subtitle">Regular Expression Sticky Matching</div>
+    <div class="desc">Keep the matching position sticky between matches and
+this way support efficient parsing of arbitrary long input strings,
+even with an arbitrary number of distinct regular expressions.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">let</span> parser<span class="punctuation"> = </span><span class="punctuation">(</span>input<span class="punctuation">,</span> match<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> pos<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">,</span> lastPos<span class="punctuation"> = </span>input<span class="punctuation">.</span>length<span class="punctuation">;</span> <span class="mark">pos <span class="punctuation">&lt;</span> lastPos</span><span class="punctuation">;</span> <span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> i<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">;</span> i <span class="punctuation">&lt;</span> match<span class="punctuation">.</span>length<span class="punctuation">;</span> i<span class="punctuation">+</span><span class="punctuation">+</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="mark">match<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>pattern<span class="punctuation">.</span>lastIndex<span class="punctuation"> = </span>pos</span><span class="semi">;</span>
+            <span class="keyword">let</span> found<span class="semi">;</span>
+            <span class="keyword">if</span> <span class="punctuation">(</span><span class="punctuation">(</span>found<span class="punctuation"> = </span>match<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>pattern<span class="punctuation">.</span>exec<span class="punctuation">(</span>input<span class="punctuation">)</span><span class="punctuation">)</span> !== null<span class="punctuation">)</span> <span class="punctuation">{</span>
+                match<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>action<span class="punctuation">(</span>found<span class="punctuation">)</span><span class="semi">;</span>
+                <span class="mark">pos<span class="punctuation"> = </span>match<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>pattern<span class="punctuation">.</span>lastIndex</span><span class="semi">;</span>
+                break<span class="semi">;</span>
+            <span class="punctuation">}</span>
+        <span class="punctuation">}</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">let</span> report<span class="punctuation"> = </span><span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>match<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+parser<span class="punctuation">(</span><span class="literal">"Foo 1 Bar 7 Baz 42"</span><span class="punctuation">,</span> <span class="punctuation">[</span>
+    <span class="punctuation">{</span> pattern: /^Foo\s<span class="punctuation">+</span><span class="punctuation">(</span>\d<span class="punctuation">+</span><span class="punctuation">)</span>/<span class="mark">y</span><span class="punctuation">,</span> action: <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> report<span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> pattern: /^Bar\s<span class="punctuation">+</span><span class="punctuation">(</span>\d<span class="punctuation">+</span><span class="punctuation">)</span>/<span class="mark">y</span><span class="punctuation">,</span> action: <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> report<span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> pattern: /^Baz\s<span class="punctuation">+</span><span class="punctuation">(</span>\d<span class="punctuation">+</span><span class="punctuation">)</span>/<span class="mark">y</span><span class="punctuation">,</span> action: <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> report<span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> pattern: /^\s<span class="punctuation">*</span>/<span class="mark">y</span><span class="punctuation">,</span>         action: <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span><span class="punctuation">}</span>            <span class="punctuation">}</span>
+<span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> parser<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>input<span class="punctuation">,</span> match<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> i<span class="punctuation">,</span> found<span class="punctuation">,</span> <span class="mark">inputTmp<span class="punctuation"> = </span>input</span><span class="punctuation">;</span> <span class="mark">inputTmp !== <span class="literal">""</span></span><span class="punctuation">;</span> <span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">for</span> <span class="punctuation">(</span>i<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">;</span> i <span class="punctuation">&lt;</span> match<span class="punctuation">.</span>length<span class="punctuation">;</span> i<span class="punctuation">+</span><span class="punctuation">+</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="keyword">if</span> <span class="punctuation">(</span><span class="punctuation">(</span>found<span class="punctuation"> = </span>match<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>pattern<span class="punctuation">.</span>exec<span class="punctuation">(</span>inputTmp<span class="punctuation">)</span><span class="punctuation">)</span> !== null<span class="punctuation">)</span> <span class="punctuation">{</span>
+                match<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">.</span>action<span class="punctuation">(</span>found<span class="punctuation">)</span><span class="semi">;</span>
+                <span class="mark">inputTmp<span class="punctuation"> = </span>inputTmp<span class="punctuation">.</span>substr<span class="punctuation">(</span>found<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation">.</span>length<span class="punctuation">)</span></span><span class="semi">;</span>
+                break<span class="semi">;</span>
+            <span class="punctuation">}</span>
+        <span class="punctuation">}</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">var</span> report<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>match<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+parser<span class="punctuation">(</span><span class="literal">"Foo 1 Bar 7 Baz 42"</span><span class="punctuation">,</span> <span class="punctuation">[</span>
+    <span class="punctuation">{</span> pattern: /^Foo\s<span class="punctuation">+</span><span class="punctuation">(</span>\d<span class="punctuation">+</span><span class="punctuation">)</span>/<span class="punctuation">,</span> action: <span class="keyword">function</span> <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">{</span> report<span class="punctuation">(</span>match<span class="punctuation">)</span><span class="semi">;</span> <span class="punctuation">}</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> pattern: /^Bar\s<span class="punctuation">+</span><span class="punctuation">(</span>\d<span class="punctuation">+</span><span class="punctuation">)</span>/<span class="punctuation">,</span> action: <span class="keyword">function</span> <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">{</span> report<span class="punctuation">(</span>match<span class="punctuation">)</span><span class="semi">;</span> <span class="punctuation">}</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> pattern: /^Baz\s<span class="punctuation">+</span><span class="punctuation">(</span>\d<span class="punctuation">+</span><span class="punctuation">)</span>/<span class="punctuation">,</span> action: <span class="keyword">function</span> <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">{</span> report<span class="punctuation">(</span>match<span class="punctuation">)</span><span class="semi">;</span> <span class="punctuation">}</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    <span class="punctuation">{</span> pattern: /^\s<span class="punctuation">*</span>/<span class="punctuation">,</span>         action: <span class="keyword">function</span> <span class="punctuation">(</span>match<span class="punctuation">)</span> <span class="punctuation">{</span><span class="punctuation">}</span>                 <span class="punctuation">}</span>
+<span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

@@ -220,6 +220,63 @@ Extended support using Unicode within strings and regular expressions.
 5| //  no equivalent in ES5
 
 
+Enhanced Regular Expression
+===========================
+
+Regular Expression Sticky Matching
+----------------------------------
+
+Keep the matching position sticky between matches and
+this way support efficient parsing of arbitrary long input strings,
+even with an arbitrary number of distinct regular expressions.
+
+6| let parser = (input, match) {
+6|     for (let pos = 0, lastPos = input.length; |pos < lastPos|; ) {
+6|         for (let i = 0; i < match.length; i++) {
+6|             |match[i].pattern.lastIndex = pos|;
+6|             let found;
+6|             if ((found = match[i].pattern.exec(input)) !== null) {
+6|                 match[i].action(found);
+6|                 |pos = match[i].pattern.lastIndex|;
+6|                 break;
+6|             }
+6|         }
+6|     }
+6| }
+6|
+6| let report = (match) => {
+6|     console.log(JSON.stringify(match));
+6| };
+6| parser("Foo 1 Bar 7 Baz 42", [
+6|     { pattern: /^Foo\s+(\d+)/|y|, action: (match) => report(match) },
+6|     { pattern: /^Bar\s+(\d+)/|y|, action: (match) => report(match) },
+6|     { pattern: /^Baz\s+(\d+)/|y|, action: (match) => report(match) },
+6|     { pattern: /^\s*/|y|,         action: (match) => {}            }
+6| ]);
+
+5| var parser = function (input, match) {
+5|     for (var i, found, |inputTmp = input|; |inputTmp !== ""|; ) {
+5|         for (i = 0; i < match.length; i++) {
+5|             if ((found = match[i].pattern.exec(inputTmp)) !== null) {
+5|                 match[i].action(found);
+5|                 |inputTmp = inputTmp.substr(found[0].length)|;
+5|                 break;
+5|             }
+5|         }
+5|     }
+5| }
+5|
+5| var report = function (match) {
+5|     console.log(JSON.stringify(match));
+5| };
+5| parser("Foo 1 Bar 7 Baz 42", [
+5|     { pattern: /^Foo\s+(\d+)/, action: function (match) { report(match); } },
+5|     { pattern: /^Bar\s+(\d+)/, action: function (match) { report(match); } },
+5|     { pattern: /^Baz\s+(\d+)/, action: function (match) { report(match); } },
+5|     { pattern: /^\s*/,         action: function (match) {}                 }
+5| ]);
+
+
 Enhanced Object Properties
 ==========================
 
