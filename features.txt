@@ -639,6 +639,26 @@ More intuitive and boilerplate-free getter/setter members.
 5| rec|.setArea(|2000|)|; // exception!
 
 
+Symbol Type
+===========
+
+Symbol Type
+-----------
+
+Unique and immutable data type to be used as an identifier for object properties.
+
+6| Symbol("foo") |!==| Symbol("foo");
+6| let foo = Symbol("foo");
+6| let bar = Symbol("bar");
+6| typeof foo === |"symbol"|;
+6| typeof bar === |"symbol"|;
+6| let obj = {};
+6| obj[foo] = "foo";
+6| obj[bar] = "bar";
+
+5| // no equivalent in ES5
+
+
 Iterators
 =========
 
@@ -841,26 +861,6 @@ Memory-leak-free Object-key’d side-by-side data-structures.
 6| foo.data = "bar";
 6| foo.data === "bar";
 6| JSON.stringify(foo) === |'{"id":"foo"}'|;
-
-5| // no equivalent in ES5
-
-
-Symbol Type
-===========
-
-Symbol Type
------------
-
-Unique and immutable data type to be used as an identifier for object properties.
-
-6| Symbol("foo") |!==| Symbol("foo");
-6| let foo = Symbol("foo");
-6| let bar = Symbol("bar");
-6| typeof foo === |"symbol"|;
-6| typeof bar === |"symbol"|;
-6| let obj = {};
-6| obj[foo] = "foo";
-6| obj[bar] = "bar";
 
 5| // no equivalent in ES5
 

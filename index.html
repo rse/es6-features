@@ -159,6 +159,12 @@
     <a href="#GetterSetter">Getter/Setter</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
+<li class="title">Symbol Type
+    <ul>
+<li class="subtitle subtitle_SymbolType">
+    <a href="#SymbolType">Symbol Type</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
 <li class="title">Iterators
     <ul>
 <li class="subtitle subtitle_IteratorForOfOperator">
@@ -175,12 +181,6 @@
     <a href="#MapDataStructure">Map Data-Structure</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_WeakLinkDataStructures">
     <a href="#WeakLinkDataStructures">Weak-Link Data-Structures</a> <i class="fa fa-arrow-circle-right"></i></li>
-    </ul>
-</li>
-<li class="title">Symbol Type
-    <ul>
-<li class="subtitle subtitle_SymbolType">
-    <a href="#SymbolType">Symbol Type</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Promises
@@ -1002,6 +1002,30 @@ rec<span class="mark"><span class="punctuation">.</span>setArea<span class="punc
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
+<div id="SymbolType" class="showcase showcase_SymbolType">    <div class="title">Symbol Type</div>
+    <div class="subtitle">Symbol Type</div>
+    <div class="desc">Unique and immutable data type to be used as an identifier for object properties.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code">Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span> <span class="mark">!==</span> Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">let</span> foo<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">let</span> bar<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"bar"</span><span class="punctuation">)</span><span class="semi">;</span>
+typeof foo <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
+typeof bar <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
+<span class="keyword">let</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+obj<span class="punctuation">[</span>foo<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"foo"</span><span class="semi">;</span>
+obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
 <div id="IteratorForOfOperator" class="showcase showcase_IteratorForOfOperator">    <div class="title">Iterators</div>
     <div class="subtitle">Iterator & For-Of Operator</div>
     <div class="desc">Support "iterable" protocol to allow objects to customize their
@@ -1191,30 +1215,6 @@ foo<span class="punctuation">.</span>mark<span class="punctuation">(</span><span
 foo<span class="punctuation">.</span>data<span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
 foo<span class="punctuation">.</span>data <span class="punctuation">===</span> <span class="literal">"bar"</span><span class="semi">;</span>
 JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">'<span class="punctuation">{</span>"id":"foo"<span class="punctuation">}</span>'</span></span><span class="semi">;</span>
-</div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-check-circle"></i>
-</div>
-    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
-    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
-    <i class="icon fa fa-circle"></i>
-    <i class="icon fa fa-times-circle"></i>
-</div>
-</div>
-<div id="SymbolType" class="showcase showcase_SymbolType">    <div class="title">Symbol Type</div>
-    <div class="subtitle">Symbol Type</div>
-    <div class="desc">Unique and immutable data type to be used as an identifier for object properties.</div>
-<div class="js es6">
-    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span> <span class="mark">!==</span> Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="keyword">let</span> foo<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="keyword">let</span> bar<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"bar"</span><span class="punctuation">)</span><span class="semi">;</span>
-typeof foo <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
-typeof bar <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
-<span class="keyword">let</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
-obj<span class="punctuation">[</span>foo<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"foo"</span><span class="semi">;</span>
-obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
