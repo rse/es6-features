@@ -871,8 +871,8 @@ Shape<span class="punctuation">.</span><span class="mark">prototype<span class="
     <span class="mark">get area</span> <span class="punctuation">{</span> <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span> <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 <span class="keyword">let</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>area</span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>area</span><span class="punctuation"> = </span><span class="literal">2000</span><span class="semi">;</span><span class="comment"> // exception!</span>
+rec<span class="mark"><span class="punctuation">.</span>area</span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
+rec<span class="mark"><span class="punctuation">.</span>area</span><span class="punctuation"> = </span><span class="literal">2000</span><span class="semi">;</span><span class="comment"> // exception!</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -892,8 +892,8 @@ Circle<span class="mark"><span class="punctuation">.</span>prototype<span class=
     <span class="keyword">return</span> Math<span class="punctuation">.</span>PI <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius <span class="punctuation">*</span> <span class="keyword">this</span><span class="punctuation">.</span>radius<span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
 <span class="keyword">var</span> rec<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">50</span><span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">)</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>getArea<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
-circle<span class="mark"><span class="punctuation">.</span>setArea<span class="punctuation">(</span></span><span class="literal">2000</span><span class="mark"><span class="punctuation">)</span></span><span class="semi">;</span><span class="comment"> // exception!</span></div>
+rec<span class="mark"><span class="punctuation">.</span>getArea<span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">1000</span><span class="semi">;</span>
+rec<span class="mark"><span class="punctuation">.</span>setArea<span class="punctuation">(</span></span><span class="literal">2000</span><span class="mark"><span class="punctuation">)</span></span><span class="semi">;</span><span class="comment"> // exception!</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
