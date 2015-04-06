@@ -183,6 +183,12 @@
     <a href="#WeakLinkDataStructures">Weak-Link Data-Structures</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
+<li class="title">Typed Arrays
+    <ul>
+<li class="subtitle subtitle_TypedArrays">
+    <a href="#TypedArrays">Typed Arrays</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
 <li class="title">Promises
     <ul>
 <li class="subtitle subtitle_PromiseUsage">
@@ -1222,6 +1228,49 @@ JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="TypedArrays" class="showcase showcase_TypedArrays">    <div class="title">Typed Arrays</div>
+    <div class="subtitle">Typed Arrays</div>
+    <div class="desc">Support for arbitrary byte-based data structures to implement network
+protocols, cryptography algorithms, file format manipulations, etc.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  ES<span class="literal">6</span> <span class="keyword">class</span> equivalent to the following C structure:</span><span class="comment">
+//  struct Example <span class="punctuation">{</span> unsigned long id<span class="punctuation">;</span> char username<span class="punctuation">[</span><span class="literal">16</span><span class="punctuation">]</span><span class="punctuation">;</span> float amountDue<span class="semi">;</span> <span class="punctuation">}</span><span class="semi">;</span></span>
+<span class="keyword">class</span> Example <span class="punctuation">{</span>
+    constructor <span class="punctuation">(</span>buffer<span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> ArrayBuffer<span class="punctuation">(</span><span class="literal">24</span><span class="punctuation">)</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>buffer<span class="punctuation"> = </span>buffer<span class="semi">;</span>
+    <span class="punctuation">}</span>
+    set buffer <span class="punctuation">(</span>buffer<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>_buffer   <span class="punctuation"> = </span>buffer<span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>_id       <span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Uint<span class="literal">32</span>Array <span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">.</span>_buffer<span class="punctuation">,</span>  <span class="literal">0</span><span class="punctuation">,</span>  <span class="literal">1</span><span class="punctuation">)</span></span><span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>_username <span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Uint<span class="literal">8</span>Array  <span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">.</span>_buffer<span class="punctuation">,</span>  <span class="literal">4</span><span class="punctuation">,</span> <span class="literal">16</span><span class="punctuation">)</span></span><span class="semi">;</span>
+        <span class="keyword">this</span><span class="punctuation">.</span>_amountDue<span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Float<span class="literal">32</span>Array<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">.</span>_buffer<span class="punctuation">,</span> <span class="literal">20</span><span class="punctuation">,</span>  <span class="literal">1</span><span class="punctuation">)</span></span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+    get buffer <span class="punctuation">(</span><span class="punctuation">)</span>     <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_buffer<span class="semi">;</span>       <span class="punctuation">}</span>
+    set id <span class="punctuation">(</span>v<span class="punctuation">)</span>        <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_id<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation"> = </span>v<span class="semi">;</span>           <span class="punctuation">}</span>
+    get id <span class="punctuation">(</span><span class="punctuation">)</span>         <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_id<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="semi">;</span>        <span class="punctuation">}</span>
+    set username <span class="punctuation">(</span>v<span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_username<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation"> = </span>v<span class="semi">;</span>     <span class="punctuation">}</span>
+    get username <span class="punctuation">(</span><span class="punctuation">)</span>   <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_username<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="semi">;</span>  <span class="punctuation">}</span>
+    set amountDue <span class="punctuation">(</span>v<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_amountDue<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="punctuation"> = </span>v<span class="semi">;</span>    <span class="punctuation">}</span>
+    get amountDue <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_amountDue<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span><span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">let</span> example<span class="punctuation"> = </span><span class="keyword">new</span> Example<span class="punctuation">(</span><span class="punctuation">)</span>
+example<span class="punctuation">.</span><span class="mark">id</span><span class="punctuation"> = </span><span class="literal">7</span>
+example<span class="punctuation">.</span><span class="mark">username</span><span class="punctuation"> = </span><span class="literal">"John Doe"</span>
+example<span class="punctuation">.</span><span class="mark">amountDue</span><span class="punctuation"> = </span><span class="literal">42</span><span class="punctuation">.</span><span class="literal">0</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
+//  <span class="punctuation">(</span>only an equivalent <span class="keyword">in</span> HTML<span class="literal">5</span><span class="punctuation">)</span></span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

@@ -865,6 +865,45 @@ Memory-leak-free Object-key’d side-by-side data-structures.
 5| // no equivalent in ES5
 
 
+Typed Arrays
+============
+
+Typed Arrays
+------------
+
+Support for arbitrary byte-based data structures to implement network
+protocols, cryptography algorithms, file format manipulations, etc.
+
+6| //  ES6 class equivalent to the following C structure:
+6| //  struct Example { unsigned long id; char username[16]; float amountDue; };
+6| class Example {
+6|     constructor (buffer = |new ArrayBuffer(24)|) {
+6|         this.buffer = buffer;
+6|     }
+6|     set buffer (buffer) {
+6|         this._buffer    = buffer;
+6|         this._id        = |new Uint32Array (this._buffer,  0,  1)|;
+6|         this._username  = |new Uint8Array  (this._buffer,  4, 16)|;
+6|         this._amountDue = |new Float32Array(this._buffer, 20,  1)|;
+6|     }
+6|     get buffer ()     { return this._buffer;       }
+6|     set id (v)        { this._id[0] = v;           }
+6|     get id ()         { return this._id[0];        }
+6|     set username (v)  { this._username[0] = v;     }
+6|     get username ()   { return this._username[0];  }
+6|     set amountDue (v) { this._amountDue[0] = v;    }
+6|     get amountDue ()  { return this._amountDue[0]; }
+6| }
+6|
+6| let example = new Example()
+6| example.|id| = 7
+6| example.|username| = "John Doe"
+6| example.|amountDue| = 42.0
+
+5| //  no equivalent in ES5
+5| //  (only an equivalent in HTML5)
+
+
 Promises
 ========
 
