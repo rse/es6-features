@@ -133,6 +133,10 @@ code {
     -webkit-transform: rotate(-4deg);
     letter-spacing: 1px;
     line-height: 19pt;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .bg {
@@ -148,6 +152,10 @@ code {
     -webkit-transform: rotate(-8deg);
     letter-spacing: -20px;
     opacity: 0.4;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .nav {
