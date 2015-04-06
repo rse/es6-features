@@ -61,6 +61,33 @@ Block-scoped variables without variable hoisting.
 5|     ...
 5| }
 
+Block-Scoped Functions
+----------------------
+
+Block-scoped function definitions, even in strict mode.
+
+6| "use strict";
+6| function foo () {
+6|     function bar () {
+6|         function baz () {
+6|             ...
+6|         }
+6|         ...
+6|     }
+6|     ...
+6| }
+
+5| "use strict";
+5| function baz () {
+5|     ...
+5| }
+5| function bar () {
+5|     ...
+5| }
+5| function foo () {
+5|     ...
+5| }
+
 
 Arrow Functions
 ===============
