@@ -121,6 +121,20 @@ code {
     color: #f0e0d0;
 }
 
+.statement {
+    font-family: "TypoPRO Journal";
+    font-size: 25pt;
+    color: #777777;
+    position: fixed;
+    right: 100px;
+    bottom: 250px;
+    transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    letter-spacing: 1px;
+    line-height: 19pt;
+}
+
 .bg {
     font-weight: 800;
     z-index: -1000;
