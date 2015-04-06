@@ -41,6 +41,8 @@ equivalents.
   just use its tricky [`require` hook](http://babeljs.io/docs/usage/require/). For browser environments use Babel in conjunction
   with [Browserify](http://browserify.org/) and its [Babelify](https://github.com/babel/babelify) plugin. For
   other tools see [Using Babel](http://babeljs.io/docs/using-babel/).
+  If you want to see pre-integrated scenarios, check out our sibling project
+  [es6-support](https://github.com/rse/es6-support) for various code examples!
 
 - *Why uses the website for ECMAScript 6 the "reduced" syntactic sugar style without semicolons as
   the default, but for ECMAScript 5 the "traditional" syntactic sugar style with semicolons?*
