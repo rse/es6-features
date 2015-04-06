@@ -278,9 +278,9 @@ PI<span class="mark"><span class="punctuation">(</span><span class="punctuation"
         <span class="keyword">function</span> baz <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
             <span class="ellipsis">&hellip;</span>
         <span class="punctuation">}</span>
-        <span class="ellipsis">&hellip;</span>
+        <span class="ellipsis">&hellip;</span> baz<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
     <span class="punctuation">}</span>
-    <span class="ellipsis">&hellip;</span>
+    <span class="ellipsis">&hellip;</span> bar<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
 <span class="punctuation">}</span>
 </div>
     <i class="icon fa fa-circle"></i>
@@ -289,14 +289,14 @@ PI<span class="mark"><span class="punctuation">(</span><span class="punctuation"
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="literal">"use strict"</span><span class="semi">;</span>
-<span class="keyword">function</span> baz <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+<span class="keyword">function</span> foo_bar_baz <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="ellipsis">&hellip;</span>
 <span class="punctuation">}</span>
-<span class="keyword">function</span> bar <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
+<span class="keyword">function</span> foo_bar <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="ellipsis">&hellip;</span> foo_bar_baz<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
 <span class="punctuation">}</span>
 <span class="keyword">function</span> foo <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
+    <span class="ellipsis">&hellip;</span> foo_bar<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
 <span class="punctuation">}</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
