@@ -76,6 +76,7 @@ Block-scoped function definitions, even in strict mode.
 6|     }
 6|     ... bar() ...
 6| }
+6| foo()
 
 5| "use strict";
 5| function foo_bar_baz () {
@@ -87,6 +88,7 @@ Block-scoped function definitions, even in strict mode.
 5| function foo () {
 5|     ... foo_bar() ...
 5| }
+5| foo()
 
 
 Arrow Functions
