@@ -104,7 +104,7 @@ txt.replace(/\s*([^\n]+)\n====+[ \t]*\n((?:.|\n)+?)(?=[^\n]+\n====+[ \t]*\n|$)/g
         /*  generate level-2 navigation entry  */
         nav += `<li class="subtitle subtitle_${id}">\n`
         nav += `    <a href="#${id}">${md(subtitle)}</a> <i class="fa fa-arrow-circle-right"></i>`
-        nav += `</li>\n`
+        nav += "</li>\n"
 
         /*  generate showcase header  */
         out += `<div id="${id}" class="showcase showcase_${id}">`
@@ -120,7 +120,7 @@ txt.replace(/\s*([^\n]+)\n====+[ \t]*\n((?:.|\n)+?)(?=[^\n]+\n====+[ \t]*\n|$)/g
             out += '    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div>'
             out += js("es5", "ECMAScript 5", es5, "times-circle")
         })
-        out += `</div>\n`
+        out += "</div>\n"
     })
 
     nav += "    </ul>\n"
