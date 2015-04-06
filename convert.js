@@ -25,9 +25,7 @@
 let fs = require("fs")
 
 /*  minimum Markdown translation ;-)  */
-let md = (txt) => {
-    return txt.replace(/`(.+?)`/g, "<code>$1</code>")
-}
+let md = txt => txt.replace(/`(.+?)`/g, "<code>$1</code>")
 
 /*  generate JavaScript code block  */
 let js = (clazz, title, code, icon) => {
