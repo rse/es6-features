@@ -51,7 +51,7 @@ let js = (clazz, title, code, icon) => {
         /(\s=\s|=&gt;|&gt;|&lt;|&amp;|===|[%+*{}().,\[\]-])/g,
         "<span class=punctuation>$1</span>")
     code = code.replace(
-        /("(?:.|\n)*?"|'(?:.|\n)*?'|`(?:.|\n)*?`|\d+(?:\.\d+)?)/g,
+        /("(?:.|\n)*?"|'(?:.|\n)*?'|`(?:.|\n)*?`|\d+(?:\.\d+)?(?!@))/g,
         "<span class=literal>$1</span>")
     code = code.replace(
         /\b(this|function|class(?=[^=])|extends|return|if|new|import|export|in|of|var|let|while|for|const)\b/g,
@@ -62,6 +62,7 @@ let js = (clazz, title, code, icon) => {
     code = code.replace(
         /\|(.+?)\|/g,
         "<span class=mark>$1</span>")
+    code = code.replace(/@3@/g, "|");
     code = code.replace(/class=([a-z]+)/g, "class=\"$1\"")
 
     /*  extend title with style switcher  */
