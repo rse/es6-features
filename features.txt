@@ -64,7 +64,7 @@ Block-scoped variables without variable hoisting.
 Block-Scoped Functions
 ----------------------
 
-Block-scoped function definitions, even in strict mode.
+Block-scoped function definitions, even in strict mode (which ES5 wishes that runtimes do not allow).
 
 6| "use strict";
 6| function foo () {
