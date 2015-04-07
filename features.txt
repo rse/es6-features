@@ -573,6 +573,124 @@ More intuitive, OOP-style and boilerplate-free inheritance.
 5| |Circle.prototype = Object.create(Shape.prototype)|;
 5| |Circle.prototype.constructor = Circle|;
 
+Class Mixins
+------------
+
+Support for mixin-style inheritance by extending from expressions yielding
+function objects. [Notice: the generic `combine` function is usually provided
+by a library, of course]
+
+6| var |combine| = (baseClass, ...mixins) => {
+6|     let base = class _Combined extends baseClass {
+6|         constructor (...args) {
+6|             |super|(...args);
+6|             mixins.forEach((mixin) => {
+6|                 mixin.prototype.|initializer|.call(this);
+6|             });
+6|         }
+6|     };
+6|     let copyProps = (target, source) => {
+6|         Object.getOwnPropertyNames(source)
+6|             .concat(Object.getOwnPropertySymbols(source))
+6|             .forEach((prop) => {
+6|             if (prop.match(/^(?:constructor@3@prototype@3@arguments@3@caller@3@name@3@bind@3@call@3@apply@3@toString@3@length)$/))
+6|                 return
+6|             Object.defineProperty(target, prop, Object.getOwnPropertyDescriptor(source, prop))
+6|         })
+6|     }
+6|     mixins.forEach((mixin) => {
+6|         copyProps(base.prototype, mixin.prototype);
+6|         copyProps(base, mixin);
+6|     });
+6|     return base;
+6| };
+6|
+6| class |Colored| {
+6|     |initializer| ()     { this._color = "white"; }
+6|     get color ()       { return this._color; }
+6|     set color (v)      { this._color = v; }
+6| }
+6|
+6| class |ZCoord| {
+6|     |initializer| ()     { this._z = 0; }
+6|     get z ()           { return this._z; }
+6|     set z (v)          { this._z = v; }
+6| }
+6|
+6| class |Shape| {
+6|     |constructor| (x, y) { this._x = x; this._y = y; }
+6|     get x ()           { return this._x; }
+6|     set x (v)          { this._x = v; }
+6|     get y ()           { return this._y; }
+6|     set y (v)          { this._y = v; }
+6| }
+6|
+6| class Rectangle extends |combine(Shape, Colored, ZCoord)| {}
+6|
+6| var rect = new Rectangle(7, 42);
+6| rect.|z|     = 1000;
+6| rect.|color| = "red";
+6| console.log(rect.x, rect.y, rect.z, rect.color);
+
+5| var |combine| = function (baseClass, mixins) {
+5|     var base = function () {
+5|         |baseClass.apply|(this, arguments);
+5|         mixins.forEach(function (mixin) {
+5|             mixin.prototype.|initializer|.call(this);
+5|         }.bind(this));
+5|     };
+5|     base.prototype = Object.create(baseClass.prototype);
+5|     base.prototype.constructor = base;
+5|     var copyProps = function (target, source) {
+5|         Object.getOwnPropertyNames(source).forEach(function (prop) {
+5|             if (prop.match(/^(?:constructor@3@prototype@3@arguments@3@caller@3@name@3@bind@3@call@3@apply@3@toString@3@length)$/))
+5|                 return
+5|             Object.defineProperty(target, prop, Object.getOwnPropertyDescriptor(source, prop))
+5|         })
+5|     }
+5|     mixins.forEach(function (mixin) {
+5|         copyProps(base.prototype, mixin.prototype);
+5|         copyProps(base, mixin);
+5|     });
+5|     return base;
+5| };
+5|
+5| var Colored = function () {};
+5| Colored.prototype = {
+5|     |initializer|: function ()  { this._color = "white"; },
+5|     getColor:    function ()  { return this._color; },
+5|     setColor:    function (v) { this._color = v; }
+5| };
+5|
+5| var ZCoord = function () {};
+5| ZCoord.prototype = {
+5|     |initializer|: function ()  { this._z = 0; },
+5|     getZ:        function ()  { return this._z; },
+5|     setZ:        function (v) { this._z = v; }
+5| };
+5|
+5| var Shape = function (x, y) {
+5|     this._x = x; this._y = y;
+5| };
+5| Shape.prototype = {
+5|     getX: function ()  { return this._x; },
+5|     setX: function (v) { this._x = v; },
+5|     getY: function ()  { return this._y; },
+5|     setX: function (v) { this._y = v; }
+5| }
+5|
+5| var _Combined = |combine(Shape, [ Colored, ZCoord ])|;
+5| var Rectangle = function (x, y) {
+5|     _Combined.call(this, x, y);
+5| };
+5| Rectangle.prototype = Object.create(_Combined.prototype);
+5| Rectangle.prototype.constructor = Rectangle;
+5|
+5| var rect = new Rectangle(7, 42);
+5| rect.|setZ|(1000);
+5| rect.|setColor|("red");
+5| console.log(rect.getX(), rect.getY(), rect.getZ(), rect.getColor());
+
 Base Class Access
 -----------------
 

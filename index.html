@@ -158,6 +158,8 @@
     <a href="#ClassDefinition">Class Definition</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_ClassInheritance">
     <a href="#ClassInheritance">Class Inheritance</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_ClassMixins">
+    <a href="#ClassMixins">Class Mixins</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_BaseClassAccess">
     <a href="#BaseClassAccess">Base Class Access</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_StaticMembers">
@@ -933,6 +935,132 @@ Shape<span class="punctuation">.</span><span class="mark">prototype<span class="
 <span class="punctuation">}</span><span class="semi">;</span>
 <span class="mark">Circle<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>Shape<span class="punctuation">.</span>prototype<span class="punctuation">)</span></span><span class="semi">;</span>
 <span class="mark">Circle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>Circle</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="ClassMixins" class="showcase showcase_ClassMixins">    <div class="title">Classes</div>
+    <div class="subtitle">Class Mixins</div>
+    <div class="desc">Support for mixin-style inheritance by extending from expressions yielding
+function objects. [Notice: the generic <code>combine</code> function is usually provided
+by a library, of course]</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> <span class="mark">combine</span><span class="punctuation"> = </span><span class="punctuation">(</span>baseClass<span class="punctuation">,</span> <span class="ellipsis">&hellip;</span>mixins<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    <span class="keyword">let</span> base<span class="punctuation"> = </span><span class="keyword">class</span> _Combined <span class="keyword">extends</span> baseClass <span class="punctuation">{</span>
+        constructor <span class="punctuation">(</span><span class="ellipsis">&hellip;</span>args<span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="mark">super</span><span class="punctuation">(</span><span class="ellipsis">&hellip;</span>args<span class="punctuation">)</span><span class="semi">;</span>
+            mixins<span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="punctuation">(</span>mixin<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+                mixin<span class="punctuation">.</span>prototype<span class="punctuation">.</span><span class="mark">initializer</span><span class="punctuation">.</span>call<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">)</span><span class="semi">;</span>
+            <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+        <span class="punctuation">}</span>
+    <span class="punctuation">}</span><span class="semi">;</span>
+    <span class="keyword">let</span> copyProps<span class="punctuation"> = </span><span class="punctuation">(</span>target<span class="punctuation">,</span> source<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+        Object<span class="punctuation">.</span>getOwnPropertyNames<span class="punctuation">(</span>source<span class="punctuation">)</span>
+            <span class="punctuation">.</span>concat<span class="punctuation">(</span>Object<span class="punctuation">.</span>getOwnPropertySymbols<span class="punctuation">(</span>source<span class="punctuation">)</span><span class="punctuation">)</span>
+            <span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="punctuation">(</span>prop<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+            <span class="keyword">if</span> <span class="punctuation">(</span>prop<span class="punctuation">.</span>match<span class="punctuation">(</span>/^<span class="punctuation">(</span>?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length<span class="punctuation">)</span>$/<span class="punctuation">)</span><span class="punctuation">)</span>
+                <span class="keyword">return</span>
+            Object<span class="punctuation">.</span>defineProperty<span class="punctuation">(</span>target<span class="punctuation">,</span> prop<span class="punctuation">,</span> Object<span class="punctuation">.</span>getOwnPropertyDescriptor<span class="punctuation">(</span>source<span class="punctuation">,</span> prop<span class="punctuation">)</span><span class="punctuation">)</span>
+        <span class="punctuation">}</span><span class="punctuation">)</span>
+    <span class="punctuation">}</span>
+    mixins<span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="punctuation">(</span>mixin<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+        copyProps<span class="punctuation">(</span>base<span class="punctuation">.</span>prototype<span class="punctuation">,</span> mixin<span class="punctuation">.</span>prototype<span class="punctuation">)</span><span class="semi">;</span>
+        copyProps<span class="punctuation">(</span>base<span class="punctuation">,</span> mixin<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="keyword">return</span> base<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+
+<span class="keyword">class</span> <span class="mark">Colored</span> <span class="punctuation">{</span>
+    <span class="mark">initializer</span> <span class="punctuation">(</span><span class="punctuation">)</span>     <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_color<span class="punctuation"> = </span><span class="literal">"white"</span><span class="semi">;</span> <span class="punctuation">}</span>
+    get color <span class="punctuation">(</span><span class="punctuation">)</span>       <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_color<span class="semi">;</span> <span class="punctuation">}</span>
+    set color <span class="punctuation">(</span>v<span class="punctuation">)</span>      <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_color<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">class</span> <span class="mark">ZCoord</span> <span class="punctuation">{</span>
+    <span class="mark">initializer</span> <span class="punctuation">(</span><span class="punctuation">)</span>     <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_z<span class="punctuation"> = </span><span class="literal">0</span><span class="semi">;</span> <span class="punctuation">}</span>
+    get z <span class="punctuation">(</span><span class="punctuation">)</span>           <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_z<span class="semi">;</span> <span class="punctuation">}</span>
+    set z <span class="punctuation">(</span>v<span class="punctuation">)</span>          <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_z<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">class</span> <span class="mark">Shape</span> <span class="punctuation">{</span>
+    <span class="mark">constructor</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_x<span class="punctuation"> = </span>x<span class="punctuation">;</span> <span class="keyword">this</span><span class="punctuation">.</span>_y<span class="punctuation"> = </span>y<span class="semi">;</span> <span class="punctuation">}</span>
+    get x <span class="punctuation">(</span><span class="punctuation">)</span>           <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_x<span class="semi">;</span> <span class="punctuation">}</span>
+    set x <span class="punctuation">(</span>v<span class="punctuation">)</span>          <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_x<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+    get y <span class="punctuation">(</span><span class="punctuation">)</span>           <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_y<span class="semi">;</span> <span class="punctuation">}</span>
+    set y <span class="punctuation">(</span>v<span class="punctuation">)</span>          <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_y<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">class</span> Rectangle <span class="keyword">extends</span> <span class="mark">combine<span class="punctuation">(</span>Shape<span class="punctuation">,</span> Colored<span class="punctuation">,</span> ZCoord<span class="punctuation">)</span></span> <span class="punctuation">{</span><span class="punctuation">}</span>
+
+<span class="keyword">var</span> rect<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">7</span><span class="punctuation">,</span> <span class="literal">42</span><span class="punctuation">)</span><span class="semi">;</span>
+rect<span class="punctuation">.</span><span class="mark">z</span>    <span class="punctuation"> = </span><span class="literal">1000</span><span class="semi">;</span>
+rect<span class="punctuation">.</span><span class="mark">color</span><span class="punctuation"> = </span><span class="literal">"red"</span><span class="semi">;</span>
+console<span class="punctuation">.</span>log<span class="punctuation">(</span>rect<span class="punctuation">.</span>x<span class="punctuation">,</span> rect<span class="punctuation">.</span>y<span class="punctuation">,</span> rect<span class="punctuation">.</span>z<span class="punctuation">,</span> rect<span class="punctuation">.</span>color<span class="punctuation">)</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> <span class="mark">combine</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>baseClass<span class="punctuation">,</span> mixins<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">var</span> base<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark">baseClass<span class="punctuation">.</span>apply</span><span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">,</span> arguments<span class="punctuation">)</span><span class="semi">;</span>
+        mixins<span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span>mixin<span class="punctuation">)</span> <span class="punctuation">{</span>
+            mixin<span class="punctuation">.</span>prototype<span class="punctuation">.</span><span class="mark">initializer</span><span class="punctuation">.</span>call<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">)</span><span class="semi">;</span>
+        <span class="punctuation">}</span><span class="punctuation">.</span>bind<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="semi">;</span>
+    base<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>baseClass<span class="punctuation">.</span>prototype<span class="punctuation">)</span><span class="semi">;</span>
+    base<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>base<span class="semi">;</span>
+    <span class="keyword">var</span> copyProps<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>target<span class="punctuation">,</span> source<span class="punctuation">)</span> <span class="punctuation">{</span>
+        Object<span class="punctuation">.</span>getOwnPropertyNames<span class="punctuation">(</span>source<span class="punctuation">)</span><span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span>prop<span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="keyword">if</span> <span class="punctuation">(</span>prop<span class="punctuation">.</span>match<span class="punctuation">(</span>/^<span class="punctuation">(</span>?:constructor|prototype|arguments|caller|name|bind|call|apply|toString|length<span class="punctuation">)</span>$/<span class="punctuation">)</span><span class="punctuation">)</span>
+                <span class="keyword">return</span>
+            Object<span class="punctuation">.</span>defineProperty<span class="punctuation">(</span>target<span class="punctuation">,</span> prop<span class="punctuation">,</span> Object<span class="punctuation">.</span>getOwnPropertyDescriptor<span class="punctuation">(</span>source<span class="punctuation">,</span> prop<span class="punctuation">)</span><span class="punctuation">)</span>
+        <span class="punctuation">}</span><span class="punctuation">)</span>
+    <span class="punctuation">}</span>
+    mixins<span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span>mixin<span class="punctuation">)</span> <span class="punctuation">{</span>
+        copyProps<span class="punctuation">(</span>base<span class="punctuation">.</span>prototype<span class="punctuation">,</span> mixin<span class="punctuation">.</span>prototype<span class="punctuation">)</span><span class="semi">;</span>
+        copyProps<span class="punctuation">(</span>base<span class="punctuation">,</span> mixin<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="keyword">return</span> base<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+
+<span class="keyword">var</span> Colored<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+Colored<span class="punctuation">.</span>prototype<span class="punctuation"> = </span><span class="punctuation">{</span>
+    <span class="mark">initializer</span>: <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_color<span class="punctuation"> = </span><span class="literal">"white"</span><span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    getColor:    <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_color<span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    setColor:    <span class="keyword">function</span> <span class="punctuation">(</span>v<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_color<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+
+<span class="keyword">var</span> ZCoord<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+ZCoord<span class="punctuation">.</span>prototype<span class="punctuation"> = </span><span class="punctuation">{</span>
+    <span class="mark">initializer</span>: <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_z<span class="punctuation"> = </span><span class="literal">0</span><span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    getZ:        <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_z<span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    setZ:        <span class="keyword">function</span> <span class="punctuation">(</span>v<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_z<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+
+<span class="keyword">var</span> Shape<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>_x<span class="punctuation"> = </span>x<span class="punctuation">;</span> <span class="keyword">this</span><span class="punctuation">.</span>_y<span class="punctuation"> = </span>y<span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+Shape<span class="punctuation">.</span>prototype<span class="punctuation"> = </span><span class="punctuation">{</span>
+    getX: <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_x<span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    setX: <span class="keyword">function</span> <span class="punctuation">(</span>v<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_x<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    getY: <span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span>  <span class="punctuation">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="punctuation">.</span>_y<span class="semi">;</span> <span class="punctuation">}</span><span class="punctuation">,</span>
+    setX: <span class="keyword">function</span> <span class="punctuation">(</span>v<span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">this</span><span class="punctuation">.</span>_y<span class="punctuation"> = </span>v<span class="semi">;</span> <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">var</span> _Combined<span class="punctuation"> = </span><span class="mark">combine<span class="punctuation">(</span>Shape<span class="punctuation">,</span> <span class="punctuation">[</span> Colored<span class="punctuation">,</span> ZCoord <span class="punctuation">]</span><span class="punctuation">)</span></span><span class="semi">;</span>
+<span class="keyword">var</span> Rectangle<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">)</span> <span class="punctuation">{</span>
+    _Combined<span class="punctuation">.</span>call<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">,</span> x<span class="punctuation">,</span> y<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+Rectangle<span class="punctuation">.</span>prototype<span class="punctuation"> = </span>Object<span class="punctuation">.</span>create<span class="punctuation">(</span>_Combined<span class="punctuation">.</span>prototype<span class="punctuation">)</span><span class="semi">;</span>
+Rectangle<span class="punctuation">.</span>prototype<span class="punctuation">.</span>constructor<span class="punctuation"> = </span>Rectangle<span class="semi">;</span>
+
+<span class="keyword">var</span> rect<span class="punctuation"> = </span><span class="keyword">new</span> Rectangle<span class="punctuation">(</span><span class="literal">7</span><span class="punctuation">,</span> <span class="literal">42</span><span class="punctuation">)</span><span class="semi">;</span>
+rect<span class="punctuation">.</span><span class="mark">setZ</span><span class="punctuation">(</span><span class="literal">1000</span><span class="punctuation">)</span><span class="semi">;</span>
+rect<span class="punctuation">.</span><span class="mark">setColor</span><span class="punctuation">(</span><span class="literal">"red"</span><span class="punctuation">)</span><span class="semi">;</span>
+console<span class="punctuation">.</span>log<span class="punctuation">(</span>rect<span class="punctuation">.</span>getX<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> rect<span class="punctuation">.</span>getY<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> rect<span class="punctuation">.</span>getZ<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> rect<span class="punctuation">.</span>getColor<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
