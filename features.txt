@@ -336,13 +336,17 @@ Support for computed names in object property definitions.
 Method Properties
 -----------------
 
-Support for method notation in object property definitions.
+Support for method notation in object property definitions,
+for both regular functions and generator functions.
 
 6| obj = {
 6|     |foo (a, b)| {
 6|         ...
 6|     },
 6|     |bar (x, y)| {
+6|         ...
+6|     },
+6|     |*quux (x, y)| {
 6|         ...
 6|     }
 6| };
@@ -352,6 +356,9 @@ Support for method notation in object property definitions.
 5|         ...
 5|     },
 5|     bar|: function| (x, y) {
+5|         ...
+5|     },
+5|     quux|: function*| (x, y) {
 5|         ...
 5|     }
 5| };
@@ -718,7 +725,7 @@ the control flow can be paused and resumed. Beside iteration,
 supports asynchronous programming.
 
 6| let fibonacci = {
-6|     [Symbol.iterator]: |function*| () {
+6|     |*[Symbol.iterator]()| {
 6|         let pre = 0, cur = 1;
 6|         |for (;;)| {
 6|             [ pre, cur ] = [ cur, pre + cur ];
