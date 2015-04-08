@@ -967,6 +967,29 @@ flow can be paused and resumed, in order to produce sequence of values
 5|     console.log(n);
 5| }
 
+Generator Matching
+------------------
+
+Support for generator functions, i.e., functions where the control flow
+can be paused and resumed, in order to produce and spread sequence of
+values (either finite or infinite).
+
+6| let fibonacci = |function*| (numbers) {
+6|     let pre = 0, cur = 1;
+6|     while (numbers-- > 0) {
+6|         [ pre, cur ] = [ cur, pre + cur ];
+6|         |yield cur|;
+6|     }
+6| };
+6|
+6| for (|let n of fibonacci(1000)|)
+6|     console.log(n);
+6|
+6| let numbers = [ |...fibonacci(1000)| ];
+
+5| //  no equivalent in ES5
+
+
 Generator Control-Flow
 ----------------------
 

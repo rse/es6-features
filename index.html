@@ -190,6 +190,8 @@
     <ul>
 <li class="subtitle subtitle_GeneratorIteration">
     <a href="#GeneratorIteration">Generator Iteration</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GeneratorMatching">
+    <a href="#GeneratorMatching">Generator Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_GeneratorControlFlow">
     <a href="#GeneratorControlFlow">Generator Control-Flow</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
@@ -463,7 +465,7 @@ f<span class="punctuation">(</span><span class="literal">1</span><span class="pu
     <div class="desc">Aggregation of remaining arguments into single parameter of variadic functions.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>a</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span>x<span class="punctuation">,</span> y<span class="punctuation">,</span> <span class="mark"><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>a</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="keyword">return</span> <span class="punctuation">(</span>x <span class="punctuation">+</span> y<span class="punctuation">)</span> <span class="punctuation">*</span> a<span class="punctuation">.</span>length<span class="semi">;</span>
 <span class="punctuation">}</span>
 f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span></span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
@@ -488,8 +490,8 @@ f<span class="punctuation">(</span><span class="literal">1</span><span class="pu
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">var</span> params<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span><span class="semi">;</span>
-<span class="keyword">var</span> other<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>params</span><span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span></span>
-f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="ellipsis">&hellip;</span>params</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
+<span class="keyword">var</span> other<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>params</span><span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="literal">"hello"</span><span class="punctuation">,</span> true<span class="punctuation">,</span> <span class="literal">7</span> <span class="punctuation">]</span></span>
+f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>params</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -1003,10 +1005,10 @@ function objects. [Notice: the generic <code>combine</code> function is usually 
 by a library, of course]</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> <span class="mark">combine</span><span class="punctuation"> = </span><span class="punctuation">(</span>baseClass<span class="punctuation">,</span> <span class="ellipsis">&hellip;</span>mixins<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    <div class="code"><span class="keyword">var</span> <span class="mark">combine</span><span class="punctuation"> = </span><span class="punctuation">(</span>baseClass<span class="punctuation">,</span> <span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>mixins<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
     <span class="keyword">let</span> base<span class="punctuation"> = </span><span class="keyword">class</span> _Combined <span class="keyword">extends</span> baseClass <span class="punctuation">{</span>
-        constructor <span class="punctuation">(</span><span class="ellipsis">&hellip;</span>args<span class="punctuation">)</span> <span class="punctuation">{</span>
-            <span class="mark">super</span><span class="punctuation">(</span><span class="ellipsis">&hellip;</span>args<span class="punctuation">)</span><span class="semi">;</span>
+        constructor <span class="punctuation">(</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>args<span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="mark">super</span><span class="punctuation">(</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>args<span class="punctuation">)</span><span class="semi">;</span>
             mixins<span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="punctuation">(</span>mixin<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
                 mixin<span class="punctuation">.</span>prototype<span class="punctuation">.</span><span class="mark">initializer</span><span class="punctuation">.</span>call<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">)</span><span class="semi">;</span>
             <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
@@ -1395,6 +1397,36 @@ flow can be paused and resumed, in order to produce sequence of values
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
+<div id="GeneratorMatching" class="showcase showcase_GeneratorMatching">    <div class="title">Generators</div>
+    <div class="subtitle">Generator Matching</div>
+    <div class="desc">Support for generator functions, i.e., functions where the control flow
+can be paused and resumed, in order to produce and spread sequence of
+values (either finite or infinite).</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">let</span> fibonacci<span class="punctuation"> = </span><span class="mark"><span class="keyword">function</span><span class="punctuation">*</span></span> <span class="punctuation">(</span>numbers<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">let</span> pre<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">,</span> cur<span class="punctuation"> = </span><span class="literal">1</span><span class="semi">;</span>
+    <span class="keyword">while</span> <span class="punctuation">(</span>numbers<span class="punctuation">-</span><span class="punctuation">-</span> <span class="punctuation">&gt;</span> <span class="literal">0</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="punctuation">[</span> pre<span class="punctuation">,</span> cur <span class="punctuation">]</span><span class="punctuation"> = </span><span class="punctuation">[</span> cur<span class="punctuation">,</span> pre <span class="punctuation">+</span> cur <span class="punctuation">]</span><span class="semi">;</span>
+        <span class="mark">yield cur</span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="mark"><span class="keyword">let</span> n <span class="keyword">of</span> fibonacci<span class="punctuation">(</span><span class="literal">1000</span><span class="punctuation">)</span></span><span class="punctuation">)</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
+
+<span class="keyword">let</span> numbers<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="mark"><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>fibonacci<span class="punctuation">(</span><span class="literal">1000</span><span class="punctuation">)</span></span> <span class="punctuation">]</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
 <div id="GeneratorControlFlow" class="showcase showcase_GeneratorControlFlow">    <div class="title">Generators</div>
     <div class="subtitle">Generator Control-Flow</div>
     <div class="desc">Support for generators, a special case of Iterators where the control
@@ -1405,8 +1437,8 @@ and given here just for better understanding]</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="comment">//  generic asynchronous control<span class="punctuation">-</span>flow driver</span>
-<span class="keyword">function</span> <span class="mark">async</span> <span class="punctuation">(</span>proc<span class="punctuation">,</span> <span class="ellipsis">&hellip;</span>params<span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="keyword">var</span> <span class="mark">iterator</span><span class="punctuation"> = </span><span class="mark">proc<span class="punctuation">(</span><span class="ellipsis">&hellip;</span>params<span class="punctuation">)</span></span><span class="semi">;</span>
+<span class="keyword">function</span> <span class="mark">async</span> <span class="punctuation">(</span>proc<span class="punctuation">,</span> <span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>params<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">var</span> <span class="mark">iterator</span><span class="punctuation"> = </span><span class="mark">proc<span class="punctuation">(</span><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>params<span class="punctuation">)</span></span><span class="semi">;</span>
     <span class="keyword">return</span> <span class="keyword">new</span> Promise<span class="punctuation">(</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
         <span class="keyword">let</span> loop<span class="punctuation"> = </span><span class="punctuation">(</span>value<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
             <span class="keyword">let</span> result<span class="semi">;</span>
