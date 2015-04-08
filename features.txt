@@ -1207,15 +1207,15 @@ Proxing
 Hooking into runtime-level object meta-operations.
 
 6| let target = {
-6|     foo: "Hello, foo"
+6|     foo: "Welcome, foo"
 6| };
 6| let proxy = |new Proxy|(|target|, {
 6|     |get (receiver, name)| {
-6|         return `Hello, ${name}!!`;
+6|         return `Hello, ${name}`;
 6|     }
 6| });
-6| proxy.foo   === "Hello, foo";
-6| proxy.|world| === "Hello, |world|!!";
+6| proxy.foo   === "Welcome, foo";
+6| proxy.|world| === "Hello, |world|";
 
 5| // no equivalent in ES5
 
