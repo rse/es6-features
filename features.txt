@@ -102,7 +102,7 @@ Block-scoped function definitions.
 Function-Scoped Functions
 -------------------------
 
-Function-scoped function definitions.
+Function-scoped function definitions, even in strict mode.
 
 6| "use strict";
 6| function foo () {
