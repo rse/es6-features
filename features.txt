@@ -986,6 +986,8 @@ values (either finite or infinite).
 6|     console.log(n);
 6|
 6| let numbers = [ |...fibonacci(1000)| ];
+6|
+6| let [ n1, n2, n3, ...others ] = |fibonacci(1000)|;
 
 5| //  no equivalent in ES5
 
