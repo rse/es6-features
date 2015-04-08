@@ -76,6 +76,8 @@
     <a href="#BlockScopedVariables">Block-Scoped Variables</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_BlockScopedFunctions">
     <a href="#BlockScopedFunctions">Block-Scoped Functions</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_FunctionScopedFunctions">
+    <a href="#FunctionScopedFunctions">Function-Scoped Functions</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Arrow Functions
@@ -279,7 +281,42 @@ constants<span class="punctuation">.</span>PI <span class="punctuation">&gt;</sp
 </div>
 <div id="BlockScopedFunctions" class="showcase showcase_BlockScopedFunctions">    <div class="title">Block Scope</div>
     <div class="subtitle">Block-Scoped Functions</div>
-    <div class="desc">Block-scoped function definitions, even in strict mode (which ES5 wishes that runtimes do not allow).</div>
+    <div class="desc">Block-scoped function definitions.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="punctuation">{</span>
+    <span class="keyword">function</span> foo <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="literal">1</span><span class="semi">;</span> <span class="punctuation">}</span>
+    foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">1</span><span class="semi">;</span>
+    <span class="punctuation">{</span>
+        <span class="keyword">function</span> <span class="mark">foo</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="mark"><span class="literal">2</span></span><span class="semi">;</span> <span class="punctuation">}</span>
+        <span class="mark">foo</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">2</span></span><span class="semi">;</span>
+    <span class="punctuation">}</span>
+    foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">1</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  only <span class="keyword">in</span> ES<span class="literal">5</span> with the help <span class="keyword">of</span> block<span class="punctuation">-</span>scope emulating</span><span class="comment">
+//  <span class="keyword">function</span> scopes and <span class="keyword">function</span> expressions</span>
+<span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">var</span> foo<span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="literal">1</span><span class="semi">;</span> <span class="punctuation">}</span>
+    foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">1</span><span class="semi">;</span>
+    <span class="mark"><span class="punctuation">(</span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span></span>
+        <span class="keyword">var</span> <span class="mark">foo</span><span class="punctuation"> = </span><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span> <span class="mark"><span class="literal">2</span></span><span class="semi">;</span> <span class="punctuation">}</span>
+        <span class="mark">foo</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">2</span></span><span class="semi">;</span>
+    <span class="mark"><span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">;</span></span>
+    foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">1</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="punctuation">)</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="FunctionScopedFunctions" class="showcase showcase_FunctionScopedFunctions">    <div class="title">Block Scope</div>
+    <div class="subtitle">Function-Scoped Functions</div>
+    <div class="desc">Function-scoped function definitions.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="literal">"use strict"</span><span class="semi">;</span>
@@ -292,24 +329,25 @@ constants<span class="punctuation">.</span>PI <span class="punctuation">&gt;</sp
     <span class="punctuation">}</span>
     <span class="ellipsis">&hellip;</span> bar<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
 <span class="punctuation">}</span>
-foo<span class="punctuation">(</span><span class="punctuation">)</span>
+foo<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="literal">"use strict"</span><span class="semi">;</span>
-<span class="keyword">function</span> foo_bar_baz <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span>
-<span class="punctuation">}</span>
-<span class="keyword">function</span> foo_bar <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span> foo_bar_baz<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
-<span class="punctuation">}</span>
+    <div class="code"><span class="comment">//  only <span class="keyword">in</span> ES<span class="literal">5</span> by using <span class="keyword">function</span> expressions <span class="keyword">in</span> inner scopes</span>
+<span class="literal">"use strict"</span><span class="semi">;</span>
 <span class="keyword">function</span> foo <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    <span class="ellipsis">&hellip;</span> foo_bar<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
+    <span class="mark"><span class="keyword">var</span> bar<span class="punctuation"> = </span><span class="keyword">function</span></span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark"><span class="keyword">var</span> baz<span class="punctuation"> = </span><span class="keyword">function</span></span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+            <span class="ellipsis">&hellip;</span>
+        <span class="punctuation">}</span><span class="semi">;</span>
+        <span class="ellipsis">&hellip;</span> baz<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
+    <span class="punctuation">}</span><span class="semi">;</span>
+    <span class="ellipsis">&hellip;</span> bar<span class="punctuation">(</span><span class="punctuation">)</span> <span class="ellipsis">&hellip;</span>
 <span class="punctuation">}</span>
-foo<span class="punctuation">(</span><span class="punctuation">)</span></div>
+foo<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

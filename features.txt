@@ -70,7 +70,34 @@ Block-scoped variables without variable hoisting.
 Block-Scoped Functions
 ----------------------
 
-Block-scoped function definitions, even in strict mode (which ES5 wishes that runtimes do not allow).
+Block-scoped function definitions.
+
+6| {
+6|     function foo () { return 1; }
+6|     foo() === 1;
+6|     {
+6|         function |foo| () { return |2|; }
+6|         |foo|() === |2|;
+6|     }
+6|     foo() === 1;
+6| }
+
+5| //  only in ES5 with the help of block-scope emulating
+5| //  function scopes and function expressions
+5| (function () {
+5|     var foo = function () { return 1; }
+5|     foo() === 1;
+5|     |(function () {|
+5|         var |foo| = function () { return |2|; }
+5|         |foo|() === |2|;
+5|     |})();|
+5|     foo() === 1;
+5| })();
+
+Function-Scoped Functions
+-------------------------
+
+Function-scoped function definitions.
 
 6| "use strict";
 6| function foo () {
@@ -82,20 +109,20 @@ Block-scoped function definitions, even in strict mode (which ES5 wishes that ru
 6|     }
 6|     ... bar() ...
 6| }
-6| foo()
+6| foo();
 
+5| //  only in ES5 by using function expressions in inner scopes
 5| "use strict";
-5| function foo_bar_baz () {
-5|     ...
-5| }
-5| function foo_bar () {
-5|     ... foo_bar_baz() ...
-5| }
 5| function foo () {
-5|     ... foo_bar() ...
+5|     |var bar = function| () {
+5|         |var baz = function| () {
+5|             ...
+5|         };
+5|         ... baz() ...
+5|     };
+5|     ... bar() ...
 5| }
-5| foo()
-
+5| foo();
 
 Arrow Functions
 ===============
