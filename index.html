@@ -233,8 +233,14 @@ PI <span class="punctuation">&gt;</span> <span class="literal">3</span><span cla
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="mark"><span class="keyword">var</span></span> PI<span class="punctuation"> = </span><span class="mark"><span class="keyword">function</span> <span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">{</span> <span class="keyword">return</span></span> <span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="semi">;</span> <span class="mark"><span class="punctuation">}</span></span><span class="semi">;</span>
-PI<span class="mark"><span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">&gt;</span> <span class="literal">3</span><span class="punctuation">.</span><span class="literal">0</span><span class="semi">;</span></div>
+    <div class="code"><span class="keyword">var</span> constants<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span>
+Object<span class="punctuation">.</span>defineProperty<span class="punctuation">(</span>constants<span class="punctuation">,</span> <span class="literal">"PI"</span><span class="punctuation">,</span> <span class="punctuation">{</span>
+    value:        <span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="punctuation">,</span>
+    enumerable:   true<span class="punctuation">,</span>
+    writeable:    false<span class="punctuation">,</span>
+    configurable: false
+<span class="punctuation">}</span><span class="punctuation">)</span>
+constants<span class="punctuation">.</span>PI <span class="punctuation">&gt;</span> <span class="literal">3</span><span class="punctuation">.</span><span class="literal">0</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
@@ -273,7 +279,7 @@ PI<span class="mark"><span class="punctuation">(</span><span class="punctuation"
 </div>
 <div id="BlockScopedFunctions" class="showcase showcase_BlockScopedFunctions">    <div class="title">Block Scope</div>
     <div class="subtitle">Block-Scoped Functions</div>
-    <div class="desc">Block-scoped function definitions, even in strict mode.</div>
+    <div class="desc">Block-scoped function definitions, even in strict mode (which ES5 wishes that runtimes do not allow).</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="literal">"use strict"</span><span class="semi">;</span>

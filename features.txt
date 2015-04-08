@@ -34,8 +34,14 @@ Block-scoped constants without constant hoisting.
 6| |const PI| = 3.141593;
 6| PI > 3.0;
 
-5| |var| PI = |function () { return| 3.141593; |}|;
-5| PI|()| > 3.0;
+5| var constants = {}
+5| Object.defineProperty(constants, "PI", {
+5|     value:        3.141593,
+5|     enumerable:   true,
+5|     writeable:    false,
+5|     configurable: false
+5| })
+5| constants.PI > 3.0;
 
 Block-Scoped Variables
 ----------------------
