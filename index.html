@@ -184,8 +184,14 @@
     <ul>
 <li class="subtitle subtitle_IteratorForOfOperator">
     <a href="#IteratorForOfOperator">Iterator & For-Of Operator</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_Generators">
-    <a href="#Generators">Generators</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
+<li class="title">Generators
+    <ul>
+<li class="subtitle subtitle_GeneratorIteration">
+    <a href="#GeneratorIteration">Generator Iteration</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GeneratorControlFlow">
+    <a href="#GeneratorControlFlow">Generator Control-Flow</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Map/Set & WeakMap/WeakSet
@@ -1338,11 +1344,11 @@ convenient <code>of</code> operator to iterate over all values of an iterable ob
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="Generators" class="showcase showcase_Generators">    <div class="title">Iterators</div>
-    <div class="subtitle">Generators</div>
-    <div class="desc">Support for generators, a special case of Iterators where
-the control flow can be paused and resumed. Beside iteration,
-supports asynchronous programming.</div>
+<div id="GeneratorIteration" class="showcase showcase_GeneratorIteration">    <div class="title">Generators</div>
+    <div class="subtitle">Generator Iteration</div>
+    <div class="desc">Support for generators, a special case of Iterators where the control
+flow can be paused and resumed, in order to produce sequence of values
+(either finite or infinite).</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> fibonacci<span class="punctuation"> = </span><span class="punctuation">{</span>
@@ -1385,6 +1391,70 @@ supports asynchronous programming.</div>
         break<span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="GeneratorControlFlow" class="showcase showcase_GeneratorControlFlow">    <div class="title">Generators</div>
+    <div class="subtitle">Generator Control-Flow</div>
+    <div class="desc">Support for generators, a special case of Iterators where the control
+flow can be paused and resumed, in order to support asynchronous
+programming in combination with promises (see below).
+[Notice: the generic <code>async</code> function usually is provided by a reusable library
+and given here just for better understanding]</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  generic asynchronous control<span class="punctuation">-</span>flow driver</span>
+<span class="keyword">function</span> <span class="mark">async</span> <span class="punctuation">(</span>proc<span class="punctuation">,</span> <span class="ellipsis">&hellip;</span>params<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">var</span> <span class="mark">iterator</span><span class="punctuation"> = </span><span class="mark">proc<span class="punctuation">(</span><span class="ellipsis">&hellip;</span>params<span class="punctuation">)</span></span><span class="semi">;</span>
+    <span class="keyword">return</span> <span class="keyword">new</span> Promise<span class="punctuation">(</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+        <span class="keyword">let</span> loop<span class="punctuation"> = </span><span class="punctuation">(</span>value<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+            <span class="keyword">let</span> result<span class="semi">;</span>
+            try <span class="punctuation">{</span>
+                result<span class="punctuation"> = </span><span class="mark">iterator<span class="punctuation">.</span>next</span><span class="punctuation">(</span>value<span class="punctuation">)</span><span class="semi">;</span>
+            <span class="punctuation">}</span>
+            catch <span class="punctuation">(</span>err<span class="punctuation">)</span> <span class="punctuation">{</span>
+                reject<span class="punctuation">(</span>err<span class="punctuation">)</span><span class="semi">;</span>
+            <span class="punctuation">}</span>
+            <span class="keyword">if</span> <span class="punctuation">(</span>result<span class="punctuation">.</span>done<span class="punctuation">)</span>
+                resolve<span class="punctuation">(</span>result<span class="punctuation">.</span>value<span class="punctuation">)</span><span class="semi">;</span>
+            else <span class="keyword">if</span> <span class="punctuation">(</span>   typeof result<span class="punctuation">.</span>value      <span class="punctuation">===</span> <span class="literal">"object"</span>
+                     <span class="punctuation"><span class="punctuation">&amp;</span></span><span class="punctuation"><span class="punctuation">&amp;</span></span> typeof result<span class="punctuation">.</span>value<span class="punctuation">.</span>then <span class="punctuation">===</span> <span class="literal">"<span class="keyword">function</span>"</span><span class="punctuation">)</span>
+                result<span class="punctuation">.</span>value<span class="punctuation">.</span>then<span class="punctuation">(</span><span class="punctuation">(</span>value<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+                    loop<span class="punctuation">(</span>value<span class="punctuation">)</span><span class="semi">;</span>
+                <span class="punctuation">}</span><span class="punctuation">,</span> <span class="punctuation">(</span>err<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+                    reject<span class="punctuation">(</span>err<span class="punctuation">)</span><span class="semi">;</span>
+                <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+            else
+                loop<span class="punctuation">(</span>result<span class="punctuation">.</span>value<span class="punctuation">)</span><span class="semi">;</span>
+        <span class="punctuation">}</span>
+        loop<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+<span class="comment">
+//  application<span class="punctuation">-</span>specific asynchronous builder</span>
+<span class="keyword">function</span> makeAsync <span class="punctuation">(</span>text<span class="punctuation">,</span> after<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">return</span> <span class="keyword">new</span> Promise<span class="punctuation">(</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+        setTimeout<span class="punctuation">(</span><span class="punctuation">(</span><span class="punctuation">)</span> <span class="punctuation">=&gt;</span> resolve<span class="punctuation">(</span>text<span class="punctuation">)</span><span class="punctuation">,</span> after<span class="punctuation">)</span><span class="semi">;</span>
+    <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+<span class="comment">
+//  application<span class="punctuation">-</span>specific asynchronous procedure</span>
+<span class="mark">async</span><span class="punctuation">(</span><span class="mark"><span class="keyword">function</span><span class="punctuation">*</span></span> <span class="punctuation">(</span>greeting<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">let</span> foo<span class="punctuation"> = </span><span class="mark">yield</span> makeAsync<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">,</span> <span class="literal">300</span><span class="punctuation">)</span>
+    <span class="keyword">let</span> bar<span class="punctuation"> = </span><span class="mark">yield</span> makeAsync<span class="punctuation">(</span><span class="literal">"bar"</span><span class="punctuation">,</span> <span class="literal">200</span><span class="punctuation">)</span>
+    <span class="keyword">let</span> baz<span class="punctuation"> = </span><span class="mark">yield</span> makeAsync<span class="punctuation">(</span><span class="literal">"baz"</span><span class="punctuation">,</span> <span class="literal">100</span><span class="punctuation">)</span>
+    <span class="keyword">return</span> <span class="literal">`$<span class="punctuation">{</span>greeting<span class="punctuation">}</span> $<span class="punctuation">{</span>foo<span class="punctuation">}</span> $<span class="punctuation">{</span>bar<span class="punctuation">}</span> $<span class="punctuation">{</span>baz<span class="punctuation">}</span>`</span>
+<span class="punctuation">}</span><span class="punctuation">,</span> <span class="literal">"Hello"</span><span class="punctuation">)</span><span class="punctuation">.</span>then<span class="punctuation">(</span><span class="punctuation">(</span>msg<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"RESULT:"</span><span class="punctuation">,</span> msg<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="literal">"Hello foo bar baz"</span></span>
+<span class="punctuation">}</span><span class="punctuation">)</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

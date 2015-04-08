@@ -922,11 +922,14 @@ convenient `of` operator to iterate over all values of an iterable object.
 5| }
 
 Generators
-----------
+==========
 
-Support for generators, a special case of Iterators where
-the control flow can be paused and resumed. Beside iteration,
-supports asynchronous programming.
+Generator Iteration
+-------------------
+
+Support for generators, a special case of Iterators where the control
+flow can be paused and resumed, in order to produce sequence of values
+(either finite or infinite).
 
 6| let fibonacci = {
 6|     |*[Symbol.iterator]()| {
@@ -963,6 +966,62 @@ supports asynchronous programming.
 5|         break;
 5|     console.log(n);
 5| }
+
+Generator Control-Flow
+----------------------
+
+Support for generators, a special case of Iterators where the control
+flow can be paused and resumed, in order to support asynchronous
+programming in combination with promises (see below).
+[Notice: the generic `async` function usually is provided by a reusable library
+and given here just for better understanding]
+
+6| //  generic asynchronous control-flow driver
+6| function |async| (proc, ...params) {
+6|     var |iterator| = |proc(...params)|;
+6|     return new Promise((resolve, reject) => {
+6|         let loop = (value) => {
+6|             let result;
+6|             try {
+6|                 result = |iterator.next|(value);
+6|             }
+6|             catch (err) {
+6|                 reject(err);
+6|             }
+6|             if (result.done)
+6|                 resolve(result.value);
+6|             else if (   typeof result.value      === "object"
+6|                      && typeof result.value.then === "function")
+6|                 result.value.then((value) => {
+6|                     loop(value);
+6|                 }, (err) => {
+6|                     reject(err);
+6|                 });
+6|             else
+6|                 loop(result.value);
+6|         }
+6|         loop();
+6|     });
+6| }
+6|
+6| //  application-specific asynchronous builder
+6| function makeAsync (text, after) {
+6|     return new Promise((resolve, reject) => {
+6|         setTimeout(() => resolve(text), after);
+6|     });
+6| }
+6|
+6| //  application-specific asynchronous procedure
+6| |async|(|function*| (greeting) {
+6|     let foo = |yield| makeAsync("foo", 300)
+6|     let bar = |yield| makeAsync("bar", 200)
+6|     let baz = |yield| makeAsync("baz", 100)
+6|     return `${greeting} ${foo} ${bar} ${baz}`
+6| }, "Hello").then((msg) => {
+6|     console.log("RESULT:", msg); // "Hello foo bar baz"
+6| })
+
+5| //  no equivalent in ES5
 
 
 # Comprehensions
