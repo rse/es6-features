@@ -716,7 +716,7 @@ by a library, of course]
 5|     getX: function ()  { return this._x; },
 5|     setX: function (v) { this._x = v; },
 5|     getY: function ()  { return this._y; },
-5|     setX: function (v) { this._y = v; }
+5|     setY: function (v) { this._y = v; }
 5| }
 5|
 5| var _Combined = |combine(Shape, [ Colored, ZCoord ])|;
