@@ -102,7 +102,7 @@ Block-scoped function definitions.
 Function-Scoped Functions
 -------------------------
 
-Function-scoped function definitions, even in strict mode.
+Function-scoped function definitions in strict mode.
 
 6| "use strict";
 6| function foo () {
@@ -116,9 +116,9 @@ Function-scoped function definitions, even in strict mode.
 6| }
 6| foo();
 
-5| //  only in ES5 by using function expressions in inner scopes
 5| "use strict";
 5| function foo () {
+5|     //  only in ES5 by using function expressions in inner scopes
 5|     |var bar = function| () {
 5|         |var baz = function| () {
 5|             ...
