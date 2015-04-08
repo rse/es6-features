@@ -1632,7 +1632,7 @@ care of ordering of the underlying asynchronous operations yourself.</div>
 <span class="punctuation">}</span><span class="semi">;</span>
 <span class="keyword">let</span> proxy<span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Proxy</span><span class="punctuation">(</span><span class="mark">target</span><span class="punctuation">,</span> <span class="punctuation">{</span>
     <span class="mark">get <span class="punctuation">(</span>receiver<span class="punctuation">,</span> name<span class="punctuation">)</span></span> <span class="punctuation">{</span>
-        <span class="keyword">return</span> <span class="literal">`Hello<span class="punctuation">,</span> $<span class="punctuation">{</span>name<span class="punctuation">}</span>`</span><span class="semi">;</span>
+        <span class="keyword">return</span> name <span class="keyword">in</span> receiver ? receiver<span class="punctuation">[</span>name<span class="punctuation">]</span> : <span class="literal">`Hello<span class="punctuation">,</span> $<span class="punctuation">{</span>name<span class="punctuation">}</span>`</span><span class="semi">;</span>
     <span class="punctuation">}</span>
 <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 proxy<span class="punctuation">.</span>foo   <span class="punctuation">===</span> <span class="literal">"Welcome<span class="punctuation">,</span> foo"</span><span class="semi">;</span>

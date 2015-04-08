@@ -1213,7 +1213,7 @@ Hooking into runtime-level object meta-operations.
 6| };
 6| let proxy = |new Proxy|(|target|, {
 6|     |get (receiver, name)| {
-6|         return `Hello, ${name}`;
+6|         return name in receiver ? receiver[name] : `Hello, ${name}`;
 6|     }
 6| });
 6| proxy.foo   === "Welcome, foo";
