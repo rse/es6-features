@@ -44,7 +44,7 @@ let js = (clazz, title, code, icon) => {
     code = code.replace(/@2@/g, "<span class=punctuation>;</span>")
 
     /*  convert ellipsis to corresponding Unicode character  */
-    code = code.replace(/\.\.\./g, "<span class=ellipsis>&hellip;</span>")
+    code = code.replace(/(\s+)\.\.\.(\s+)/g, "$1<span class=ellipsis>&hellip;</span>$2")
 
     /*  simple syntax-highlighting of JavaScript code, the rookie but sufficient way  */
     code = code.replace(
