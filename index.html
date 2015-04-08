@@ -235,14 +235,15 @@ PI <span class="punctuation">&gt;</span> <span class="literal">3</span><span cla
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> constants<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span>
+    <div class="code"><span class="comment">//  only <span class="keyword">in</span> ES<span class="literal">5</span> through the help <span class="keyword">of</span> a wrapping object</span>
+<span class="keyword">var</span> constants<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span>
 Object<span class="punctuation">.</span>defineProperty<span class="punctuation">(</span>constants<span class="punctuation">,</span> <span class="literal">"PI"</span><span class="punctuation">,</span> <span class="punctuation">{</span>
     value:        <span class="literal">3</span><span class="punctuation">.</span><span class="literal">141593</span><span class="punctuation">,</span>
     enumerable:   true<span class="punctuation">,</span>
-    writeable:    false<span class="punctuation">,</span>
-    configurable: false
+    <span class="mark">writeable:    false</span><span class="punctuation">,</span>
+    <span class="mark">configurable: false</span>
 <span class="punctuation">}</span><span class="punctuation">)</span>
-constants<span class="punctuation">.</span>PI <span class="punctuation">&gt;</span> <span class="literal">3</span><span class="punctuation">.</span><span class="literal">0</span><span class="semi">;</span></div>
+<span class="mark">constants<span class="punctuation">.</span>PI</span> <span class="punctuation">&gt;</span> <span class="literal">3</span><span class="punctuation">.</span><span class="literal">0</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
