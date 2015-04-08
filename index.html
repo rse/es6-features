@@ -1664,7 +1664,7 @@ obj<span class="punctuation">[</span>Symbol<span class="punctuation">(</span><sp
     <div class="code"><span class="keyword">var</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span> a: <span class="literal">1</span> <span class="punctuation">}</span><span class="semi">;</span>
 Object<span class="punctuation">.</span>defineProperty<span class="punctuation">(</span>obj<span class="punctuation">,</span> <span class="literal">"b"</span><span class="punctuation">,</span> <span class="punctuation">{</span> value: <span class="literal">2</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span><span class="comment">
 // no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
-<span class="mark">Object<span class="punctuation">.</span>keys</span><span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"b"</span> <span class="punctuation">]</span></span></div>
+<span class="mark">Object<span class="punctuation">.</span>getOwnPropertyNames</span><span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"b"</span> <span class="punctuation">]</span></span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

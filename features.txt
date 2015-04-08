@@ -1232,5 +1232,5 @@ Make calls corresponding to the object meta-operations.
 5| var obj = { a: 1 };
 5| Object.defineProperty(obj, "b", { value: 2 });
 5| // no equivalent in ES5
-5| |Object.keys|(obj); // [ "a", "b" ]
+5| |Object.getOwnPropertyNames|(obj); // [ "a", "b" ]
 
