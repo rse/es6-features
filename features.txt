@@ -99,36 +99,6 @@ Block-scoped function definitions.
 5|     foo() === 1;
 5| })();
 
-Function-Scoped Functions
--------------------------
-
-Function-scoped function definitions in strict mode.
-
-6| "use strict";
-6| function foo () {
-6|     function bar () {
-6|         function baz () {
-6|             ...
-6|         }
-6|         ... baz() ...
-6|     }
-6|     ... bar() ...
-6| }
-6| foo();
-
-5| "use strict";
-5| function foo () {
-5|     //  only in ES5 by using function expressions in inner scopes
-5|     |var bar = function| () {
-5|         |var baz = function| () {
-5|             ...
-5|         };
-5|         ... baz() ...
-5|     };
-5|     ... bar() ...
-5| }
-5| foo();
-
 Arrow Functions
 ===============
 
