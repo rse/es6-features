@@ -790,16 +790,16 @@ More intuitive and boilerplate-free getter/setter members.
 
 6| class Shape {
 6|     ...
-6|     |get area| { throw new Error("calculated area not implemented"); }
-6|     |set area| { throw new Error("cannot set calculated area");      }
+6|     |get area()| { throw new Error("calculated area not implemented"); }
+6|     |set area(a)| { throw new Error("cannot set calculated area");      }
 6| }
 6| class Rectangle extends Shape {
 6|     ...
-6|     |get area| { return this.width * this.height; }
+6|     |get area()| { return this.width * this.height; }
 6| }
 6| class Circle extends Shape {
 6|     ...
-6|     |get area| { return Math.PI * this.radius * this.radius; }
+6|     |get area()| { return Math.PI * this.radius * this.radius; }
 6| }
 6| let rec = new Rectangle("foo", 0, 0, 50, 20);
 6| rec|.area| === 1000;
