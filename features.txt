@@ -587,10 +587,10 @@ Class Mixins
 ------------
 
 Support for mixin-style inheritance by extending from expressions yielding
-function objects. [Notice: the generic `combine` function is usually provided
-by a library, of course]
+function objects. [Notice: the generic `aggregation` function is usually provided
+by a library like [this one](https://github.com/rse/aggregation), of course]
 
-6| var |combine| = (baseClass, ...mixins) => {
+6| var |aggregation| = (baseClass, ...mixins) => {
 6|     let base = class _Combined extends baseClass {
 6|         constructor (...args) {
 6|             |super|(...args);
@@ -635,14 +635,14 @@ by a library, of course]
 6|     set y (v)          { this._y = v; }
 6| }
 6|
-6| class Rectangle extends |combine(Shape, Colored, ZCoord)| {}
+6| class Rectangle extends |aggregation(Shape, Colored, ZCoord)| {}
 6|
 6| var rect = new Rectangle(7, 42);
 6| rect.|z|     = 1000;
 6| rect.|color| = "red";
 6| console.log(rect.x, rect.y, rect.z, rect.color);
 
-5| var |combine| = function (baseClass, mixins) {
+5| var |aggregation| = function (baseClass, mixins) {
 5|     var base = function () {
 5|         |baseClass.apply|(this, arguments);
 5|         mixins.forEach(function (mixin) {
@@ -689,7 +689,7 @@ by a library, of course]
 5|     setY: function (v) { this._y = v; }
 5| }
 5|
-5| var _Combined = |combine(Shape, [ Colored, ZCoord ])|;
+5| var _Combined = |aggregation(Shape, [ Colored, ZCoord ])|;
 5| var Rectangle = function (x, y) {
 5|     _Combined.call(this, x, y);
 5| };
