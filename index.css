@@ -254,6 +254,15 @@ code {
     margin: 8px 0px 8px 0px;
 }
 
+.content .desc a {
+    font-size: 12pt;
+    color: #fff0e0;
+    text-decoration: none;
+}
+.content .desc a:visited {
+    color: #fff0e0;
+}
+
 .content .js {
     margin: 00px 0px 00px 0px;
     width: 100%;

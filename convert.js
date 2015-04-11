@@ -25,7 +25,11 @@
 let fs = require("fs")
 
 /*  minimum Markdown translation ;-)  */
-let md = txt => txt.replace(/`(.+?)`/g, "<code>$1</code>")
+let md = (txt) => {
+    txt = txt.replace(/`(.+?)`/g, "<code>$1</code>")
+    txt = txt.replace(/\[([^\[\]]+?)\]\(([^\(\)]+?)\)/g, "<a href=\"$2\">$1</a>")
+    return txt
+}
 
 /*  generate JavaScript code block  */
 let js = (clazz, title, code, icon) => {
