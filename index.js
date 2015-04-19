@@ -53,13 +53,13 @@
         $("li.subtitle a").each(function () {
             ids.push($(this).attr("href").replace(/^#/, ""))
         })
-        Mousetrap.bind("up", function (e) {
+        Mousetrap.bind([ "up", "pageup" ], function (e) {
             var id = $("li.subtitle.selected a").attr("href").replace(/^#/, "")
             var idx = ids.indexOf(id)
             if (idx > 0)
                 window.location.hash = "#" + ids[idx - 1]
         })
-        Mousetrap.bind("down", function (e) {
+        Mousetrap.bind([ "down", "pagedown" ], function (e) {
             var id = $("li.subtitle.selected a").attr("href").replace(/^#/, "")
             var idx = ids.indexOf(id)
             if (idx < ids.length - 1)
