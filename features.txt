@@ -207,13 +207,17 @@ String Interpolation
 
 Intuitive expression interpolation for single-line and multi-line strings.
 
-6| sender = { name: "Foo" };
-6| message = `Hello |${sender.name}|,
-6| want to eat |${num + 1}| pizzas?`;
+6| var customer = { name: "Foo" };
+6| var card = { amount: 7, product: "Bar", unitprice: 42 };
+6| message = `Hello |${customer.name}|,
+6| want to buy |${card.amount} ${card.product}| for
+6| a total of |${card.amount * card.unitprice}| bucks?`;
 
-5| sender = { name: "Foo" };
-5| message = "Hello "| + sender.name + |",\n" +
-5| "want to eat "| + (num + 1) + |" pizzas?";
+5| var customer = { name: "Foo" };
+5| var card = { amount: 7, product: "Bar", unitprice: 42 };
+5| message = "Hello "| + customer.name + |",\n" +
+5| "want to buy "| + card.amount + |" "| + card.product + |" for\n" +
+5| "a total of "| + (card.amount * card.unitprice) + |" bucks?";
 
 Custom Interpolation
 --------------------
