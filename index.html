@@ -1393,9 +1393,11 @@ values (either finite or infinite).</div>
     <div class="subtitle">Generator Control-Flow</div>
     <div class="desc">Support for generators, a special case of Iterators where the control
 flow can be paused and resumed, in order to support asynchronous
-programming in combination with promises (see below).
+programming in the style of "co-routines" in combination with Promises (see below).
 [Notice: the generic <code>async</code> function usually is provided by a reusable library
-and given here just for better understanding]</div>
+and given here just for better understanding. See
+<a href="https://github.com/tj/co">co</a> or
+<a href="https://github.com/petkaantonov/bluebird/blob/master/API.md#promisecoroutinegeneratorfunction-generatorfunction---function">Bluebird</a>'s <code>coroutine</code> in practice.]</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="comment">//  generic asynchronous control<span class="punctuation">-</span>flow driver</span>

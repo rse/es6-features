@@ -967,9 +967,11 @@ Generator Control-Flow
 
 Support for generators, a special case of Iterators where the control
 flow can be paused and resumed, in order to support asynchronous
-programming in combination with promises (see below).
+programming in the style of "co-routines" in combination with Promises (see below).
 [Notice: the generic `async` function usually is provided by a reusable library
-and given here just for better understanding]
+and given here just for better understanding. See
+[co](https://github.com/tj/co) or
+[Bluebird](https://github.com/petkaantonov/bluebird/blob/master/API.md#promisecoroutinegeneratorfunction-generatorfunction---function)'s `coroutine` in practice.]
 
 6| //  generic asynchronous control-flow driver
 6| function |async| (proc, ...params) {
