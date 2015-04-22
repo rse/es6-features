@@ -40,9 +40,9 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            "sanitize": {
-                src: [ "bower_components/sanitize.css/dist/sanitize.min.css" ],
-                dest: "lib/sanitize/sanitize.css"
+            "normalize": {
+                src: [ "bower_components/normalize.css/normalize.css" ],
+                dest: "lib/normalize/normalize.css"
             },
             "director": {
                 src: [ "bower_components/director/build/director.min.js" ],

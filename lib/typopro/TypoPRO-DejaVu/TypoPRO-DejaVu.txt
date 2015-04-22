@@ -1,5 +1,5 @@
 Name:       DejaVu
-Homepage:   http://dejavu.sf.net/
+Homepage:   http://dejavu-fonts.org/
 Download:   http://sourceforge.net/projects/dejavu/files/dejavu/2.34/dejavu-fonts-ttf-2.34.zip
 Version:    2.34 (2013-08)
 License:    Bitstream Vera Fonts Copyright, Arev Fonts Copyright, Public Domain

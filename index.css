@@ -22,7 +22,7 @@
 **  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-@import "lib/sanitize/sanitize.css";
+@import "lib/normalize/normalize.css";
 @import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-Light.css";
 @import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-Regular.css";
 @import "lib/typopro/TypoPRO-OpenSans/TypoPRO-OpenSans-Bold.css";
