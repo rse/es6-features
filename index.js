@@ -46,6 +46,16 @@
             $(".showcase_" + id).css("display", "block")
             $("li.subtitle").removeClass("selected")
             $("li.subtitle_" + id).addClass("selected")
+            var c  = $(".nav")
+            var ch = c.height()
+            var cs = c.scrollTop()
+            var e = $(".nav li.subtitle.selected")
+            var ep = e.parent().position().top + e.position().top
+            var eh = e.height()
+            if (ep < cs)
+                c.scrollTop(Math.max(0, ep - eh))
+            else if (ep > cs+ch)
+                c.scrollTop(Math.max(0, (ep + 4*eh) - ch))
         })
 
         /*  support navigation via cursor keys  */

@@ -175,6 +175,7 @@ code {
     box-shadow: 2px 2px 4px 0px #444444;
 }
 .nav > ul {
+    position: relative;
     list-style-type: none;
     margin-top: 0px;
     margin-bottom: 0px;
