@@ -773,6 +773,8 @@ Simple support for static class members.
 6|         return new Circle("default", 0, 0, 100);
 6|     }
 6| }
+6| var defRectangle = |Rectangle.defaultRectangle()|;
+6| var defCircle    = |Circle.defaultCircle()|;
 
 5| var Rectangle = function (id, x, y, width, height) {
 5|     ...
@@ -786,6 +788,8 @@ Simple support for static class members.
 5| |Circle.defaultCircle| = function () {
 5|     return new Circle("default", 0, 0, 100);
 5| };
+5| var defRectangle = |Rectangle.defaultRectangle()|;
+5| var defCircle    = |Circle.defaultCircle()|;
 
 Getter/Setter
 -------------
