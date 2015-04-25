@@ -186,8 +186,10 @@
 </li>
 <li class="title">Generators
     <ul>
-<li class="subtitle subtitle_GeneratorIteration">
-    <a href="#GeneratorIteration">Generator Iteration</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GeneratorFunctionIteratorProtocol">
+    <a href="#GeneratorFunctionIteratorProtocol">Generator Function, Iterator Protocol</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GeneratorFunctionDirectUse">
+    <a href="#GeneratorFunctionDirectUse">Generator Function, Direct Use</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_GeneratorMatching">
     <a href="#GeneratorMatching">Generator Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_GeneratorControlFlow">
@@ -1310,11 +1312,11 @@ convenient <code>of</code> operator to iterate over all values of an iterable ob
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="GeneratorIteration" class="showcase showcase_GeneratorIteration">    <div class="title">Generators</div>
-    <div class="subtitle">Generator Iteration</div>
-    <div class="desc">Support for generators, a special case of Iterators where the control
-flow can be paused and resumed, in order to produce sequence of values
-(either finite or infinite).</div>
+<div id="GeneratorFunctionIteratorProtocol" class="showcase showcase_GeneratorFunctionIteratorProtocol">    <div class="title">Generators</div>
+    <div class="subtitle">Generator Function, Iterator Protocol</div>
+    <div class="desc">Support for generators, a special case of Iterators containing a
+generator function, where the control flow can be paused and resumed, in
+order to produce sequence of values (either finite or infinite).</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> fibonacci<span class="punctuation"> = </span><span class="punctuation">{</span>
@@ -1356,6 +1358,46 @@ flow can be paused and resumed, in order to produce sequence of values
     <span class="keyword">if</span> <span class="punctuation">(</span>n <span class="punctuation">&gt;</span> <span class="literal">1000</span><span class="punctuation">)</span>
         break<span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="GeneratorFunctionDirectUse" class="showcase showcase_GeneratorFunctionDirectUse">    <div class="title">Generators</div>
+    <div class="subtitle">Generator Function, Direct Use</div>
+    <div class="desc">Support for generator functions, a special variant of functions where
+the control flow can be paused and resumed, in order to produce sequence
+of values (either finite or infinite).</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark"><span class="keyword">function</span><span class="punctuation">*</span></span> range <span class="punctuation">(</span>start<span class="punctuation">,</span> end<span class="punctuation">,</span> step<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="keyword">while</span> <span class="punctuation">(</span>start <span class="punctuation">&lt;</span> end<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark">yield</span> start<span class="semi">;</span>
+        start <span class="punctuation">+</span>= step<span class="semi">;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span>
+
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> i <span class="mark"><span class="keyword">of</span></span> range<span class="punctuation">(</span><span class="literal">0</span><span class="punctuation">,</span> <span class="literal">10</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>i<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="literal">4</span><span class="punctuation">,</span> <span class="literal">6</span><span class="punctuation">,</span> <span class="literal">8</span></span>
+<span class="punctuation">}</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="mark"><span class="keyword">function</span></span> range <span class="punctuation">(</span>start<span class="punctuation">,</span> end<span class="punctuation">,</span> step<span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark"><span class="keyword">var</span> list<span class="punctuation"> = </span><span class="punctuation">[</span><span class="punctuation">]</span></span><span class="semi">;</span>
+    <span class="keyword">while</span> <span class="punctuation">(</span>start <span class="punctuation">&lt;</span> end<span class="punctuation">)</span> <span class="punctuation">{</span>
+        <span class="mark">list<span class="punctuation">.</span>push<span class="punctuation">(</span>start<span class="punctuation">)</span></span><span class="semi">;</span>
+        start <span class="punctuation">+</span>= step<span class="semi">;</span>
+    <span class="punctuation">}</span>
+    <span class="mark"><span class="keyword">return</span> list</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+
+<span class="mark"><span class="keyword">var</span> r<span class="punctuation"> = </span>range<span class="punctuation">(</span><span class="literal">0</span><span class="punctuation">,</span> <span class="literal">10</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">)</span></span><span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="mark"><span class="keyword">var</span> i<span class="punctuation"> = </span><span class="literal">0</span><span class="punctuation">;</span> i <span class="punctuation">&lt;</span> r<span class="punctuation">.</span>length<span class="punctuation">;</span> i<span class="punctuation">+</span><span class="punctuation">+</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="mark">r<span class="punctuation">[</span>i<span class="punctuation">]</span></span><span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="literal">0</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="literal">4</span><span class="punctuation">,</span> <span class="literal">6</span><span class="punctuation">,</span> <span class="literal">8</span></span>
 <span class="punctuation">}</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>

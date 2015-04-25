@@ -898,12 +898,12 @@ convenient `of` operator to iterate over all values of an iterable object.
 Generators
 ==========
 
-Generator Iteration
--------------------
+Generator Function, Iterator Protocol
+-------------------------------------
 
-Support for generators, a special case of Iterators where the control
-flow can be paused and resumed, in order to produce sequence of values
-(either finite or infinite).
+Support for generators, a special case of Iterators containing a
+generator function, where the control flow can be paused and resumed, in
+order to produce sequence of values (either finite or infinite).
 
 6| let fibonacci = {
 6|     |*[Symbol.iterator]()| {
@@ -939,6 +939,38 @@ flow can be paused and resumed, in order to produce sequence of values
 5|     if (n > 1000)
 5|         break;
 5|     console.log(n);
+5| }
+
+Generator Function, Direct Use
+------------------------------
+
+Support for generator functions, a special variant of functions where
+the control flow can be paused and resumed, in order to produce sequence
+of values (either finite or infinite).
+
+6| |function*| range (start, end, step) {
+6|     while (start < end) {
+6|         |yield| start;
+6|         start += step;
+6|     }
+6| }
+6|
+6| for (let i |of| range(0, 10, 2)) {
+6|     console.log(i); // 0, 2, 4, 6, 8
+6| }
+
+5| |function| range (start, end, step) {
+5|     |var list = []|;
+5|     while (start < end) {
+5|         |list.push(start)|;
+5|         start += step;
+5|     }
+5|     |return list|;
+5| }
+5|
+5| |var r = range(0, 10, 2)|;
+5| for (|var i = 0; i < r.length; i++|) {
+5|     console.log(|r[i]|); // 0, 2, 4, 6, 8
 5| }
 
 Generator Matching
