@@ -587,8 +587,8 @@ More intuitive, OOP-style and boilerplate-free inheritance.
 5| |Circle.prototype = Object.create(Shape.prototype)|;
 5| |Circle.prototype.constructor = Circle|;
 
-Class Mixins
-------------
+Class Inheritance, From Expressions
+-----------------------------------
 
 Support for mixin-style inheritance by extending from expressions yielding
 function objects. [Notice: the generic `aggregation` function is usually provided
