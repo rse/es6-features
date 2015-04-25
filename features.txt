@@ -802,11 +802,11 @@ initializers, as it is possible since ECMAScript 5.1).
 6|         this.width  = width;
 6|         this.height = height;
 6|     }
-6|     set width  (width)  { this._width = width;             }
-6|     get width  ()       { return this._width;              }
-6|     set height (height) { this._height = height;           }
-6|     get height ()       { return this._height;             }
-6|     get area   ()       { return this.width * this.height; }
+6|     |set| width  (width)  { this._width = width;             }
+6|     |get| width  ()       { return this._width;              }
+6|     |set| height (height) { this._height = height;           }
+6|     |get| height ()       { return this._height;             }
+6|     |get| area   ()       { return this.width * this.height; }
 6| };
 6| var r = new Rectangle(50, 20);
 6| r.area === 1000;
@@ -815,12 +815,12 @@ initializers, as it is possible since ECMAScript 5.1).
 5|     this.width  = width;
 5|     this.height = height;
 5| };
-5| Rectangle.prototype = {
-5|     set width  (width)  { this._width = width;             },
-5|     get width  ()       { return this._width;              },
-5|     set height (height) { this._height = height;           },
-5|     get height ()       { return this._height;             },
-5|     get area   ()       { return this.width * this.height; }
+5| Rectangle|.prototype| = {
+5|     |set| width  (width)  { this._width = width;             }|,|
+5|     |get| width  ()       { return this._width;              }|,|
+5|     |set| height (height) { this._height = height;           }|,|
+5|     |get| height ()       { return this._height;             }|,|
+5|     |get| area   ()       { return this.width * this.height; }
 5| };
 5| var r = new Rectangle(50, 20);
 5| r.area === 1000;
