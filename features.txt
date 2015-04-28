@@ -61,6 +61,14 @@ Block-scoped variables (and constants) without hoisting.
 6|     |let y| = b[i];
 6|     ...
 6| }
+6|
+6| let callbacks = [];
+6| for (|let| i = 0; i <= 2; i++) {
+6|     callbacks[i] = function() { return i * 2; };
+6| }
+6| callbacks[0]() === 0;
+6| callbacks[1]() === 2;
+6| callbacks[2]() === 4;
 
 5| |var i, x, y|;
 5| for (i = 0; i < a.length; i++) {
@@ -71,6 +79,17 @@ Block-scoped variables (and constants) without hoisting.
 5|     y = b[i];
 5|     ...
 5| }
+5|
+5| var callbacks = [];
+5| for (|var| i = 0; i <= 2; i++) {
+5|     |(function (i) {|
+5|         callbacks[i] = function() { return i * 2; };
+5|     |})(i);|
+5| }
+5| callbacks[0]() === 0;
+5| callbacks[1]() === 2;
+5| callbacks[2]() === 4;
+
 
 Block-Scoped Functions
 ----------------------
