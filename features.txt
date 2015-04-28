@@ -140,11 +140,18 @@ More intuitive handling of current object context.
 6|         |this|.fives.push(v);
 6| });
 
+5| //  variant 1
 5| var |self| = |this|;
 5| |this|.nums.forEach(|function (v)| {
 5|     if (v % 5 === 0)
 5|         |self|.fives.push(v);
 5| });
+5|
+5| //  variant 2 (since ECMAScript 5.1 only)
+5| |this|.nums.forEach(|function (v)| {
+5|     if (v % 5 === 0)
+5|         |this|.fives.push(v);
+5| }|.bind(this)|);
 
 
 Extended Parameter Handling
@@ -161,9 +168,9 @@ Simple and intuitive default values for function parameters.
 6| f(1) === 50;
 
 5| function f (x, y, z) {
-5|     |if (typeof y === "undefined")|
+5|     |if (y === undefined)|
 5|         |y = 7|;
-5|     |if (typeof z === "undefined")|
+5|     |if (z === undefined)|
 5|         |z = 42|;
 5|     return x + y + z;
 5| };
