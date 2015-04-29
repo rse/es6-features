@@ -97,7 +97,7 @@ code {
 }
 
 .twitter-share-button {
-    position: fixed;
+    position: fixed !important;
     top: 20px;
     right: 260px;
     z-index: 2000;
