@@ -1382,6 +1382,43 @@ floating point numbers.
 5| console.log(0.1 + 0.2 === 0.3); // false
 5| console.log(Math.abs((0.1 + 0.2) - 0.3) < |2.220446049250313e-16|); // true
 
+Number Truncation
+-----------------
+
+Truncate a floating point number to its integral part,
+completely dropping the fractional part.
+
+6| console.log(|Math.trunc|(42.7)) // 42
+6| console.log(|Math.trunc|( 0.1)) // 0
+6| console.log(|Math.trunc|(-0.1)) // -0
+
+5| function mathTrunc (x) {
+5|     return |(x < 0 ? Math.ceil(x) : Math.floor(x))|;
+5| }
+5| console.log(mathTrunc(42.7)) // 42
+5| console.log(mathTrunc( 0.1)) // 0
+5| console.log(mathTrunc(-0.1)) // -0
+
+Number Sign Determination
+-------------------------
+
+Determine the sign of a number, including special cases of signed zero and non-number.
+
+6| console.log(|Math.sign|(7))   // 1
+6| console.log(|Math.sign|(0))   // 0
+6| console.log(|Math.sign|(-0))  // -0
+6| console.log(|Math.sign|(-7))  // -1
+6| console.log(|Math.sign|(NaN)) // NaN
+
+5| function |mathSign| (x) {
+5|     return |((x === 0 || isNaN(x)) ? x : (x > 0 ? 1 : -1))|;
+5| }
+5| console.log(mathSign(7))   // 1
+5| console.log(mathSign(0))   // 0
+5| console.log(mathSign(-0))  // -0
+5| console.log(mathSign(-7))  // -1
+5| console.log(mathSign(NaN)) // NaN
+
 
 Promises
 ========
