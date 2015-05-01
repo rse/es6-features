@@ -877,15 +877,42 @@ Symbol Type
 -----------
 
 Unique and immutable data type to be used as an identifier for object properties.
+Symbol can have an optional description, but for debugging purposes only.
 
 6| Symbol("foo") |!==| Symbol("foo");
-6| let foo = Symbol("foo");
-6| let bar = Symbol("bar");
+6| let foo = Symbol();
+6| let bar = Symbol();
 6| typeof foo === |"symbol"|;
 6| typeof bar === |"symbol"|;
 6| let obj = {};
 6| obj[foo] = "foo";
 6| obj[bar] = "bar";
+6| JSON.stringify(obj); // {}
+6| Object.keys(obj); // []
+6| Object.getOwnPropertyNames(obj); // []
+6| Object.|getOwnPropertySymbols|(obj); // [ foo, bar ]
+
+5| // no equivalent in ES5
+
+Global Symbols
+--------------
+
+Global symbols, indexed through unique keys.
+
+6| Symbol.for("app.foo") |===| Symbol.for("app.foo")
+6| let foo = Symbol.for("app.foo");
+6| let bar = Symbol.for("app.bar");
+6| Symbol.keyFor(foo) === "app.foo";
+6| Symbol.keyFor(bar) === "app.bar";
+6| typeof foo === |"symbol"|;
+6| typeof bar === |"symbol"|;
+6| let obj = {};
+6| obj[foo] = "foo";
+6| obj[bar] = "bar";
+6| JSON.stringify(obj); // {}
+6| Object.keys(obj); // []
+6| Object.getOwnPropertyNames(obj); // []
+6| Object.|getOwnPropertySymbols|(obj); // [ foo, bar ]
 
 5| // no equivalent in ES5
 

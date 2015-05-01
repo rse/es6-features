@@ -178,6 +178,8 @@
     <ul>
 <li class="subtitle subtitle_SymbolType">
     <a href="#SymbolType">Symbol Type</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GlobalSymbols">
+    <a href="#GlobalSymbols">Global Symbols</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Iterators
@@ -1311,17 +1313,52 @@ r<span class="punctuation">.</span>area <span class="punctuation">===</span> <sp
 </div>
 <div id="SymbolType" class="showcase showcase_SymbolType">    <div class="title">Symbol Type</div>
     <div class="subtitle">Symbol Type</div>
-    <div class="desc">Unique and immutable data type to be used as an identifier for object properties.</div>
+    <div class="desc">Unique and immutable data type to be used as an identifier for object properties.
+Symbol can have an optional description, but for debugging purposes only.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code">Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span> <span class="mark">!==</span> Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="keyword">let</span> foo<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
-<span class="keyword">let</span> bar<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="literal">"bar"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">let</span> foo<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">let</span> bar<span class="punctuation"> = </span>Symbol<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
 typeof foo <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
 typeof bar <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
 <span class="keyword">let</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
 obj<span class="punctuation">[</span>foo<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"foo"</span><span class="semi">;</span>
 obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
+JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">{</span><span class="punctuation">}</span></span>
+Object<span class="punctuation">.</span>keys<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span><span class="punctuation">]</span></span>
+Object<span class="punctuation">.</span>getOwnPropertyNames<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span><span class="punctuation">]</span></span>
+Object<span class="punctuation">.</span><span class="mark">getOwnPropertySymbols</span><span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> foo<span class="punctuation">,</span> bar <span class="punctuation">]</span></span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="GlobalSymbols" class="showcase showcase_GlobalSymbols">    <div class="title">Symbol Type</div>
+    <div class="subtitle">Global Symbols</div>
+    <div class="desc">Global symbols, indexed through unique keys.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code">Symbol<span class="punctuation">.</span><span class="keyword">for</span><span class="punctuation">(</span><span class="literal">"app<span class="punctuation">.</span>foo"</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">===</span></span> Symbol<span class="punctuation">.</span><span class="keyword">for</span><span class="punctuation">(</span><span class="literal">"app<span class="punctuation">.</span>foo"</span><span class="punctuation">)</span>
+<span class="keyword">let</span> foo<span class="punctuation"> = </span>Symbol<span class="punctuation">.</span><span class="keyword">for</span><span class="punctuation">(</span><span class="literal">"app<span class="punctuation">.</span>foo"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">let</span> bar<span class="punctuation"> = </span>Symbol<span class="punctuation">.</span><span class="keyword">for</span><span class="punctuation">(</span><span class="literal">"app<span class="punctuation">.</span>bar"</span><span class="punctuation">)</span><span class="semi">;</span>
+Symbol<span class="punctuation">.</span>keyFor<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">"app<span class="punctuation">.</span>foo"</span><span class="semi">;</span>
+Symbol<span class="punctuation">.</span>keyFor<span class="punctuation">(</span>bar<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">"app<span class="punctuation">.</span>bar"</span><span class="semi">;</span>
+typeof foo <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
+typeof bar <span class="punctuation">===</span> <span class="mark"><span class="literal">"symbol"</span></span><span class="semi">;</span>
+<span class="keyword">let</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span><span class="punctuation">}</span><span class="semi">;</span>
+obj<span class="punctuation">[</span>foo<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"foo"</span><span class="semi">;</span>
+obj<span class="punctuation">[</span>bar<span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
+JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">{</span><span class="punctuation">}</span></span>
+Object<span class="punctuation">.</span>keys<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span><span class="punctuation">]</span></span>
+Object<span class="punctuation">.</span>getOwnPropertyNames<span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span><span class="punctuation">]</span></span>
+Object<span class="punctuation">.</span><span class="mark">getOwnPropertySymbols</span><span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> foo<span class="punctuation">,</span> bar <span class="punctuation">]</span></span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
