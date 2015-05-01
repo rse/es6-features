@@ -214,16 +214,22 @@ Aggregation of remaining arguments into single parameter of variadic functions.
 Spread Operator
 ---------------
 
-Spreading of array elements into both literal elements and individual function parameters.
+Spreading of elements of an interable collection (like an array or even
+a string) into both literal elements and individual function parameters.
 
 6| var params = [ "hello", true, 7 ];
 6| var other = [ 1, 2, |...params| ]; // [ 1, 2, "hello", true, 7 ]
 6| f(1, 2, |...params|) === 9;
+6|
+6| var str = "foo";
+6| var chars = [ ... str ]; // [ "f", "o", "o" ]
 
 5| var params = [ "hello", true, 7 ];
 5| var other = [ 1, 2 ].|concat(params)|; // [ 1, 2, "hello", true, 7 ]
 5| f|.apply|(|undefined, [| 1, 2 |].concat(params)|) === 9;
-
+5|
+5| var str = "foo";
+5| var chars = str.split(""); // [ "f", "o", "o" ]
 
 Template Strings
 ================
