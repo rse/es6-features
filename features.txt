@@ -466,32 +466,42 @@ Intuitive and flexible destructuring of Objects into individual variables during
 5| var |b = tmp.lhs.op|;
 5| var c = tmp.rhs;
 
-Object Matching, Parameter Context
-----------------------------------
+Parameter Context Matching
+--------------------------
 
-Intuitive and flexible destructuring of Objects into individual parameters during function calls.
+Intuitive and flexible destructuring of Arrays and Objects into individual parameters during function calls.
 
-6| function f (|{ name: n, val: v }|) {
-6|     console.log(n, v);
-6| }
-6| function g (|{ name, val }|) {
+6| function f (|[ name, val ]|) {
 6|     console.log(name, val);
 6| }
-6| f({ name: "foo", val:  7 });
-6| g({ name: "bar", val: 42 });
+6| function g (|{ name: n, val: v }|) {
+6|     console.log(n, v);
+6| }
+6| function h (|{ name, val }|) {
+6|     console.log(name, val);
+6| }
+6| f([ "bar", 42 ]);
+6| g({ name: "foo", val:  7 });
+6| h({ name: "bar", val: 42 });
 
 5| function f (|arg|) {
+5|     |var name = arg[0]|;
+5|     |var val  = arg[1]|;
+5|     console.log(name, val);
+5| };
+5| function g (|arg|) {
 5|     |var n = arg.name|;
 5|     |var v = arg.val|;
 5|     console.log(n, v);
 5| };
-5| function g (|arg|) {
+5| function h (|arg|) {
 5|     |var name = arg.name|;
 5|     |var val  = arg.val|;
 5|     console.log(name, val);
 5| };
-5| f({ name: "foo", val:  7 });
-5| g({ name: "bar", val: 42 });
+5| f([ "bar", 42 ]);
+5| g({ name: "foo", val:  7 });
+5| h({ name: "bar", val: 42 });
 
 Fail-Soft Destructuring
 -----------------------

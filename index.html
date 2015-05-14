@@ -144,8 +144,8 @@
     <a href="#ObjectMatchingShorthandNotation">Object Matching, Shorthand Notation</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_ObjectMatchingDeepMatching">
     <a href="#ObjectMatchingDeepMatching">Object Matching, Deep Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
-<li class="subtitle subtitle_ObjectMatchingParameterContext">
-    <a href="#ObjectMatchingParameterContext">Object Matching, Parameter Context</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_ParameterContextMatching">
+    <a href="#ParameterContextMatching">Parameter Context Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_FailSoftDestructuring">
     <a href="#FailSoftDestructuring">Fail-Soft Destructuring</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
@@ -837,19 +837,23 @@ for both regular functions and generator functions.</div>
     <i class="icon fa fa-times-circle"></i>
 </div>
 </div>
-<div id="ObjectMatchingParameterContext" class="showcase showcase_ObjectMatchingParameterContext">    <div class="title">Destructuring Assignment</div>
-    <div class="subtitle">Object Matching, Parameter Context</div>
-    <div class="desc">Intuitive and flexible destructuring of Objects into individual parameters during function calls.</div>
+<div id="ParameterContextMatching" class="showcase showcase_ParameterContextMatching">    <div class="title">Destructuring Assignment</div>
+    <div class="subtitle">Parameter Context Matching</div>
+    <div class="desc">Intuitive and flexible destructuring of Arrays and Objects into individual parameters during function calls.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span><span class="mark"><span class="punctuation">{</span> name: n<span class="punctuation">,</span> val: v <span class="punctuation">}</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
-    console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">,</span> v<span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span>
-<span class="keyword">function</span> g <span class="punctuation">(</span><span class="mark"><span class="punctuation">{</span> name<span class="punctuation">,</span> val <span class="punctuation">}</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span><span class="mark"><span class="punctuation">[</span> name<span class="punctuation">,</span> val <span class="punctuation">]</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>name<span class="punctuation">,</span> val<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span>
-f<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"foo"</span><span class="punctuation">,</span> val:  <span class="literal">7</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
-g<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"bar"</span><span class="punctuation">,</span> val: <span class="literal">42</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">function</span> g <span class="punctuation">(</span><span class="mark"><span class="punctuation">{</span> name: n<span class="punctuation">,</span> val: v <span class="punctuation">}</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">,</span> v<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+<span class="keyword">function</span> h <span class="punctuation">(</span><span class="mark"><span class="punctuation">{</span> name<span class="punctuation">,</span> val <span class="punctuation">}</span></span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>name<span class="punctuation">,</span> val<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span>
+f<span class="punctuation">(</span><span class="punctuation">[</span> <span class="literal">"bar"</span><span class="punctuation">,</span> <span class="literal">42</span> <span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span>
+g<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"foo"</span><span class="punctuation">,</span> val:  <span class="literal">7</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+h<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"bar"</span><span class="punctuation">,</span> val: <span class="literal">42</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -857,17 +861,23 @@ g<span class="punctuation">(</span><span class="punctuation">{</span> name: <spa
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">function</span> f <span class="punctuation">(</span><span class="mark">arg</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+    <span class="mark"><span class="keyword">var</span> name<span class="punctuation"> = </span>arg<span class="punctuation">[</span><span class="literal">0</span><span class="punctuation">]</span></span><span class="semi">;</span>
+    <span class="mark"><span class="keyword">var</span> val <span class="punctuation"> = </span>arg<span class="punctuation">[</span><span class="literal">1</span><span class="punctuation">]</span></span><span class="semi">;</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>name<span class="punctuation">,</span> val<span class="punctuation">)</span><span class="semi">;</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="keyword">function</span> g <span class="punctuation">(</span><span class="mark">arg</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="mark"><span class="keyword">var</span> n<span class="punctuation"> = </span>arg<span class="punctuation">.</span>name</span><span class="semi">;</span>
     <span class="mark"><span class="keyword">var</span> v<span class="punctuation"> = </span>arg<span class="punctuation">.</span>val</span><span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>n<span class="punctuation">,</span> v<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-<span class="keyword">function</span> g <span class="punctuation">(</span><span class="mark">arg</span><span class="punctuation">)</span> <span class="punctuation">{</span>
+<span class="keyword">function</span> h <span class="punctuation">(</span><span class="mark">arg</span><span class="punctuation">)</span> <span class="punctuation">{</span>
     <span class="mark"><span class="keyword">var</span> name<span class="punctuation"> = </span>arg<span class="punctuation">.</span>name</span><span class="semi">;</span>
     <span class="mark"><span class="keyword">var</span> val <span class="punctuation"> = </span>arg<span class="punctuation">.</span>val</span><span class="semi">;</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span>name<span class="punctuation">,</span> val<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-f<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"foo"</span><span class="punctuation">,</span> val:  <span class="literal">7</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
-g<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"bar"</span><span class="punctuation">,</span> val: <span class="literal">42</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
+f<span class="punctuation">(</span><span class="punctuation">[</span> <span class="literal">"bar"</span><span class="punctuation">,</span> <span class="literal">42</span> <span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span>
+g<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"foo"</span><span class="punctuation">,</span> val:  <span class="literal">7</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+h<span class="punctuation">(</span><span class="punctuation">{</span> name: <span class="literal">"bar"</span><span class="punctuation">,</span> val: <span class="literal">42</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
