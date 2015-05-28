@@ -39,7 +39,7 @@ Support for constants (immutable variables).
 5| Object.|defineProperty|(typeof global === "object" ? global : window, "|PI|", {
 5|     value:        3.141593,
 5|     enumerable:   true,
-5|     |writeable:    false|,
+5|     |writable:     false|,
 5|     |configurable: false|
 5| })
 5| PI > 3.0;
