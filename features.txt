@@ -323,7 +323,7 @@ Keep the matching position sticky between matches and
 this way support efficient parsing of arbitrary long input strings,
 even with an arbitrary number of distinct regular expressions.
 
-6| let parser = (input, match) {
+6| let parser = (input, match) => {
 6|     for (let pos = 0, lastPos = input.length; |pos < lastPos|; ) {
 6|         for (let i = 0; i < match.length; i++) {
 6|             |match[i].pattern.lastIndex = pos|;
