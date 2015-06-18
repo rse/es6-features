@@ -58,11 +58,11 @@ module.exports = function (grunt) {
             },
             "typopro": {
                 files: [
-                    { expand: true, flatten: false, cwd: "bower_components/typopro/web",
+                    { expand: true, flatten: false, cwd: "bower_components/typopro-web/web",
                       src: "TypoPRO-OpenSans/**", dest: "lib/typopro/" },
-                    { expand: true, flatten: false, cwd: "bower_components/typopro/web",
+                    { expand: true, flatten: false, cwd: "bower_components/typopro-web/web",
                       src: "TypoPRO-DejaVu/**", dest: "lib/typopro/" },
-                    { expand: true, flatten: false, cwd: "bower_components/typopro/web",
+                    { expand: true, flatten: false, cwd: "bower_components/typopro-web/web",
                       src: "TypoPRO-Journal/**", dest: "lib/typopro/" }
                 ]
             },
