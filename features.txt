@@ -1200,9 +1200,9 @@ Cleaner data-structure for common algorithms based on sets.
 5| |s["hello"] = true|; |s["goodbye"] = true|; |s["hello"] = true|;
 5| |Object.keys(s).length| === 2;
 5| |s["hello"]| === true;
-5| for (val |in| s) // arbitrary order
+5| for (var key |in| s) // arbitrary order
 5|     if (s.hasOwnProperty(key))
-5|         console.log(val);
+5|         console.log(s[key]);
 
 Map Data-Structure
 ------------------
