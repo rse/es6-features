@@ -1193,8 +1193,8 @@ Cleaner data-structure for common algorithms based on sets.
 6| s.|add("hello")|.|add("goodbye")|.|add("hello")|;
 6| s.|size| === 2;
 6| s.|has("hello")| === true;
-6| for (let val |of| s.|values()|) // insertion order
-6|     console.log(val);
+6| for (let key |of| s.|values()|) // insertion order
+6|     console.log(key);
 
 5| var s = |{}|;
 5| |s["hello"] = true|; |s["goodbye"] = true|; |s["hello"] = true|;
