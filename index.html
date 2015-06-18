@@ -1639,8 +1639,8 @@ and given here just for better understanding. See
 s<span class="punctuation">.</span><span class="mark">add<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">)</span></span><span class="punctuation">.</span><span class="mark">add<span class="punctuation">(</span><span class="literal">"goodbye"</span><span class="punctuation">)</span></span><span class="punctuation">.</span><span class="mark">add<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">)</span></span><span class="semi">;</span>
 s<span class="punctuation">.</span><span class="mark">size</span> <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
 s<span class="punctuation">.</span><span class="mark">has<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">)</span></span> <span class="punctuation">===</span> true<span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> val <span class="mark"><span class="keyword">of</span></span> s<span class="punctuation">.</span><span class="mark">values<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="punctuation">)</span><span class="comment"> // insertion order</span>
-    console<span class="punctuation">.</span>log<span class="punctuation">(</span>val<span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">let</span> key <span class="mark"><span class="keyword">of</span></span> s<span class="punctuation">.</span><span class="mark">values<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="punctuation">)</span><span class="comment"> // insertion order</span>
+    console<span class="punctuation">.</span>log<span class="punctuation">(</span>key<span class="punctuation">)</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -1651,9 +1651,9 @@ s<span class="punctuation">.</span><span class="mark">has<span class="punctuatio
 <span class="mark">s<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span><span class="punctuation"> = </span>true</span><span class="punctuation">;</span> <span class="mark">s<span class="punctuation">[</span><span class="literal">"goodbye"</span><span class="punctuation">]</span><span class="punctuation"> = </span>true</span><span class="punctuation">;</span> <span class="mark">s<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span><span class="punctuation"> = </span>true</span><span class="semi">;</span>
 <span class="mark">Object<span class="punctuation">.</span>keys<span class="punctuation">(</span>s<span class="punctuation">)</span><span class="punctuation">.</span>length</span> <span class="punctuation">===</span> <span class="literal">2</span><span class="semi">;</span>
 <span class="mark">s<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span></span> <span class="punctuation">===</span> true<span class="semi">;</span>
-<span class="keyword">for</span> <span class="punctuation">(</span>val <span class="mark"><span class="keyword">in</span></span> s<span class="punctuation">)</span><span class="comment"> // arbitrary order</span>
+<span class="keyword">for</span> <span class="punctuation">(</span><span class="keyword">var</span> key <span class="mark"><span class="keyword">in</span></span> s<span class="punctuation">)</span><span class="comment"> // arbitrary order</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>s<span class="punctuation">.</span>hasOwnProperty<span class="punctuation">(</span>key<span class="punctuation">)</span><span class="punctuation">)</span>
-        console<span class="punctuation">.</span>log<span class="punctuation">(</span>val<span class="punctuation">)</span><span class="semi">;</span></div>
+        console<span class="punctuation">.</span>log<span class="punctuation">(</span>s<span class="punctuation">[</span>key<span class="punctuation">]</span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
