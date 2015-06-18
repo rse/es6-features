@@ -8,15 +8,14 @@ Partially based on [code snippets](http://git.io/es6features) by Luke Hoban.<br/
 Licensed under MIT license.
 
 This is the source of the website [es6-features.org](http://es6-features.org/),
-a small overview of
-[ECMAScript 6](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts)
-language features and a comparison to the older/traditional
-[ECMAScript 5](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
-equivalents.
+a small overview of current
+[ECMAScript 6](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+language features and a comparison to their old
+ECMAScript 5 equivalents.
 
 ## Frequently Asked Questions? (FAQ)
 
-- *Why was it setup? Is the ECMAScript 6 draft not enough?*
+- *Why was it setup? Is the ECMAScript 6 specification not enough?*
 
   It was setup by computer scientist and software
   architect [Ralf S. Engelschall](mailto:rse@engelschall.com) in March 2015 in order to
@@ -32,8 +31,8 @@ equivalents.
 
 - *Where can I find the latest ECMAScript 6 standard?*
 
-  The final ECMAScript 6 standard is still not published. But you can find the
-  latest drafts on [ecmascript.org](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts).
+  The final ECMAScript 6 standard (ECMA-262) was published in June 2015. You can find the
+  standard on [ecmascript.org](http://www.ecma-international.org/publications/standards/Ecma-262.htm).
 
 - *How can I use ECMAScript 6 if my JavaScript runtime still does not support it?*
 
