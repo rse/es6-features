@@ -1382,7 +1382,7 @@ New functions for checking for non-numbers and finite numbers.
 5|     return |n !== n|;
 5| };
 5| var |isFinite| = function (v) {
-5|     return |(typeof v === "number" && isNaN(v) && v !== Infinity && v !== -Infinity)|;
+5|     return |(typeof v === "number" && !isNaN(v) && v !== Infinity && v !== -Infinity)|;
 5| };
 5| isNaN(42) === false;
 5| isNaN(NaN) === true;
