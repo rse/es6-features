@@ -1317,8 +1317,8 @@ objects onto a destination object.
 5| var dst  = { quux: 0 };
 5| var src1 = { foo: |1|, bar: 2 };
 5| var src2 = { foo: |3|, baz: 4 };
-5| Object|.keys(src).forEach|(function(k) {
-5|     |dst[k] = src[k]|;
+5| Object|.keys(src1).forEach|(function(k) {
+5|     |dst[k] = src1[k]|;
 5| });
 5| Object|.keys(src2).forEach|(function(e) {
 5|     |dst[k] = src2[k]|;
