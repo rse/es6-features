@@ -1548,7 +1548,7 @@ care of ordering of the underlying asynchronous operations yourself.
 Meta-Programming
 ================
 
-Proxing
+Proxying
 -------
 
 Hooking into runtime-level object meta-operations.
