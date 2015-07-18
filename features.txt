@@ -1538,7 +1538,7 @@ care of ordering of the underlying asynchronous operations yourself.
 5|     { url: "http://backend/bar.txt", timeout: 500 },
 5|     { url: "http://backend/baz.txt", timeout: 500 }
 5| ], function (data) {
-5|     var foo = data[0], bar = data[0], baz = data[0];
+5|     var foo = data[0], bar = data[1], baz = data[2];
 5|     console.log("success: foo=" + foo + " bar=" + bar + " baz=" + baz);
 5| }, function (err) {
 5|     console.log("error: " + err);
