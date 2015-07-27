@@ -1453,7 +1453,7 @@ Determine the sign of a number, including special cases of signed zero and non-n
 6| console.log(|Math.sign|(NaN)) // NaN
 
 5| function |mathSign| (x) {
-5|     return |((x === 0 || isNaN(x)) ? x : (x > 0 ? 1 : -1))|;
+5|     return |((x === 0 \|\| isNaN(x)) ? x : (x > 0 ? 1 : -1))|;
 5| }
 5| console.log(mathSign(7))   // 1
 5| console.log(mathSign(0))   // 0
