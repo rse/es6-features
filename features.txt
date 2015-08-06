@@ -214,7 +214,7 @@ Aggregation of remaining arguments into single parameter of variadic functions.
 Spread Operator
 ---------------
 
-Spreading of elements of an interable collection (like an array or even
+Spreading of elements of an iterable collection (like an array or even
 a string) into both literal elements and individual function parameters.
 
 6| var params = [ "hello", true, 7 ];
