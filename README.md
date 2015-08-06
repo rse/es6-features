@@ -20,7 +20,10 @@ ECMAScript 5 equivalents.
   It was setup by computer scientist and software
   architect [Ralf S. Engelschall](mailto:rse@engelschall.com) in March 2015 in order to
   promote ECMAScript 6 in the software engineering projects around him
-  and to have bookmarkable URLs at hand for referencing certain ECMAScript 6 features.
+  and to have bookmarkable URLs at hand for referencing certain
+  ECMAScript 6 features. Additionally, creating this website was a
+  good approach for Ralf S. Engelschall to learn the new ECMAScript 6
+  features himself.
 
 - *Where can I find the current browser support status quo for ECMASCript 6?*
 
