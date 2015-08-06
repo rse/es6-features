@@ -43,21 +43,20 @@ ECMAScript 5 equivalents.
   If you want to see pre-integrated scenarios, check out our sibling project
   [es6-support](https://github.com/rse/es6-support) for various code examples!
 
-- *Why uses the website for ECMAScript 6 the "reduced" syntactic sugar style without semicolons as
-  the default, but for ECMAScript 5 the "traditional" syntactic sugar style with semicolons?*
+- *Why does the website default use the "reduced" syntactic sugar style (without semicolons)
+  for ECMAScript 6 and the "traditional" syntactic sugar style (with semicolons) for ECMAScript 5?*
 
   ECMAScript since its earliest days supported automatic semicolon
   inference/insertion, of course. But people coding ECMAScript 5 started it
   in an era where lots of tools (especially source code compressors)
-  had problems when simicolons where left out from the source code. As
-  a consequence, most ECMAScript 5 coders sticked to the traditional
+  had problems when semicolons where left out from the source code. As
+  a consequence, most ECMAScript 5 coders maintained the traditional
   coding style with semicolons as the syntactic sugar, although in most
   of the cases they are not necessary. But this era is gone today.
   Both ECMAScript 6 and all tools (including compressors) perfectly
   support automatic semicolon inference/insertion nowadays. As a consequence,
-  ECMAScript 6 coders nowadays finally can nearly get rid of all
-  semicolons and this way clutter their source code a lot less with bare
-  syntactic sugar. Ralf S. Engelschall is a strong promoter of reducing
+  ECMAScript 6 coders nowadays can get rid of nearly all
+  semicolons and remove clutter from their source code. Ralf S. Engelschall is a strong promoter of reducing
   source code to its bare minimum. Hence, in his personal opinion
   ECMAScript 6 should be coded with as less syntactic sugar as possible
   and hence without semicolons. But if you disagree, just switch the
