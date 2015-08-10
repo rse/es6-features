@@ -222,7 +222,7 @@ a string) into both literal elements and individual function parameters.
 6| f(1, 2, |...params|) === 9;
 6|
 6| var str = "foo";
-6| var chars = [ ... str ]; // [ "f", "o", "o" ]
+6| var chars = [ |...str| ]; // [ "f", "o", "o" ]
 
 5| var params = [ "hello", true, 7 ];
 5| var other = [ 1, 2 ].|concat(params)|; // [ 1, 2, "hello", true, 7 ]
