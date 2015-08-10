@@ -1247,6 +1247,7 @@ Memory-leak-free Object-key’d side-by-side data-structures.
 6| }
 6|
 6| let foo = new Node("foo");
+6|
 6| JSON.stringify(foo) === |'{"id":"foo"}'|;
 6| foo.mark();
 6| foo.data = "bar";
