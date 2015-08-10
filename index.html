@@ -508,7 +508,7 @@ a string) into both literal elements and individual function parameters.</div>
 f<span class="punctuation">(</span><span class="literal">1</span><span class="punctuation">,</span> <span class="literal">2</span><span class="punctuation">,</span> <span class="mark"><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>params</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="literal">9</span><span class="semi">;</span>
 
 <span class="keyword">var</span> str<span class="punctuation"> = </span><span class="literal">"foo"</span><span class="semi">;</span>
-<span class="keyword">var</span> chars<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="ellipsis">&hellip;</span> str <span class="punctuation">]</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"f"</span><span class="punctuation">,</span> <span class="literal">"o"</span><span class="punctuation">,</span> <span class="literal">"o"</span> <span class="punctuation">]</span></span>
+<span class="keyword">var</span> chars<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="mark"><span class="punctuation">.</span><span class="punctuation">.</span><span class="punctuation">.</span>str</span> <span class="punctuation">]</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"f"</span><span class="punctuation">,</span> <span class="literal">"o"</span><span class="punctuation">,</span> <span class="literal">"o"</span> <span class="punctuation">]</span></span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
@@ -1707,12 +1707,17 @@ m<span class="punctuation">.</span><span class="mark">size</span> <span class="p
     get data    <span class="punctuation">(</span><span class="punctuation">)</span>     <span class="punctuation">{</span> <span class="keyword">return</span> <span class="mark">attachedData<span class="punctuation">.</span>get</span><span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">)</span><span class="semi">;</span> <span class="punctuation">}</span>
 <span class="punctuation">}</span>
 
-<span class="keyword">new</span> foo<span class="punctuation"> = </span><span class="keyword">new</span> Node<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">let</span> foo<span class="punctuation"> = </span><span class="keyword">new</span> Node<span class="punctuation">(</span><span class="literal">"foo"</span><span class="punctuation">)</span><span class="semi">;</span>
 JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">'<span class="punctuation">{</span>"id":"foo"<span class="punctuation">}</span>'</span></span><span class="semi">;</span>
 foo<span class="punctuation">.</span>mark<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
 foo<span class="punctuation">.</span>data<span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
 foo<span class="punctuation">.</span>data <span class="punctuation">===</span> <span class="literal">"bar"</span><span class="semi">;</span>
 JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">'<span class="punctuation">{</span>"id":"foo"<span class="punctuation">}</span>'</span></span><span class="semi">;</span>
+isMarked<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> true
+attachedData<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> true
+foo<span class="punctuation"> = </span>null<span class="comment"> // remove only reference to foo</span>
+attachedData<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> false 
+isMarked<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> false
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
