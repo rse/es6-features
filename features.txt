@@ -1246,12 +1246,17 @@ Memory-leak-free Object-key’d side-by-side data-structures.
 6|     get data    ()     { return |attachedData.get|(this); }
 6| }
 6|
-6| new foo = new Node("foo");
+6| let foo = new Node("foo");
 6| JSON.stringify(foo) === |'{"id":"foo"}'|;
 6| foo.mark();
 6| foo.data = "bar";
 6| foo.data === "bar";
 6| JSON.stringify(foo) === |'{"id":"foo"}'|;
+6| isMarked.has(foo) === true
+6| attachedData.has(foo) === true
+6| foo = null // remove only reference to foo
+6| attachedData.has(foo) === false 
+6| isMarked.has(foo) === false
 
 5| // no equivalent in ES5
 
