@@ -1713,11 +1713,12 @@ foo<span class="punctuation">.</span>mark<span class="punctuation">(</span><span
 foo<span class="punctuation">.</span>data<span class="punctuation"> = </span><span class="literal">"bar"</span><span class="semi">;</span>
 foo<span class="punctuation">.</span>data <span class="punctuation">===</span> <span class="literal">"bar"</span><span class="semi">;</span>
 JSON<span class="punctuation">.</span>stringify<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">'<span class="punctuation">{</span>"id":"foo"<span class="punctuation">}</span>'</span></span><span class="semi">;</span>
-isMarked<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> true
-attachedData<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> true
-foo<span class="punctuation"> = </span>null<span class="comment"> // remove only reference to foo</span>
-attachedData<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> false 
-isMarked<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> false
+
+isMarked<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span>     <span class="punctuation">===</span> <span class="mark">true</span>
+attachedData<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark">true</span>
+foo<span class="punctuation"> = </span><span class="mark">null</span>  /<span class="punctuation">*</span> remove only reference to foo <span class="punctuation">*</span>/
+attachedData<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark">false</span>
+isMarked<span class="punctuation">.</span>has<span class="punctuation">(</span>foo<span class="punctuation">)</span>     <span class="punctuation">===</span> <span class="mark">false</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
