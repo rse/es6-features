@@ -206,9 +206,12 @@ Aggregation of remaining arguments into single parameter of variadic functions.
 6| f(1, 2, |"hello", true, 7|) === 9;
 
 5| function f (x, y) {
-5|     |var a = Array.prototype.slice.call(arguments, 2)|;
+5|     |var a = []|;
+5|     for (var i = 2, length = arguments.length; i < length; i++) {
+5|          |a.push(arguments[i])|;
+5|     }
 5|     return (x + y) * a.length;
-5| };
+5| }
 5| f(1, 2, |"hello", true, 7|) === 9;
 
 Spread Operator
