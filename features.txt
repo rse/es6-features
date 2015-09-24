@@ -1008,7 +1008,7 @@ order to produce sequence of values (either finite or infinite).
 6| }
 
 5| var fibonacci = {
-5|     next: ((|function| () {
+5|     next: (|function| () {
 5|         var pre = 0, cur = 1;
 5|         return function () {
 5|             tmp = pre;
@@ -1016,7 +1016,7 @@ order to produce sequence of values (either finite or infinite).
 5|             cur += tmp;
 5|             return cur;
 5|         };
-5|     })();
+5|     })()
 5| };
 5|
 5| var n;
