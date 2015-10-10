@@ -235,8 +235,8 @@ a string) into both literal elements and individual function parameters.
 5| var str = "foo";
 5| var chars = str.split(""); // [ "f", "o", "o" ]
 
-Template Strings
-================
+Template Literals
+=================
 
 String Interpolation
 --------------------
