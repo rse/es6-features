@@ -532,10 +532,10 @@ Fail-soft destructuring, optionally with defaults.
 Modules
 =======
 
-Symbol Export/Import
---------------------
+Value Export/Import
+-------------------
 
-Support for exporting/importing symbols from/to modules without global namespace pollution.
+Support for exporting/importing values from/to modules without global namespace pollution.
 
 6| //  lib/math.js
 6| |export| function |sum| (x, y) { return x + y };
@@ -565,7 +565,7 @@ Support for exporting/importing symbols from/to modules without global namespace
 Default & Wildcard
 ------------------
 
-Marking a symbol as the default exported symbol and mass-mixin of symbols.
+Marking a value as the default exported value and mass-mixin of values.
 
 6| //  lib/mathplusplus.js
 6| |export *| from "lib/math";
