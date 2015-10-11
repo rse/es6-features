@@ -89,3 +89,12 @@ ECMAScript 5 equivalents.
   just generated out of it. Fork this project on Github, edit the file
   `features.txt` and then please send a pull request.
 
+- *Do you know more such ECMAScript 6 feature lists?*
+
+    - [ECMAScript 6 Features](https://github.com/lukehoban/es6features#readme) (by Luke Hoban)
+    - [Learn ES2015 - A detailed overview of ECMAScript 6 features](https://babeljs.io/docs/learn-es2015/) (by Babel team)
+    - [ECMAScript 6 Cheatsheet](http://help.wtf/es6) (by Erik Moeller)
+    - [First Steps with ECMAScript 6](http://exploringjs.com/es6/ch_first-steps.html) (by Axel Rauschmayer)
+    - [JS Features](http://jsfeatures.in/) (by Hemanth.HM)
+    - [Minimalist examples of ES6 functionalities](https://github.com/hemanth/paws-on-es6) (by Hemanth.HM)
+
