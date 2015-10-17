@@ -254,6 +254,18 @@
     <a href="#Reflection">Reflection</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
+<li class="title">Internationalization & Localization
+    <ul>
+<li class="subtitle subtitle_Collation">
+    <a href="#Collation">Collation</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_NumberFormatting">
+    <a href="#NumberFormatting">Number Formatting</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_CurrencyFormatting">
+    <a href="#CurrencyFormatting">Currency Formatting</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_DateTimeFormatting">
+    <a href="#DateTimeFormatting">Date/Time Formatting</a> <i class="fa fa-arrow-circle-right"></i></li>
+    </ul>
+</li>
 </ul>
 
             <!-- ATTENTION: END OF GENERATED CODE. DO NOT EDIT MANUALLY -->
@@ -2155,6 +2167,94 @@ obj<span class="punctuation">[</span>Symbol<span class="punctuation">(</span><sp
 Object<span class="punctuation">.</span>defineProperty<span class="punctuation">(</span>obj<span class="punctuation">,</span> <span class="literal">"b"</span><span class="punctuation">,</span> <span class="punctuation">{</span> value: <span class="literal">2</span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span><span class="comment">
 // no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
 <span class="mark">Object<span class="punctuation">.</span>getOwnPropertyNames</span><span class="punctuation">(</span>obj<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"b"</span> <span class="punctuation">]</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="Collation" class="showcase showcase_Collation">    <div class="title">Internationalization & Localization</div>
+    <div class="subtitle">Collation</div>
+    <div class="desc">Sorting a set of strings and searching within a set of strings.
+Collation is parameterized by locale and aware of Unicode.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// <span class="keyword">in</span> German<span class="punctuation">,</span>  <span class="literal">"ä"</span> sorts with <span class="literal">"a"</span></span><span class="comment">
+// <span class="keyword">in</span> Swedish<span class="punctuation">,</span> <span class="literal">"ä"</span> sorts after <span class="literal">"z"</span></span>
+<span class="keyword">var</span> list<span class="punctuation"> = </span><span class="punctuation">[</span> <span class="mark"><span class="literal">"ä"</span></span><span class="punctuation">,</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"z"</span> <span class="punctuation">]</span><span class="semi">;</span>
+<span class="keyword">var</span> i<span class="literal">10</span>nDE<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>Collator<span class="punctuation">(</span><span class="mark"><span class="literal">"de"</span></span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">var</span> i<span class="literal">10</span>nSV<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>Collator<span class="punctuation">(</span><span class="mark"><span class="literal">"sv"</span></span><span class="punctuation">)</span><span class="semi">;</span>
+i<span class="literal">10</span>nDE<span class="punctuation">.</span>compare<span class="punctuation">(</span><span class="literal">"ä"</span><span class="punctuation">,</span> <span class="literal">"z"</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="punctuation">-</span><span class="literal">1</span></span><span class="semi">;</span>
+i<span class="literal">10</span>nSV<span class="punctuation">.</span>compare<span class="punctuation">(</span><span class="literal">"ä"</span><span class="punctuation">,</span> <span class="literal">"z"</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="punctuation">+</span><span class="literal">1</span></span><span class="semi">;</span>
+console<span class="punctuation">.</span>log<span class="punctuation">(</span>list<span class="punctuation">.</span>sort<span class="punctuation">(</span>i<span class="literal">10</span>nDE<span class="punctuation">.</span>compare<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"ä"</span></span><span class="punctuation">,</span> <span class="literal">"z"</span> <span class="punctuation">]</span></span>
+console<span class="punctuation">.</span>log<span class="punctuation">(</span>list<span class="punctuation">.</span>sort<span class="punctuation">(</span>i<span class="literal">10</span>nSV<span class="punctuation">.</span>compare<span class="punctuation">)</span><span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="punctuation">[</span> <span class="literal">"a"</span><span class="punctuation">,</span> <span class="literal">"z"</span><span class="punctuation">,</span> <span class="mark"><span class="literal">"ä"</span></span> <span class="punctuation">]</span></span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="NumberFormatting" class="showcase showcase_NumberFormatting">    <div class="title">Internationalization & Localization</div>
+    <div class="subtitle">Number Formatting</div>
+    <div class="desc">Format numbers with digit grouping and localized separators.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> i<span class="literal">10</span>nEN<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>NumberFormat<span class="punctuation">(</span><span class="mark"><span class="literal">"en<span class="punctuation">-</span>US"</span></span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">var</span> i<span class="literal">10</span>nDE<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>NumberFormat<span class="punctuation">(</span><span class="mark"><span class="literal">"de<span class="punctuation">-</span>DE"</span></span><span class="punctuation">)</span><span class="semi">;</span>
+i<span class="literal">10</span>nEN<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="literal">1234567</span><span class="punctuation">.</span><span class="literal">89</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"1<span class="punctuation">,</span>234<span class="punctuation">,</span>567<span class="punctuation">.</span>89"</span></span><span class="semi">;</span>
+i<span class="literal">10</span>nDE<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="literal">1234567</span><span class="punctuation">.</span><span class="literal">89</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"1<span class="punctuation">.</span>234<span class="punctuation">.</span>567<span class="punctuation">,</span>89"</span></span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="CurrencyFormatting" class="showcase showcase_CurrencyFormatting">    <div class="title">Internationalization & Localization</div>
+    <div class="subtitle">Currency Formatting</div>
+    <div class="desc">Format numbers with digit grouping, localized separators and attached currency symbol.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> i<span class="literal">10</span>nUSD<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>NumberFormat<span class="punctuation">(</span><span class="literal">"en<span class="punctuation">-</span>US"</span><span class="punctuation">,</span> <span class="punctuation">{</span> style: <span class="literal">"currency"</span><span class="punctuation">,</span> currency: <span class="mark"><span class="literal">"USD"</span></span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">var</span> i<span class="literal">10</span>nGBP<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>NumberFormat<span class="punctuation">(</span><span class="literal">"en<span class="punctuation">-</span>GB"</span><span class="punctuation">,</span> <span class="punctuation">{</span> style: <span class="literal">"currency"</span><span class="punctuation">,</span> currency: <span class="mark"><span class="literal">"GBP"</span></span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">var</span> i<span class="literal">10</span>nEUR<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>NumberFormat<span class="punctuation">(</span><span class="literal">"de<span class="punctuation">-</span>DE"</span><span class="punctuation">,</span> <span class="punctuation">{</span> style: <span class="literal">"currency"</span><span class="punctuation">,</span> currency: <span class="mark"><span class="literal">"EUR"</span></span> <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
+i<span class="literal">10</span>nUSD<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="literal">100200300</span><span class="punctuation">.</span><span class="literal">40</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"$100<span class="punctuation">,</span>200<span class="punctuation">,</span>300<span class="punctuation">.</span>40"</span></span><span class="semi">;</span>
+i<span class="literal">10</span>nGBP<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="literal">100200300</span><span class="punctuation">.</span><span class="literal">40</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"£100<span class="punctuation">,</span>200<span class="punctuation">,</span>300<span class="punctuation">.</span>40"</span></span><span class="semi">;</span>
+i<span class="literal">10</span>nEUR<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="literal">100200300</span><span class="punctuation">.</span><span class="literal">40</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"100<span class="punctuation">.</span>200<span class="punctuation">.</span>300<span class="punctuation">,</span>40 €"</span></span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="DateTimeFormatting" class="showcase showcase_DateTimeFormatting">    <div class="title">Internationalization & Localization</div>
+    <div class="subtitle">Date/Time Formatting</div>
+    <div class="desc">Format date/time with localized ordering and separators.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> i<span class="literal">10</span>nEN<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>DateTimeFormat<span class="punctuation">(</span><span class="mark"><span class="literal">"en<span class="punctuation">-</span>US"</span></span><span class="punctuation">)</span><span class="semi">;</span>
+<span class="keyword">var</span> i<span class="literal">10</span>nDE<span class="punctuation"> = </span><span class="keyword">new</span> Intl<span class="punctuation">.</span>DateTimeFormat<span class="punctuation">(</span><span class="mark"><span class="literal">"de<span class="punctuation">-</span>DE"</span></span><span class="punctuation">)</span><span class="semi">;</span>
+i<span class="literal">10</span>nEN<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="keyword">new</span> Date<span class="punctuation">(</span><span class="literal">"2015<span class="punctuation">-</span>01<span class="punctuation">-</span>02"</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"1/2/2015"</span></span><span class="semi">;</span>
+i<span class="literal">10</span>nDE<span class="punctuation">.</span>format<span class="punctuation">(</span><span class="keyword">new</span> Date<span class="punctuation">(</span><span class="literal">"2015<span class="punctuation">-</span>01<span class="punctuation">-</span>02"</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">===</span> <span class="mark"><span class="literal">"2<span class="punctuation">.</span>1<span class="punctuation">.</span>2015"</span></span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
