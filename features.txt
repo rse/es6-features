@@ -428,6 +428,7 @@ for both regular functions and generator functions.
 5|         ...
 5|     },
 5|     //  quux: no equivalent in ES5
+5|     ...
 5| };
 
 
