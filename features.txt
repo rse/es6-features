@@ -247,22 +247,22 @@ Intuitive expression interpolation for single-line and multi-line strings.
 
 6| var customer = { name: "Foo" };
 6| var card = { amount: 7, product: "Bar", unitprice: 42 };
-6| message = `Hello |${customer.name}|,
+6| message = |`|Hello |${customer.name}|,
 6| want to buy |${card.amount} ${card.product}| for
-6| a total of |${card.amount * card.unitprice}| bucks?`;
+6| a total of |${card.amount * card.unitprice}| bucks?|`|;
 
 5| var customer = { name: "Foo" };
 5| var card = { amount: 7, product: "Bar", unitprice: 42 };
-5| message = "Hello "| + customer.name + |",\n" +
+5| message = |"|Hello "| + customer.name + |",\n" +
 5| "want to buy "| + card.amount + |" "| + card.product + |" for\n" +
-5| "a total of "| + (card.amount * card.unitprice) + |" bucks?";
+5| "a total of "| + (card.amount * card.unitprice) + |" bucks?|"|;
 
 Custom Interpolation
 --------------------
 
 Flexible expression interpolation for arbitrary methods.
 
-6| get`http://example.com/foo?bar=|${|bar + baz|}|&quux=|${|quux|}|`;
+6| get|`|http://example.com/foo?bar=|${|bar + baz|}|&quux=|${|quux|}`|;
 
 5| get|([ |"http://example.com/foo?bar="|,| "&quux="|,| ""| ],|bar + baz|,| quux|)|;
 
@@ -278,9 +278,9 @@ Access the raw template string content (backslashes are not interpreted).
 6|     strings.raw[1] === "bar";
 6|     values[0] === 42;
 6| }
-6| quux `foo|\n|${ 42 }bar`
+6| quux |`|foo|\n|${ 42 }bar|`|
 6|
-6| String.raw `foo|\n|${ 42 }bar` === "foo|\\n|42bar";
+6| String.raw |`|foo|\n|${ 42 }bar|`| === "foo|\\n|42bar";
 
 5| //  no equivalent in ES5
 
