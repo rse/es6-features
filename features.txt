@@ -193,8 +193,7 @@ Simple and intuitive default values for function parameters.
 5| function f (x, y, z) {
 5|     |if (y === undefined)|
 5|         |y = 7|;
-5|     |if (z === undefined)|
-5|         |z = 42|;
+5|         z = z || 42;
 5|     return x + y + z;
 5| };
 5| f(1) === 50;
