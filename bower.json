@@ -2,8 +2,8 @@
     "name": "es6-features",
     "dependencies": {
         "normalize.css":      "3.0.3",
-        "typopro-web":        "3.2.4",
-        "fontawesome":        "4.4.0",
+        "typopro-web":        "3.4.1",
+        "fontawesome":        "4.5.0",
         "director":           "1.2.8",
         "jquery":             "2.1.4",
         "mousetrap":          "1.5.3"
