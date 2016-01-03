@@ -198,6 +198,8 @@
     <a href="#GeneratorMatching">Generator Matching</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_GeneratorControlFlow">
     <a href="#GeneratorControlFlow">Generator Control-Flow</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_GeneratorMethods">
+    <a href="#GeneratorMethods">Generator Methods</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Map/Set & WeakMap/WeakSet
@@ -1637,6 +1639,33 @@ and given here just for better understanding. See
 <span class="punctuation">}</span><span class="punctuation">,</span> <span class="literal">"Hello"</span><span class="punctuation">)</span><span class="punctuation">.</span>then<span class="punctuation">(</span><span class="punctuation">(</span>msg<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> <span class="punctuation">{</span>
     console<span class="punctuation">.</span>log<span class="punctuation">(</span><span class="literal">"RESULT:"</span><span class="punctuation">,</span> msg<span class="punctuation">)</span><span class="semi">;</span><span class="comment"> // <span class="literal">"Hello foo bar baz"</span></span>
 <span class="punctuation">}</span><span class="punctuation">)</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="GeneratorMethods" class="showcase showcase_GeneratorMethods">    <div class="title">Generators</div>
+    <div class="subtitle">Generator Methods</div>
+    <div class="desc">Support for generator methods, i.e., methods in classes and on objects,
+based on generator functions.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">class</span> Clz <span class="punctuation">{</span>
+    <span class="mark"><span class="punctuation">*</span> bar <span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
+        <span class="ellipsis">&hellip;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span><span class="semi">;</span>
+<span class="keyword">let</span> Obj<span class="punctuation"> = </span><span class="punctuation">{</span>
+    <span class="mark"><span class="punctuation">*</span> foo <span class="punctuation">(</span><span class="punctuation">)</span></span> <span class="punctuation">{</span>
+        <span class="ellipsis">&hellip;</span>
+    <span class="punctuation">}</span>
+<span class="punctuation">}</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>

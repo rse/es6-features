@@ -1149,6 +1149,24 @@ and given here just for better understanding. See
 
 5| //  no equivalent in ES5
 
+Generator Methods
+-----------------
+
+Support for generator methods, i.e., methods in classes and on objects,
+based on generator functions.
+
+6| class Clz {
+6|     |* bar ()| {
+6|         ...
+6|     }
+6| };
+6| let Obj = {
+6|     |* foo ()| {
+6|         ...
+6|     }
+6| };
+
+5| //  no equivalent in ES5
 
 # Comprehensions
 # ==============
