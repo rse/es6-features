@@ -354,21 +354,20 @@ code {
     color: #999999;
 }
 .content .js .icon {
+    z-index: 999;
     position: absolute;
     top: 5px;
     right: 5px;
     font-size: 30px;
 }
 .content .js.es5 .icon {
-    z-index: 1001;
     color: #990000;
 }
 .content .js.es6 .icon {
-    z-index: 1001;
     color: #009900;
 }
 .content .js .icon.fa-circle {
-    z-index: 1000;
+    z-index: 999;
     color: #ffffff;
 }
 
