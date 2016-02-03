@@ -230,11 +230,12 @@ code {
 }
 
 .content {
-    position: absolute;
+    position: fixed;
     left: 380px;
     top: 80px;
     width: calc(100% - 380px - 30px);
-    padding-bottom: 100px;
+    height: calc(100% - 180px);
+    overflow: scroll;
 }
 
 .content .title {
