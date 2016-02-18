@@ -743,9 +743,9 @@ parser<span class="punctuation">(</span><span class="literal">"Foo 1 Bar 7 Baz 4
     <div class="desc">Support for computed names in object property definitions.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span>
+    <div class="code"><span class="keyword">let</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span>
     foo: <span class="literal">"bar"</span><span class="punctuation">,</span>
-    <span class="mark"><span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span>:</span> <span class="literal">42</span>
+    <span class="mark"><span class="punctuation">[</span></span> <span class="literal">"baz"</span> <span class="punctuation">+</span> quux<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span>:</span> <span class="literal">42</span>
 <span class="punctuation">}</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
@@ -753,10 +753,10 @@ parser<span class="punctuation">(</span><span class="literal">"Foo 1 Bar 7 Baz 4
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code">obj<span class="punctuation"> = </span><span class="punctuation">{</span>
+    <div class="code"><span class="keyword">var</span> obj<span class="punctuation"> = </span><span class="punctuation">{</span>
     foo: <span class="literal">"bar"</span>
 <span class="punctuation">}</span><span class="semi">;</span>
-<span class="mark">obj<span class="punctuation">[</span></span> <span class="literal">"prop_"</span> <span class="punctuation">+</span> foo<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span> =</span> <span class="literal">42</span><span class="semi">;</span></div>
+<span class="mark">obj<span class="punctuation">[</span></span> <span class="literal">"baz"</span> <span class="punctuation">+</span> quux<span class="punctuation">(</span><span class="punctuation">)</span> <span class="mark"><span class="punctuation">]</span> =</span> <span class="literal">42</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
