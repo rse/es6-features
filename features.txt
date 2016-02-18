@@ -394,15 +394,15 @@ Computed Property Names
 
 Support for computed names in object property definitions.
 
-6| obj = {
+6| let obj = {
 6|     foo: "bar",
-6|     |[| "prop_" + foo() |]:| 42
+6|     |[| "prop_" + foo |]:| 42
 6| };
 
-5| obj = {
+5| var obj = {
 5|     foo: "bar"
 5| };
-5| |obj[| "prop_" + foo() |] =| 42;
+5| |obj[| "prop_" + foo |] =| 42;
 
 Method Properties
 -----------------
