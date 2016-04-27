@@ -79,7 +79,7 @@ Block-scoped variables (and constants) without hoisting.
 5|     x = a[i];
 5|     ...
 5| }
-5| for (i = 0; i < b.length; i++)
+5| for (i = 0; i < b.length; i++) {
 5|     y = b[i];
 5|     ...
 5| }
