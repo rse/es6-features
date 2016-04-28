@@ -1,11 +1,11 @@
 {
     "name": "es6-features",
     "dependencies": {
-        "normalize.css":      "3.0.3",
-        "typopro-web":        "3.4.3",
-        "fontawesome":        "4.5.0",
+        "normalize.css":      "4.1.1",
+        "typopro-web":        "3.4.4",
+        "fontawesome":        "4.6.1",
         "director":           "1.2.8",
-        "jquery":             "2.1.4",
+        "jquery":             "2.2.3",
         "mousetrap":          "1.5.3"
     }
 }
