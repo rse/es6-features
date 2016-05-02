@@ -590,7 +590,7 @@ Marking a value as the default exported value and mass-mixin of values.
 5| |LibMathPP.exp| = function (x) { return Math.exp(x) };
 5|
 5| //  someApp.js
-5| var |exp = LibMathPP.exp|, |pi = LibMathPP.pi|, |e = libMathPP.e|;
+5| var |exp = LibMathPP.exp|, |pi = LibMathPP.pi|, |e = LibMathPP.e|;
 5| console.log("e^{π} = " + exp(pi));
 
 
