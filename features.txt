@@ -1628,12 +1628,12 @@ Collation is parameterized by locale and aware of Unicode.
 6| // in German,  "ä" sorts with "a"
 6| // in Swedish, "ä" sorts after "z"
 6| var list = [ |"ä"|, "a", "z" ];
-6| var i10nDE = new Intl.Collator(|"de"|);
-6| var i10nSV = new Intl.Collator(|"sv"|);
-6| i10nDE.compare("ä", "z") === |-1|;
-6| i10nSV.compare("ä", "z") === |+1|;
-6| console.log(list.sort(i10nDE.compare)); // [ "a", |"ä"|, "z" ]
-6| console.log(list.sort(i10nSV.compare)); // [ "a", "z", |"ä"| ]
+6| var l10nDE = new Intl.Collator(|"de"|);
+6| var l10nSV = new Intl.Collator(|"sv"|);
+6| l10nDE.compare("ä", "z") === |-1|;
+6| l10nSV.compare("ä", "z") === |+1|;
+6| console.log(list.sort(l10nDE.compare)); // [ "a", |"ä"|, "z" ]
+6| console.log(list.sort(l10nSV.compare)); // [ "a", "z", |"ä"| ]
 
 5| // no equivalent in ES5
 
@@ -1642,10 +1642,10 @@ Number Formatting
 
 Format numbers with digit grouping and localized separators.
 
-6| var i10nEN = new Intl.NumberFormat(|"en-US"|);
-6| var i10nDE = new Intl.NumberFormat(|"de-DE"|);
-6| i10nEN.format(1234567.89) === |"1,234,567.89"|;
-6| i10nDE.format(1234567.89) === |"1.234.567,89"|;
+6| var l10nEN = new Intl.NumberFormat(|"en-US"|);
+6| var l10nDE = new Intl.NumberFormat(|"de-DE"|);
+6| l10nEN.format(1234567.89) === |"1,234,567.89"|;
+6| l10nDE.format(1234567.89) === |"1.234.567,89"|;
 
 5| // no equivalent in ES5
 
@@ -1654,12 +1654,12 @@ Currency Formatting
 
 Format numbers with digit grouping, localized separators and attached currency symbol.
 
-6| var i10nUSD = new Intl.NumberFormat("en-US", { style: "currency", currency: |"USD"| });
-6| var i10nGBP = new Intl.NumberFormat("en-GB", { style: "currency", currency: |"GBP"| });
-6| var i10nEUR = new Intl.NumberFormat("de-DE", { style: "currency", currency: |"EUR"| });
-6| i10nUSD.format(100200300.40) === |"$100,200,300.40"|;
-6| i10nGBP.format(100200300.40) === |"£100,200,300.40"|;
-6| i10nEUR.format(100200300.40) === |"100.200.300,40 €"|;
+6| var l10nUSD = new Intl.NumberFormat("en-US", { style: "currency", currency: |"USD"| });
+6| var l10nGBP = new Intl.NumberFormat("en-GB", { style: "currency", currency: |"GBP"| });
+6| var l10nEUR = new Intl.NumberFormat("de-DE", { style: "currency", currency: |"EUR"| });
+6| l10nUSD.format(100200300.40) === |"$100,200,300.40"|;
+6| l10nGBP.format(100200300.40) === |"£100,200,300.40"|;
+6| l10nEUR.format(100200300.40) === |"100.200.300,40 €"|;
 
 5| // no equivalent in ES5
 
@@ -1668,10 +1668,10 @@ Date/Time Formatting
 
 Format date/time with localized ordering and separators.
 
-6| var i10nEN = new Intl.DateTimeFormat(|"en-US"|);
-6| var i10nDE = new Intl.DateTimeFormat(|"de-DE"|);
-6| i10nEN.format(new Date("2015-01-02")) === |"1/2/2015"|;
-6| i10nDE.format(new Date("2015-01-02")) === |"2.1.2015"|;
+6| var l10nEN = new Intl.DateTimeFormat(|"en-US"|);
+6| var l10nDE = new Intl.DateTimeFormat(|"de-DE"|);
+6| l10nEN.format(new Date("2015-01-02")) === |"1/2/2015"|;
+6| l10nDE.format(new Date("2015-01-02")) === |"2.1.2015"|;
 
 5| // no equivalent in ES5
 
