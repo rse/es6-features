@@ -2,10 +2,10 @@
     "name": "es6-features",
     "dependencies": {
         "normalize.css":      "4.1.1",
-        "typopro-web":        "3.4.4",
-        "fontawesome":        "4.6.1",
+        "typopro-web":        "3.4.5",
+        "fontawesome":        "4.6.3",
         "director":           "1.2.8",
-        "jquery":             "2.2.3",
+        "jquery":             "2.2.4",
         "mousetrap":          "1.5.3"
     }
 }
