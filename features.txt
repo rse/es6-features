@@ -1353,7 +1353,7 @@ objects onto a destination object.
 5| Object|.keys(src1).forEach|(function(k) {
 5|     |dst[k] = src1[k]|;
 5| });
-5| Object|.keys(src2).forEach|(function(e) {
+5| Object|.keys(src2).forEach|(function(k) {
 5|     |dst[k] = src2[k]|;
 5| });
 5| dst.quux === 0;
