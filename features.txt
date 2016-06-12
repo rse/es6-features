@@ -1509,8 +1509,8 @@ First class representation of a value that may be made asynchronously and be ava
 6|         setTimeout(() => |resolve|(`${msg} Hello ${who}!`), timeout);
 6|     });
 6| }
-6| msgAfterTimeout("", "Foo", 100).|then|((msg) =>
-6|     return msgAfterTimeout(msg, "Bar", 200);
+6| msgAfterTimeout("", "Foo", 100).|then|(
+6|     (msg) => msgAfterTimeout(msg, "Bar", 200)
 6| ).|then|((msg) => {
 6|     console.log(`done after 300ms:${msg}`);
 6| });
