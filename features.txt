@@ -307,7 +307,7 @@ Extended support using Unicode within strings and regular expressions.
 
 6| "𠮷".length === 2;
 6| "𠮷".match(/./|u|)[0].length === 2;
-5| "𠮷" === "\uD842\uDFB7";
+6| "𠮷" === "\uD842\uDFB7";
 6| "𠮷" === "|\u{20BB7}|";
 6| "𠮷".|codePointAt|(0) == 0x20BB7;
 6| for (let codepoint |of| "𠮷") console.log(codepoint);
