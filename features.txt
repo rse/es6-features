@@ -170,7 +170,13 @@ More intuitive handling of current object context.
 5|         |self|.fives.push(v);
 5| });
 5|
-5| //  variant 2 (since ECMAScript 5.1 only)
+5| //  variant 2
+5| |this|.nums.forEach(|function (v)| {
+5|     if (v % 5 === 0)
+5|         |this|.fives.push(v);
+5| }, |this|);
+5|
+5| //  variant 3 (since ECMAScript 5.1 only)
 5| |this|.nums.forEach(|function (v)| {
 5|     if (v % 5 === 0)
 5|         |this|.fives.push(v);
