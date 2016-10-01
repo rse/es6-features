@@ -308,6 +308,7 @@ code {
     -webkit-border-radius: 0px 0px 4px 4px;
     border-radius: 0px 0px 4px 4px;
     overflow-x: scroll;
+    line-height: 1.25;
 }
 .content .js.es5 .code {
     border-left: 10px solid #990000;
@@ -344,7 +345,7 @@ code {
 }
 .content .js .code .mark {
     background-color: #f0f8ff;
-    padding: 1px 0px 1px 0px;
+    padding: 0px 0px 0px 0px;
     -webkit-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
     border-top: 1px solid #e0e8ef;
