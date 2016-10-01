@@ -455,11 +455,11 @@ nums <span class="punctuation"> = </span>evens<span class="punctuation">.</span>
         <span class="mark">self</span><span class="punctuation">.</span>fives<span class="punctuation">.</span>push<span class="punctuation">(</span>v<span class="punctuation">)</span><span class="semi">;</span>
 <span class="punctuation">}</span><span class="punctuation">)</span><span class="semi">;</span>
 <span class="comment">
-//  variant <span class="literal">2</span> <span class="punctuation">(</span>since ECMAScript <span class="literal">5</span><span class="punctuation">.</span><span class="literal">1</span> only<span class="punctuation">)</span></span>
+//  variant <span class="literal">2</span></span>
 <span class="mark"><span class="keyword">this</span></span><span class="punctuation">.</span>nums<span class="punctuation">.</span>forEach<span class="punctuation">(</span><span class="mark"><span class="keyword">function</span> <span class="punctuation">(</span>v<span class="punctuation">)</span></span> <span class="punctuation">{</span>
     <span class="keyword">if</span> <span class="punctuation">(</span>v <span class="punctuation">%</span> <span class="literal">5</span> <span class="punctuation">===</span> <span class="literal">0</span><span class="punctuation">)</span>
         <span class="mark"><span class="keyword">this</span></span><span class="punctuation">.</span>fives<span class="punctuation">.</span>push<span class="punctuation">(</span>v<span class="punctuation">)</span><span class="semi">;</span>
-<span class="punctuation">}</span><span class="mark"><span class="punctuation">.</span>bind<span class="punctuation">(</span><span class="keyword">this</span><span class="punctuation">)</span></span><span class="punctuation">)</span><span class="semi">;</span></div>
+<span class="punctuation">}</span><span class="punctuation">,</span> <span class="mark"><span class="keyword">this</span></span><span class="punctuation">)</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>
