@@ -1,4 +1,4 @@
-##
+﻿##
 ##  es6-features -- ECMAScript 6 Feature Overview & Comparison
 ##  Copyright (c) 2015-2016 Ralf S. Engelschall <rse@engelschall.com>
 ##
@@ -1243,8 +1243,8 @@ Cleaner data-structure for common algorithms based on maps.
 
 6| let m = |new Map()|;
 6| m.|set("hello", 42)|;
-6| m.|set(s, 34)|;
-6| m.|get(s)| === 34;
+6| m.|set("s", 34)|;
+6| m.|get("s")| === 34;
 6| m.|size| === 2;
 6| for (let |[ key, val ] of m.entries()|)
 6|     console.log(key + " = " + val);
