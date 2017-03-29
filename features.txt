@@ -480,6 +480,23 @@ Intuitive and flexible destructuring of Objects into individual variables during
 5| var |b = tmp.lhs.op|;
 5| var c = tmp.rhs;
 
+Object And Array Matching, Default Values
+-----------------------------------------
+
+Simple and intuitive default values for destructuring of Objects and Arrays.
+
+6| var obj = { a: 1 };
+6| var list = [ 1 ];
+6| var { a, |b = 2| } = obj;
+6| var [ x, |y = 2| ] = list;
+
+5| var obj = { a: 1 };
+5| var list = [ 1 ];
+5| var a = obj.a;
+5| var |b = obj.b === undefined ? 2 : obj.b|;
+5| var x = list[0];
+5| var |y = list[1] === undefined ? 2 : list[1]|;
+
 Parameter Context Matching
 --------------------------
 
