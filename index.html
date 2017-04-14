@@ -830,14 +830,14 @@ for both regular functions and generator functions.</div>
     <div class="desc">Intuitive and flexible destructuring of Objects into individual variables during assignment.</div>
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> <span class="mark"><span class="punctuation">{</span> op<span class="punctuation">,</span> lhs<span class="punctuation">,</span> rhs <span class="punctuation">}</span></span><span class="punctuation"> = </span>getASTNode<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+    <div class="code"><span class="keyword">var</span> <span class="mark"><span class="punctuation">{</span> op<span class="punctuation">,</span> lhs<span class="punctuation">,</span> rhs <span class="punctuation">}</span></span><span class="punctuation"> = </span><span class="punctuation">{</span> op: <span class="punctuation">(</span>left<span class="punctuation">,</span> right<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> left <span class="punctuation">+</span> right<span class="punctuation">,</span> lhs: <span class="literal">1</span><span class="punctuation">,</span> rhs: <span class="literal">2</span> <span class="punctuation">}</span><span class="semi">;</span>
 </div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-check-circle"></i>
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> <span class="mark">tmp</span><span class="punctuation"> = </span>getASTNode<span class="punctuation">(</span><span class="punctuation">)</span><span class="semi">;</span>
+    <div class="code"><span class="keyword">var</span> <span class="mark">tmp</span><span class="punctuation"> = </span><span class="punctuation">{</span> op: <span class="punctuation">(</span>left<span class="punctuation">,</span> right<span class="punctuation">)</span> <span class="punctuation">=&gt;</span> left <span class="punctuation">+</span> right<span class="punctuation">,</span> lhs: <span class="literal">1</span><span class="punctuation">,</span> rhs: <span class="literal">2</span> <span class="punctuation">}</span><span class="semi">;</span>
 <span class="keyword">var</span> <span class="mark">op <span class="punctuation"> = </span>tmp<span class="punctuation">.</span>op</span><span class="semi">;</span>
 <span class="keyword">var</span> <span class="mark">lhs<span class="punctuation"> = </span>tmp<span class="punctuation">.</span>lhs</span><span class="semi">;</span>
 <span class="keyword">var</span> <span class="mark">rhs<span class="punctuation"> = </span>tmp<span class="punctuation">.</span>rhs</span><span class="semi">;</span></div>

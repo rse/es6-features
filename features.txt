@@ -461,9 +461,9 @@ Object Matching, Shorthand Notation
 
 Intuitive and flexible destructuring of Objects into individual variables during assignment.
 
-6| var |{ op, lhs, rhs }| = getASTNode();
+6| var |{ op, lhs, rhs }| = { op: (left, right) => left + right, lhs: 1, rhs: 2 };
 
-5| var |tmp| = getASTNode();
+5| var |tmp| = { op: (left, right) => left + right, lhs: 1, rhs: 2 };
 5| var |op  = tmp.op|;
 5| var |lhs = tmp.lhs|;
 5| var |rhs = tmp.rhs|;
