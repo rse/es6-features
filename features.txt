@@ -1259,6 +1259,7 @@ Map Data-Structure
 Cleaner data-structure for common algorithms based on maps.
 
 6| let m = |new Map()|;
+6| let s = |new Symbol()|;
 6| m.|set("hello", 42)|;
 6| m.|set(s, 34)|;
 6| m.|get(s)| === 34;
@@ -1267,6 +1268,7 @@ Cleaner data-structure for common algorithms based on maps.
 6|     console.log(key + " = " + val);
 
 5| var m = |{}|;
+5| // no equivalent in ES5
 5| |m["hello"] = 42|;
 5| // no equivalent in ES5
 5| // no equivalent in ES5

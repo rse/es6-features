@@ -1746,6 +1746,7 @@ s<span class="punctuation">.</span><span class="mark">has<span class="punctuatio
 <div class="js es6">
     <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="keyword">let</span> m<span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Map<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="semi">;</span>
+<span class="keyword">let</span> s<span class="punctuation"> = </span><span class="mark"><span class="keyword">new</span> Symbol<span class="punctuation">(</span><span class="punctuation">)</span></span><span class="semi">;</span>
 m<span class="punctuation">.</span><span class="mark">set<span class="punctuation">(</span><span class="literal">"hello"</span><span class="punctuation">,</span> <span class="literal">42</span><span class="punctuation">)</span></span><span class="semi">;</span>
 m<span class="punctuation">.</span><span class="mark">set<span class="punctuation">(</span>s<span class="punctuation">,</span> <span class="literal">34</span><span class="punctuation">)</span></span><span class="semi">;</span>
 m<span class="punctuation">.</span><span class="mark">get<span class="punctuation">(</span>s<span class="punctuation">)</span></span> <span class="punctuation">===</span> <span class="literal">34</span><span class="semi">;</span>
@@ -1758,7 +1759,8 @@ m<span class="punctuation">.</span><span class="mark">size</span> <span class="p
 </div>
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
-    <div class="code"><span class="keyword">var</span> m<span class="punctuation"> = </span><span class="mark"><span class="punctuation">{</span><span class="punctuation">}</span></span><span class="semi">;</span>
+    <div class="code"><span class="keyword">var</span> m<span class="punctuation"> = </span><span class="mark"><span class="punctuation">{</span><span class="punctuation">}</span></span><span class="semi">;</span><span class="comment">
+// no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
 <span class="mark">m<span class="punctuation">[</span><span class="literal">"hello"</span><span class="punctuation">]</span><span class="punctuation"> = </span><span class="literal">42</span></span><span class="semi">;</span><span class="comment">
 // no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span><span class="comment">
 // no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span>
