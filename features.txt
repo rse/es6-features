@@ -1328,7 +1328,7 @@ protocols, cryptography algorithms, file format manipulations, etc.
 6| //  struct Example { unsigned long id; char username[16]; float amountDue; };
 6| class Example {
 6|     constructor (buffer = |new ArrayBuffer(24)|) {
-6|         this._buffer = buffer;
+6|         this.buffer = buffer;
 6|     }
 6|     set buffer (buffer) {
 6|         this._buffer    = buffer;
@@ -1701,4 +1701,3 @@ Format date/time with localized ordering and separators.
 6| l10nDE.format(new Date("2015-01-02")) === |"2.1.2015"|;
 
 5| // no equivalent in ES5
-
