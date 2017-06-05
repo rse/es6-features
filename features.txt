@@ -229,6 +229,10 @@ a string) into both literal elements and individual function parameters.
 
 6| var params = [ "hello", true, 7 ];
 6| var other = [ 1, 2, |...params| ]; // [ 1, 2, "hello", true, 7 ]
+6|
+6| function f (x, y, ...a) {
+6|     return (x + y) * a.length;
+6| }
 6| f(1, 2, |...params|) === 9;
 6|
 6| var str = "foo";
@@ -236,6 +240,11 @@ a string) into both literal elements and individual function parameters.
 
 5| var params = [ "hello", true, 7 ];
 5| var other = [ 1, 2 ].|concat(params)|; // [ 1, 2, "hello", true, 7 ]
+5|
+5| function f (x, y) {
+5|     var a = Array.prototype.slice.call(arguments, 2);
+5|     return (x + y) * a.length;
+5| };
 5| f|.apply|(|undefined, [| 1, 2 |].concat(params)|) === 9;
 5|
 5| var str = "foo";
