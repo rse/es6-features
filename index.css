@@ -302,6 +302,7 @@ code {
 .content .js .code {
     font-family: "TypoPRO DejaVu Sans Mono", sans-serif;
     font-size: 11pt;
+    line-height: 22px;
     display: block;
     white-space: pre;
     background-color: white;
