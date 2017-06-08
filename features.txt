@@ -158,7 +158,7 @@ Lexical `this`
 
 More intuitive handling of current object context.
 
-6| |this|.nums.forEach(|(v) =>| {
+6| |this|.nums.forEach(|v =>| {
 6|     if (v % 5 === 0)
 6|         |this|.fives.push(v);
 6| });
