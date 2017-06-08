@@ -1,4 +1,4 @@
-##
+﻿##
 ##  es6-features -- ECMAScript 6 Feature Overview & Comparison
 ##  Copyright (c) 2015-2016 Ralf S. Engelschall <rse@engelschall.com>
 ##
@@ -1267,6 +1267,7 @@ Map Data-Structure
 
 Cleaner data-structure for common algorithms based on maps.
 
+6| let s = |5|;
 6| let m = |new Map()|;
 6| let s = |Symbol()|;
 6| m.|set("hello", 42)|;
