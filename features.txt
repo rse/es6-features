@@ -26,7 +26,7 @@
 Constants
 =========
 
-Constants
+Constants (常量)
 ---------
 
 Support for constants (also known as "immutable variables"), i.e.,
@@ -52,7 +52,7 @@ can still be altered).
 Scoping
 =======
 
-Block-Scoped Variables
+Block-Scoped Variables (局部变量)
 ----------------------
 
 Block-scoped variables (and constants) without hoisting.
@@ -95,7 +95,7 @@ Block-scoped variables (and constants) without hoisting.
 5| callbacks[2]() === 4;
 
 
-Block-Scoped Functions
+Block-Scoped Functions (局部作用域)
 ----------------------
 
 Block-scoped function definitions.
@@ -122,10 +122,10 @@ Block-scoped function definitions.
 5|     foo() === 1;
 5| })();
 
-Arrow Functions
+Arrow Functions (箭头函数)
 ===============
 
-Expression Bodies
+Expression Bodies (表达式)
 -----------------
 
 More expressive closure syntax.
@@ -138,7 +138,7 @@ More expressive closure syntax.
 5| pairs = evens.map(|function (v) { return| { even: v, odd: v + 1 }; |}|);
 5| nums  = evens.map(|function (v, i) { return| v + i; |}|);
 
-Statement Bodies
+Statement Bodies (声明式)
 ----------------
 
 More expressive closure syntax.
@@ -153,7 +153,7 @@ More expressive closure syntax.
 5|        fives.push(v);
 5| |}|);
 
-Lexical `this`
+Lexical `this` (绑定作用域)
 --------------
 
 More intuitive handling of current object context.
@@ -183,10 +183,10 @@ More intuitive handling of current object context.
 5| }|.bind(this)|);
 
 
-Extended Parameter Handling
+Extended Parameter Handling  (扩展函数参数)
 ===========================
 
-Default Parameter Values
+Default Parameter Values (参数默认值)
 ------------------------
 
 Simple and intuitive default values for function parameters.
@@ -205,7 +205,7 @@ Simple and intuitive default values for function parameters.
 5| };
 5| f(1) === 50;
 
-Rest Parameter
+Rest Parameter (rest 参数)
 --------------
 
 Aggregation of remaining arguments into single parameter of variadic functions.
@@ -221,7 +221,7 @@ Aggregation of remaining arguments into single parameter of variadic functions.
 5| };
 5| f(1, 2, |"hello", true, 7|) === 9;
 
-Spread Operator
+Spread Operator (扩展参数)
 ---------------
 
 Spreading of elements of an iterable collection (like an array or even
@@ -250,10 +250,10 @@ a string) into both literal elements and individual function parameters.
 5| var str = "foo";
 5| var chars = str.split(""); // [ "f", "o", "o" ]
 
-Template Literals
+Template Literals (模版字面量)
 =================
 
-String Interpolation
+String Interpolation (字符串变量)
 --------------------
 
 Intuitive expression interpolation for single-line and multi-line strings.
