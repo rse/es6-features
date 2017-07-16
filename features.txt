@@ -1372,28 +1372,28 @@ Object Property Assignment
 New function for assigning enumerable properties of one or more source
 objects onto a destination object.
 
-6| var dst  = { quux: 0 };
+6| var dest = { quux: 0 };
 6| var src1 = { foo: |1|, bar: 2 };
 6| var src2 = { foo: |3|, baz: 4 };
-6| Object|.assign|(dst, src1, src2);
-6| dst.quux === 0;
-6| dst.foo  === |3|;
-6| dst.bar  === 2;
-6| dst.baz  === 4;
+6| Object|.assign|(dest, src1, src2);
+6| dest.quux === 0;
+6| dest.foo  === |3|;
+6| dest.bar  === 2;
+6| dest.baz  === 4;
 
-5| var dst  = { quux: 0 };
+5| var dest = { quux: 0 };
 5| var src1 = { foo: |1|, bar: 2 };
 5| var src2 = { foo: |3|, baz: 4 };
 5| Object|.keys(src1).forEach|(function(k) {
-5|     |dst[k] = src1[k]|;
+5|     |dest[k] = src1[k]|;
 5| });
 5| Object|.keys(src2).forEach|(function(k) {
-5|     |dst[k] = src2[k]|;
+5|     |dest[k] = src2[k]|;
 5| });
-5| dst.quux === 0;
-5| dst.foo  === |3|;
-5| dst.bar  === 2;
-5| dst.baz  === 4;
+5| dest.quux === 0;
+5| dest.foo  === |3|;
+5| dest.bar  === 2;
+5| dest.baz  === 4;
 
 Array Element Finding
 ---------------------
