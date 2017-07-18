@@ -909,7 +909,7 @@ initializers, as it is possible since ECMAScript 5.1).
 6|     |get| area   ()       { return this._width * this._height; }
 6| };
 6| var r = new Rectangle(50, 20);
-6| r.area === 1000;
+6| r.width === 1000;
 
 5| var Rectangle = function (width, height) {
 5|     this._width  = width;
@@ -923,7 +923,7 @@ initializers, as it is possible since ECMAScript 5.1).
 5|     |get| area   ()       { return this._width * this._height; }
 5| };
 5| var r = new Rectangle(50, 20);
-5| r.area === 1000;
+5| r.width === 1000;
 
 
 Symbol Type
