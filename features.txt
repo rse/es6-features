@@ -1488,10 +1488,8 @@ Number Comparison
 Availability of a standard Epsilon value for more precise comparison of
 floating point numbers.
 
-6| console.log(0.1 + 0.2 === 0.3); // false
 6| console.log(Math.abs((0.1 + 0.2) - 0.3) < |Number.EPSILON|); // true
 
-5| console.log(0.1 + 0.2 === 0.3); // false
 5| console.log(Math.abs((0.1 + 0.2) - 0.3) < |2.220446049250313e-16|); // true
 
 Number Truncation
