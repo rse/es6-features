@@ -1,0 +1,15 @@
+
+/* TypoPRO Open Sans Condensed Bold */
+@font-face {
+    font-family:  'TypoPRO Open Sans Condensed';
+    src:          url('TypoPRO-OpenSansCondensed-Bold.eot');
+    src:          local('*'),
+                  url('TypoPRO-OpenSansCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-OpenSansCondensed-Bold.woff') format('woff'),
+                  url('TypoPRO-OpenSansCondensed-Bold.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  bold;
+    font-stretch: condensed;
+    font-variant: normal;
+}
+

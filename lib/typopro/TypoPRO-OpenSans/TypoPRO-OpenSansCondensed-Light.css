@@ -1,0 +1,15 @@
+
+/* TypoPRO Open Sans Condensed Light */
+@font-face {
+    font-family:  'TypoPRO Open Sans Condensed';
+    src:          url('TypoPRO-OpenSansCondensed-Light.eot');
+    src:          local('*'),
+                  url('TypoPRO-OpenSansCondensed-Light.eot?#iefix') format('embedded-opentype'),
+                  url('TypoPRO-OpenSansCondensed-Light.woff') format('woff'),
+                  url('TypoPRO-OpenSansCondensed-Light.ttf') format('truetype');
+    font-style:   normal;
+    font-weight:  300;
+    font-stretch: condensed;
+    font-variant: normal;
+}
+

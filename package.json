@@ -5,9 +5,16 @@
         "grunt-cli":                  "~1.2.0",
         "grunt-contrib-clean":        "~1.1.0",
         "grunt-contrib-copy":         "~1.0.0",
-        "grunt-bower-install-simple": "~1.2.4",
         "babel-cli":                  "~6.26.0",
         "babel":                      "~6.23.0",
         "babel-preset-es2015":        "~6.24.1"
+    },
+    "dependencies": {
+        "normalize.css":              "~7.0.0",
+        "typopro-web":                "~3.7.6",
+        "font-awesome":               "~4.7.0",
+        "director":                   "~1.2.8",
+        "jquery":                     "~3.2.1",
+        "mousetrap":                  "~1.6.1"
     }
 }

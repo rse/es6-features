@@ -1,6 +1,7 @@
 Name:       DejaVu
 Homepage:   http://dejavu-fonts.org/
 Download:   http://dejavu-fonts.org/wiki/Download
+Download:   https://github.com/dejavu-fonts/dejavu-fonts
 Version:    2.37 (2016-07)
 License:    Bitstream Vera Fonts Copyright, Arev Fonts Copyright, Public Domain
 Publisher:  DejaVu Project
