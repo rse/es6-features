@@ -3,7 +3,7 @@
 
 ### ECMAScript 6: Feature Overview &amp; Comparison
 
-Copyright (c) 2015-2016 Ralf S. Engelschall &lt;[rse@engelschall.com](mailto:rse@engelschall.com)&gt; &lt;[@engelschall](http://twitter.com/engelschall)&gt;<br/>
+Copyright (c) 2015-2017 Ralf S. Engelschall &lt;[rse@engelschall.com](mailto:rse@engelschall.com)&gt; &lt;[@engelschall](http://twitter.com/engelschall)&gt;<br/>
 Partially based on [code snippets](http://git.io/es6features) by Luke Hoban.<br/>
 Licensed under MIT license.
 
