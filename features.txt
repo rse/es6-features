@@ -400,9 +400,9 @@ Property Shorthand
 
 Shorter syntax for common object property definition idiom.
 
-6| obj = { |x|, |y| };
+6| let obj = { |x|, |y| };
 
-5| obj = { |x: x|, |y: y| };
+5| let obj = { |x: x|, |y: y| };
 
 Computed Property Names
 -----------------------
@@ -425,7 +425,7 @@ Method Properties
 Support for method notation in object property definitions,
 for both regular functions and generator functions.
 
-6| obj = {
+6| let obj = {
 6|     |foo (a, b)| {
 6|         ...
 6|     },
@@ -437,7 +437,7 @@ for both regular functions and generator functions.
 6|     }
 6| };
 
-5| obj = {
+5| let obj = {
 5|     foo|: function| (a, b) {
 5|         ...
 5|     },
