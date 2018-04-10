@@ -363,10 +363,10 @@ even with an arbitrary number of distinct regular expressions.
 6|     console.log(JSON.stringify(match));
 6| };
 6| parser("Foo 1 Bar 7 Baz 42", [
-6|     { pattern: /^Foo\s+(\d+)/|y|, action: (match) => report(match) },
-6|     { pattern: /^Bar\s+(\d+)/|y|, action: (match) => report(match) },
-6|     { pattern: /^Baz\s+(\d+)/|y|, action: (match) => report(match) },
-6|     { pattern: /^\s*/|y|,         action: (match) => {}            }
+6|     { pattern: /Foo\s+(\d+)/|y|, action: (match) => report(match) },
+6|     { pattern: /Bar\s+(\d+)/|y|, action: (match) => report(match) },
+6|     { pattern: /Baz\s+(\d+)/|y|, action: (match) => report(match) },
+6|     { pattern: /\s*/|y|,         action: (match) => {}            }
 6| ]);
 
 5| var parser = function (input, match) {
