@@ -400,8 +400,10 @@ Property Shorthand
 
 Shorter syntax for common object property definition idiom.
 
+6| var x = 0, y = 0;
 6| obj = { |x|, |y| };
 
+5| var x = 0, y = 0;
 5| obj = { |x: x|, |y: y| };
 
 Computed Property Names
