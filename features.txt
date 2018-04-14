@@ -1140,7 +1140,7 @@ and given here just for better understanding. See
 
 6| //  generic asynchronous control-flow driver
 6| function |async| (proc, ...params) {
-6|     var |iterator| = |proc(...params)|;
+6|     let |iterator| = |proc(...params)|;
 6|     return new Promise((resolve, reject) => {
 6|         let loop = (value) => {
 6|             let result;
