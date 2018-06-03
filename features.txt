@@ -459,8 +459,8 @@ Array Matching
 
 Intuitive and flexible destructuring of Arrays into individual variables during assignment.
 
-6| var list = [ 1, 2, 3 ];
-6| var |[ a, , b ] = list|;
+6| let list = [ 1, 2, 3 ];
+6| let |[ a, , b ] = list|;
 6| [ |b, a| ] = [ |a, b| ];
 
 5| var list = [ 1, 2, 3 ];
@@ -472,7 +472,7 @@ Object Matching, Shorthand Notation
 
 Intuitive and flexible destructuring of Objects into individual variables during assignment.
 
-6| var |{ op, lhs, rhs }| = getASTNode();
+6| let |{ op, lhs, rhs }| = getASTNode();
 
 5| var |tmp| = getASTNode();
 5| var |op  = tmp.op|;
@@ -484,7 +484,7 @@ Object Matching, Deep Matching
 
 Intuitive and flexible destructuring of Objects into individual variables during assignment.
 
-6| var { op: a, |lhs: { op: b }|, rhs: c } = getASTNode();
+6| let { op: a, |lhs: { op: b }|, rhs: c } = getASTNode();
 
 5| var tmp = getASTNode();
 5| var a = tmp.op;
@@ -496,10 +496,10 @@ Object And Array Matching, Default Values
 
 Simple and intuitive default values for destructuring of Objects and Arrays.
 
-6| var obj = { a: 1 };
-6| var list = [ 1 ];
-6| var { a, |b = 2| } = obj;
-6| var [ x, |y = 2| ] = list;
+6| let obj = { a: 1 };
+6| let list = [ 1 ];
+6| let { a, |b = 2| } = obj;
+6| let [ x, |y = 2| ] = list;
 
 5| var obj = { a: 1 };
 5| var list = [ 1 ];
