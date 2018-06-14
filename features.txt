@@ -293,9 +293,9 @@ Access the raw template string content (backslashes are not interpreted).
 6|     strings.raw[1] === "bar";
 6|     values[0] === 42;
 6| }
-6| quux |`|foo|\n|${ 42 }bar|`|
+6| quux|`|foo|\n|${ 42 }bar|`|
 6|
-6| String.raw |`|foo|\n|${ 42 }bar|`| === "foo|\\n|42bar";
+6| String.raw|`|foo|\n|${ 42 }bar|`| === "foo|\\n|42bar";
 
 5| //  no equivalent in ES5
 
