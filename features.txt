@@ -1276,7 +1276,7 @@ Cleaner data-structure for common algorithms based on maps.
 6| m.|get(s)| === 34;
 6| m.|size| === 2;
 6| for (let |[ key, val ] of m.entries()|)
-6|     console.log(key + " = " + val);
+6|     console.log(key , val);
 
 5| var m = |{}|;
 5| // no equivalent in ES5
