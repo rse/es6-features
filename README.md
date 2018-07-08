@@ -98,4 +98,5 @@ ECMAScript 5 equivalents.
     - [JS Features](http://jsfeatures.in/) (by Hemanth.HM)
     - [Minimalist examples of ES6 functionalities](https://github.com/hemanth/paws-on-es6) (by Hemanth.HM)
     - [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/) (by Nicholas C. Zakas)
+    - [ECMAScript 6 examples](https://crismaster.github.io/es6-examples/) (by Cristhian Won)
 
