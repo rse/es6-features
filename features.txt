@@ -1111,7 +1111,7 @@ values (either finite or infinite).
 
 6| let fibonacci = |function*| (numbers) {
 6|     let pre = 0, cur = 1;
-6|     while (numbers-- > 0) {
+6|     while (numbers > pre + cur) {
 6|         [ pre, cur ] = [ cur, pre + cur ];
 6|         |yield cur|;
 6|     }
