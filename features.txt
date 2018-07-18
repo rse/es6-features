@@ -1406,7 +1406,7 @@ New function for finding an element in an array.
 6| [ 1, 3, 4, 2 ].|findIndex|(|x =>| x > 3); // 2
 
 5| [ 1, 3, 4, 2 ].|filter|(|function (x) { return| x > 3; })|[0]|; // 4
-5| // no equivalent in ES5
+5| [ 1, 3, 4, 2 ].|map|(|function(x, index) { return| x > 3 |? index : undefined; }).filter(function (x) { return x !== undefined; }|)|[0]|; // 2
 
 String Repeating
 ----------------
