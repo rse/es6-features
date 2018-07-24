@@ -235,7 +235,7 @@ code {
     top: 80px;
     width: calc(100% - 380px - 30px);
     height: calc(100% - 180px);
-    overflow: scroll;
+    overflow: auto;
 }
 
 .content .title {
