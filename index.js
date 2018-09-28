@@ -40,8 +40,8 @@
         $(".showcase").css("display", "none")
         $(".showcase:first").css("display", "block")
         $("li.subtitle:first").addClass("selected")
-        $(".nav a").click(function (ev) {
-            var id = $(ev.target).attr("href").replace(/^#/, "")
+        $(".nav a").click(function () {
+            var id = $(this).attr("href").replace(/^#/, "")
             $(".showcase").css("display", "none")
             $(".showcase_" + id).css("display", "block")
             $("li.subtitle").removeClass("selected")
