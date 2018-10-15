@@ -110,6 +110,8 @@
     <a href="#CustomInterpolation">Custom Interpolation</a> <i class="fa fa-arrow-circle-right"></i></li>
 <li class="subtitle subtitle_RawStringAccess">
     <a href="#RawStringAccess">Raw String Access</a> <i class="fa fa-arrow-circle-right"></i></li>
+<li class="subtitle subtitle_MultiLineStrings">
+    <a href="#MultiLineStrings">Multi-Line Strings</a> <i class="fa fa-arrow-circle-right"></i></li>
     </ul>
 </li>
 <li class="title">Extended Literals
@@ -626,6 +628,32 @@ String<span class="punctuation">.</span>raw<span class="mark"><span class="liter
     <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
     <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
     <div class="code"><span class="comment">//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span></span></div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-times-circle"></i>
+</div>
+</div>
+<div id="MultiLineStrings" class="showcase showcase_MultiLineStrings">    <div class="title">Template Literals</div>
+    <div class="subtitle">Multi-Line Strings</div>
+    <div class="desc">Include Newline characters in a string.</div>
+<div class="js es6">
+    <div class="title"><b>ECMAScript 6</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="keyword">var</span> foo=<span class="literal">`
+The Cat
+Sat
+On
+The Mat`</span><span class="semi">;</span>
+</div>
+    <i class="icon fa fa-circle"></i>
+    <i class="icon fa fa-check-circle"></i>
+</div>
+    <div class="arrow"><i class="fa fa-caret-up"></i><i class="fa fa-caret-down"></i></div><div class="js es5">
+    <div class="title"><b>ECMAScript 5</b> &mdash; syntactic sugar: <span class="style reduced">reduced</span> | <span class="style traditional">traditional</span></div>
+    <div class="code"><span class="comment">//  no equivalent <span class="keyword">in</span> ES<span class="literal">5</span>: Use Concatenation  and \n instead:</span>
+<span class="keyword">var</span> foo=<span class="literal">'\n'</span><span class="punctuation">+</span>
+<span class="literal">'The Cat\n'</span><span class="punctuation">+</span>
+<span class="literal">'Sat\n'</span>
+<span class="literal">'On\n'</span>
+<span class="literal">'The Mat'</span><span class="semi">;</span></div>
     <i class="icon fa fa-circle"></i>
     <i class="icon fa fa-times-circle"></i>
 </div>

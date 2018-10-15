@@ -300,6 +300,25 @@ Access the raw template string content (backslashes are not interpreted).
 5| //  no equivalent in ES5
 
 
+Multi-Line Strings
+-----------------
+
+Include Newline characters in a string.
+
+6| var foo=`
+6| The Cat
+6| Sat
+6| On
+6| The Mat`;
+
+5| //  no equivalent in ES5: Use Concatenation  and \n instead:
+5| var foo='\n'+
+5| 'The Cat\n'+
+5| 'Sat\n'
+5| 'On\n'
+5| 'The Mat';
+
+
 Extended Literals
 =================
 
