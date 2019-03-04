@@ -682,12 +682,14 @@ More intuitive, OOP-style and boilerplate-free inheritance.
 5| };
 5| |Rectangle.prototype = Object.create(Shape.prototype)|;
 5| |Rectangle.prototype.constructor = Rectangle|;
+5| |Rectangle.__proto__ = Shape|;
 5| var Circle = function (id, x, y, radius) {
 5|     |Shape.call|(this, id, x, y);
 5|     this.radius = radius;
 5| };
 5| |Circle.prototype = Object.create(Shape.prototype)|;
 5| |Circle.prototype.constructor = Circle|;
+5| |Circle.__proto__ = Shape|;
 
 Class Inheritance, From Expressions
 -----------------------------------
