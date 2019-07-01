@@ -165,14 +165,16 @@ code {
     margin-left: 30px;
     width: 320px;
     background-color: #222222;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: auto;
     padding-left: 0px;
     height: calc(100% - 180px);
     -webkit-border-radius: 4px 4px 4px 4px;
     border-radius: 4px 4px 4px 4px;
     -webkit-box-shadow: 2px 2px 4px 0px #444444;
     box-shadow: 2px 2px 4px 0px #444444;
+}
+.nav .title {
+    line-height: 1.6;
 }
 .nav > ul {
     position: relative;
@@ -187,31 +189,28 @@ code {
     color: #e0e0e0;
     font-weight: bold;
     padding-left: 10px;
-    width: 100%;
 }
 .nav > ul > li > ul {
     position: relative;
-    left: -10px;
     background-color: red;
     list-style-type: none;
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: -10px;
     padding-left: 0px;
-    width: 100%;
 }
 .nav > ul > li > ul > li {
     background-color: #111111;
     color: #000000;
     font-weight: normal;
-    width: 100%;
     position: relative;
 }
 .nav > ul > li > ul > li a {
     text-decoration: none;
     color: #e0e0e0;
     padding-left: 30px;
-    width: 100%;
-    display: inline-block;
+    display: block;
+    line-height: 1.5;
 }
 .nav > ul > li > ul > li i {
     position: absolute;
@@ -226,7 +225,6 @@ code {
 .nav > ul > li > ul > li.selected a {
     background-color: #336699;
     color: #ffffff;
-    width: 100%;
 }
 
 .content {
