@@ -461,7 +461,7 @@ Intuitive and flexible destructuring of Arrays into individual variables during 
 
 6| var list = [ 1, 2, 3 ];
 6| var |[ a, , b ] = list|;
-6| [ |b, a| ] = [ |a, b| ];
+6| {[ |b, a| ] = [ |a, b| ]};
 
 5| var list = [ 1, 2, 3 ];
 5| var |a = list[0]|, |b = list[2]|;
