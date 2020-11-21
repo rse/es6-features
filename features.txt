@@ -1262,7 +1262,7 @@ Cleaner data-structure for common algorithms based on sets.
 5| |s["hello"]| === true;
 5| for (var key |in| s) // arbitrary order
 5|     if (s.hasOwnProperty(key))
-5|         console.log(s[key]);
+5|         console.log(key);
 
 Map Data-Structure
 ------------------
